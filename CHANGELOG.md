@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+1.41.0 (2025-06-13)
+-------------------
+- Build: auto-update snippets to version: 1.41.0. [Github Actions]
+
+
 1.40.0 (2025-06-06)
 -------------------
 - Build: auto-update snippets to version: 1.40.0. [Github Actions]
