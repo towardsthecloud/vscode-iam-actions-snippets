@@ -1534,6 +1534,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateInvestigationGroup.html"
+      },
+      "ValidateInvestigationGroup": {
+        "access_level": "Read",
+        "action_name": "aiops:ValidateInvestigationGroup",
+        "condition_keys": [],
+        "description": "Grants permission to validate the specified investigation group",
+        "resource_types": [
+          {
+            "name": "investigation-group*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonaioperations.html#amazonaioperations-investigation-group"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ValidateInvestigationGroup.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonaioperations.html",
@@ -6672,6 +6685,14 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_BatchDeleteEvaluationJob.html"
       },
+      "CallWithBearerToken": {
+        "access_level": "Read",
+        "action_name": "bedrock:CallWithBearerToken",
+        "condition_keys": [],
+        "description": "Grants permission to use bearer token",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
+      },
       "CreateAgent": {
         "access_level": "Write",
         "action_name": "bedrock:CreateAgent",
@@ -6762,6 +6783,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprintVersion.html"
+      },
+      "CreateCustomModel": {
+        "access_level": "Write",
+        "action_name": "bedrock:CreateCustomModel",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a custom model into Bedrock",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html"
       },
       "CreateDataAutomationProject": {
         "access_level": "Write",
@@ -66201,6 +66239,22 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Vpc"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Vpc",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Vpc"
+          },
+          {
             "name": "ec2:Region",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
           }
@@ -66218,6 +66272,10 @@
           {
             "name": "security-group",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-security-group"
+          },
+          {
+            "name": "subnet",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-subnet"
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
@@ -89636,6 +89694,19 @@
         ],
         "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
       },
+      "CreateAndAttachS3AccessPoint": {
+        "access_level": "Write",
+        "action_name": "fsx:CreateAndAttachS3AccessPoint",
+        "condition_keys": [],
+        "description": "Grants permission to create and attach a S3 Access Point to a FSx File System",
+        "resource_types": [
+          {
+            "name": "volume",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html#amazonfsx-volume"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html"
+      },
       "CreateBackup": {
         "access_level": "Write",
         "action_name": "fsx:CreateBackup",
@@ -90137,6 +90208,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html"
       },
+      "DescribeS3AccessPointAttachments": {
+        "access_level": "Read",
+        "action_name": "fsx:DescribeS3AccessPointAttachments",
+        "condition_keys": [],
+        "description": "Grants permission to return the descriptions of S3 Access Point Attachments",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeS3AccessPointAttachments.html"
+      },
       "DescribeSharedVpcConfiguration": {
         "access_level": "Read",
         "action_name": "fsx:DescribeSharedVpcConfiguration",
@@ -90168,6 +90247,19 @@
         "description": "Grants permission to return the descriptions of all volumes owned by your AWS account in the AWS Region of the endpoint that you're calling",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeVolumes.html"
+      },
+      "DetachAndDeleteS3AccessPoint": {
+        "access_level": "Write",
+        "action_name": "fsx:DetachAndDeleteS3AccessPoint",
+        "condition_keys": [],
+        "description": "Grants permission to detach an S3 Access Point from an Amazon FSx File System and delete the S3 Access Point",
+        "resource_types": [
+          {
+            "name": "volume",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html#amazonfsx-volume"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DetachAndDeleteS3AccessPoint.html"
       },
       "DisassociateFileGateway": {
         "access_level": "Write",
@@ -90514,7 +90606,7 @@
     "serviceName": "Amazon FSx",
     "service_prefix": "fsx"
   },
-  "amazongamelift": {
+  "amazongameliftservers": {
     "actions": {
       "AcceptMatch": {
         "access_level": "Write",
@@ -90522,7 +90614,7 @@
         "condition_keys": [],
         "description": "Grants permission to register player acceptance or rejection of a proposed FlexMatch match",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_AcceptMatch.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_AcceptMatch.html"
       },
       "ClaimGameServer": {
         "access_level": "Write",
@@ -90532,10 +90624,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ClaimGameServer.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ClaimGameServer.html"
       },
       "CreateAlias": {
         "access_level": "Write",
@@ -90543,16 +90635,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to define a new alias for a fleet",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateAlias.html"
       },
       "CreateBuild": {
         "access_level": "Write",
@@ -90560,16 +90652,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new game build using files stored in an Amazon S3 bucket",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateBuild.html"
       },
       "CreateContainerFleet": {
         "access_level": "Write",
@@ -90577,16 +90669,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new container fleet of computing resources to run your game servers",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerFleet.html"
       },
       "CreateContainerGroupDefinition": {
         "access_level": "Write",
@@ -90594,16 +90686,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new container group definition using images stored in an Amazon ECR repository",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerGroupDefinition.html"
       },
       "CreateFleet": {
         "access_level": "Write",
@@ -90611,16 +90703,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new fleet of computing resources to run your game servers",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleet.html"
       },
       "CreateFleetLocations": {
         "access_level": "Write",
@@ -90630,14 +90722,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleetLocations.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleetLocations.html"
       },
       "CreateGameServerGroup": {
         "access_level": "Write",
@@ -90645,16 +90737,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new game server group, set up a corresponding Auto Scaling group, and launche instances to host game servers",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameServerGroup.html"
       },
       "CreateGameSession": {
         "access_level": "Write",
@@ -90662,7 +90754,7 @@
         "condition_keys": [],
         "description": "Grants permission to start a new game session on a specified fleet",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSession.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSession.html"
       },
       "CreateGameSessionQueue": {
         "access_level": "Write",
@@ -90670,16 +90762,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to set up a new queue for processing game session placement requests",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSessionQueue.html"
       },
       "CreateLocation": {
         "access_level": "Write",
@@ -90687,16 +90779,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to define a new location for a fleet",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateLocation.html"
       },
       "CreateMatchmakingConfiguration": {
         "access_level": "Write",
@@ -90704,16 +90796,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new FlexMatch matchmaker",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingConfiguration.html"
       },
       "CreateMatchmakingRuleSet": {
         "access_level": "Write",
@@ -90721,16 +90813,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new matchmaking rule set for FlexMatch",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingRuleSet.html"
       },
       "CreatePlayerSession": {
         "access_level": "Write",
@@ -90738,7 +90830,7 @@
         "condition_keys": [],
         "description": "Grants permission to reserve an available game session slot for a player",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSession.html"
       },
       "CreatePlayerSessions": {
         "access_level": "Write",
@@ -90746,7 +90838,7 @@
         "condition_keys": [],
         "description": "Grants permission to reserve available game session slots for multiple players",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSessions.html"
       },
       "CreateScript": {
         "access_level": "Write",
@@ -90754,16 +90846,16 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new Realtime Servers script",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateScript.html"
       },
       "CreateVpcPeeringAuthorization": {
         "access_level": "Write",
@@ -90771,7 +90863,7 @@
         "condition_keys": [],
         "description": "Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringAuthorization.html"
       },
       "CreateVpcPeeringConnection": {
         "access_level": "Write",
@@ -90779,7 +90871,7 @@
         "condition_keys": [],
         "description": "Grants permission to establish a peering connection between your GameLift fleet VPC and a VPC on another account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringConnection.html"
       },
       "DeleteAlias": {
         "access_level": "Write",
@@ -90789,10 +90881,10 @@
         "resource_types": [
           {
             "name": "alias*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteAlias.html"
       },
       "DeleteBuild": {
         "access_level": "Write",
@@ -90802,10 +90894,10 @@
         "resource_types": [
           {
             "name": "build*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteBuild.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteBuild.html"
       },
       "DeleteContainerFleet": {
         "access_level": "Write",
@@ -90815,10 +90907,10 @@
         "resource_types": [
           {
             "name": "containerFleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteContainerFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerFleet.html"
       },
       "DeleteContainerGroupDefinition": {
         "access_level": "Write",
@@ -90828,10 +90920,10 @@
         "resource_types": [
           {
             "name": "containerGroupDefinition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteContainerGroupDefinition.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerGroupDefinition.html"
       },
       "DeleteFleet": {
         "access_level": "Write",
@@ -90841,10 +90933,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleet.html"
       },
       "DeleteFleetLocations": {
         "access_level": "Write",
@@ -90854,14 +90946,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleetLocations.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleetLocations.html"
       },
       "DeleteGameServerGroup": {
         "access_level": "Write",
@@ -90871,10 +90963,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameServerGroup.html"
       },
       "DeleteGameSessionQueue": {
         "access_level": "Write",
@@ -90884,10 +90976,10 @@
         "resource_types": [
           {
             "name": "gameSessionQueue*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameSessionQueue.html"
       },
       "DeleteLocation": {
         "access_level": "Write",
@@ -90897,10 +90989,10 @@
         "resource_types": [
           {
             "name": "location*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-location"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-location"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteLocation.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteLocation.html"
       },
       "DeleteMatchmakingConfiguration": {
         "access_level": "Write",
@@ -90910,10 +91002,10 @@
         "resource_types": [
           {
             "name": "matchmakingConfiguration*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingConfiguration"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingConfiguration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingConfiguration.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingConfiguration.html"
       },
       "DeleteMatchmakingRuleSet": {
         "access_level": "Write",
@@ -90923,10 +91015,10 @@
         "resource_types": [
           {
             "name": "matchmakingRuleSet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingRuleSet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingRuleSet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingRuleSet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingRuleSet.html"
       },
       "DeleteScalingPolicy": {
         "access_level": "Write",
@@ -90936,14 +91028,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScalingPolicy.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScalingPolicy.html"
       },
       "DeleteScript": {
         "access_level": "Write",
@@ -90953,10 +91045,10 @@
         "resource_types": [
           {
             "name": "script*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScript.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScript.html"
       },
       "DeleteVpcPeeringAuthorization": {
         "access_level": "Write",
@@ -90964,7 +91056,7 @@
         "condition_keys": [],
         "description": "Grants permission to cancel a VPC peering authorization",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringAuthorization.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringAuthorization.html"
       },
       "DeleteVpcPeeringConnection": {
         "access_level": "Write",
@@ -90972,7 +91064,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove a peering connection between VPCs",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringConnection.html"
       },
       "DeregisterCompute": {
         "access_level": "Write",
@@ -90982,10 +91074,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterCompute.html"
       },
       "DeregisterGameServer": {
         "access_level": "Write",
@@ -90995,10 +91087,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterGameServer.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterGameServer.html"
       },
       "DescribeAlias": {
         "access_level": "Read",
@@ -91008,10 +91100,10 @@
         "resource_types": [
           {
             "name": "alias*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeAlias.html"
       },
       "DescribeBuild": {
         "access_level": "Read",
@@ -91021,10 +91113,10 @@
         "resource_types": [
           {
             "name": "build*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeBuild.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeBuild.html"
       },
       "DescribeCompute": {
         "access_level": "Read",
@@ -91034,14 +91126,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeCompute.html"
       },
       "DescribeContainerFleet": {
         "access_level": "Read",
@@ -91051,10 +91143,10 @@
         "resource_types": [
           {
             "name": "containerFleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerFleet.html"
       },
       "DescribeContainerGroupDefinition": {
         "access_level": "Read",
@@ -91064,10 +91156,10 @@
         "resource_types": [
           {
             "name": "containerGroupDefinition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerGroupDefinition.html"
       },
       "DescribeEC2InstanceLimits": {
         "access_level": "Read",
@@ -91075,7 +91167,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the maximum allowed and current usage for EC2 instance types",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeEC2InstanceLimits.html"
       },
       "DescribeFleetAttributes": {
         "access_level": "Read",
@@ -91083,7 +91175,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve general properties, including status, for fleets",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetAttributes.html"
       },
       "DescribeFleetCapacity": {
         "access_level": "Read",
@@ -91091,7 +91183,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the current capacity settings for managed fleets",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetCapacity.html"
       },
       "DescribeFleetDeployment": {
         "access_level": "Read",
@@ -91101,10 +91193,10 @@
         "resource_types": [
           {
             "name": "containerFleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetDeployment.html"
       },
       "DescribeFleetEvents": {
         "access_level": "Read",
@@ -91114,14 +91206,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetEvents.html"
       },
       "DescribeFleetLocationAttributes": {
         "access_level": "Read",
@@ -91131,14 +91223,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationAttributes.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationAttributes.html"
       },
       "DescribeFleetLocationCapacity": {
         "access_level": "Read",
@@ -91148,14 +91240,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationCapacity.html"
       },
       "DescribeFleetLocationUtilization": {
         "access_level": "Read",
@@ -91165,10 +91257,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationUtilization.html"
       },
       "DescribeFleetPortSettings": {
         "access_level": "Read",
@@ -91178,10 +91270,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetPortSettings.html"
       },
       "DescribeFleetUtilization": {
         "access_level": "Read",
@@ -91189,7 +91281,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve utilization statistics for fleets",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetUtilization.html"
       },
       "DescribeGameServer": {
         "access_level": "Read",
@@ -91199,10 +91291,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServer.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServer.html"
       },
       "DescribeGameServerGroup": {
         "access_level": "Read",
@@ -91212,10 +91304,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerGroup.html"
       },
       "DescribeGameServerInstances": {
         "access_level": "Read",
@@ -91225,10 +91317,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerInstances.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerInstances.html"
       },
       "DescribeGameSessionDetails": {
         "access_level": "Read",
@@ -91236,7 +91328,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for game sessions in a fleet, including the protection policy",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionDetails.html"
       },
       "DescribeGameSessionPlacement": {
         "access_level": "Read",
@@ -91244,7 +91336,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve details of a game session placement request",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionPlacement.html"
       },
       "DescribeGameSessionQueues": {
         "access_level": "Read",
@@ -91252,7 +91344,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for game session queues",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionQueues.html"
       },
       "DescribeGameSessions": {
         "access_level": "Read",
@@ -91260,7 +91352,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for game sessions in a fleet",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessions.html"
       },
       "DescribeInstances": {
         "access_level": "Read",
@@ -91270,14 +91362,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeInstances.html"
       },
       "DescribeMatchmaking": {
         "access_level": "Read",
@@ -91285,7 +91377,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve details of matchmaking tickets",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmaking.html"
       },
       "DescribeMatchmakingConfigurations": {
         "access_level": "Read",
@@ -91293,7 +91385,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for FlexMatch matchmakers",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingConfigurations.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingConfigurations.html"
       },
       "DescribeMatchmakingRuleSets": {
         "access_level": "Read",
@@ -91301,7 +91393,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for FlexMatch matchmaking rule sets",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingRuleSets.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingRuleSets.html"
       },
       "DescribePlayerSessions": {
         "access_level": "Read",
@@ -91309,7 +91401,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for player sessions in a game session",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribePlayerSessions.html"
       },
       "DescribeRuntimeConfiguration": {
         "access_level": "Read",
@@ -91319,10 +91411,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeRuntimeConfiguration.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeRuntimeConfiguration.html"
       },
       "DescribeScalingPolicies": {
         "access_level": "Read",
@@ -91332,14 +91424,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScalingPolicies.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScalingPolicies.html"
       },
       "DescribeScript": {
         "access_level": "Read",
@@ -91349,10 +91441,10 @@
         "resource_types": [
           {
             "name": "script*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScript.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScript.html"
       },
       "DescribeVpcPeeringAuthorizations": {
         "access_level": "Read",
@@ -91360,7 +91452,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve valid VPC peering authorizations",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringAuthorizations.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringAuthorizations.html"
       },
       "DescribeVpcPeeringConnections": {
         "access_level": "Read",
@@ -91368,7 +91460,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve details on active or pending VPC peering connections",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringConnections.html"
       },
       "GetComputeAccess": {
         "access_level": "Read",
@@ -91378,14 +91470,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAccess.html"
       },
       "GetComputeAuthToken": {
         "access_level": "Read",
@@ -91395,14 +91487,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAuthToken.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAuthToken.html"
       },
       "GetGameSessionLogUrl": {
         "access_level": "Read",
@@ -91410,7 +91502,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the location of stored logs for a game session",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetGameSessionLogUrl.html"
       },
       "GetInstanceAccess": {
         "access_level": "Read",
@@ -91420,10 +91512,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetInstanceAccess.html"
       },
       "ListAliases": {
         "access_level": "List",
@@ -91431,7 +91523,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve all aliases that are defined in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListAliases.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListAliases.html"
       },
       "ListBuilds": {
         "access_level": "List",
@@ -91439,7 +91531,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve all game build in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListBuilds.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListBuilds.html"
       },
       "ListCompute": {
         "access_level": "List",
@@ -91449,14 +91541,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListCompute.html"
       },
       "ListContainerFleets": {
         "access_level": "List",
@@ -91464,7 +91556,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the properties of all existing container fleets in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerFleets.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerFleets.html"
       },
       "ListContainerGroupDefinitionVersions": {
         "access_level": "List",
@@ -91474,10 +91566,10 @@
         "resource_types": [
           {
             "name": "containerGroupDefinition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitionVersions.html"
       },
       "ListContainerGroupDefinitions": {
         "access_level": "List",
@@ -91485,7 +91577,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the properties of all existing container group definitions in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitions.html"
       },
       "ListFleetDeployments": {
         "access_level": "List",
@@ -91493,7 +91585,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the properties of all existing fleet deployments in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleetDeployments.html"
       },
       "ListFleets": {
         "access_level": "List",
@@ -91501,7 +91593,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve a list of fleet IDs for all fleets in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleets.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleets.html"
       },
       "ListGameServerGroups": {
         "access_level": "List",
@@ -91509,7 +91601,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve all game server groups that are defined in the current Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServerGroups.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServerGroups.html"
       },
       "ListGameServers": {
         "access_level": "List",
@@ -91519,10 +91611,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServers.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServers.html"
       },
       "ListLocations": {
         "access_level": "List",
@@ -91530,7 +91622,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve all locations in this account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListLocations.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListLocations.html"
       },
       "ListScripts": {
         "access_level": "List",
@@ -91538,7 +91630,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve properties for all Realtime Servers scripts in the current region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListScripts.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListScripts.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -91548,50 +91640,50 @@
         "resource_types": [
           {
             "name": "alias",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           },
           {
             "name": "build",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           },
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "containerGroupDefinition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           },
           {
             "name": "gameServerGroup",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           },
           {
             "name": "gameSessionQueue",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           },
           {
             "name": "location",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-location"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-location"
           },
           {
             "name": "matchmakingConfiguration",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingConfiguration"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingConfiguration"
           },
           {
             "name": "matchmakingRuleSet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingRuleSet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingRuleSet"
           },
           {
             "name": "script",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListTagsForResource.html"
       },
       "PutScalingPolicy": {
         "access_level": "Write",
@@ -91601,14 +91693,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_PutScalingPolicy.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_PutScalingPolicy.html"
       },
       "RegisterCompute": {
         "access_level": "Write",
@@ -91618,10 +91710,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterCompute.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterCompute.html"
       },
       "RegisterGameServer": {
         "access_level": "Write",
@@ -91631,10 +91723,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterGameServer.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterGameServer.html"
       },
       "RequestUploadCredentials": {
         "access_level": "Read",
@@ -91644,10 +91736,10 @@
         "resource_types": [
           {
             "name": "build*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RequestUploadCredentials.html"
       },
       "ResolveAlias": {
         "access_level": "Read",
@@ -91657,10 +91749,10 @@
         "resource_types": [
           {
             "name": "alias*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResolveAlias.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResolveAlias.html"
       },
       "ResumeGameServerGroup": {
         "access_level": "Write",
@@ -91670,10 +91762,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResumeGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResumeGameServerGroup.html"
       },
       "SearchGameSessions": {
         "access_level": "Read",
@@ -91681,7 +91773,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve game sessions that match a set of search criteria",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_SearchGameSessions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SearchGameSessions.html"
       },
       "StartFleetActions": {
         "access_level": "Write",
@@ -91691,14 +91783,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartFleetActions.html"
       },
       "StartGameSessionPlacement": {
         "access_level": "Write",
@@ -91708,10 +91800,10 @@
         "resource_types": [
           {
             "name": "gameSessionQueue*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartGameSessionPlacement.html"
       },
       "StartMatchBackfill": {
         "access_level": "Write",
@@ -91719,7 +91811,7 @@
         "condition_keys": [],
         "description": "Grants permission to request FlexMatch matchmaking to fill available player slots in an existing game session",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchBackfill.html"
       },
       "StartMatchmaking": {
         "access_level": "Write",
@@ -91727,7 +91819,7 @@
         "condition_keys": [],
         "description": "Grants permission to request FlexMatch matchmaking for one or a group of players and initiate game session placement",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchmaking.html"
       },
       "StopFleetActions": {
         "access_level": "Write",
@@ -91737,14 +91829,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopFleetActions.html"
       },
       "StopGameSessionPlacement": {
         "access_level": "Write",
@@ -91752,7 +91844,7 @@
         "condition_keys": [],
         "description": "Grants permission to cancel a game session placement request that is in progress",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopGameSessionPlacement.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopGameSessionPlacement.html"
       },
       "StopMatchmaking": {
         "access_level": "Write",
@@ -91760,7 +91852,7 @@
         "condition_keys": [],
         "description": "Grants permission to cancel a matchmaking or match backfill request that is in progress",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopMatchmaking.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopMatchmaking.html"
       },
       "SuspendGameServerGroup": {
         "access_level": "Write",
@@ -91770,10 +91862,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_SuspendGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SuspendGameServerGroup.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -91781,61 +91873,61 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to tag GameLift resources",
         "resource_types": [
           {
             "name": "alias",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           },
           {
             "name": "build",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           },
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "containerGroupDefinition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           },
           {
             "name": "gameServerGroup",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           },
           {
             "name": "gameSessionQueue",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           },
           {
             "name": "location",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-location"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-location"
           },
           {
             "name": "matchmakingConfiguration",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingConfiguration"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingConfiguration"
           },
           {
             "name": "matchmakingRuleSet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingRuleSet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingRuleSet"
           },
           {
             "name": "script",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TagResource.html"
       },
       "TerminateGameSession": {
         "access_level": "Write",
@@ -91843,7 +91935,7 @@
         "condition_keys": [],
         "description": "Grants permission to shut down an existing game session",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TerminateGameSession.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -91851,57 +91943,57 @@
         "condition_keys": [
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-aws_TagKeys"
           }
         ],
         "description": "Grants permission to untag GameLift resources",
         "resource_types": [
           {
             "name": "alias",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           },
           {
             "name": "build",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           },
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "containerGroupDefinition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           },
           {
             "name": "gameServerGroup",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           },
           {
             "name": "gameSessionQueue",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           },
           {
             "name": "location",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-location"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-location"
           },
           {
             "name": "matchmakingConfiguration",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingConfiguration"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingConfiguration"
           },
           {
             "name": "matchmakingRuleSet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingRuleSet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingRuleSet"
           },
           {
             "name": "script",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UntagResource.html"
       },
       "UpdateAlias": {
         "access_level": "Write",
@@ -91911,10 +92003,10 @@
         "resource_types": [
           {
             "name": "alias*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-alias"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-alias"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateAlias.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateAlias.html"
       },
       "UpdateBuild": {
         "access_level": "Write",
@@ -91924,10 +92016,10 @@
         "resource_types": [
           {
             "name": "build*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-build"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-build"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateBuild.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateBuild.html"
       },
       "UpdateContainerFleet": {
         "access_level": "Write",
@@ -91937,10 +92029,10 @@
         "resource_types": [
           {
             "name": "containerFleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerFleet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerFleet.html"
       },
       "UpdateContainerGroupDefinition": {
         "access_level": "Write",
@@ -91950,10 +92042,10 @@
         "resource_types": [
           {
             "name": "containerGroupDefinition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerGroupDefinition"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerGroupDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerGroupDefinition.html"
       },
       "UpdateFleetAttributes": {
         "access_level": "Write",
@@ -91963,10 +92055,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetAttributes.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetAttributes.html"
       },
       "UpdateFleetCapacity": {
         "access_level": "Write",
@@ -91976,14 +92068,14 @@
         "resource_types": [
           {
             "name": "containerFleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-containerFleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-containerFleet"
           },
           {
             "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetCapacity.html"
       },
       "UpdateFleetPortSettings": {
         "access_level": "Write",
@@ -91993,10 +92085,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetPortSettings.html"
       },
       "UpdateGameServer": {
         "access_level": "Write",
@@ -92006,10 +92098,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServer.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServer.html"
       },
       "UpdateGameServerGroup": {
         "access_level": "Write",
@@ -92019,10 +92111,10 @@
         "resource_types": [
           {
             "name": "gameServerGroup*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameServerGroup"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameServerGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServerGroup.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServerGroup.html"
       },
       "UpdateGameSession": {
         "access_level": "Write",
@@ -92030,7 +92122,7 @@
         "condition_keys": [],
         "description": "Grants permission to update the properties of an existing game session",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSession.html"
       },
       "UpdateGameSessionQueue": {
         "access_level": "Write",
@@ -92040,10 +92132,10 @@
         "resource_types": [
           {
             "name": "gameSessionQueue*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-gameSessionQueue"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-gameSessionQueue"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSessionQueue.html"
       },
       "UpdateMatchmakingConfiguration": {
         "access_level": "Write",
@@ -92053,10 +92145,10 @@
         "resource_types": [
           {
             "name": "matchmakingConfiguration*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-matchmakingConfiguration"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-matchmakingConfiguration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateMatchmakingConfiguration.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateMatchmakingConfiguration.html"
       },
       "UpdateRuntimeConfiguration": {
         "access_level": "Write",
@@ -92066,10 +92158,10 @@
         "resource_types": [
           {
             "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-fleet"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-fleet"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateRuntimeConfiguration.html"
       },
       "UpdateScript": {
         "access_level": "Write",
@@ -92079,10 +92171,10 @@
         "resource_types": [
           {
             "name": "script*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html#amazongamelift-script"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html#amazongameliftservers-script"
           }
         ],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateScript.html"
       },
       "ValidateMatchmakingRuleSet": {
         "access_level": "Read",
@@ -92090,11 +92182,11 @@
         "condition_keys": [],
         "description": "Grants permission to validate the syntax of a FlexMatch matchmaking rule set",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html"
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ValidateMatchmakingRuleSet.html"
       }
     },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html",
-    "serviceName": "Amazon GameLift",
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html",
+    "serviceName": "Amazon GameLift Servers",
     "service_prefix": "gamelift"
   },
   "amazongameliftstreams": {
@@ -116060,10 +116152,6 @@
         "action_name": "aoss:CreateLifecyclePolicy",
         "condition_keys": [
           {
-            "name": "aoss:collection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_collection"
-          },
-          {
             "name": "aoss:index",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_index"
           }
@@ -116157,10 +116245,6 @@
         "access_level": "Write",
         "action_name": "aoss:DeleteLifecyclePolicy",
         "condition_keys": [
-          {
-            "name": "aoss:collection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_collection"
-          },
           {
             "name": "aoss:index",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_index"
@@ -116385,10 +116469,6 @@
         "access_level": "Write",
         "action_name": "aoss:UpdateLifecyclePolicy",
         "condition_keys": [
-          {
-            "name": "aoss:collection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_collection"
-          },
           {
             "name": "aoss:index",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_index"
@@ -184945,7 +185025,7 @@
         "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html"
       },
       "SetWebACL": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "appsync:SetWebACL",
         "condition_keys": [],
         "description": "Grants permission to set a web ACL",
@@ -195487,14 +195567,6 @@
         "action_name": "cloud9:UpdateUserSettings",
         "condition_keys": [],
         "description": "Grants permission to update IDE-specific settings of an AWS Cloud9 user",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
-      },
-      "ValidateEnvironmentName": {
-        "access_level": "Read",
-        "action_name": "cloud9:ValidateEnvironmentName",
-        "condition_keys": [],
-        "description": "Grants permission to validate the environment name during the process of creating an AWS Cloud9 development environment",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix"
       }
