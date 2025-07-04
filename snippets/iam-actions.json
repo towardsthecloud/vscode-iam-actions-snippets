@@ -2309,6 +2309,40 @@
   },
   "amazonapigatewaymanagementv2": {
     "actions": {
+      "CreateRoutingRule": {
+        "access_level": "Write",
+        "action_name": "apigateway:CreateRoutingRule",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Priority"
+          },
+          {
+            "name": "apigateway:Request/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ConditionBasePaths"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "apigateway:Request/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Priority"
+          },
+          {
+            "name": "apigateway:Request/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ConditionBasePaths"
+          }
+        ],
+        "description": "Grants permission to create a routing rule",
+        "resource_types": [
+          {
+            "name": "RoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-RoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulespost"
+      },
       "DELETE": {
         "access_level": "Write",
         "action_name": "apigateway:DELETE",
@@ -2389,7 +2423,41 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-VpcLink"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_DELETE.html"
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+      },
+      "DeleteRoutingRule": {
+        "access_level": "Write",
+        "action_name": "apigateway:DeleteRoutingRule",
+        "condition_keys": [
+          {
+            "name": "apigateway:Resource/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_Priority"
+          },
+          {
+            "name": "apigateway:Resource/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_ConditionBasePaths"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "apigateway:Resource/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_Priority"
+          },
+          {
+            "name": "apigateway:Resource/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_ConditionBasePaths"
+          }
+        ],
+        "description": "Grants permission to delete a routing rule",
+        "resource_types": [
+          {
+            "name": "RoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-RoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleiddelete"
       },
       "GET": {
         "access_level": "Read",
@@ -2514,7 +2582,43 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-VpcLinks"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_GET.html"
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+      },
+      "GetRoutingRule": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetRoutingRule",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to read a routing rule",
+        "resource_types": [
+          {
+            "name": "RoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-RoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidget"
+      },
+      "ListRoutingRule": {
+        "access_level": "List",
+        "action_name": "apigateway:ListRoutingRule",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list routing rules under a domain name",
+        "resource_types": [
+          {
+            "name": "RoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-RoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulesget"
       },
       "PATCH": {
         "access_level": "Write",
@@ -2580,7 +2684,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-VpcLink"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_PATCH.html"
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
       },
       "POST": {
         "access_level": "Write",
@@ -2642,7 +2746,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-VpcLinks"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_POST.html"
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
       },
       "PUT": {
         "access_level": "Write",
@@ -2668,7 +2772,57 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Apis"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_PUT.html"
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+      },
+      "UpdateRoutingRule": {
+        "access_level": "Write",
+        "action_name": "apigateway:UpdateRoutingRule",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Priority"
+          },
+          {
+            "name": "apigateway:Request/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ConditionBasePaths"
+          },
+          {
+            "name": "apigateway:Resource/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_Priority"
+          },
+          {
+            "name": "apigateway:Resource/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_ConditionBasePaths"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "apigateway:Request/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Priority"
+          },
+          {
+            "name": "apigateway:Request/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ConditionBasePaths"
+          },
+          {
+            "name": "apigateway:Resource/Priority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_Priority"
+          },
+          {
+            "name": "apigateway:Resource/ConditionBasePaths",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Resource_ConditionBasePaths"
+          }
+        ],
+        "description": "Grants permission to update a routing rule using the PutRoutingRule API",
+        "resource_types": [
+          {
+            "name": "RoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-RoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidput"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html",
@@ -3203,6 +3357,19 @@
         ],
         "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html"
       },
+      "CreateDataIntegrationSchedule": {
+        "access_level": "Write",
+        "action_name": "app-integrations:CreateDataIntegrationSchedule",
+        "condition_keys": [],
+        "description": "Grants permission to create a data integration schedule",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationSchedule.html"
+      },
       "CreateEventIntegration": {
         "access_level": "Write",
         "action_name": "app-integrations:CreateEventIntegration",
@@ -3376,6 +3543,32 @@
         ],
         "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegration.html"
       },
+      "GetDataIntegrationExecution": {
+        "access_level": "Read",
+        "action_name": "app-integrations:GetDataIntegrationExecution",
+        "condition_keys": [],
+        "description": "Grants permission to get details about a data integration execution",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationExecution.html"
+      },
+      "GetDataIntegrationSchedule": {
+        "access_level": "Read",
+        "action_name": "app-integrations:GetDataIntegrationSchedule",
+        "condition_keys": [],
+        "description": "Grants permission to get details about a data integration schedule",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationSchedule.html"
+      },
       "GetEventIntegration": {
         "access_level": "Read",
         "action_name": "app-integrations:GetEventIntegration",
@@ -3417,6 +3610,32 @@
         "description": "Grants permission to list DataIntegrationAssociations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationAssociations.html"
+      },
+      "ListDataIntegrationExecutions": {
+        "access_level": "List",
+        "action_name": "app-integrations:ListDataIntegrationExecutions",
+        "condition_keys": [],
+        "description": "Grants permission to list data integration executions",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationExecutions.html"
+      },
+      "ListDataIntegrationSchedules": {
+        "access_level": "List",
+        "action_name": "app-integrations:ListDataIntegrationSchedules",
+        "condition_keys": [],
+        "description": "Grants permission to list data integration schedules",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationSchedules.html"
       },
       "ListDataIntegrations": {
         "access_level": "List",
@@ -3475,6 +3694,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListTagsForResource.html"
+      },
+      "StartDataIntegrationExecution": {
+        "access_level": "Write",
+        "action_name": "app-integrations:StartDataIntegrationExecution",
+        "condition_keys": [],
+        "description": "Grants permission to start a data integration execution",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_StartDataIntegrationExecution.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -3617,6 +3849,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationAssociation.html"
+      },
+      "UpdateDataIntegrationSchedule": {
+        "access_level": "Write",
+        "action_name": "app-integrations:UpdateDataIntegrationSchedule",
+        "condition_keys": [],
+        "description": "Grants permission to update a data integration schedule",
+        "resource_types": [
+          {
+            "name": "data-integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappintegrations.html#amazonappintegrations-data-integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationSchedule.html"
       },
       "UpdateEventIntegration": {
         "access_level": "Write",
@@ -39427,6 +39672,19 @@
         ],
         "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html"
       },
+      "CreateGlobalTableWitness": {
+        "access_level": "Write",
+        "action_name": "dynamodb:CreateGlobalTableWitness",
+        "condition_keys": [],
+        "description": "Grants permission to add a Witness to a Global Table",
+        "resource_types": [
+          {
+            "name": "table*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html#amazondynamodb-table"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+      },
       "CreateTable": {
         "access_level": "Write",
         "action_name": "dynamodb:CreateTable",
@@ -39474,6 +39732,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html"
+      },
+      "DeleteGlobalTableWitness": {
+        "access_level": "Write",
+        "action_name": "dynamodb:DeleteGlobalTableWitness",
+        "condition_keys": [],
+        "description": "Grants permission to remove a Witness from a Global Table",
+        "resource_types": [
+          {
+            "name": "table*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html#amazondynamodb-table"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
       },
       "DeleteItem": {
         "access_level": "Write",
@@ -81818,6 +82089,19 @@
   },
   "amazonelasticmapreduce": {
     "actions": {
+      "AccessAllEventLogs": {
+        "access_level": "Write",
+        "action_name": "elasticmapreduce:AccessAllEventLogs",
+        "condition_keys": [],
+        "description": "Grants permission to view all event logs in a persistent application history server",
+        "resource_types": [
+          {
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html#amazonelasticmapreduce-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html"
+      },
       "AddInstanceFleet": {
         "access_level": "Write",
         "action_name": "elasticmapreduce:AddInstanceFleet",
@@ -97606,6 +97890,53 @@
         ],
         "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
       },
+      "GetRecords": {
+        "access_level": "Read",
+        "action_name": "cassandra:GetRecords",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the CDC stream records from a given shard",
+        "resource_types": [
+          {
+            "name": "stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+      },
+      "GetShardIterator": {
+        "access_level": "Read",
+        "action_name": "cassandra:GetShardIterator",
+        "condition_keys": [],
+        "description": "Grants permission to return a shard iterator",
+        "resource_types": [
+          {
+            "name": "stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+      },
+      "GetStream": {
+        "access_level": "Read",
+        "action_name": "cassandra:GetStream",
+        "condition_keys": [],
+        "description": "Grants permission to return information about a CDC stream, including the composition of its shards",
+        "resource_types": [
+          {
+            "name": "stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+      },
+      "ListStreams": {
+        "access_level": "List",
+        "action_name": "cassandra:ListStreams",
+        "condition_keys": [],
+        "description": "Grants permission to return an array of CDC stream ARNs associated with the current account and endpoint",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/"
+      },
       "Modify": {
         "access_level": "Write",
         "action_name": "cassandra:Modify",
@@ -97723,11 +98054,15 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to tag a keyspace or table",
+        "description": "Grants permission to tag a keyspace, table, or stream",
         "resource_types": [
           {
             "name": "keyspace",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-keyspace"
+          },
+          {
+            "name": "stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-stream"
           },
           {
             "name": "table",
@@ -97767,11 +98102,15 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to untag a keyspace or table",
+        "description": "Grants permission to untag a keyspace, table or stream",
         "resource_types": [
           {
             "name": "keyspace",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-keyspace"
+          },
+          {
+            "name": "stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkeyspacesforapachecassandra.html#amazonkeyspacesforapachecassandra-stream"
           },
           {
             "name": "table",
@@ -122263,11 +122602,55 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateApplication.html"
       },
+      "CreateChatResponseConfiguration": {
+        "access_level": "Write",
+        "action_name": "qbusiness:CreateChatResponseConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a chat response configuration to the application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateChatResponseConfiguration.html"
+      },
       "CreateDataAccessor": {
         "access_level": "Write",
         "action_name": "qbusiness:CreateDataAccessor",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create DataAccessor to the application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html"
+      },
+      "CreateDataAccessorWithTti": {
+        "access_level": "Write",
+        "action_name": "qbusiness:CreateDataAccessorWithTti",
+        "condition_keys": [],
+        "description": "Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application",
         "resource_types": [
           {
             "name": "application*",
@@ -122494,6 +122877,23 @@
         ],
         "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatControlsConfiguration.html"
       },
+      "DeleteChatResponseConfiguration": {
+        "access_level": "Write",
+        "action_name": "qbusiness:DeleteChatResponseConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete a chat response configuration",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          },
+          {
+            "name": "chat-response-configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatResponseConfiguration.html"
+      },
       "DeleteConversation": {
         "access_level": "Write",
         "action_name": "qbusiness:DeleteConversation",
@@ -122712,6 +123112,23 @@
         ],
         "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatControlsConfiguration.html"
       },
+      "GetChatResponseConfiguration": {
+        "access_level": "Read",
+        "action_name": "qbusiness:GetChatResponseConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to get a chat response configuration",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          },
+          {
+            "name": "chat-response-configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatResponseConfiguration.html"
+      },
       "GetDataAccessor": {
         "access_level": "Read",
         "action_name": "qbusiness:GetDataAccessor",
@@ -122924,6 +123341,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListAttachments.html"
+      },
+      "ListChatResponseConfigurations": {
+        "access_level": "List",
+        "action_name": "qbusiness:ListChatResponseConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to list chat response configurations for an application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListChatResponseConfigurations.html"
       },
       "ListConversations": {
         "access_level": "List",
@@ -123145,6 +123575,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
           },
           {
+            "name": "chat-response-configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
+          },
+          {
             "name": "data-accessor",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-data-accessor"
           },
@@ -123339,6 +123773,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
           },
           {
+            "name": "chat-response-configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
+          },
+          {
             "name": "data-accessor",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-data-accessor"
           },
@@ -123383,6 +123821,10 @@
           {
             "name": "application",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          },
+          {
+            "name": "chat-response-configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
           },
           {
             "name": "data-accessor",
@@ -123440,6 +123882,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatControlsConfiguration.html"
+      },
+      "UpdateChatResponseConfiguration": {
+        "access_level": "Write",
+        "action_name": "qbusiness:UpdateChatResponseConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to update a chat response configuration",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-application"
+          },
+          {
+            "name": "chat-response-configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqbusiness.html#amazonqbusiness-chat-response-configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatResponseConfiguration.html"
       },
       "UpdateDataAccessor": {
         "access_level": "Write",
@@ -137277,12 +137736,7 @@
         "action_name": "rekognition:ListStreamProcessors",
         "condition_keys": [],
         "description": "Grants permission to get a list of your stream processors",
-        "resource_types": [
-          {
-            "name": "streamprocessor*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html#amazonrekognition-streamprocessor"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListStreamProcessors.html"
       },
       "ListTagsForResource": {
@@ -148539,6 +148993,14 @@
           {
             "name": "s3express:x-amz-content-sha256",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new bucket",
@@ -148860,7 +149322,12 @@
           }
         ],
         "description": "Grants permission to return configuration information about the specified access point",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "accesspoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-accesspoint"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html"
       },
       "GetAccessPointPolicy": {
@@ -149115,6 +149582,40 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListDirectoryBuckets.html"
       },
+      "ListTagsForResource": {
+        "access_level": "List",
+        "action_name": "s3express:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "s3express:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_authType"
+          },
+          {
+            "name": "s3express:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_ResourceAccount"
+          },
+          {
+            "name": "s3express:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_signatureversion"
+          },
+          {
+            "name": "s3express:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_TlsVersion"
+          },
+          {
+            "name": "s3express:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          }
+        ],
+        "description": "Grants permission to lists all of the tags for a specified resource",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html"
+      },
       "PutAccessPointPolicy": {
         "access_level": "Permissions management",
         "action_name": "s3express:PutAccessPointPolicy",
@@ -149308,6 +149809,86 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "s3express:TagResource",
+        "condition_keys": [
+          {
+            "name": "s3express:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_authType"
+          },
+          {
+            "name": "s3express:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_ResourceAccount"
+          },
+          {
+            "name": "s3express:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_signatureversion"
+          },
+          {
+            "name": "s3express:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_TlsVersion"
+          },
+          {
+            "name": "s3express:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new user-defined tag or update an existing tag",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "s3express:UntagResource",
+        "condition_keys": [
+          {
+            "name": "s3express:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_authType"
+          },
+          {
+            "name": "s3express:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_ResourceAccount"
+          },
+          {
+            "name": "s3express:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_signatureversion"
+          },
+          {
+            "name": "s3express:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_TlsVersion"
+          },
+          {
+            "name": "s3express:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove the specified user-defined tags from an S3 resource",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html",
@@ -169402,6 +169983,14 @@
   },
   "amazonvpclattice": {
     "actions": {
+      "AssociateViaAWSService": {
+        "access_level": "Permissions management",
+        "action_name": "vpc-lattice:AssociateViaAWSService",
+        "condition_keys": [],
+        "description": "Grants permission to associate a resource configuration through any AWS service managed networks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/service-network-associations.html#service-network-resource-configuration"
+      },
       "AssociateViaAWSService-EventsAndStates": {
         "access_level": "Permissions management",
         "action_name": "vpc-lattice:AssociateViaAWSService-EventsAndStates",
@@ -185315,36 +185904,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_AcceptNdaForAgreement.html"
-      },
-      "DownloadAgreement": {
-        "access_level": "Read",
-        "action_name": "artifact:DownloadAgreement",
-        "condition_keys": [],
-        "description": "Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account",
-        "resource_types": [
-          {
-            "name": "agreement",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html#awsartifact-agreement"
-          },
-          {
-            "name": "customer-agreement",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html#awsartifact-customer-agreement"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html"
-      },
-      "Get": {
-        "access_level": "Read",
-        "action_name": "artifact:Get",
-        "condition_keys": [],
-        "description": "Grants permission to download an AWS compliance report package",
-        "resource_types": [
-          {
-            "name": "report-package*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsartifact.html#awsartifact-report-package"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html"
       },
       "GetAccountSettings": {
         "access_level": "Read",
@@ -256242,13 +256801,55 @@
     "serviceName": "AWS IoT Jobs DataPlane",
     "service_prefix": "iotjobsdata"
   },
-  "awsiotmanagedintegrationsfeatureofiotdevicemanagement": {
+  "awsiotmanagedintegrations": {
     "actions": {
+      "CreateAccountAssociation": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:CreateAccountAssociation",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new account association",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateAccountAssociation.html"
+      },
+      "CreateCloudConnector": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:CreateCloudConnector",
+        "condition_keys": [],
+        "description": "Grants permission to create a new cloud connector",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCloudConnector.html"
+      },
+      "CreateConnectorDestination": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:CreateConnectorDestination",
+        "condition_keys": [],
+        "description": "Grants permission to create a new connector destination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateConnectorDestination.html"
+      },
       "CreateCredentialLocker": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateCredentialLocker",
-        "condition_keys": [],
-        "description": "Grants permission to create a product credential locker. This operation will trigger the creation of all the manufacturing resources including Wi-Fi setup key pair and device certificate",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a product credential locker",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCredentialLocker.html"
       },
@@ -256256,7 +256857,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateDestination",
         "condition_keys": [],
-        "description": "Grants permission to create a destination",
+        "description": "Grants permission to create a new destination",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateDestination.html"
       },
@@ -256264,31 +256865,54 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateEventLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to set the event log configuration for the account, a resource type, or a specific resource",
+        "description": "Grants permission to create a new event configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateEventLogConfiguration.html"
       },
       "CreateManagedThing": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateManagedThing",
-        "condition_keys": [],
-        "description": "Grants permission to create a Managed Thing",
-        "resource_types": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new managed thing",
+        "resource_types": [
+          {
+            "name": "credential-locker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateManagedThing.html"
       },
       "CreateNotificationConfiguration": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateNotificationConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to create a notification configuration",
+        "description": "Grants permission to create a new notification configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateNotificationConfiguration.html"
       },
       "CreateOtaTask": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateOtaTask",
-        "condition_keys": [],
-        "description": "Grants permission to customers to create an OTA task to update their devices",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new ota task",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateOtaTask.html"
       },
@@ -256296,27 +256920,65 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateOtaTaskConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to create an OTA task configuration",
+        "description": "Grants permission to create a new ota task configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateOtaTaskConfiguration.html"
       },
       "CreateProvisioningProfile": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:CreateProvisioningProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new provisioning profile",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateProvisioningProfile.html"
+      },
+      "DeleteAccountAssociation": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:DeleteAccountAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to delete an account association",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteAccountAssociation.html"
+      },
+      "DeleteCloudConnector": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:DeleteCloudConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete a cloud connector",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCloudConnector.html"
+      },
+      "DeleteConnectorDestination": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:DeleteConnectorDestination",
+        "condition_keys": [],
+        "description": "Grants permission to delete a connector destination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteConnectorDestination.html"
       },
       "DeleteCredentialLocker": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteCredentialLocker",
         "condition_keys": [],
-        "description": "Grants permission to delete a Credential Locker. This operation cannot be undone and any existing device won't be able to use the IoT managed integrations Setup",
+        "description": "Grants permission to delete a credential locker",
         "resource_types": [
           {
-            "name": "CredentialLockerResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-CredentialLockerResource"
+            "name": "credential-locker*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCredentialLocker.html"
@@ -256325,7 +256987,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteDestination",
         "condition_keys": [],
-        "description": "Grants permission to delete a destination",
+        "description": "Grants permission to delete destination",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteDestination.html"
       },
@@ -256333,7 +256995,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteEventLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to delete an event log configuration by log configuration ID",
+        "description": "Grants permission to delete event log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteEventLogConfiguration.html"
       },
@@ -256341,11 +257003,11 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteManagedThing",
         "condition_keys": [],
-        "description": "Grants permission to delete a managed thing. If a Controller is deleted, all the devices connected to it will have their status changed to pending. Note, it is not possible to remove a Cloud device",
+        "description": "Grants permission to delete managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteManagedThing.html"
@@ -256354,7 +257016,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteNotificationConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to delete a notification configuration",
+        "description": "Grants permission to delete notification configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteNotificationConfiguration.html"
       },
@@ -256362,11 +257024,11 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteOtaTask",
         "condition_keys": [],
-        "description": "Grants permission to delete an OTA task",
+        "description": "Grants permission to delete ota task",
         "resource_types": [
           {
-            "name": "OtaTaskResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-OtaTaskResource"
+            "name": "ota-task*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteOtaTask.html"
@@ -256375,7 +257037,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteOtaTaskConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to delete a OTA task configuration",
+        "description": "Grants permission to delete ota task configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteOtaTaskConfiguration.html"
       },
@@ -256383,24 +257045,70 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:DeleteProvisioningProfile",
         "condition_keys": [],
-        "description": "Grants permission to delete a provisioning Profile",
+        "description": "Grants permission to delete provisioning profile",
         "resource_types": [
           {
-            "name": "ProvisioningProfileResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ProvisioningProfileResource"
+            "name": "provisioning-profile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-provisioning-profile"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteProvisioningProfile.html"
+      },
+      "DeregisterAccountAssociation": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:DeregisterAccountAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to deregister account association",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeregisterAccountAssociation.html"
+      },
+      "GetAccountAssociation": {
+        "access_level": "Read",
+        "action_name": "iotmanagedintegrations:GetAccountAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to get information about an account association",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetAccountAssociation.html"
+      },
+      "GetCloudConnector": {
+        "access_level": "Read",
+        "action_name": "iotmanagedintegrations:GetCloudConnector",
+        "condition_keys": [],
+        "description": "Grants permission to get information about a cloud connector",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCloudConnector.html"
+      },
+      "GetConnectorDestination": {
+        "access_level": "Read",
+        "action_name": "iotmanagedintegrations:GetConnectorDestination",
+        "condition_keys": [],
+        "description": "Grants permission to get information about a cloud destination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetConnectorDestination.html"
       },
       "GetCredentialLocker": {
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetCredentialLocker",
         "condition_keys": [],
-        "description": "Grants permission to get an existing Credential Locker information",
+        "description": "Grants permission to get information about a credential locker",
         "resource_types": [
           {
-            "name": "CredentialLockerResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-CredentialLockerResource"
+            "name": "credential-locker*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCredentialLocker.html"
@@ -256409,7 +257117,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetCustomEndpoint",
         "condition_keys": [],
-        "description": "Grants permission to customers to retrieve the custom endpoint address",
+        "description": "Grants permission to get information about a custom endpoint",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCustomEndpoint.html"
       },
@@ -256417,7 +257125,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetDefaultEncryptionConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get a connector by AWS ARN",
+        "description": "Grants permission to get information about a default encryption configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDefaultEncryptionConfiguration.html"
       },
@@ -256425,7 +257133,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetDestination",
         "condition_keys": [],
-        "description": "Grants permission to get a destination",
+        "description": "Grants permission to get information about a destination",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDestination.html"
       },
@@ -256433,7 +257141,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetDeviceDiscovery",
         "condition_keys": [],
-        "description": "Grants permission to get the current state of a device discovery",
+        "description": "Grants permission to get information about a device discovery",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDeviceDiscovery.html"
       },
@@ -256441,7 +257149,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetEventLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get an event log configuration by log configuration ID",
+        "description": "Grants permission to get information about an event log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetEventLogConfiguration.html"
       },
@@ -256449,7 +257157,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetHubConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get hub configuration",
+        "description": "Grants permission to get information about a hub configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetHubConfiguration.html"
       },
@@ -256457,11 +257165,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetManagedThing",
         "condition_keys": [],
-        "description": "Grants permission to get a managed thing",
+        "description": "Grants permission to get information about a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThing.html"
@@ -256470,11 +257178,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetManagedThingCapabilities",
         "condition_keys": [],
-        "description": "Grants permission to get capabilities by ManagedThingId",
+        "description": "Grants permission to get the capability report for a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingCapabilities.html"
@@ -256483,11 +257191,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetManagedThingConnectivityData",
         "condition_keys": [],
-        "description": "Grants permission to get the connectivity status of a Managed Thing",
+        "description": "Grants permission to get the connectivity data for a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingConnectivityData.html"
@@ -256496,11 +257204,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetManagedThingMetaData",
         "condition_keys": [],
-        "description": "Grants permission to get metaData info by ManagedThingId",
+        "description": "Grants permission to get the meta data information for a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingMetaData.html"
@@ -256509,11 +257217,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetManagedThingState",
         "condition_keys": [],
-        "description": "Grants permission to get managed thing states by managed thing id",
+        "description": "Grants permission to get the device state information for a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingState.html"
@@ -256522,7 +257230,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetNotificationConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get a notification configuration",
+        "description": "Grants permission to get information for a notification configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetNotificationConfiguration.html"
       },
@@ -256530,11 +257238,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetOtaTask",
         "condition_keys": [],
-        "description": "Grants permission to get the Ota task",
+        "description": "Grants permission to get information for an ota task",
         "resource_types": [
           {
-            "name": "OtaTaskResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-OtaTaskResource"
+            "name": "ota-task*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetOtaTask.html"
@@ -256543,7 +257251,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetOtaTaskConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get an OTA task configuration",
+        "description": "Grants permission to get information for an ota task configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetOtaTaskConfiguration.html"
       },
@@ -256551,11 +257259,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetProvisioningProfile",
         "condition_keys": [],
-        "description": "Grants permission to get an existing provisioning profile information",
+        "description": "Grants permission to get information for a provisioning profile",
         "resource_types": [
           {
-            "name": "ProvisioningProfileResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ProvisioningProfileResource"
+            "name": "provisioning-profile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-provisioning-profile"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetProvisioningProfile.html"
@@ -256564,7 +257272,7 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetRuntimeLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to get runtime log configuration for a specific managed thing or for all managed things as a group",
+        "description": "Grants permission to get information for a runtime log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetRuntimeLogConfiguration.html"
       },
@@ -256572,15 +257280,39 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:GetSchemaVersion",
         "condition_keys": [],
-        "description": "Grants permission to get a schema version with the provided information",
+        "description": "Grants permission to get information for a version of a schema",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetSchemaVersion.html"
+      },
+      "ListAccountAssociations": {
+        "access_level": "List",
+        "action_name": "iotmanagedintegrations:ListAccountAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list information for account associations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListAccountAssociations.html"
+      },
+      "ListCloudConnectors": {
+        "access_level": "List",
+        "action_name": "iotmanagedintegrations:ListCloudConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to list information for cloud connectors",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListCloudConnectors.html"
+      },
+      "ListConnectorDestinations": {
+        "access_level": "List",
+        "action_name": "iotmanagedintegrations:ListConnectorDestinations",
+        "condition_keys": [],
+        "description": "Grants permission to list information for connector destinations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListConnectorDestinations.html"
       },
       "ListCredentialLockers": {
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListCredentialLockers",
         "condition_keys": [],
-        "description": "Grants permission to list the existing Credential Locker",
+        "description": "Grants permission to list information for credential lockers",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListCredentialLockers.html"
       },
@@ -256588,27 +257320,51 @@
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListDestinations",
         "condition_keys": [],
-        "description": "Grants permission to list all the destinations",
+        "description": "Grants permission to list information for destinations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDestinations.html"
       },
-      "ListEventLogConfigurations": {
+      "ListDeviceDiscoveries": {
         "access_level": "List",
+        "action_name": "iotmanagedintegrations:ListDeviceDiscoveries",
+        "condition_keys": [],
+        "description": "Grants permission to list information for device discoveries",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDeviceDiscoveries.html"
+      },
+      "ListDiscoveredDevices": {
+        "access_level": "Read",
+        "action_name": "iotmanagedintegrations:ListDiscoveredDevices",
+        "condition_keys": [],
+        "description": "Grants permission to list information for device discovered in a device discoveries",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDiscoveredDevices.html"
+      },
+      "ListEventLogConfigurations": {
+        "access_level": "Read",
         "action_name": "iotmanagedintegrations:ListEventLogConfigurations",
         "condition_keys": [],
-        "description": "Grants permission to list all event log configurations for account",
+        "description": "Grants permission to list information for event log configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListEventLogConfigurations.html"
+      },
+      "ListManagedThingAccountAssociations": {
+        "access_level": "List",
+        "action_name": "iotmanagedintegrations:ListManagedThingAccountAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list information for associations between managed thing and account associations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThingAccountAssociations.html"
       },
       "ListManagedThingSchemas": {
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:ListManagedThingSchemas",
         "condition_keys": [],
-        "description": "Grants permission to list Schemas Associated With Managed Thing",
+        "description": "Grants permission to list schemas associated with a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThingSchemas.html"
@@ -256617,23 +257373,23 @@
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListManagedThings",
         "condition_keys": [],
-        "description": "Grants permission to list all the managed things",
+        "description": "Grants permission to list information for managed things",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThings.html"
       },
       "ListNotificationConfigurations": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "iotmanagedintegrations:ListNotificationConfigurations",
         "condition_keys": [],
-        "description": "Grants permission to list all the notification configurations",
+        "description": "Grants permission to list information for notification configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListNotificationConfigurations.html"
       },
       "ListOtaTaskConfigurations": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "iotmanagedintegrations:ListOtaTaskConfigurations",
         "condition_keys": [],
-        "description": "Grants permission to list all the OTA task configurations",
+        "description": "Grants permission to list information for ota task configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTaskConfigurations.html"
       },
@@ -256641,11 +257397,11 @@
         "access_level": "Read",
         "action_name": "iotmanagedintegrations:ListOtaTaskExecutions",
         "condition_keys": [],
-        "description": "Grants permission to list all the Ota task executions",
+        "description": "Grants permission to list information for ota task executions",
         "resource_types": [
           {
-            "name": "OtaTaskResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-OtaTaskResource"
+            "name": "ota-task*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTaskExecutions.html"
@@ -256654,7 +257410,7 @@
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListOtaTasks",
         "condition_keys": [],
-        "description": "Grants permission to list all the OTA tasks",
+        "description": "Grants permission to list information for ota tasks",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTasks.html"
       },
@@ -256662,7 +257418,7 @@
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListProvisioningProfiles",
         "condition_keys": [],
-        "description": "Grants permission to list the existing provisioning profile",
+        "description": "Grants permission to list information for provisioning profiles",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListProvisioningProfiles.html"
       },
@@ -256670,15 +257426,49 @@
         "access_level": "List",
         "action_name": "iotmanagedintegrations:ListSchemaVersions",
         "condition_keys": [],
-        "description": "Grants permission to list schema versions with the provided information",
+        "description": "Grants permission to list information for schemas",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListSchemaVersions.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "iotmanagedintegrations:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list tags for the specified resource",
+        "resource_types": [
+          {
+            "name": "account-association",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "credential-locker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
+          },
+          {
+            "name": "managed-thing",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          },
+          {
+            "name": "ota-task",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
+          },
+          {
+            "name": "provisioning-profile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-provisioning-profile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListTagsForResource.html"
       },
       "PutDefaultEncryptionConfiguration": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:PutDefaultEncryptionConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to associate KMS key with IoT managed integrations",
+        "description": "Grants permission to update the default settings for an encryption configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_PutDefaultEncryptionConfiguration.html"
       },
@@ -256694,15 +257484,32 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:PutRuntimeLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to set the runtime log configuration for a specific managed thing or for all managed  things as a group",
+        "description": "Grants permission to update a runtime log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_PutRuntimeLogConfiguration.html"
+      },
+      "RegisterAccountAssociation": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:RegisterAccountAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to register an account association to a managed thing",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_RegisterAccountAssociation.html"
       },
       "RegisterCustomEndpoint": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:RegisterCustomEndpoint",
         "condition_keys": [],
-        "description": "Grants permission to customers to request us to manage the server trust for them or bring their own external server trusts for the custom domain",
+        "description": "Grants permission to register a custom endpoint",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_RegisterCustomEndpoint.html"
       },
@@ -256710,25 +257517,173 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:ResetRuntimeLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to reset a runtime log configuration for a specific managed thing or for all managed things as a group",
+        "description": "Grants permission to reset a runtime log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ResetRuntimeLogConfiguration.html"
+      },
+      "SendConnectorEvent": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:SendConnectorEvent",
+        "condition_keys": [],
+        "description": "Grants permission to send a connector event",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_SendConnectorEvent.html"
       },
       "SendManagedThingCommand": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:SendManagedThingCommand",
         "condition_keys": [],
-        "description": "Grants permission to use the SendManagedThingCommand API to send commands to managed things",
-        "resource_types": [],
+        "description": "Grants permission to send a command to a managed thing",
+        "resource_types": [
+          {
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          },
+          {
+            "name": "account-association",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_SendManagedThingCommand.html"
+      },
+      "StartAccountAssociationRefresh": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:StartAccountAssociationRefresh",
+        "condition_keys": [],
+        "description": "Grants permission to start a refresh of access tokens associated with an account association",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_StartAccountAssociationRefresh.html"
       },
       "StartDeviceDiscovery": {
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:StartDeviceDiscovery",
         "condition_keys": [],
-        "description": "Grants permission to request to start device discovery",
-        "resource_types": [],
+        "description": "Grants permission to start a device discovery",
+        "resource_types": [
+          {
+            "name": "account-association",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "managed-thing",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_StartDeviceDiscovery.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "iotmanagedintegrations:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to add tags for the specified resource",
+        "resource_types": [
+          {
+            "name": "account-association",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "credential-locker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
+          },
+          {
+            "name": "managed-thing",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          },
+          {
+            "name": "ota-task",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
+          },
+          {
+            "name": "provisioning-profile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-provisioning-profile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "iotmanagedintegrations:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove tags for the specified resource",
+        "resource_types": [
+          {
+            "name": "account-association",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          },
+          {
+            "name": "credential-locker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
+          },
+          {
+            "name": "managed-thing",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          },
+          {
+            "name": "ota-task",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
+          },
+          {
+            "name": "provisioning-profile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-provisioning-profile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateAccountAssociation": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:UpdateAccountAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to update an account association",
+        "resource_types": [
+          {
+            "name": "account-association*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-account-association"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateAccountAssociation.html"
+      },
+      "UpdateCloudConnector": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:UpdateCloudConnector",
+        "condition_keys": [],
+        "description": "Grants permission to update a cloud connector",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateCloudConnector.html"
+      },
+      "UpdateConnectorDestination": {
+        "access_level": "Write",
+        "action_name": "iotmanagedintegrations:UpdateConnectorDestination",
+        "condition_keys": [],
+        "description": "Grants permission to update a connector destination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateConnectorDestination.html"
       },
       "UpdateDestination": {
         "access_level": "Write",
@@ -256742,7 +257697,7 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:UpdateEventLogConfiguration",
         "condition_keys": [],
-        "description": "Grants permission to update an event log configuration by log configuration ID",
+        "description": "Grants permission to update an event log configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateEventLogConfiguration.html"
       },
@@ -256753,8 +257708,12 @@
         "description": "Grants permission to update a managed thing",
         "resource_types": [
           {
-            "name": "ManagedThingResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-ManagedThingResource"
+            "name": "managed-thing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-managed-thing"
+          },
+          {
+            "name": "credential-locker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-credential-locker"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateManagedThing.html"
@@ -256771,18 +257730,18 @@
         "access_level": "Write",
         "action_name": "iotmanagedintegrations:UpdateOtaTask",
         "condition_keys": [],
-        "description": "Grants permission to update an OTA Task",
+        "description": "Grants permission to update an ota task",
         "resource_types": [
           {
-            "name": "OtaTaskResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html#awsiotmanagedintegrationsfeatureofiotdevicemanagement-OtaTaskResource"
+            "name": "ota-task*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-ota-task"
           }
         ],
         "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateOtaTask.html"
       }
     },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html",
-    "serviceName": "AWS IoT managed integrations feature of IoT Device Management",
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html",
+    "serviceName": "AWS IoT Managed Integrations",
     "service_prefix": "iotmanagedintegrations"
   },
   "awsiotsitewise": {
@@ -274463,7 +275422,7 @@
         "access_level": "Read",
         "action_name": "organizations:DescribeOrganization",
         "condition_keys": [],
-        "description": "Grants permission to retrieves details about the organization that the calling credentials belong to",
+        "description": "Grants permission to retrieve details about the organization that the calling credentials belong to",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganization.html"
       },
@@ -274489,7 +275448,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_PolicyType"
           }
         ],
-        "description": "Grants permission to retrieves details about a policy",
+        "description": "Grants permission to retrieve details about a policy",
         "resource_types": [
           {
             "name": "policy*",
@@ -274648,7 +275607,7 @@
         "access_level": "List",
         "action_name": "organizations:ListAccounts",
         "condition_keys": [],
-        "description": "Grants permission to list all of the the accounts in the organization",
+        "description": "Grants permission to list all of the accounts in the organization",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccounts.html"
       },
@@ -274740,7 +275699,7 @@
         "access_level": "List",
         "action_name": "organizations:ListOrganizationalUnitsForParent",
         "condition_keys": [],
-        "description": "Grants permission to lists all of the organizational units (OUs) in a parent organizational unit or root",
+        "description": "Grants permission to list all of the organizational units (OUs) in a parent organizational unit or root",
         "resource_types": [
           {
             "name": "organizationalunit",
@@ -274929,7 +275888,7 @@
         "access_level": "Write",
         "action_name": "organizations:RemoveAccountFromOrganization",
         "condition_keys": [],
-        "description": "Grants permission to removes the specified account from the organization",
+        "description": "Grants permission to remove the specified account from the organization",
         "resource_types": [
           {
             "name": "account*",
@@ -288237,6 +289196,729 @@
     "serviceName": "AWS Server Migration Service",
     "service_prefix": "sms"
   },
+  "awsservice-oracledatabaseataws": {
+    "actions": {
+      "AcceptMarketplaceRegistration": {
+        "access_level": "Write",
+        "action_name": "odb:AcceptMarketplaceRegistration",
+        "condition_keys": [],
+        "description": "Grants permission to register the Amazon Web Services Marketplace token for your Amazon Web Services account to activate your Oracle Database@Amazon Web Services subscription",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_AcceptMarketplaceRegistration.html"
+      },
+      "CreateCloudAutonomousVmCluster": {
+        "access_level": "Write",
+        "action_name": "odb:CreateCloudAutonomousVmCluster",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new Autonomous VM cluster in the specified Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudAutonomousVmCluster.html"
+      },
+      "CreateCloudExadataInfrastructure": {
+        "access_level": "Write",
+        "action_name": "odb:CreateCloudExadataInfrastructure",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an Exadata infrastructure",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudExadataInfrastructure.html"
+      },
+      "CreateCloudVmCluster": {
+        "access_level": "Write",
+        "action_name": "odb:CreateCloudVmCluster",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a VM cluster on the specified Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudVmCluster.html"
+      },
+      "CreateDbNode": {
+        "access_level": "Write",
+        "action_name": "odb:CreateDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to create a DB Node",
+        "resource_types": [
+          {
+            "name": "db-node*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateDbNode.html"
+      },
+      "CreateOdbNetwork": {
+        "access_level": "Write",
+        "action_name": "odb:CreateOdbNetwork",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an ODB network",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbNetwork.html"
+      },
+      "CreateOdbPeeringConnection": {
+        "access_level": "Write",
+        "action_name": "odb:CreateOdbPeeringConnection",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an ODB Peering Connection",
+        "resource_types": [
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbPeeringConnection.html"
+      },
+      "CreateOutboundIntegration": {
+        "access_level": "Write",
+        "action_name": "odb:CreateOutboundIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to create an Outbound Integration",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateOutboundIntegration.html"
+      },
+      "DeleteCloudAutonomousVmCluster": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteCloudAutonomousVmCluster",
+        "condition_keys": [],
+        "description": "Grants permission to Deletes an Autonomous VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudAutonomousVmCluster.html"
+      },
+      "DeleteCloudExadataInfrastructure": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteCloudExadataInfrastructure",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified Exadata infrastructure. Before you use this operation, make sure to delete all of the VM clusters that are hosted on this Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudExadataInfrastructure.html"
+      },
+      "DeleteCloudVmCluster": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteCloudVmCluster",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudVmCluster.html"
+      },
+      "DeleteDbNode": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to delete a DB Node",
+        "resource_types": [
+          {
+            "name": "db-node*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteDbNode.html"
+      },
+      "DeleteOdbNetwork": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteOdbNetwork",
+        "condition_keys": [],
+        "description": "Grants permission to delete the specified ODB network",
+        "resource_types": [
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbNetwork.html"
+      },
+      "DeleteOdbPeeringConnection": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteOdbPeeringConnection",
+        "condition_keys": [],
+        "description": "Grants permission to delete the specified ODB Peering Connection. When you delete an ODB peering connection, the underlying VPC peering connection is also deleted",
+        "resource_types": [
+          {
+            "name": "odb-peering-connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbPeeringConnection.html"
+      },
+      "DeleteResourcePolicy": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete a resource policy",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteResourcePolicy.html"
+      },
+      "GetCloudAutonomousVmCluster": {
+        "access_level": "Read",
+        "action_name": "odb:GetCloudAutonomousVmCluster",
+        "condition_keys": [],
+        "description": "Grants permission to get information about a specific Autonomous VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudAutonomousVmCluster.html"
+      },
+      "GetCloudExadataInfrastructure": {
+        "access_level": "Read",
+        "action_name": "odb:GetCloudExadataInfrastructure",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructure.html"
+      },
+      "GetCloudExadataInfrastructureUnallocatedResources": {
+        "access_level": "Read",
+        "action_name": "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about unallocated resources in a specified Cloud Exadata Infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructureUnallocatedResources.html"
+      },
+      "GetCloudVmCluster": {
+        "access_level": "Read",
+        "action_name": "odb:GetCloudVmCluster",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudVmCluster.html"
+      },
+      "GetDbNode": {
+        "access_level": "Read",
+        "action_name": "odb:GetDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified DB node",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbNode.html"
+      },
+      "GetDbServer": {
+        "access_level": "Read",
+        "action_name": "odb:GetDbServer",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified database server",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbServer.html"
+      },
+      "GetOciOnboardingStatus": {
+        "access_level": "Read",
+        "action_name": "odb:GetOciOnboardingStatus",
+        "condition_keys": [],
+        "description": "Grants permission to get the tenancy activation link and onboarding status for your Amazon Web Services account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOciOnboardingStatus.html"
+      },
+      "GetOdbNetwork": {
+        "access_level": "Read",
+        "action_name": "odb:GetOdbNetwork",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified ODB network",
+        "resource_types": [
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbNetwork.html"
+      },
+      "GetOdbPeeringConnection": {
+        "access_level": "Read",
+        "action_name": "odb:GetOdbPeeringConnection",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the specified ODB Peering connection",
+        "resource_types": [
+          {
+            "name": "odb-peering-connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbPeeringConnection.html"
+      },
+      "GetResourcePolicy": {
+        "access_level": "Write",
+        "action_name": "odb:GetResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to get a resource policy",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_GetResourcePolicy.html"
+      },
+      "InitializeService": {
+        "access_level": "Write",
+        "action_name": "odb:InitializeService",
+        "condition_keys": [],
+        "description": "Grants permission to initialize the ODB service for the first time in an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_InitializeService.html"
+      },
+      "ListAutonomousVirtualMachines": {
+        "access_level": "Read",
+        "action_name": "odb:ListAutonomousVirtualMachines",
+        "condition_keys": [],
+        "description": "Grants permission to list all Autonomous VMs in an Autonomous VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListAutonomousVirtualMachines.html"
+      },
+      "ListCloudAutonomousVmClusters": {
+        "access_level": "List",
+        "action_name": "odb:ListCloudAutonomousVmClusters",
+        "condition_keys": [],
+        "description": "Grants permission to list all Autonomous VM clusters in a specified Cloud Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudAutonomousVmClusters.html"
+      },
+      "ListCloudExadataInfrastructures": {
+        "access_level": "List",
+        "action_name": "odb:ListCloudExadataInfrastructures",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the Exadata infrastructures owned by your Amazon Web Services account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudExadataInfrastructures.html"
+      },
+      "ListCloudVmClusters": {
+        "access_level": "List",
+        "action_name": "odb:ListCloudVmClusters",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the VM clusters owned by your Amazon Web Services account or only the ones on the specified Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudVmClusters.html"
+      },
+      "ListDbNodes": {
+        "access_level": "List",
+        "action_name": "odb:ListDbNodes",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the DB nodes for the specified VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbNodes.html"
+      },
+      "ListDbServers": {
+        "access_level": "Read",
+        "action_name": "odb:ListDbServers",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the database servers that belong to the specified Exadata infrastructure",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbServers.html"
+      },
+      "ListDbSystemShapes": {
+        "access_level": "Read",
+        "action_name": "odb:ListDbSystemShapes",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the shapes that are available for an Exadata infrastructure",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbSystemShapes.html"
+      },
+      "ListGiVersions": {
+        "access_level": "Read",
+        "action_name": "odb:ListGiVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list information about Oracle Grid Infrastructure (GI) software versions that are available for a VM cluster for the specified shape",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListGiVersions.html"
+      },
+      "ListOdbNetworks": {
+        "access_level": "List",
+        "action_name": "odb:ListOdbNetworks",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the ODB networks owned by your Amazon Web Services account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbNetworks.html"
+      },
+      "ListOdbPeeringConnections": {
+        "access_level": "List",
+        "action_name": "odb:ListOdbPeeringConnections",
+        "condition_keys": [],
+        "description": "Grants permission to list all ODB peering connections or those associated with a specific ODB network",
+        "resource_types": [
+          {
+            "name": "odb-network",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbPeeringConnections.html"
+      },
+      "ListSystemVersions": {
+        "access_level": "Read",
+        "action_name": "odb:ListSystemVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list information about the system versions that are available for a VM cluster for the specified giVersion and shape",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListSystemVersions.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "odb:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list information about the tags applied to this resource",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "cloud-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          },
+          {
+            "name": "odb-network",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          },
+          {
+            "name": "odb-peering-connection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListTagsForResource.html"
+      },
+      "PutResourcePolicy": {
+        "access_level": "Write",
+        "action_name": "odb:PutResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to update a resource policy",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_PutResourcePolicy.html"
+      },
+      "RebootDbNode": {
+        "access_level": "Read",
+        "action_name": "odb:RebootDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to reboot the specified DB node in a VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_RebootDbNode.html"
+      },
+      "StartDbNode": {
+        "access_level": "Read",
+        "action_name": "odb:StartDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to start the specified DB node in a VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StartDbNode.html"
+      },
+      "StopDbNode": {
+        "access_level": "Read",
+        "action_name": "odb:StopDbNode",
+        "condition_keys": [],
+        "description": "Grants permission to stop the specified DB node in a VM cluster",
+        "resource_types": [
+          {
+            "name": "cloud-vm-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StopDbNode.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "odb:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to apply tags to the specified resource",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "cloud-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          },
+          {
+            "name": "odb-network",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          },
+          {
+            "name": "odb-peering-connection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "odb:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove tags from the specified resource",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          },
+          {
+            "name": "cloud-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+          },
+          {
+            "name": "db-node",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+          },
+          {
+            "name": "odb-network",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          },
+          {
+            "name": "odb-peering-connection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UntagResource.html"
+      },
+      "UpdateCloudExadataInfrastructure": {
+        "access_level": "Write",
+        "action_name": "odb:UpdateCloudExadataInfrastructure",
+        "condition_keys": [],
+        "description": "Grants permission to update the properties of an Exadata infrastructure resource",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateCloudExadataInfrastructure.html"
+      },
+      "UpdateOdbNetwork": {
+        "access_level": "Write",
+        "action_name": "odb:UpdateOdbNetwork",
+        "condition_keys": [],
+        "description": "Grants permission to update properties of a specified ODB network",
+        "resource_types": [
+          {
+            "name": "odb-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateOdbNetwork.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html",
+    "serviceName": "AWS Service - Oracle Database@AWS",
+    "service_prefix": "odb"
+  },
   "awsservicecatalog": {
     "actions": {
       "AcceptPortfolioShare": {
@@ -297461,7 +299143,12 @@
       "PutInventory": {
         "access_level": "Write",
         "action_name": "ssm:PutInventory",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "ssm:InventoryTypeName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-ssm_InventoryTypeName"
+          }
+        ],
         "description": "Grants permission to add or update inventory items on multiple specified managed instances",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html"
