@@ -289196,7 +289196,7 @@
     "serviceName": "AWS Server Migration Service",
     "service_prefix": "sms"
   },
-  "awsservice-oracledatabaseataws": {
+  "awsservice-oracledatabase_aws": {
     "actions": {
       "AcceptMarketplaceRegistration": {
         "access_level": "Write",
@@ -289212,22 +289212,22 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a new Autonomous VM cluster in the specified Exadata infrastructure",
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudAutonomousVmCluster.html"
@@ -289238,11 +289238,11 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an Exadata infrastructure",
@@ -289255,22 +289255,22 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create a VM cluster on the specified Exadata infrastructure",
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudVmCluster.html"
@@ -289283,7 +289283,7 @@
         "resource_types": [
           {
             "name": "db-node*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateDbNode.html"
@@ -289294,11 +289294,11 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an ODB network",
@@ -289311,18 +289311,18 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an ODB Peering Connection",
         "resource_types": [
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbPeeringConnection.html"
@@ -289335,11 +289335,11 @@
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           },
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateOutboundIntegration.html"
@@ -289352,7 +289352,7 @@
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudAutonomousVmCluster.html"
@@ -289365,7 +289365,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudExadataInfrastructure.html"
@@ -289378,7 +289378,7 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudVmCluster.html"
@@ -289391,7 +289391,7 @@
         "resource_types": [
           {
             "name": "db-node*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteDbNode.html"
@@ -289404,7 +289404,7 @@
         "resource_types": [
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbNetwork.html"
@@ -289417,7 +289417,7 @@
         "resource_types": [
           {
             "name": "odb-peering-connection*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbPeeringConnection.html"
@@ -289430,11 +289430,11 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteResourcePolicy.html"
@@ -289447,7 +289447,7 @@
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudAutonomousVmCluster.html"
@@ -289460,7 +289460,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructure.html"
@@ -289473,7 +289473,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructureUnallocatedResources.html"
@@ -289486,7 +289486,7 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudVmCluster.html"
@@ -289499,11 +289499,11 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbNode.html"
@@ -289516,7 +289516,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbServer.html"
@@ -289537,7 +289537,7 @@
         "resource_types": [
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbNetwork.html"
@@ -289550,7 +289550,7 @@
         "resource_types": [
           {
             "name": "odb-peering-connection*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbPeeringConnection.html"
@@ -289563,11 +289563,11 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_GetResourcePolicy.html"
@@ -289588,7 +289588,7 @@
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListAutonomousVirtualMachines.html"
@@ -289601,7 +289601,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudAutonomousVmClusters.html"
@@ -289622,7 +289622,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudVmClusters.html"
@@ -289635,7 +289635,7 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbNodes.html"
@@ -289648,7 +289648,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbServers.html"
@@ -289685,7 +289685,7 @@
         "resource_types": [
           {
             "name": "odb-network",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbPeeringConnections.html"
@@ -289704,34 +289704,34 @@
         "condition_keys": [
           {
             "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to list information about the tags applied to this resource",
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           },
           {
             "name": "cloud-exadata-infrastructure",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "cloud-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           },
           {
             "name": "odb-network",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           },
           {
             "name": "odb-peering-connection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListTagsForResource.html"
@@ -289744,11 +289744,11 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_PutResourcePolicy.html"
@@ -289761,11 +289761,11 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_RebootDbNode.html"
@@ -289778,11 +289778,11 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StartDbNode.html"
@@ -289795,7 +289795,7 @@
         "resource_types": [
           {
             "name": "cloud-vm-cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StopDbNode.html"
@@ -289806,42 +289806,42 @@
         "condition_keys": [
           {
             "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_RequestTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_ResourceTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to apply tags to the specified resource",
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           },
           {
             "name": "cloud-exadata-infrastructure",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "cloud-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           },
           {
             "name": "odb-network",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           },
           {
             "name": "odb-peering-connection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_TagResource.html"
@@ -289852,38 +289852,38 @@
         "condition_keys": [
           {
             "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_ResourceTag___TagKey_"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_ResourceTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-aws_TagKeys"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-aws_TagKeys"
           }
         ],
         "description": "Grants permission to remove tags from the specified resource",
         "resource_types": [
           {
             "name": "cloud-autonomous-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-autonomous-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           },
           {
             "name": "cloud-exadata-infrastructure",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           },
           {
             "name": "cloud-vm-cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-vm-cluster"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           },
           {
             "name": "db-node",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-db-node"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           },
           {
             "name": "odb-network",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           },
           {
             "name": "odb-peering-connection",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-peering-connection"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UntagResource.html"
@@ -289896,7 +289896,7 @@
         "resource_types": [
           {
             "name": "cloud-exadata-infrastructure*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-cloud-exadata-infrastructure"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateCloudExadataInfrastructure.html"
@@ -289909,13 +289909,13 @@
         "resource_types": [
           {
             "name": "odb-network*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html#awsservice-oracledatabaseataws-odb-network"
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateOdbNetwork.html"
       }
     },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabaseataws.html",
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html",
     "serviceName": "AWS Service - Oracle Database@AWS",
     "service_prefix": "odb"
   },
@@ -292079,6 +292079,23 @@
         ],
         "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html"
       },
+      "DescribeAttackContributors": {
+        "access_level": "Read",
+        "action_name": "shield:DescribeAttackContributors",
+        "condition_keys": [],
+        "description": "Grants permission to get detailed information about the contributors to a specific DDoS attack",
+        "resource_types": [
+          {
+            "name": "attack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html#awsshield-attack"
+          },
+          {
+            "name": "protection-group",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html#awsshield-protection-group"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html"
+      },
       "DescribeAttackStatistics": {
         "access_level": "Read",
         "action_name": "shield:DescribeAttackStatistics",
@@ -292213,6 +292230,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_EnableProactiveEngagement.html"
       },
+      "GetGlobalThreatData": {
+        "access_level": "Read",
+        "action_name": "shield:GetGlobalThreatData",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html"
+      },
       "GetSubscriptionState": {
         "access_level": "Read",
         "action_name": "shield:GetSubscriptionState",
@@ -292228,6 +292253,19 @@
         "description": "Grants permission to list all existing attacks",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html"
+      },
+      "ListMitigations": {
+        "access_level": "List",
+        "action_name": "shield:ListMitigations",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks",
+        "resource_types": [
+          {
+            "name": "attack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html#awsshield-attack"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html"
       },
       "ListProtectionGroups": {
         "access_level": "List",
