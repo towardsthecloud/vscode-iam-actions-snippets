@@ -9919,6 +9919,987 @@
     "serviceName": "Amazon Bedrock",
     "service_prefix": "bedrock"
   },
+  "amazonbedrockagentcore": {
+    "actions": {
+      "AllowVendedLogDeliveryForResource": {
+        "access_level": "Permissions management",
+        "action_name": "bedrock-agentcore:AllowVendedLogDeliveryForResource",
+        "condition_keys": [],
+        "description": "Grants permission to configure vended telemetry for a resource",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ConnectBrowserAutomationStream": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:ConnectBrowserAutomationStream",
+        "condition_keys": [],
+        "description": "Grants permission to connect to a browser automation stream",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ConnectBrowserLiveViewStream": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:ConnectBrowserLiveViewStream",
+        "condition_keys": [],
+        "description": "Grants permission to connect to a browser live view stream",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "CreateAgentRuntime": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateAgentRuntime",
+        "condition_keys": [],
+        "description": "Grants permission to create a new agent runtime",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "CreateAgentRuntimeEndpoint": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateAgentRuntimeEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to create a new agent endpoint",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "CreateApiKeyCredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateApiKeyCredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to create a new API Key Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateApiKeyCredentialProvider.html"
+      },
+      "CreateBrowser": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateBrowser",
+        "condition_keys": [],
+        "description": "Grants permission to create a new custom browser",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "CreateCodeInterpreter": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateCodeInterpreter",
+        "condition_keys": [],
+        "description": "Grants permission to create a new custom code interpreter",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "CreateEvent": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateEvent",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:sessionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_sessionId"
+          },
+          {
+            "name": "bedrock-agentcore:actorId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_actorId"
+          }
+        ],
+        "description": "Grants permission to create an Event",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateEvent.html"
+      },
+      "CreateGateway": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateGateway",
+        "condition_keys": [],
+        "description": "Grants permission to create a new gateway",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateGateway.html"
+      },
+      "CreateGatewayTarget": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateGatewayTarget",
+        "condition_keys": [],
+        "description": "Grants permission to create a new target in an existing gateway",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateGatewayTarget.html"
+      },
+      "CreateMemory": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateMemory",
+        "condition_keys": [],
+        "description": "Grants permission to create a Memory resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateMemory.html"
+      },
+      "CreateOauth2CredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateOauth2CredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to create a new Credential Provider to access external resources with OAuth2 protocol",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateOauth2CredentialProvider.html"
+      },
+      "CreateWorkloadIdentity": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateWorkloadIdentity",
+        "condition_keys": [],
+        "description": "Grants permission to create a new Workload Identity",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateWorkloadIdentity.html"
+      },
+      "DeleteAgentRuntime": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteAgentRuntime",
+        "condition_keys": [],
+        "description": "Grants permission to delete an agent runtime",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "DeleteAgentRuntimeEndpoint": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteAgentRuntimeEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to delete an agent endpoint",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          },
+          {
+            "name": "runtime-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime-endpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "DeleteApiKeyCredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteApiKeyCredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to delete a registered API Key Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteApiKeyCredentialProvider.html"
+      },
+      "DeleteBrowser": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteBrowser",
+        "condition_keys": [],
+        "description": "Grants permission to delete a custom browser",
+        "resource_types": [
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "DeleteCodeInterpreter": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteCodeInterpreter",
+        "condition_keys": [],
+        "description": "Grants permission to delete a custom code interpreter",
+        "resource_types": [
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "DeleteEvent": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteEvent",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:sessionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_sessionId"
+          },
+          {
+            "name": "bedrock-agentcore:actorId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_actorId"
+          }
+        ],
+        "description": "Grants permission to delete an Event",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteEvent.html"
+      },
+      "DeleteGateway": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteGateway",
+        "condition_keys": [],
+        "description": "Grants permission to delete an existing gateway",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteGateway.html"
+      },
+      "DeleteGatewayTarget": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteGatewayTarget",
+        "condition_keys": [],
+        "description": "Grants permission to delete an existing gateway target",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteGatewayTarget.html"
+      },
+      "DeleteMemory": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteMemory",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Memory resource",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemory.html"
+      },
+      "DeleteMemoryRecord": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteMemoryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Memory Record",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemoryRecord.html"
+      },
+      "DeleteOauth2CredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteOauth2CredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to delete a registered OAuth2 Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteOauth2CredentialProvider.html"
+      },
+      "DeleteWorkloadIdentity": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteWorkloadIdentity",
+        "condition_keys": [],
+        "description": "Grants permission to delete a registered Workload Identity",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteWorkloadIdentity.html"
+      },
+      "GetAgentRuntime": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetAgentRuntime",
+        "condition_keys": [],
+        "description": "Grants permission to get details of an agent runtime",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetAgentRuntimeEndpoint": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetAgentRuntimeEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to get details of an agent endpoint",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          },
+          {
+            "name": "runtime-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime-endpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetApiKeyCredentialProvider": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetApiKeyCredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to fetch a registered API Key Credential Provider by its name",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetApiKeyCredentialProvider.html"
+      },
+      "GetBrowser": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetBrowser",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a browser",
+        "resource_types": [
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetBrowserSession": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetBrowserSession",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a browser session",
+        "resource_types": [
+          {
+            "name": "browser*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser"
+          },
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetCodeInterpreter": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetCodeInterpreter",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a code interpreter",
+        "resource_types": [
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetCodeInterpreterSession": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetCodeInterpreterSession",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a code interpreter session",
+        "resource_types": [
+          {
+            "name": "code-interpreter*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter"
+          },
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "GetEvent": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetEvent",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:sessionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_sessionId"
+          },
+          {
+            "name": "bedrock-agentcore:actorId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_actorId"
+          }
+        ],
+        "description": "Grants permission to fetch an Event",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetEvent.html"
+      },
+      "GetGateway": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetGateway",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an existing gateway",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetGateway.html"
+      },
+      "GetGatewayTarget": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetGatewayTarget",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an existing gateway target",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetGatewayTarget.html"
+      },
+      "GetMemory": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetMemory",
+        "condition_keys": [],
+        "description": "Grants permission to fetch details for a Memory resource",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetMemory.html"
+      },
+      "GetMemoryRecord": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetMemoryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to fetch a Memory Record",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetMemoryRecord.html"
+      },
+      "GetOauth2CredentialProvider": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetOauth2CredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to fetch a registered OAuth2 Credential Provider by its name",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetOauth2CredentialProvider.html"
+      },
+      "GetResourceApiKey": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetResourceApiKey",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an API Key associated with an Api Key Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceApiKey.html"
+      },
+      "GetResourceOauth2Token": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetResourceOauth2Token",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve access token with OAuth2 2LO or 3LO flow to access external resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetResourceOauth2Token.html"
+      },
+      "GetTokenVault": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetTokenVault",
+        "condition_keys": [],
+        "description": "Grants permission to fetch the current configuration of the TokenVault, including encryption settings",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetTokenVault.html"
+      },
+      "GetWorkloadAccessToken": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:GetWorkloadAccessToken",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an Workload access token for agentic workloads not acting on behalf of a user",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessToken.html"
+      },
+      "GetWorkloadAccessTokenForJWT": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:GetWorkloadAccessTokenForJWT",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with JWT token",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForJWT.html"
+      },
+      "GetWorkloadAccessTokenForUserId": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:GetWorkloadAccessTokenForUserId",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with User Id",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForUserId.html"
+      },
+      "GetWorkloadIdentity": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetWorkloadIdentity",
+        "condition_keys": [],
+        "description": "Grants permission to fetch details for a specific Workload identity, including its name and allowed OAuth2 return URLs",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadIdentity.html"
+      },
+      "InvokeAgentRuntimeEndpoint": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:InvokeAgentRuntimeEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to invoke an agent endpoint",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          },
+          {
+            "name": "runtime-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime-endpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "InvokeCodeInterpreter": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:InvokeCodeInterpreter",
+        "condition_keys": [],
+        "description": "Grants permission to invoke a code interpreter session",
+        "resource_types": [
+          {
+            "name": "code-interpreter*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter"
+          },
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListActors": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListActors",
+        "condition_keys": [],
+        "description": "Grants permission to list Actors",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListActors.html"
+      },
+      "ListAgentRuntimeEndpoints": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListAgentRuntimeEndpoints",
+        "condition_keys": [],
+        "description": "Grants permission to list agent endpoints",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListAgentRuntimeVersions": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListAgentRuntimeVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list agent runtime versions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListAgentRuntimes": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListAgentRuntimes",
+        "condition_keys": [],
+        "description": "Grants permission to list agent runtimes",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListApiKeyCredentialProviders": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:ListApiKeyCredentialProviders",
+        "condition_keys": [],
+        "description": "Grants permission to list all API Key Credential Providers in the Token Vault",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListApiKeyCredentialProviders.html"
+      },
+      "ListBrowserSessions": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListBrowserSessions",
+        "condition_keys": [],
+        "description": "Grants permission to list browser sessions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListBrowsers": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListBrowsers",
+        "condition_keys": [],
+        "description": "Grants permission to list browsers",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListCodeInterpreterSessions": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListCodeInterpreterSessions",
+        "condition_keys": [],
+        "description": "Grants permission to list code interpreter sessions",
+        "resource_types": [
+          {
+            "name": "code-interpreter*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter"
+          },
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListCodeInterpreters": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListCodeInterpreters",
+        "condition_keys": [],
+        "description": "Grants permission to list code interpreters",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "ListEvents": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListEvents",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:sessionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_sessionId"
+          },
+          {
+            "name": "bedrock-agentcore:actorId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_actorId"
+          }
+        ],
+        "description": "Grants permission to list events",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListEvents.html"
+      },
+      "ListGatewayTargets": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListGatewayTargets",
+        "condition_keys": [],
+        "description": "Grants permission to list existing gateway targets",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListGatewayTargets.html"
+      },
+      "ListGateways": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListGateways",
+        "condition_keys": [],
+        "description": "Grants permission to list existing gateways",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListGateways.html"
+      },
+      "ListMemories": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListMemories",
+        "condition_keys": [],
+        "description": "Grants permission to list memory resources",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemories.html"
+      },
+      "ListMemoryRecords": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListMemoryRecords",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:namespace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_namespace"
+          },
+          {
+            "name": "bedrock-agentcore:strategyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_strategyId"
+          }
+        ],
+        "description": "Grants permission to list memory records",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryRecords.html"
+      },
+      "ListOauth2CredentialProviders": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:ListOauth2CredentialProviders",
+        "condition_keys": [],
+        "description": "Grants permission to list all OAuth2 Credential Providers in the Token Vault",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListOauth2CredentialProviders.html"
+      },
+      "ListSessions": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListSessions",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:actorId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_actorId"
+          }
+        ],
+        "description": "Grants permission to list sessions",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListSessions.html"
+      },
+      "ListWorkloadIdentities": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:ListWorkloadIdentities",
+        "condition_keys": [],
+        "description": "Grants permission to list all Workload Identities in the caller's AWS account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListWorkloadIdentities.html"
+      },
+      "RetrieveMemoryRecords": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:RetrieveMemoryRecords",
+        "condition_keys": [
+          {
+            "name": "bedrock-agentcore:namespace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_namespace"
+          },
+          {
+            "name": "bedrock-agentcore:strategyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_strategyId"
+          }
+        ],
+        "description": "Grants permission to retrieve memory records through sematic query",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_RetrieveMemoryRecords.html"
+      },
+      "SetTokenVaultCMK": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:SetTokenVaultCMK",
+        "condition_keys": [],
+        "description": "Grants permission to associate a Customer Managed Key (CMK) or a Service Managed Key with a specific TokenVault",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SetTokenVaultCMK.html"
+      },
+      "StartBrowserSession": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:StartBrowserSession",
+        "condition_keys": [],
+        "description": "Grants permission to starts a new browser session",
+        "resource_types": [
+          {
+            "name": "browser*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser"
+          },
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "StartCodeInterpreterSession": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:StartCodeInterpreterSession",
+        "condition_keys": [],
+        "description": "Grants permission to start a new code interpreter session",
+        "resource_types": [
+          {
+            "name": "code-interpreter*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter"
+          },
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "StopBrowserSession": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:StopBrowserSession",
+        "condition_keys": [],
+        "description": "Grants permission to stop a browser session",
+        "resource_types": [
+          {
+            "name": "browser*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser"
+          },
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "StopCodeInterpreterSession": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:StopCodeInterpreterSession",
+        "condition_keys": [],
+        "description": "Grants permission to stop a code interpreter session",
+        "resource_types": [
+          {
+            "name": "code-interpreter*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter"
+          },
+          {
+            "name": "code-interpreter-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-code-interpreter-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "SynchronizeGatewayTargets": {
+        "access_level": "Permissions management",
+        "action_name": "bedrock-agentcore:SynchronizeGatewayTargets",
+        "condition_keys": [],
+        "description": "Grants permission to enable search on gateways",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+      },
+      "UpdateAgentRuntime": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateAgentRuntime",
+        "condition_keys": [],
+        "description": "Grants permission to update an agent runtime",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "UpdateAgentRuntimeEndpoint": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateAgentRuntimeEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to update an agent endpoint",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          },
+          {
+            "name": "runtime-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime-endpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "UpdateApiKeyCredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateApiKeyCredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing API Key Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateApiKeyCredentialProvider.html"
+      },
+      "UpdateBrowserStream": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateBrowserStream",
+        "condition_keys": [],
+        "description": "Grants permission to update the status of browser session stream",
+        "resource_types": [
+          {
+            "name": "browser*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser"
+          },
+          {
+            "name": "browser-custom*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-browser-custom"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/"
+      },
+      "UpdateGateway": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateGateway",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing gateway",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateGateway.html"
+      },
+      "UpdateGatewayTarget": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateGatewayTarget",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing gateway target",
+        "resource_types": [
+          {
+            "name": "gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateGatewayTarget.html"
+      },
+      "UpdateMemory": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateMemory",
+        "condition_keys": [],
+        "description": "Grants permission to update a Memory resource",
+        "resource_types": [
+          {
+            "name": "memory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateMemory.html"
+      },
+      "UpdateOauth2CredentialProvider": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateOauth2CredentialProvider",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing OAuth2 Credential Provider",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateOauth2CredentialProvider.html"
+      },
+      "UpdateWorkloadIdentity": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateWorkloadIdentity",
+        "condition_keys": [],
+        "description": "Grants permission to update the metadata of an existing Workload Identity",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateWorkloadIdentity.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html",
+    "serviceName": "Amazon Bedrock Agentcore",
+    "service_prefix": "bedrock-agentcore"
+  },
   "amazonbraket": {
     "actions": {
       "AcceptUserAgreement": {
@@ -38174,6 +39155,14 @@
         "description": "Grants permission to logout as SSO user",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_SsoLogout.html"
+      },
+      "StartAccountBootstrapAction": {
+        "access_level": "Write",
+        "action_name": "datazone:StartAccountBootstrapAction",
+        "condition_keys": [],
+        "description": "Grants permission to start account bootstrap action for a domain",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartAccountBootstrapAction.html"
       },
       "StartDataSourceRun": {
         "access_level": "Write",
@@ -83566,7 +84555,7 @@
         "access_level": "Write",
         "action_name": "emr-containers:CreateCertificate",
         "condition_keys": [],
-        "description": "Grants permission to create a certificate",
+        "description": "Grants permission to call the CreateCertificate method to accept the CertificateSigningRequest, and return the signed certificate",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateCertificate.html"
       },
@@ -83825,6 +84814,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-managedEndpoint"
           },
           {
+            "name": "securityConfiguration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-securityConfiguration"
+          },
+          {
             "name": "virtualCluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-virtualCluster"
           }
@@ -83897,6 +84890,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-managedEndpoint"
           },
           {
+            "name": "securityConfiguration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-securityConfiguration"
+          },
+          {
             "name": "virtualCluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-virtualCluster"
           }
@@ -83925,6 +84922,10 @@
           {
             "name": "managedEndpoint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-managedEndpoint"
+          },
+          {
+            "name": "securityConfiguration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html#amazonemroneksemrcontainers-securityConfiguration"
           },
           {
             "name": "virtualCluster",
@@ -130652,6 +131653,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-es"
           },
           {
+            "name": "global-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-global-cluster"
+          },
+          {
             "name": "integration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-integration"
           },
@@ -131466,7 +132471,16 @@
       "CreateGlobalCluster": {
         "access_level": "Write",
         "action_name": "rds:CreateGlobalCluster",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an Aurora global database or DocumentDB global database spread across multiple regions",
         "resource_types": [
           {
@@ -132612,6 +133626,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-es"
           },
           {
+            "name": "global-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-global-cluster"
+          },
+          {
             "name": "integration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-integration"
           },
@@ -133236,6 +134254,10 @@
           {
             "name": "es",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-es"
+          },
+          {
+            "name": "global-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-global-cluster"
           },
           {
             "name": "integration",
@@ -141718,6 +142740,10 @@
         "action_name": "s3:CreateAccessGrant",
         "condition_keys": [
           {
+            "name": "s3:AccessGrantScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantScope"
+          },
+          {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
           },
@@ -141817,6 +142843,10 @@
         "access_level": "Permissions management",
         "action_name": "s3:CreateAccessGrantsLocation",
         "condition_keys": [
+          {
+            "name": "s3:AccessGrantsLocationScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantsLocationScope"
+          },
           {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
@@ -142070,14 +143100,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
           }
         ],
-        "description": "Grants permission to create a new S3 Metadata configuration for a specified bucket",
+        "description": "Grants permission to create a new S3 Metadata configuration for a specified general purpose bucket",
         "resource_types": [
           {
             "name": "bucket*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-bucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html"
       },
       "CreateJob": {
         "access_level": "Write",
@@ -142220,6 +143250,10 @@
         "action_name": "s3:DeleteAccessGrant",
         "condition_keys": [
           {
+            "name": "s3:AccessGrantScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantScope"
+          },
+          {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
           },
@@ -142345,6 +143379,10 @@
         "access_level": "Permissions management",
         "action_name": "s3:DeleteAccessGrantsLocation",
         "condition_keys": [
+          {
+            "name": "s3:AccessGrantsLocationScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantsLocationScope"
+          },
           {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
@@ -142650,14 +143688,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
           }
         ],
-        "description": "Grants permission to delete the S3 Metadata configuration for a specified bucket",
+        "description": "Grants permission to delete the S3 Metadata configuration for a specified general purpose bucket",
         "resource_types": [
           {
             "name": "bucket*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-bucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html"
       },
       "DeleteBucketPolicy": {
         "access_level": "Permissions management",
@@ -143322,6 +144360,10 @@
         "action_name": "s3:GetAccessGrant",
         "condition_keys": [
           {
+            "name": "s3:AccessGrantScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantScope"
+          },
+          {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
           },
@@ -143489,6 +144531,10 @@
         "access_level": "Read",
         "action_name": "s3:GetAccessGrantsLocation",
         "condition_keys": [
+          {
+            "name": "s3:AccessGrantsLocationScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantsLocationScope"
+          },
           {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
@@ -144124,14 +145170,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
           }
         ],
-        "description": "Grants permission to return the S3 Metadata configuration for a specified bucket",
+        "description": "Grants permission to return the S3 Metadata configuration for a specified general purpose bucket",
         "resource_types": [
           {
             "name": "bucket*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-bucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html"
       },
       "GetBucketNotification": {
         "access_level": "Read",
@@ -148734,6 +149780,10 @@
         "action_name": "s3:UpdateAccessGrantsLocation",
         "condition_keys": [
           {
+            "name": "s3:AccessGrantsLocationScope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_AccessGrantsLocationScope"
+          },
+          {
             "name": "s3:authType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
           },
@@ -148770,6 +149820,82 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateAccessGrantsLocation.html"
+      },
+      "UpdateBucketMetadataInventoryTableConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3:UpdateBucketMetadataInventoryTableConfiguration",
+        "condition_keys": [
+          {
+            "name": "s3:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
+          },
+          {
+            "name": "s3:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_ResourceAccount"
+          },
+          {
+            "name": "s3:signatureAge",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_signatureAge"
+          },
+          {
+            "name": "s3:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_signatureversion"
+          },
+          {
+            "name": "s3:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_TlsVersion"
+          },
+          {
+            "name": "s3:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
+          }
+        ],
+        "description": "Grants permission to update the inventory table configuration on an existing S3 Metadata configuration for a specified general purpose bucket",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html"
+      },
+      "UpdateBucketMetadataJournalTableConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3:UpdateBucketMetadataJournalTableConfiguration",
+        "condition_keys": [
+          {
+            "name": "s3:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
+          },
+          {
+            "name": "s3:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_ResourceAccount"
+          },
+          {
+            "name": "s3:signatureAge",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_signatureAge"
+          },
+          {
+            "name": "s3:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_signatureversion"
+          },
+          {
+            "name": "s3:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_TlsVersion"
+          },
+          {
+            "name": "s3:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
+          }
+        ],
+        "description": "Grants permission to update the journal table configuration on an existing S3 Metadata configuration for a specified general purpose bucket",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html"
       },
       "UpdateJobPriority": {
         "access_level": "Write",
@@ -153404,6 +154530,225 @@
     "serviceName": "Amazon S3 Tables",
     "service_prefix": "s3tables"
   },
+  "amazons3vectors": {
+    "actions": {
+      "CreateIndex": {
+        "access_level": "Write",
+        "action_name": "s3vectors:CreateIndex",
+        "condition_keys": [],
+        "description": "Grants permission to create a new vector index within a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateIndex.html"
+      },
+      "CreateVectorBucket": {
+        "access_level": "Write",
+        "action_name": "s3vectors:CreateVectorBucket",
+        "condition_keys": [
+          {
+            "name": "s3vectors:sseType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-s3vectors_sseType"
+          },
+          {
+            "name": "s3vectors:kmsKeyArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-s3vectors_kmsKeyArn"
+          }
+        ],
+        "description": "Grants permission to create a new vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateVectorBucket.html"
+      },
+      "DeleteIndex": {
+        "access_level": "Write",
+        "action_name": "s3vectors:DeleteIndex",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified vector index",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteIndex.html"
+      },
+      "DeleteVectorBucket": {
+        "access_level": "Write",
+        "action_name": "s3vectors:DeleteVectorBucket",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucket.html"
+      },
+      "DeleteVectorBucketPolicy": {
+        "access_level": "Write",
+        "action_name": "s3vectors:DeleteVectorBucketPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete the IAM resource policy from a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucketPolicy.html"
+      },
+      "DeleteVectors": {
+        "access_level": "Write",
+        "action_name": "s3vectors:DeleteVectors",
+        "condition_keys": [],
+        "description": "Grants permission to delete a batch of vectors from a specified vector index",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectors.html"
+      },
+      "GetIndex": {
+        "access_level": "Read",
+        "action_name": "s3vectors:GetIndex",
+        "condition_keys": [],
+        "description": "Grants permission to get the attributes of a specified vector index",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetIndex.html"
+      },
+      "GetVectorBucket": {
+        "access_level": "Read",
+        "action_name": "s3vectors:GetVectorBucket",
+        "condition_keys": [],
+        "description": "Grants permission to get the attributes of a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucket.html"
+      },
+      "GetVectorBucketPolicy": {
+        "access_level": "Read",
+        "action_name": "s3vectors:GetVectorBucketPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to get the IAM resource policy for a specific vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucketPolicy.html"
+      },
+      "GetVectors": {
+        "access_level": "Read",
+        "action_name": "s3vectors:GetVectors",
+        "condition_keys": [],
+        "description": "Grants permission to get a batch of vectors by their vector keys",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectors.html"
+      },
+      "ListIndexes": {
+        "access_level": "List",
+        "action_name": "s3vectors:ListIndexes",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all indexes in a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListIndexes.html"
+      },
+      "ListVectorBuckets": {
+        "access_level": "List",
+        "action_name": "s3vectors:ListVectorBuckets",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all vector buckets in the account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectorBuckets.html"
+      },
+      "ListVectors": {
+        "access_level": "List",
+        "action_name": "s3vectors:ListVectors",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all vectors in a specified vector index",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectors.html"
+      },
+      "PutVectorBucketPolicy": {
+        "access_level": "Write",
+        "action_name": "s3vectors:PutVectorBucketPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to add an IAM resource policy to a specified vector bucket",
+        "resource_types": [
+          {
+            "name": "VectorBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectorBucketPolicy.html"
+      },
+      "PutVectors": {
+        "access_level": "Write",
+        "action_name": "s3vectors:PutVectors",
+        "condition_keys": [],
+        "description": "Grants permission to add a batch of vectors to a specified vector index",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectors.html"
+      },
+      "QueryVectors": {
+        "access_level": "Read",
+        "action_name": "s3vectors:QueryVectors",
+        "condition_keys": [],
+        "description": "Grants permission to find approximate nearest neighbors within a specified search vector index for a given query vector",
+        "resource_types": [
+          {
+            "name": "Index*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueryVectors.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html",
+    "serviceName": "Amazon S3 Vectors",
+    "service_prefix": "s3vectors"
+  },
   "amazonsagemaker": {
     "actions": {
       "AddAssociation": {
@@ -153625,6 +154970,10 @@
           {
             "name": "notebook-instance",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance"
+          },
+          {
+            "name": "notebook-instance-lifecycle-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance-lifecycle-config"
           },
           {
             "name": "optimization-job",
@@ -154558,6 +155907,23 @@
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHub.html"
       },
+      "CreateHubContentPresignedUrls": {
+        "access_level": "Read",
+        "action_name": "sagemaker:CreateHubContentPresignedUrls",
+        "condition_keys": [],
+        "description": "Grants permission to generate S3 presigned URLs with GetObject permission for accessing model artifacts",
+        "resource_types": [
+          {
+            "name": "hub*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-hub"
+          },
+          {
+            "name": "hub-content*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-hub-content"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHubContentPresignedUrls.html"
+      },
       "CreateHubContentReference": {
         "access_level": "Write",
         "action_name": "sagemaker:CreateHubContentReference",
@@ -155263,7 +156629,16 @@
       "CreateNotebookInstanceLifecycleConfig": {
         "access_level": "Write",
         "action_name": "sagemaker:CreateNotebookInstanceLifecycleConfig",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a notebook instance lifecycle configuration that can be deployed using Amazon SageMaker",
         "resource_types": [
           {
@@ -155529,6 +156904,10 @@
           {
             "name": "sagemaker:OwnerUserProfileArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_OwnerUserProfileArn"
+          },
+          {
+            "name": "sagemaker:RemoteAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_RemoteAccess"
           },
           {
             "name": "sagemaker:SpaceSharingType",
@@ -156760,6 +158139,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance"
           },
           {
+            "name": "notebook-instance-lifecycle-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance-lifecycle-config"
+          },
+          {
             "name": "optimization-job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-optimization-job"
           },
@@ -157012,6 +158395,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCluster.html"
+      },
+      "DescribeClusterInference": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeClusterInference",
+        "condition_keys": [],
+        "description": "Grants permission to get information about the inference operator for a SageMaker HyperPod cluster",
+        "resource_types": [
+          {
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html"
       },
       "DescribeClusterNode": {
         "access_level": "Read",
@@ -157587,7 +158983,12 @@
       "DescribePipeline": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribePipeline",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:PipelineVersionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_PipelineVersionId"
+          }
+        ],
         "description": "Grants permission to get information about a pipeline",
         "resource_types": [
           {
@@ -158610,6 +160011,19 @@
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineParametersForExecution.html"
       },
+      "ListPipelineVersions": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListPipelineVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list versions of a pipeline",
+        "resource_types": [
+          {
+            "name": "pipeline*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-pipeline"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineVersions.html"
+      },
       "ListPipelines": {
         "access_level": "List",
         "action_name": "sagemaker:ListPipelines",
@@ -158882,6 +160296,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance"
           },
           {
+            "name": "notebook-instance-lifecycle-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-notebook-instance-lifecycle-config"
+          },
+          {
             "name": "optimization-job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-optimization-job"
           },
@@ -158892,6 +160310,10 @@
           {
             "name": "pipeline",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-pipeline"
+          },
+          {
+            "name": "pipeline-execution",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-pipeline-execution"
           },
           {
             "name": "processing-job",
@@ -159260,7 +160682,12 @@
       "StartPipelineExecution": {
         "access_level": "Write",
         "action_name": "sagemaker:StartPipelineExecution",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:PipelineVersionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_PipelineVersionId"
+          }
+        ],
         "description": "Grants permission to start a pipeline execution",
         "resource_types": [
           {
@@ -159269,6 +160696,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"
+      },
+      "StartSession": {
+        "access_level": "Write",
+        "action_name": "sagemaker:StartSession",
+        "condition_keys": [],
+        "description": "Grants permission to start a remote session for a SageMaker space",
+        "resource_types": [
+          {
+            "name": "space*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-space"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartSession.html"
       },
       "StopAutoMLJob": {
         "access_level": "Write",
@@ -159580,6 +161020,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCluster.html"
+      },
+      "UpdateClusterInference": {
+        "access_level": "Write",
+        "action_name": "sagemaker:UpdateClusterInference",
+        "condition_keys": [],
+        "description": "Grants permission to update the inference operator for a SageMaker HyperPod cluster",
+        "resource_types": [
+          {
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html"
       },
       "UpdateClusterSchedulerConfig": {
         "access_level": "Write",
@@ -160108,6 +161561,24 @@
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipelineExecution.html"
       },
+      "UpdatePipelineVersion": {
+        "access_level": "Write",
+        "action_name": "sagemaker:UpdatePipelineVersion",
+        "condition_keys": [
+          {
+            "name": "sagemaker:PipelineVersionId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_PipelineVersionId"
+          }
+        ],
+        "description": "Grants permission to update a pipeline version",
+        "resource_types": [
+          {
+            "name": "pipeline*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-pipeline"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipelineVersion.html"
+      },
       "UpdateProject": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdateProject",
@@ -160162,6 +161633,10 @@
           {
             "name": "sagemaker:OwnerUserProfileArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_OwnerUserProfileArn"
+          },
+          {
+            "name": "sagemaker:RemoteAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_RemoteAccess"
           },
           {
             "name": "sagemaker:SpaceSharingType",
@@ -160732,6 +162207,32 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
       },
+      "DeleteLoggedModel": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:DeleteLoggedModel",
+        "condition_keys": [],
+        "description": "Grants permission to delete a logged model in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
+      "DeleteLoggedModelTag": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:DeleteLoggedModelTag",
+        "condition_keys": [],
+        "description": "Grants permission to delete a tag for a logged model in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
       "DeleteModelVersion": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteModelVersion",
@@ -160862,6 +162363,19 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
       },
+      "FinalizeLoggedModel": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:FinalizeLoggedModel",
+        "condition_keys": [],
+        "description": "Grants permission to set status for a logged model in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
       "GetDownloadURIForModelVersionArtifacts": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetDownloadURIForModelVersionArtifacts",
@@ -160906,6 +162420,19 @@
         "action_name": "sagemaker-mlflow:GetLatestModelVersions",
         "condition_keys": [],
         "description": "Grants permission to get the latest model versions",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
+      "GetLoggedModel": {
+        "access_level": "Read",
+        "action_name": "sagemaker-mlflow:GetLoggedModel",
+        "condition_keys": [],
+        "description": "Grants permission to get a logged model in MLflow",
         "resource_types": [
           {
             "name": "mlflow-tracking-server*",
@@ -161005,6 +162532,19 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
       },
+      "ListLoggedModelArtifacts": {
+        "access_level": "List",
+        "action_name": "sagemaker-mlflow:ListLoggedModelArtifacts",
+        "condition_keys": [],
+        "description": "Grants permission to list artifacts for a logged model in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
       "LogBatch": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogBatch",
@@ -161031,6 +162571,19 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
       },
+      "LogLoggedModelParams": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:LogLoggedModelParams",
+        "condition_keys": [],
+        "description": "Grants permission to log params for a logged model in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
       "LogMetric": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogMetric",
@@ -161049,6 +162602,19 @@
         "action_name": "sagemaker-mlflow:LogModel",
         "condition_keys": [],
         "description": "Grants permission to log the model associated with a run",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
+      "LogOutputs": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:LogOutputs",
+        "condition_keys": [],
+        "description": "Grants permission to log outputs, such as models, for a run in MLflow",
         "resource_types": [
           {
             "name": "mlflow-tracking-server*",
@@ -161122,6 +162688,19 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
       },
+      "SearchLoggedModels": {
+        "access_level": "Read",
+        "action_name": "sagemaker-mlflow:SearchLoggedModels",
+        "condition_keys": [],
+        "description": "Grants permission to search for logged models in MLflow",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
       "SearchModelVersions": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchModelVersions",
@@ -161179,6 +162758,19 @@
         "action_name": "sagemaker-mlflow:SetExperimentTag",
         "condition_keys": [],
         "description": "Grants permission to set a tag on an experiment",
+        "resource_types": [
+          {
+            "name": "mlflow-tracking-server*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-mlflow-tracking-server"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}"
+      },
+      "SetLoggedModelTags": {
+        "access_level": "Write",
+        "action_name": "sagemaker-mlflow:SetLoggedModelTags",
+        "condition_keys": [],
+        "description": "Grants permission to set tags for a logged model in MLflow",
         "resource_types": [
           {
             "name": "mlflow-tracking-server*",
@@ -161413,6 +163005,10 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html#amazonsecuritylake-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html#amazonsecuritylake-aws_ResourceTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
@@ -211746,7 +213342,12 @@
           }
         ],
         "description": "Grants permission to create a data grant",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "data-grants*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-data-grants"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataGrant.html"
       },
       "CreateDataSet": {
@@ -211763,15 +213364,34 @@
           }
         ],
         "description": "Grants permission to create a data set",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "data-sets*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-data-sets"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataSet.html"
       },
       "CreateEventAction": {
         "access_level": "Write",
         "action_name": "dataexchange:CreateEventAction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an event action",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "event-actions*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-event-actions"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html"
       },
       "CreateJob": {
@@ -211784,7 +213404,12 @@
           }
         ],
         "description": "Grants permission to create a job to import or export assets",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "jobs*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-jobs"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html"
       },
       "CreateRevision": {
@@ -212070,6 +213695,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-data-sets"
           },
           {
+            "name": "event-actions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-event-actions"
+          },
+          {
             "name": "revisions",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-revisions"
           }
@@ -212092,7 +213721,16 @@
       "PublishToDataGrant": {
         "access_level": "Write",
         "action_name": "dataexchange:PublishToDataGrant",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to publish a data set to a data grant",
         "resource_types": [
           {
@@ -212182,6 +213820,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-data-sets"
           },
           {
+            "name": "event-actions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-event-actions"
+          },
+          {
             "name": "revisions",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-revisions"
           }
@@ -212206,6 +213848,10 @@
           {
             "name": "data-sets",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-data-sets"
+          },
+          {
+            "name": "event-actions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html#awsdataexchange-event-actions"
           },
           {
             "name": "revisions",
@@ -233594,6 +235240,22 @@
   },
   "awsfreetier": {
     "actions": {
+      "GetAccountActivity": {
+        "access_level": "Read",
+        "action_name": "freetier:GetAccountActivity",
+        "condition_keys": [],
+        "description": "Grants permission to get a specific activity record",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountActivity.html"
+      },
+      "GetAccountPlanState": {
+        "access_level": "Read",
+        "action_name": "freetier:GetAccountPlanState",
+        "condition_keys": [],
+        "description": "Grants permission to get all of the information related to the state of the account plan related to Free Tier",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountPlanState.html"
+      },
       "GetFreeTierAlertPreference": {
         "access_level": "Read",
         "action_name": "freetier:GetFreeTierAlertPreference",
@@ -233610,6 +235272,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html"
       },
+      "ListAccountActivities": {
+        "access_level": "List",
+        "action_name": "freetier:ListAccountActivities",
+        "condition_keys": [],
+        "description": "Grants permission to list available activities",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_ListAccountActivities.html"
+      },
       "PutFreeTierAlertPreference": {
         "access_level": "Write",
         "action_name": "freetier:PutFreeTierAlertPreference",
@@ -233617,6 +235287,14 @@
         "description": "Grants permission to set free tier alert preference (email address)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html"
+      },
+      "UpgradeAccountPlan": {
+        "access_level": "Write",
+        "action_name": "freetier:UpgradeAccountPlan",
+        "condition_keys": [],
+        "description": "Grants permission to trigger an upgrade of account plan",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_UpgradeAccountPlan.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfreetier.html",
@@ -271901,6 +273579,23 @@
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupMetadata.html"
       },
+      "DescribeRuleGroupSummary": {
+        "access_level": "Read",
+        "action_name": "network-firewall:DescribeRuleGroupSummary",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the summary information about a rule group",
+        "resource_types": [
+          {
+            "name": "StatefulRuleGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-StatefulRuleGroup"
+          },
+          {
+            "name": "StatelessRuleGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-StatelessRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupSummary.html"
+      },
       "DescribeTLSInspectionConfiguration": {
         "access_level": "Read",
         "action_name": "network-firewall:DescribeTLSInspectionConfiguration",
@@ -292408,6 +294103,85 @@
     "serviceName": "AWS Shield",
     "service_prefix": "shield"
   },
+  "awsshieldnetworksecuritydirector": {
+    "actions": {
+      "GetFinding": {
+        "access_level": "Read",
+        "action_name": "network-security-director:GetFinding",
+        "condition_keys": [],
+        "description": "Grants permission to get a finding",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetFinding.html"
+      },
+      "GetNetworkSecurityScan": {
+        "access_level": "Read",
+        "action_name": "network-security-director:GetNetworkSecurityScan",
+        "condition_keys": [],
+        "description": "Grants permission to get the status of network security scan",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetNetworkSecurityScan.html"
+      },
+      "GetResource": {
+        "access_level": "Read",
+        "action_name": "network-security-director:GetResource",
+        "condition_keys": [],
+        "description": "Grants permission to get a resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetResource.html"
+      },
+      "ListFindings": {
+        "access_level": "List",
+        "action_name": "network-security-director:ListFindings",
+        "condition_keys": [],
+        "description": "Grants permission to list findings",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListFindings.html"
+      },
+      "ListInsights": {
+        "access_level": "List",
+        "action_name": "network-security-director:ListInsights",
+        "condition_keys": [],
+        "description": "Grants permission to list insights about the latest network security scan",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListInsights.html"
+      },
+      "ListRemediations": {
+        "access_level": "List",
+        "action_name": "network-security-director:ListRemediations",
+        "condition_keys": [],
+        "description": "Grants permission to list remediations for a finding",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListRemediations.html"
+      },
+      "ListResources": {
+        "access_level": "List",
+        "action_name": "network-security-director:ListResources",
+        "condition_keys": [],
+        "description": "Grants permission to list resources",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListResources.html"
+      },
+      "StartNetworkSecurityScan": {
+        "access_level": "Write",
+        "action_name": "network-security-director:StartNetworkSecurityScan",
+        "condition_keys": [],
+        "description": "Grants permission to start a network security scan",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_StartNetworkSecurityScan.html"
+      },
+      "UpdateFinding": {
+        "access_level": "Write",
+        "action_name": "network-security-director:UpdateFinding",
+        "condition_keys": [],
+        "description": "Grants permission to update the status of a finding",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_UpdateFinding.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshieldnetworksecuritydirector.html",
+    "serviceName": "AWS Shield network security director",
+    "service_prefix": "network-security-director"
+  },
   "awssigner": {
     "actions": {
       "AddProfilePermission": {
@@ -297409,29 +299183,6 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupportplans.html",
     "serviceName": "AWS Support Plans",
     "service_prefix": "supportplans"
-  },
-  "awssupportrecommendations": {
-    "actions": {
-      "GetSupportTroubleshootingResponse": {
-        "access_level": "Read",
-        "action_name": "supportrecommendations:GetSupportTroubleshootingResponse",
-        "condition_keys": [],
-        "description": "Grants permission to the GetSupportTroubleshootingResponse API which lists troubleshooting responses for users' issues",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-recommendations.html/"
-      },
-      "StartSupportTroubleshooting": {
-        "access_level": "Read",
-        "action_name": "supportrecommendations:StartSupportTroubleshooting",
-        "condition_keys": [],
-        "description": "Grants permission to the StartSupportTroubleshooting API which starts troubleshooting for users' issues",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-recommendations.html/"
-      }
-    },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupportrecommendations.html",
-    "serviceName": "AWS Support Recommendations",
-    "service_prefix": "supportrecommendations"
   },
   "awssustainability": {
     "actions": {
