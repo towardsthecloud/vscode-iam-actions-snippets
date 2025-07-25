@@ -2602,9 +2602,9 @@
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidget"
       },
-      "ListRoutingRule": {
+      "ListRoutingRules": {
         "access_level": "List",
-        "action_name": "apigateway:ListRoutingRule",
+        "action_name": "apigateway:ListRoutingRules",
         "condition_keys": [
           {
             "name": "aws:ResourceTag/${TagKey}",
@@ -7046,6 +7046,28 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html"
       },
+      "CreateCustomModelDeployment": {
+        "access_level": "Write",
+        "action_name": "bedrock:CreateCustomModelDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a custom model deployment for custom model",
+        "resource_types": [
+          {
+            "name": "custom-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html"
+      },
       "CreateDataAutomationProject": {
         "access_level": "Write",
         "action_name": "bedrock:CreateDataAutomationProject",
@@ -7602,6 +7624,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModel.html"
       },
+      "DeleteCustomModelDeployment": {
+        "access_level": "Write",
+        "action_name": "bedrock:DeleteCustomModelDeployment",
+        "condition_keys": [],
+        "description": "Grants permission to delete a custom model deployment that you created earlier",
+        "resource_types": [
+          {
+            "name": "custom-model-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html"
+      },
       "DeleteDataAutomationProject": {
         "access_level": "Write",
         "action_name": "bedrock:DeleteDataAutomationProject",
@@ -8056,6 +8091,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModel.html"
+      },
+      "GetCustomModelDeployment": {
+        "access_level": "Read",
+        "action_name": "bedrock:GetCustomModelDeployment",
+        "condition_keys": [],
+        "description": "Grants permission to get the properties associated with a custom model deployment. Use this operation to get the status of a custom model deployment",
+        "resource_types": [
+          {
+            "name": "custom-model-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html"
       },
       "GetDataAutomationProject": {
         "access_level": "Read",
@@ -8616,6 +8664,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock-marketplace-model-endpoint"
           },
           {
+            "name": "custom-model-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
+          },
+          {
             "name": "default-prompt-router*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-default-prompt-router"
           },
@@ -8668,6 +8720,10 @@
           {
             "name": "bedrock-marketplace-model-endpoint*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock-marketplace-model-endpoint"
+          },
+          {
+            "name": "custom-model-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
           },
           {
             "name": "default-prompt-router*",
@@ -8789,6 +8845,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListBlueprints.html"
+      },
+      "ListCustomModelDeployments": {
+        "access_level": "List",
+        "action_name": "bedrock:ListCustomModelDeployments",
+        "condition_keys": [],
+        "description": "Grants permission to get the list of custom model deployments that you have submitted",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html"
       },
       "ListCustomModels": {
         "access_level": "List",
@@ -9123,6 +9187,10 @@
           {
             "name": "custom-model*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model"
+          },
+          {
+            "name": "custom-model-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
           },
           {
             "name": "data-automation-invocation-job*",
@@ -9494,6 +9562,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model"
           },
           {
+            "name": "custom-model-deployment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
+          },
+          {
             "name": "data-automation-invocation-job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-invocation-job"
           },
@@ -9602,6 +9674,10 @@
           {
             "name": "custom-model",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model"
+          },
+          {
+            "name": "custom-model-deployment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-custom-model-deployment"
           },
           {
             "name": "data-automation-invocation-job",
@@ -44419,6 +44495,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -47944,6 +48024,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
@@ -48405,6 +48489,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -48541,6 +48629,10 @@
           {
             "name": "ec2:VolumeID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
           },
           {
             "name": "ec2:VolumeIops",
@@ -48751,6 +48843,22 @@
         "access_level": "Tagging",
         "action_name": "ec2:CreateTags",
         "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
@@ -50364,6 +50472,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -50654,6 +50766,10 @@
         ],
         "description": "Grants permission to add or overwrite one or more tags for Amazon EC2 resources",
         "resource_types": [
+          {
+            "name": "capacity-block",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-block"
+          },
           {
             "name": "capacity-reservation",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-reservation"
@@ -52006,6 +52122,10 @@
           {
             "name": "ec2:VolumeID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
           },
           {
             "name": "ec2:VolumeIops",
@@ -55786,6 +55906,22 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
           },
@@ -55796,6 +55932,10 @@
         ],
         "description": "Grants permission to delete one or more tags from Amazon EC2 resources",
         "resource_types": [
+          {
+            "name": "capacity-block",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-block"
+          },
           {
             "name": "capacity-reservation",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-reservation"
@@ -56754,6 +56894,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -57579,6 +57723,32 @@
         "description": "Grants permission to describe Capacity Block offerings available for purchase",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlockOfferings.html"
+      },
+      "DescribeCapacityBlockStatus": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeCapacityBlockStatus",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe the availability of capacity for the specified Capacity blocks, or all of your Capacity Blocks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlockStatus.html"
+      },
+      "DescribeCapacityBlocks": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeCapacityBlocks",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe details about Capacity Blocks in the AWS Region that you're currently using",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlocks.html"
       },
       "DescribeCapacityReservationBillingRequests": {
         "access_level": "List",
@@ -59771,6 +59941,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -60444,6 +60618,10 @@
           {
             "name": "ec2:VolumeID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
           },
           {
             "name": "ec2:VolumeIops",
@@ -66054,6 +66232,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -68729,6 +68911,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
           },
           {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
             "name": "ec2:VolumeIops",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
           },
@@ -68797,6 +68983,10 @@
           {
             "name": "ec2:VolumeID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
           },
           {
             "name": "ec2:VolumeIops",
@@ -72784,6 +72974,10 @@
           {
             "name": "ec2:VolumeID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
           },
           {
             "name": "ec2:VolumeIops",
@@ -84967,6 +85161,19 @@
         ],
         "url": "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/interactive-workloads-livy-endpoints.html"
       },
+      "AccessSystemProfileLogs": {
+        "access_level": "Write",
+        "action_name": "emr-serverless:AccessSystemProfileLogs",
+        "condition_keys": [],
+        "description": "Grants permission to access system profile logs",
+        "resource_types": [
+          {
+            "name": "jobRun*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-jobRun"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging-monitoring.html"
+      },
       "CancelJobRun": {
         "access_level": "Write",
         "action_name": "emr-serverless:CancelJobRun",
@@ -95421,6 +95628,22 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_AssociateMember.html"
       },
+      "BatchAssociateCodeSecurityScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:BatchAssociateCodeSecurityScanConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to associate multiple code repositories with an Amazon Inspector code security scan configuration",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchAssociateCodeSecurityScanConfiguration.html"
+      },
+      "BatchDisassociateCodeSecurityScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:BatchDisassociateCodeSecurityScanConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to disassociate multiple code repositories from an Amazon Inspector code security scan configuration",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchDisassociateCodeSecurityScanConfiguration.html"
+      },
       "BatchGetAccountStatus": {
         "access_level": "Read",
         "action_name": "inspector2:BatchGetAccountStatus",
@@ -95511,6 +95734,50 @@
         ],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCisScanConfiguration.html"
       },
+      "CreateCodeSecurityIntegration": {
+        "access_level": "Write",
+        "action_name": "inspector2:CreateCodeSecurityIntegration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a code security integration with a source code repository provider",
+        "resource_types": [
+          {
+            "name": "Code Security Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityIntegration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityIntegration.html"
+      },
+      "CreateCodeSecurityScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:CreateCodeSecurityScanConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a scan configuration for code security scanning",
+        "resource_types": [
+          {
+            "name": "Code Security Scan Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityScanConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html"
+      },
       "CreateFilter": {
         "access_level": "Write",
         "action_name": "inspector2:CreateFilter",
@@ -95566,6 +95833,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCisScanConfiguration.html"
+      },
+      "DeleteCodeSecurityIntegration": {
+        "access_level": "Write",
+        "action_name": "inspector2:DeleteCodeSecurityIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to delete a code security integration",
+        "resource_types": [
+          {
+            "name": "Code Security Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityIntegration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityIntegration.html"
+      },
+      "DeleteCodeSecurityScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:DeleteCodeSecurityScanConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete a code security scan configuration",
+        "resource_types": [
+          {
+            "name": "Code Security Scan Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityScanConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityScanConfiguration.html"
       },
       "DeleteFilter": {
         "access_level": "Write",
@@ -95651,6 +95944,30 @@
         "description": "Grants permission to get cluster information for a given a continuously scanned amazon Ecr image",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetClustersForImage.html"
+      },
+      "GetCodeSecurityIntegration": {
+        "access_level": "Read",
+        "action_name": "inspector2:GetCodeSecurityIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a code security integration",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityIntegration.html"
+      },
+      "GetCodeSecurityScan": {
+        "access_level": "Read",
+        "action_name": "inspector2:GetCodeSecurityScan",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a specific code security scan",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScan.html"
+      },
+      "GetCodeSecurityScanConfiguration": {
+        "access_level": "Read",
+        "action_name": "inspector2:GetCodeSecurityScanConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a code security scan configuration",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScanConfiguration.html"
       },
       "GetConfiguration": {
         "access_level": "Read",
@@ -95747,6 +96064,30 @@
         "description": "Grants permission to retrieve information about completed CIS scans",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScans.html"
+      },
+      "ListCodeSecurityIntegrations": {
+        "access_level": "List",
+        "action_name": "inspector2:ListCodeSecurityIntegrations",
+        "condition_keys": [],
+        "description": "Grants permission to list all code security integrations in your account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityIntegrations.html"
+      },
+      "ListCodeSecurityScanConfigurationAssociations": {
+        "access_level": "List",
+        "action_name": "inspector2:ListCodeSecurityScanConfigurationAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list the associations between code repositories and Amazon Inspector code security scan configurations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurationAssociations.html"
+      },
+      "ListCodeSecurityScanConfigurations": {
+        "access_level": "List",
+        "action_name": "inspector2:ListCodeSecurityScanConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to list all code security scan configurations in your account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurations.html"
       },
       "ListCoverage": {
         "access_level": "List",
@@ -95860,6 +96201,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCisSession.html"
       },
+      "StartCodeSecurityScan": {
+        "access_level": "Write",
+        "action_name": "inspector2:StartCodeSecurityScan",
+        "condition_keys": [],
+        "description": "Grants permission to initiate a code security scan on a specified repository",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCodeSecurityScan.html"
+      },
       "StopCisSession": {
         "access_level": "Write",
         "action_name": "inspector2:StopCisSession",
@@ -95892,6 +96241,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CISScanConfiguration"
           },
           {
+            "name": "Code Security Integration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityIntegration"
+          },
+          {
+            "name": "Code Security Scan Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityScanConfiguration"
+          },
+          {
             "name": "Filter",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-Filter"
           }
@@ -95918,6 +96275,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CISScanConfiguration"
           },
           {
+            "name": "Code Security Integration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityIntegration"
+          },
+          {
+            "name": "Code Security Scan Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityScanConfiguration"
+          },
+          {
             "name": "Filter",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-Filter"
           }
@@ -95941,6 +96306,42 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCisScanConfiguration.html"
+      },
+      "UpdateCodeSecurityIntegration": {
+        "access_level": "Write",
+        "action_name": "inspector2:UpdateCodeSecurityIntegration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update an existing code security integration",
+        "resource_types": [
+          {
+            "name": "Code Security Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityIntegration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityIntegration.html"
+      },
+      "UpdateCodeSecurityScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:UpdateCodeSecurityScanConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update an existing code security scan configuration",
+        "resource_types": [
+          {
+            "name": "Code Security Scan Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-CodeSecurityScanConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityScanConfiguration.html"
       },
       "UpdateConfiguration": {
         "access_level": "Write",
@@ -113602,6 +114003,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_ListTags.html"
+      },
+      "PauseMultiRegionClusterReplication": {
+        "access_level": "Write",
+        "action_name": "memorydb:PauseMultiRegionClusterReplication",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html#amazonmemorydb-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to pause replication for a Multi-Region cluster",
+        "resource_types": [
+          {
+            "name": "multiregioncluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmemorydb.html#amazonmemorydb-multiregioncluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference"
       },
       "PurchaseReservedNodesOffering": {
         "access_level": "Write",
@@ -154594,7 +155013,7 @@
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucket.html"
       },
       "DeleteVectorBucketPolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "s3vectors:DeleteVectorBucketPolicy",
         "condition_keys": [],
         "description": "Grants permission to delete the IAM resource policy from a specified vector bucket",
@@ -154706,7 +155125,7 @@
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectors.html"
       },
       "PutVectorBucketPolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "s3vectors:PutVectorBucketPolicy",
         "condition_keys": [],
         "description": "Grants permission to add an IAM resource policy to a specified vector bucket",
@@ -191786,6 +192205,19 @@
         ],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_GetBillingView.html"
       },
+      "GetBillingViewData": {
+        "access_level": "Read",
+        "action_name": "billing:GetBillingViewData",
+        "condition_keys": [],
+        "description": "Grants permission to get cost and usage data for a specified billng view",
+        "resource_types": [
+          {
+            "name": "billingview*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbilling.html#awsbilling-billingview"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/"
+      },
       "GetContractInformation": {
         "access_level": "Read",
         "action_name": "billing:GetContractInformation",
@@ -197413,7 +197845,16 @@
       "DeleteEnvironmentMembership": {
         "access_level": "Write",
         "action_name": "cloud9:DeleteEnvironmentMembership",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cloud9:UserArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html#awscloud9-cloud9_UserArn"
+          },
+          {
+            "name": "cloud9:EnvironmentId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html#awscloud9-cloud9_EnvironmentId"
+          }
+        ],
         "description": "Grants permission to delete an environment member from an AWS Cloud9 development environment",
         "resource_types": [
           {
@@ -210652,7 +211093,20 @@
       "PutReportDefinition": {
         "access_level": "Write",
         "action_name": "cur:PutReportDefinition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostandusagereport.html#awscostandusagereport-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostandusagereport.html#awscostandusagereport-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostandusagereport.html#awscostandusagereport-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to write Cost and Usage Report Definition",
         "resource_types": [
           {
@@ -226727,7 +227181,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeOutputs.html"
       },
       "AddBridgeSources": {
         "access_level": "Write",
@@ -226740,7 +227194,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeSources.html"
       },
       "AddFlowMediaStreams": {
         "access_level": "Write",
@@ -226748,7 +227202,7 @@
         "condition_keys": [],
         "description": "Grants permission to add media streams to any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowMediaStreams.html"
       },
       "AddFlowOutputs": {
         "access_level": "Write",
@@ -226756,7 +227210,7 @@
         "condition_keys": [],
         "description": "Grants permission to add outputs to any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowOutputs.html"
       },
       "AddFlowSources": {
         "access_level": "Write",
@@ -226764,7 +227218,7 @@
         "condition_keys": [],
         "description": "Grants permission to add sources to any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowSources.html"
       },
       "AddFlowVpcInterfaces": {
         "access_level": "Write",
@@ -226772,20 +227226,15 @@
         "condition_keys": [],
         "description": "Grants permission to add VPC interfaces to any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowVpcInterfaces.html"
       },
       "CreateBridge": {
         "access_level": "Write",
         "action_name": "mediaconnect:CreateBridge",
         "condition_keys": [],
         "description": "Grants permission to create bridges",
-        "resource_types": [
-          {
-            "name": "Bridge*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html"
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateBridge.html"
       },
       "CreateFlow": {
         "access_level": "Write",
@@ -226793,20 +227242,15 @@
         "condition_keys": [],
         "description": "Grants permission to create flows",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateFlow.html"
       },
       "CreateGateway": {
         "access_level": "Write",
         "action_name": "mediaconnect:CreateGateway",
         "condition_keys": [],
         "description": "Grants permission to create gateways",
-        "resource_types": [
-          {
-            "name": "Gateway*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Gateway"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html"
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateGateway.html"
       },
       "DeleteBridge": {
         "access_level": "Write",
@@ -226819,7 +227263,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteBridge.html"
       },
       "DeleteFlow": {
         "access_level": "Write",
@@ -226827,7 +227271,7 @@
         "condition_keys": [],
         "description": "Grants permission to delete flows",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteFlow.html"
       },
       "DeleteGateway": {
         "access_level": "Write",
@@ -226840,7 +227284,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Gateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteGateway.html"
       },
       "DeregisterGatewayInstance": {
         "access_level": "Write",
@@ -226853,7 +227297,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-GatewayInstance"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterGatewayInstance.html"
       },
       "DescribeBridge": {
         "access_level": "Read",
@@ -226866,7 +227310,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeBridge.html"
       },
       "DescribeFlow": {
         "access_level": "Read",
@@ -226874,7 +227318,7 @@
         "condition_keys": [],
         "description": "Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlow.html"
       },
       "DescribeFlowSourceMetadata": {
         "access_level": "Read",
@@ -226882,7 +227326,7 @@
         "condition_keys": [],
         "description": "Grants permission to view information about the flow's source transport stream and programs",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-metadata.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceMetadata.html"
       },
       "DescribeFlowSourceThumbnail": {
         "access_level": "Read",
@@ -226890,7 +227334,7 @@
         "condition_keys": [],
         "description": "Grants permission to view flow's source thumbnail",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-thumbnail.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceThumbnail.html"
       },
       "DescribeGateway": {
         "access_level": "Read",
@@ -226903,7 +227347,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Gateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGateway.html"
       },
       "DescribeGatewayInstance": {
         "access_level": "Read",
@@ -226916,7 +227360,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-GatewayInstance"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGatewayInstance.html"
       },
       "DescribeOffering": {
         "access_level": "Read",
@@ -226924,7 +227368,7 @@
         "condition_keys": [],
         "description": "Grants permission to display the details of an offering",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeOffering.html"
       },
       "DescribeReservation": {
         "access_level": "Read",
@@ -226932,7 +227376,7 @@
         "condition_keys": [],
         "description": "Grants permission to display the details of a reservation",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations-reservationarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeReservation.html"
       },
       "DiscoverGatewayPollEndpoint": {
         "access_level": "Write",
@@ -226940,7 +227384,7 @@
         "condition_keys": [],
         "description": "Grants permission to discover gateway poll endpoint",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DiscoverGatewayPollEndpoint.html"
       },
       "GrantFlowEntitlements": {
         "access_level": "Write",
@@ -226948,7 +227392,7 @@
         "condition_keys": [],
         "description": "Grants permission to grant entitlements on any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GrantFlowEntitlements.html"
       },
       "ListBridges": {
         "access_level": "List",
@@ -226961,7 +227405,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListBridges.html"
       },
       "ListEntitlements": {
         "access_level": "List",
@@ -226969,7 +227413,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of all entitlements that have been granted to the account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-entitlements.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListEntitlements.html"
       },
       "ListFlows": {
         "access_level": "List",
@@ -226977,7 +227421,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of flows that are associated with this account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListFlows.html"
       },
       "ListGatewayInstances": {
         "access_level": "List",
@@ -226990,7 +227434,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-GatewayInstance"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGatewayInstances.html"
       },
       "ListGateways": {
         "access_level": "List",
@@ -226998,7 +227442,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of gateways that are associated with this account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGateways.html"
       },
       "ListOfferings": {
         "access_level": "List",
@@ -227006,7 +227450,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of all offerings that are available to the account in the current AWS Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListOfferings.html"
       },
       "ListReservations": {
         "access_level": "List",
@@ -227014,7 +227458,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListReservations.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -227022,7 +227466,7 @@
         "condition_keys": [],
         "description": "Grants permission to display a list of all tags associated with a resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListTagsForResource.html"
       },
       "PollGateway": {
         "access_level": "Write",
@@ -227030,7 +227474,7 @@
         "condition_keys": [],
         "description": "Grants permission to poll gateway",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PollGateway.html"
       },
       "PurchaseOffering": {
         "access_level": "Write",
@@ -227038,7 +227482,7 @@
         "condition_keys": [],
         "description": "Grants permission to purchase an offering",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PurchaseOffering.html"
       },
       "RemoveBridgeOutput": {
         "access_level": "Write",
@@ -227051,7 +227495,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeOutput.html"
       },
       "RemoveBridgeSource": {
         "access_level": "Write",
@@ -227064,7 +227508,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeSource.html"
       },
       "RemoveFlowMediaStream": {
         "access_level": "Write",
@@ -227072,7 +227516,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove media streams from any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowMediaStream.html"
       },
       "RemoveFlowOutput": {
         "access_level": "Write",
@@ -227080,7 +227524,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove outputs from any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowOutput.html"
       },
       "RemoveFlowSource": {
         "access_level": "Write",
@@ -227088,7 +227532,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove sources from any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowSource.html"
       },
       "RemoveFlowVpcInterface": {
         "access_level": "Write",
@@ -227096,7 +227540,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove VPC interfaces from any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces-vpcinterfacename.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowVpcInterface.html"
       },
       "RevokeFlowEntitlement": {
         "access_level": "Write",
@@ -227104,7 +227548,7 @@
         "condition_keys": [],
         "description": "Grants permission to revoke entitlements on any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RevokeFlowEntitlement.html"
       },
       "StartFlow": {
         "access_level": "Write",
@@ -227112,7 +227556,7 @@
         "condition_keys": [],
         "description": "Grants permission to start flows",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-start-flowarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartFlow.html"
       },
       "StopFlow": {
         "access_level": "Write",
@@ -227120,7 +227564,7 @@
         "condition_keys": [],
         "description": "Grants permission to stop flows",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-stop-flowarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopFlow.html"
       },
       "SubmitGatewayStateChange": {
         "access_level": "Write",
@@ -227128,7 +227572,7 @@
         "condition_keys": [],
         "description": "Grants permission to submit gateway state change",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_SubmitGatewayStateChange.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -227136,7 +227580,7 @@
         "condition_keys": [],
         "description": "Grants permission to associate tags with resources",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -227144,7 +227588,7 @@
         "condition_keys": [],
         "description": "Grants permission to remove tags from resources",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UntagResource.html"
       },
       "UpdateBridge": {
         "access_level": "Write",
@@ -227157,7 +227601,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridge.html"
       },
       "UpdateBridgeOutput": {
         "access_level": "Write",
@@ -227170,7 +227614,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeOutput.html"
       },
       "UpdateBridgeSource": {
         "access_level": "Write",
@@ -227183,7 +227627,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeSource.html"
       },
       "UpdateBridgeState": {
         "access_level": "Write",
@@ -227196,7 +227640,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-Bridge"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-state.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeState.html"
       },
       "UpdateFlow": {
         "access_level": "Write",
@@ -227204,7 +227648,7 @@
         "condition_keys": [],
         "description": "Grants permission to update flows",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlow.html"
       },
       "UpdateFlowEntitlement": {
         "access_level": "Write",
@@ -227212,7 +227656,7 @@
         "condition_keys": [],
         "description": "Grants permission to update entitlements on any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowEntitlement.html"
       },
       "UpdateFlowMediaStream": {
         "access_level": "Write",
@@ -227220,7 +227664,7 @@
         "condition_keys": [],
         "description": "Grants permission to update media streams on any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowMediaStream.html"
       },
       "UpdateFlowOutput": {
         "access_level": "Write",
@@ -227228,7 +227672,7 @@
         "condition_keys": [],
         "description": "Grants permission to update outputs on any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowOutput.html"
       },
       "UpdateFlowSource": {
         "access_level": "Write",
@@ -227236,7 +227680,7 @@
         "condition_keys": [],
         "description": "Grants permission to update the source of any flow",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowSource.html"
       },
       "UpdateGatewayInstance": {
         "access_level": "Write",
@@ -227249,7 +227693,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html#awselementalmediaconnect-GatewayInstance"
           }
         ],
-        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html"
+        "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateGatewayInstance.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html",
@@ -241864,6 +242308,19 @@
         ],
         "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_DeleteImageSet.html"
       },
+      "GetDICOMBulkdata": {
+        "access_level": "Read",
+        "action_name": "medical-imaging:GetDICOMBulkdata",
+        "condition_keys": [],
+        "description": "Grants permission to get dicom bulkdata in binary format",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMBulkdata.html"
+      },
       "GetDICOMImportJob": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMImportJob",
@@ -242112,6 +242569,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_StartDICOMImportJob.html"
+      },
+      "StoreDICOM": {
+        "access_level": "Write",
+        "action_name": "medical-imaging:StoreDICOM",
+        "condition_keys": [],
+        "description": "Grants permission to store dicom instances that returns result in DICOM JSON format",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOM.html"
+      },
+      "StoreDICOMStudy": {
+        "access_level": "Write",
+        "action_name": "medical-imaging:StoreDICOMStudy",
+        "condition_keys": [],
+        "description": "Grants permission to store a dicom study that returns result in DICOM JSON format",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOMStudy.html"
       },
       "TagResource": {
         "access_level": "Tagging",
