@@ -4780,7 +4780,7 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html"
       },
       "DescribeAppBlockBuilderAppBlockAssociations": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeAppBlockBuilderAppBlockAssociations",
         "condition_keys": [],
         "description": "Grants permission to retrieve the associations that are associated with the specified app block builder or app block",
@@ -4797,33 +4797,23 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilderAppBlockAssociations.html"
       },
       "DescribeAppBlockBuilders": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeAppBlockBuilders",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified app block builders, if the app block builder names are provided. Otherwise, all app block builders in the account are described",
-        "resource_types": [
-          {
-            "name": "app-block-builder",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-app-block-builder"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilders.html"
       },
       "DescribeAppBlocks": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeAppBlocks",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified app blocks, if the app block arns are provided. Otherwise, all app blocks in the account are described",
-        "resource_types": [
-          {
-            "name": "app-block",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-app-block"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlocks.html"
       },
       "DescribeApplicationFleetAssociations": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeApplicationFleetAssociations",
         "condition_keys": [],
         "description": "Grants permission to retrieve the associations that are associated with the specified application or fleet",
@@ -4840,20 +4830,15 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplicationFleetAssociations.html"
       },
       "DescribeApplications": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeApplications",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified applications, if the application arns are provided. Otherwise, all applications in the account are described",
-        "resource_types": [
-          {
-            "name": "application",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-application"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplications.html"
       },
       "DescribeDirectoryConfigs": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeDirectoryConfigs",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
@@ -4861,7 +4846,7 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeDirectoryConfigs.html"
       },
       "DescribeEntitlements": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeEntitlements",
         "condition_keys": [],
         "description": "Grants permission to retrieve one or all entitlements for the specified stack",
@@ -4874,29 +4859,19 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeEntitlements.html"
       },
       "DescribeFleets": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeFleets",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described",
-        "resource_types": [
-          {
-            "name": "fleet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-fleet"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html"
       },
       "DescribeImageBuilders": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeImageBuilders",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described",
-        "resource_types": [
-          {
-            "name": "image-builder",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-image-builder"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImageBuilders.html"
       },
       "DescribeImagePermissions": {
@@ -4913,20 +4888,15 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImagePermissions.html"
       },
       "DescribeImages": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeImages",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described",
-        "resource_types": [
-          {
-            "name": "image",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-image"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImages.html"
       },
       "DescribeSessions": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeSessions",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes the streaming sessions for the specified stack and fleet. If a user ID is provided for the stack and fleet, only the streaming sessions for that user are described",
@@ -4943,16 +4913,11 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSessions.html"
       },
       "DescribeStacks": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeStacks",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described",
-        "resource_types": [
-          {
-            "name": "stack",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html#amazonappstream2.0-stack"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeStacks.html"
       },
       "DescribeThemeForStack": {
@@ -4969,7 +4934,7 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeThemeForStack.html"
       },
       "DescribeUsageReportSubscriptions": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeUsageReportSubscriptions",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes one or more usage report subscriptions",
@@ -4977,7 +4942,7 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsageReportSubscriptions.html"
       },
       "DescribeUserStackAssociations": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeUserStackAssociations",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes the UserStackAssociation objects",
@@ -4990,7 +4955,7 @@
         "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUserStackAssociations.html"
       },
       "DescribeUsers": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "appstream:DescribeUsers",
         "condition_keys": [],
         "description": "Grants permission to retrieve a list that describes users in the user pool",
@@ -6621,7 +6586,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "GetCluster": {
         "access_level": "Read",
@@ -6647,7 +6612,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "GetVpcEndpointServiceName": {
         "access_level": "Read",
@@ -6738,7 +6703,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "StartRestoreJob": {
         "access_level": "Write",
@@ -6751,7 +6716,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "StopBackupJob": {
         "access_level": "Write",
@@ -6764,7 +6729,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "StopRestoreJob": {
         "access_level": "Write",
@@ -6777,7 +6742,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-restore.html"
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -75604,8 +75569,8 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTagKeys"
           },
           {
-            "name": "imagebuilder:CreatedResourceTag/<key>",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTag_key"
+            "name": "imagebuilder:CreatedResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTag___TagKey_"
           },
           {
             "name": "imagebuilder:Ec2MetadataHttpTokens",
@@ -75858,12 +75823,7 @@
       "GetImage": {
         "access_level": "Read",
         "action_name": "imagebuilder:GetImage",
-        "condition_keys": [
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to view details about an image",
         "resource_types": [
           {
@@ -76089,8 +76049,8 @@
         "description": "Grants permission to list the component build versions in your account",
         "resource_types": [
           {
-            "name": "componentVersion*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-componentVersion"
+            "name": "allComponentBuildVersions*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-allComponentBuildVersions"
           }
         ],
         "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponentBuildVersions.html"
@@ -76126,8 +76086,8 @@
         "description": "Grants permission to list the image build versions in your account",
         "resource_types": [
           {
-            "name": "imageVersion*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imageVersion"
+            "name": "allImageBuildVersions*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-allImageBuildVersions"
           }
         ],
         "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageBuildVersions.html"
@@ -76135,12 +76095,7 @@
       "ListImagePackages": {
         "access_level": "List",
         "action_name": "imagebuilder:ListImagePackages",
-        "condition_keys": [
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to return a list of packages installed on the specified image",
         "resource_types": [
           {
@@ -76270,44 +76225,7 @@
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "imagebuilder:ListTagsForResource",
-        "condition_keys": [
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to list tags for an Image Builder resource",
         "resource_types": [
           {
@@ -76364,8 +76282,8 @@
         "description": "Grants permission to list the workflow build versions in your account",
         "resource_types": [
           {
-            "name": "workflowVersion*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-workflowVersion"
+            "name": "allWorkflowBuildVersions*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-allWorkflowBuildVersions"
           }
         ],
         "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowBuildVersions.html"
@@ -76510,106 +76428,6 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to tag an Image Builder resource",
@@ -76657,74 +76475,6 @@
         "access_level": "Tagging",
         "action_name": "imagebuilder:UntagResource",
         "condition_keys": [
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
@@ -76802,16 +76552,12 @@
         "action_name": "imagebuilder:UpdateInfrastructureConfiguration",
         "condition_keys": [
           {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_ResourceTag___TagKey_"
-          },
-          {
             "name": "imagebuilder:CreatedResourceTagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTagKeys"
           },
           {
-            "name": "imagebuilder:CreatedResourceTag/<key>",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTag_key"
+            "name": "imagebuilder:CreatedResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-imagebuilder_CreatedResourceTag___TagKey_"
           },
           {
             "name": "imagebuilder:Ec2MetadataHttpTokens",
@@ -85435,6 +85181,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html"
+      },
+      "AllowVendedLogDeliveryForResource": {
+        "access_level": "Write",
+        "action_name": "events:AllowVendedLogDeliveryForResource",
+        "condition_keys": [],
+        "description": "Grants permission to configure vended log delivery for EventBridge",
+        "resource_types": [
+          {
+            "name": "event-bus*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridge.html#amazoneventbridge-event-bus"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html"
       },
       "CancelReplay": {
         "access_level": "Write",
@@ -154962,7 +154721,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateIndex.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateIndex.html"
       },
       "CreateVectorBucket": {
         "access_level": "Write",
@@ -154984,7 +154743,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateVectorBucket.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateVectorBucket.html"
       },
       "DeleteIndex": {
         "access_level": "Write",
@@ -154997,7 +154756,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteIndex.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteIndex.html"
       },
       "DeleteVectorBucket": {
         "access_level": "Write",
@@ -155010,7 +154769,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucket.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucket.html"
       },
       "DeleteVectorBucketPolicy": {
         "access_level": "Permissions management",
@@ -155023,7 +154782,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucketPolicy.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucketPolicy.html"
       },
       "DeleteVectors": {
         "access_level": "Write",
@@ -155036,7 +154795,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectors.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectors.html"
       },
       "GetIndex": {
         "access_level": "Read",
@@ -155049,7 +154808,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetIndex.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetIndex.html"
       },
       "GetVectorBucket": {
         "access_level": "Read",
@@ -155062,7 +154821,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucket.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucket.html"
       },
       "GetVectorBucketPolicy": {
         "access_level": "Read",
@@ -155075,7 +154834,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucketPolicy.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucketPolicy.html"
       },
       "GetVectors": {
         "access_level": "Read",
@@ -155088,7 +154847,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectors.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectors.html"
       },
       "ListIndexes": {
         "access_level": "List",
@@ -155101,7 +154860,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListIndexes.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListIndexes.html"
       },
       "ListVectorBuckets": {
         "access_level": "List",
@@ -155109,7 +154868,7 @@
         "condition_keys": [],
         "description": "Grants permission to get a paginated list of all vector buckets in the account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectorBuckets.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectorBuckets.html"
       },
       "ListVectors": {
         "access_level": "List",
@@ -155122,7 +154881,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectors.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectors.html"
       },
       "PutVectorBucketPolicy": {
         "access_level": "Permissions management",
@@ -155135,7 +154894,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-VectorBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectorBucketPolicy.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketPolicy.html"
       },
       "PutVectors": {
         "access_level": "Write",
@@ -155148,7 +154907,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectors.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectors.html"
       },
       "QueryVectors": {
         "access_level": "Read",
@@ -155161,7 +154920,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html#amazons3vectors-Index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueryVectors.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_QueryVectors.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3vectors.html",
@@ -176329,6 +176088,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html"
       },
+      "CreateRootClientCertificate": {
+        "access_level": "Write",
+        "action_name": "workspaces:CreateRootClientCertificate",
+        "condition_keys": [],
+        "description": "Grants permission to create a root client certificate",
+        "resource_types": [
+          {
+            "name": "certificateid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+      },
       "CreateStandbyWorkspaces": {
         "access_level": "Write",
         "action_name": "workspaces:CreateStandbyWorkspaces",
@@ -176562,6 +176334,19 @@
         ],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html"
       },
+      "DeleteRootClientCertificate": {
+        "access_level": "Write",
+        "action_name": "workspaces:DeleteRootClientCertificate",
+        "condition_keys": [],
+        "description": "Grants permission to delete root client certificate",
+        "resource_types": [
+          {
+            "name": "certificateid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+      },
       "DeleteTags": {
         "access_level": "Tagging",
         "action_name": "workspaces:DeleteTags",
@@ -176787,6 +176572,19 @@
         ],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html"
       },
+      "DescribeRootClientCertificates": {
+        "access_level": "List",
+        "action_name": "workspaces:DescribeRootClientCertificates",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information for root client certificates",
+        "resource_types": [
+          {
+            "name": "certificateid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+      },
       "DescribeTags": {
         "access_level": "Read",
         "action_name": "workspaces:DescribeTags",
@@ -176899,6 +176697,19 @@
         "description": "Grants permission to retrieve information about WorkSpaces Pools",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPools.html"
+      },
+      "DirectoryAccessManagement": {
+        "access_level": "List",
+        "action_name": "workspaces:DirectoryAccessManagement",
+        "condition_keys": [],
+        "description": "Grants permission to directory management actions while managing and provisioning workspaces",
+        "resource_types": [
+          {
+            "name": "directoryid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-directoryid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
       },
       "DisassociateConnectionAlias": {
         "access_level": "Write",
@@ -177363,6 +177174,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateConnectionAliasPermission.html"
+      },
+      "UpdateRootClientCertificate": {
+        "access_level": "Write",
+        "action_name": "workspaces:UpdateRootClientCertificate",
+        "condition_keys": [],
+        "description": "Grants permission to update a root client certificate",
+        "resource_types": [
+          {
+            "name": "certificateid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
       },
       "UpdateRulesOfIpGroup": {
         "access_level": "Write",
@@ -196293,6 +196117,19 @@
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
       },
+      "UpdateConfiguredTableAllowedColumns": {
+        "access_level": "Write",
+        "action_name": "cleanrooms:UpdateConfiguredTableAllowedColumns",
+        "condition_keys": [],
+        "description": "Grants permission to update the allowed columns of an existing configured table",
+        "resource_types": [
+          {
+            "name": "configuredtable*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-configuredtable"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
+      },
       "UpdateConfiguredTableAnalysisRule": {
         "access_level": "Write",
         "action_name": "cleanrooms:UpdateConfiguredTableAnalysisRule",
@@ -196331,6 +196168,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAssociationAnalysisRule.html"
+      },
+      "UpdateConfiguredTableReference": {
+        "access_level": "Write",
+        "action_name": "cleanrooms:UpdateConfiguredTableReference",
+        "condition_keys": [],
+        "description": "Grants permission to update the table reference of an existing configured table",
+        "resource_types": [
+          {
+            "name": "configuredtable*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-configuredtable"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
       },
       "UpdateIdMappingTable": {
         "access_level": "Write",
@@ -213050,12 +212900,7 @@
         "action_name": "dms:ListDataProviders",
         "condition_keys": [],
         "description": "Grants permission to list the AWS DMS attributes for a data providers",
-        "resource_types": [
-          {
-            "name": "DataProvider",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-DataProvider"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeDataProviders.html"
       },
       "ListExtensionPacks": {
@@ -216101,7 +215946,16 @@
       "CreateMonitor": {
         "access_level": "Write",
         "action_name": "deadline:CreateMonitor",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a monitor",
         "resource_types": [
           {
@@ -217145,6 +216999,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           },
           {
+            "name": "monitor",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
+          },
+          {
             "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           },
@@ -217303,6 +217161,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           },
           {
+            "name": "monitor",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
+          },
+          {
             "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           },
@@ -217335,6 +217197,10 @@
           {
             "name": "license-endpoint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
+          },
+          {
+            "name": "monitor",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
           },
           {
             "name": "queue",
@@ -260117,6 +259983,32 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateBulkImportJob.html"
       },
+      "CreateComputationModel": {
+        "access_level": "Write",
+        "action_name": "iotsitewise:CreateComputationModel",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a computation model",
+        "resource_types": [
+          {
+            "name": "asset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "asset-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html"
+      },
       "CreateDashboard": {
         "access_level": "Write",
         "action_name": "iotsitewise:CreateDashboard",
@@ -260264,6 +260156,19 @@
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelCompositeModel.html"
       },
+      "DeleteComputationModel": {
+        "access_level": "Write",
+        "action_name": "iotsitewise:DeleteComputationModel",
+        "condition_keys": [],
+        "description": "Grants permission to delete a computation model",
+        "resource_types": [
+          {
+            "name": "computation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteComputationModel.html"
+      },
       "DeleteDashboard": {
         "access_level": "Write",
         "action_name": "iotsitewise:DeleteDashboard",
@@ -260368,6 +260273,10 @@
           {
             "name": "asset",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
           }
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAction.html"
@@ -260445,6 +260354,36 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeBulkImportJob.html"
       },
+      "DescribeComputationModel": {
+        "access_level": "Read",
+        "action_name": "iotsitewise:DescribeComputationModel",
+        "condition_keys": [],
+        "description": "Grants permission to describe a computation model",
+        "resource_types": [
+          {
+            "name": "computation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModel.html"
+      },
+      "DescribeComputationModelExecutionSummary": {
+        "access_level": "Read",
+        "action_name": "iotsitewise:DescribeComputationModelExecutionSummary",
+        "condition_keys": [],
+        "description": "Grants permission to describe computation model execution summary",
+        "resource_types": [
+          {
+            "name": "computation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          },
+          {
+            "name": "asset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModelExecutionSummary.html"
+      },
       "DescribeDashboard": {
         "access_level": "Read",
         "action_name": "iotsitewise:DescribeDashboard",
@@ -260478,6 +260417,14 @@
         "description": "Grants permission to describe the default encryption configuration for the AWS account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDefaultEncryptionConfiguration.html"
+      },
+      "DescribeExecution": {
+        "access_level": "Read",
+        "action_name": "iotsitewise:DescribeExecution",
+        "condition_keys": [],
+        "description": "Grants permission to describe an execution",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeExecution.html"
       },
       "DescribeGateway": {
         "access_level": "Read",
@@ -260620,6 +260567,10 @@
           {
             "name": "asset",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
           }
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ExecuteAction.html"
@@ -260734,6 +260685,10 @@
           {
             "name": "asset",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
           }
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListActions.html"
@@ -260845,6 +260800,44 @@
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListCompositionRelationships.html"
       },
+      "ListComputationModelDataBindingUsages": {
+        "access_level": "List",
+        "action_name": "iotsitewise:ListComputationModelDataBindingUsages",
+        "condition_keys": [],
+        "description": "Grants permission to list computation model data binding usages",
+        "resource_types": [
+          {
+            "name": "asset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "asset-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelDataBindingUsages.html"
+      },
+      "ListComputationModelResolveToResources": {
+        "access_level": "List",
+        "action_name": "iotsitewise:ListComputationModelResolveToResources",
+        "condition_keys": [],
+        "description": "Grants permission to list computation model resolve to resources",
+        "resource_types": [
+          {
+            "name": "computation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelResolveToResources.html"
+      },
+      "ListComputationModels": {
+        "access_level": "List",
+        "action_name": "iotsitewise:ListComputationModels",
+        "condition_keys": [],
+        "description": "Grants permission to list all computation models",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModels.html"
+      },
       "ListDashboards": {
         "access_level": "List",
         "action_name": "iotsitewise:ListDashboards",
@@ -260865,6 +260858,23 @@
         "description": "Grants permission to list all datasets",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasets.html"
+      },
+      "ListExecutions": {
+        "access_level": "List",
+        "action_name": "iotsitewise:ListExecutions",
+        "condition_keys": [],
+        "description": "Grants permission to list executions",
+        "resource_types": [
+          {
+            "name": "asset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListExecutions.html"
       },
       "ListGateways": {
         "access_level": "List",
@@ -260930,6 +260940,10 @@
           {
             "name": "asset-model",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
           },
           {
             "name": "dashboard",
@@ -261023,6 +261037,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
           },
           {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          },
+          {
             "name": "dashboard",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-dashboard"
           },
@@ -261071,6 +261089,10 @@
           {
             "name": "asset-model",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
+          },
+          {
+            "name": "computation-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
           },
           {
             "name": "dashboard",
@@ -261176,6 +261198,27 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html"
+      },
+      "UpdateComputationModel": {
+        "access_level": "Write",
+        "action_name": "iotsitewise:UpdateComputationModel",
+        "condition_keys": [],
+        "description": "Grants permission to update a computation model",
+        "resource_types": [
+          {
+            "name": "computation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-computation-model"
+          },
+          {
+            "name": "asset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset"
+          },
+          {
+            "name": "asset-model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html#awsiotsitewise-asset-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateComputationModel.html"
       },
       "UpdateDashboard": {
         "access_level": "Write",
@@ -291382,7 +291425,7 @@
         "condition_keys": [],
         "description": "Grants permission to register the Amazon Web Services Marketplace token for your Amazon Web Services account to activate your Oracle Database@Amazon Web Services subscription",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_AcceptMarketplaceRegistration.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html"
       },
       "CreateCloudAutonomousVmCluster": {
         "access_level": "Write",
@@ -291408,7 +291451,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudAutonomousVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudAutonomousVmCluster.html"
       },
       "CreateCloudExadataInfrastructure": {
         "access_level": "Write",
@@ -291425,7 +291468,7 @@
         ],
         "description": "Grants permission to create an Exadata infrastructure",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudExadataInfrastructure.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudExadataInfrastructure.html"
       },
       "CreateCloudVmCluster": {
         "access_level": "Write",
@@ -291451,7 +291494,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudVmCluster.html"
       },
       "CreateDbNode": {
         "access_level": "Write",
@@ -291464,7 +291507,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateDbNode.html"
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateDbNode.html"
       },
       "CreateOdbNetwork": {
         "access_level": "Write",
@@ -291481,7 +291524,7 @@
         ],
         "description": "Grants permission to create an ODB network",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbNetwork.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbNetwork.html"
       },
       "CreateOdbPeeringConnection": {
         "access_level": "Write",
@@ -291503,7 +291546,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbPeeringConnection.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbPeeringConnection.html"
       },
       "CreateOutboundIntegration": {
         "access_level": "Write",
@@ -291533,7 +291576,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudAutonomousVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudAutonomousVmCluster.html"
       },
       "DeleteCloudExadataInfrastructure": {
         "access_level": "Write",
@@ -291546,7 +291589,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudExadataInfrastructure.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudExadataInfrastructure.html"
       },
       "DeleteCloudVmCluster": {
         "access_level": "Write",
@@ -291559,7 +291602,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudVmCluster.html"
       },
       "DeleteDbNode": {
         "access_level": "Write",
@@ -291585,7 +291628,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbNetwork.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbNetwork.html"
       },
       "DeleteOdbPeeringConnection": {
         "access_level": "Write",
@@ -291598,7 +291641,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbPeeringConnection.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbPeeringConnection.html"
       },
       "DeleteResourcePolicy": {
         "access_level": "Write",
@@ -291628,7 +291671,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudAutonomousVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudAutonomousVmCluster.html"
       },
       "GetCloudExadataInfrastructure": {
         "access_level": "Read",
@@ -291641,7 +291684,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructure.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructure.html"
       },
       "GetCloudExadataInfrastructureUnallocatedResources": {
         "access_level": "Read",
@@ -291654,7 +291697,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructureUnallocatedResources.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructureUnallocatedResources.html"
       },
       "GetCloudVmCluster": {
         "access_level": "Read",
@@ -291667,7 +291710,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudVmCluster.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudVmCluster.html"
       },
       "GetDbNode": {
         "access_level": "Read",
@@ -291684,7 +291727,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbNode.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbNode.html"
       },
       "GetDbServer": {
         "access_level": "Read",
@@ -291697,7 +291740,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbServer.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbServer.html"
       },
       "GetOciOnboardingStatus": {
         "access_level": "Read",
@@ -291705,7 +291748,7 @@
         "condition_keys": [],
         "description": "Grants permission to get the tenancy activation link and onboarding status for your Amazon Web Services account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOciOnboardingStatus.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOciOnboardingStatus.html"
       },
       "GetOdbNetwork": {
         "access_level": "Read",
@@ -291718,7 +291761,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbNetwork.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbNetwork.html"
       },
       "GetOdbPeeringConnection": {
         "access_level": "Read",
@@ -291731,10 +291774,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbPeeringConnection.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbPeeringConnection.html"
       },
       "GetResourcePolicy": {
-        "access_level": "Write",
+        "access_level": "Read",
         "action_name": "odb:GetResourcePolicy",
         "condition_keys": [],
         "description": "Grants permission to get a resource policy",
@@ -291756,7 +291799,7 @@
         "condition_keys": [],
         "description": "Grants permission to initialize the ODB service for the first time in an account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_InitializeService.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_InitializeService.html"
       },
       "ListAutonomousVirtualMachines": {
         "access_level": "Read",
@@ -291769,7 +291812,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListAutonomousVirtualMachines.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousVirtualMachines.html"
       },
       "ListCloudAutonomousVmClusters": {
         "access_level": "List",
@@ -291782,7 +291825,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudAutonomousVmClusters.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudAutonomousVmClusters.html"
       },
       "ListCloudExadataInfrastructures": {
         "access_level": "List",
@@ -291790,7 +291833,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information about the Exadata infrastructures owned by your Amazon Web Services account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudExadataInfrastructures.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudExadataInfrastructures.html"
       },
       "ListCloudVmClusters": {
         "access_level": "List",
@@ -291803,7 +291846,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudVmClusters.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudVmClusters.html"
       },
       "ListDbNodes": {
         "access_level": "List",
@@ -291816,7 +291859,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbNodes.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbNodes.html"
       },
       "ListDbServers": {
         "access_level": "Read",
@@ -291829,7 +291872,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbServers.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbServers.html"
       },
       "ListDbSystemShapes": {
         "access_level": "Read",
@@ -291837,7 +291880,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information about the shapes that are available for an Exadata infrastructure",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbSystemShapes.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbSystemShapes.html"
       },
       "ListGiVersions": {
         "access_level": "Read",
@@ -291845,7 +291888,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information about Oracle Grid Infrastructure (GI) software versions that are available for a VM cluster for the specified shape",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListGiVersions.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiVersions.html"
       },
       "ListOdbNetworks": {
         "access_level": "List",
@@ -291853,7 +291896,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information about the ODB networks owned by your Amazon Web Services account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbNetworks.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbNetworks.html"
       },
       "ListOdbPeeringConnections": {
         "access_level": "List",
@@ -291866,7 +291909,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbPeeringConnections.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbPeeringConnections.html"
       },
       "ListSystemVersions": {
         "access_level": "Read",
@@ -291874,7 +291917,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information about the system versions that are available for a VM cluster for the specified giVersion and shape",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListSystemVersions.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListSystemVersions.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -291912,7 +291955,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListTagsForResource.html"
       },
       "PutResourcePolicy": {
         "access_level": "Write",
@@ -291932,7 +291975,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_PutResourcePolicy.html"
       },
       "RebootDbNode": {
-        "access_level": "Read",
+        "access_level": "Write",
         "action_name": "odb:RebootDbNode",
         "condition_keys": [],
         "description": "Grants permission to reboot the specified DB node in a VM cluster",
@@ -291946,10 +291989,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_RebootDbNode.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootDbNode.html"
       },
       "StartDbNode": {
-        "access_level": "Read",
+        "access_level": "Write",
         "action_name": "odb:StartDbNode",
         "condition_keys": [],
         "description": "Grants permission to start the specified DB node in a VM cluster",
@@ -291963,10 +292006,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-db-node"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StartDbNode.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StartDbNode.html"
       },
       "StopDbNode": {
-        "access_level": "Read",
+        "access_level": "Write",
         "action_name": "odb:StopDbNode",
         "condition_keys": [],
         "description": "Grants permission to stop the specified DB node in a VM cluster",
@@ -291976,7 +292019,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_StopDbNode.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StopDbNode.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -292022,7 +292065,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -292064,7 +292107,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UntagResource.html"
       },
       "UpdateCloudExadataInfrastructure": {
         "access_level": "Write",
@@ -292077,7 +292120,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-exadata-infrastructure"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateCloudExadataInfrastructure.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html"
       },
       "UpdateOdbNetwork": {
         "access_level": "Write",
@@ -292090,7 +292133,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-network"
           }
         ],
-        "url": "https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateOdbNetwork.html"
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html",
