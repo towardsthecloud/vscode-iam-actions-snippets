@@ -32084,6 +32084,28 @@
         ],
         "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html"
       },
+      "GetContactMetrics": {
+        "access_level": "Read",
+        "action_name": "connect:GetContactMetrics",
+        "condition_keys": [
+          {
+            "name": "connect:InstanceId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
+          }
+        ],
+        "description": "Grants permission to get contact metrics in an Amazon Connect instance",
+        "resource_types": [
+          {
+            "name": "contact*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-contact"
+          },
+          {
+            "name": "instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactMetrics.html"
+      },
       "GetCurrentMetricData": {
         "access_level": "Read",
         "action_name": "connect:GetCurrentMetricData",
@@ -36075,6 +36097,23 @@
         ],
         "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateTemplate.html"
       },
+      "DeleteCase": {
+        "access_level": "Write",
+        "action_name": "cases:DeleteCase",
+        "condition_keys": [],
+        "description": "Grants permission to delete the case in the case domain",
+        "resource_types": [
+          {
+            "name": "Case*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-Case"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteCase.html"
+      },
       "DeleteCaseRule": {
         "access_level": "Write",
         "action_name": "cases:DeleteCaseRule",
@@ -36143,7 +36182,7 @@
         "access_level": "Write",
         "action_name": "cases:DeleteRelatedItem",
         "condition_keys": [],
-        "description": "Grants permission to delete a related item associated to a case in the case domain",
+        "description": "Grants permission to delete the related item associated to the case in the case domain",
         "resource_types": [
           {
             "name": "Case*",
@@ -133515,6 +133554,10 @@
           {
             "name": "rds:ManageMasterUserPassword",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_ManageMasterUserPassword"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to create a new DB instance",
@@ -133561,6 +133604,10 @@
           {
             "name": "rds:req-tag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_req-tag___TagKey_"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to create a DB instance that acts as a Read Replica of a source DB instance",
@@ -133694,6 +133741,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-aws_TagKeys"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to create a new Aurora Limitless Database DB shard group",
@@ -135856,6 +135907,10 @@
           {
             "name": "rds:ManageMasterUserPassword",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_ManageMasterUserPassword"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to create a new DB instance from a DB snapshot",
@@ -135906,6 +135961,10 @@
           {
             "name": "rds:ManageMasterUserPassword",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_ManageMasterUserPassword"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to create a new DB instance from an Amazon S3 bucket",
@@ -135956,6 +136015,10 @@
           {
             "name": "rds:ManageMasterUserPassword",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_ManageMasterUserPassword"
+          },
+          {
+            "name": "rds:PubliclyAccessible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_PubliclyAccessible"
           }
         ],
         "description": "Grants permission to restore a DB instance to an arbitrary point in time",
@@ -160704,6 +160767,19 @@
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeProject.html"
       },
+      "DescribeReservedCapacity": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeReservedCapacity",
+        "condition_keys": [],
+        "description": "Grants permission to return information about a specified Reserved Capacity",
+        "resource_types": [
+          {
+            "name": "reserved-capacity*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-reserved-capacity"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeReservedCapacity.html"
+      },
       "DescribeSharedModel": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribeSharedModel",
@@ -162090,6 +162166,19 @@
         "description": "Grants permission to list trials",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html"
+      },
+      "ListUltraServersByReservedCapacity": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListUltraServersByReservedCapacity",
+        "condition_keys": [],
+        "description": "Grants permission to list all UltraServers in a specified Reserved Capacity",
+        "resource_types": [
+          {
+            "name": "reserved-capacity*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-reserved-capacity"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListUltraServersByReservedCapacity.html"
       },
       "ListUserProfiles": {
         "access_level": "List",
@@ -199515,6 +199604,23 @@
         "description": "Grants permission to return a list of trained model inference jobs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelInferenceJobs.html"
+      },
+      "ListTrainedModelVersions": {
+        "access_level": "List",
+        "action_name": "cleanrooms-ml:ListTrainedModelVersions",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanroomsml.html#awscleanroomsml-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanroomsml.html#awscleanroomsml-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to return a list of trained model versions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelVersions.html"
       },
       "ListTrainedModels": {
         "access_level": "List",
@@ -247867,6 +247973,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
       },
+      "GetApplicationSessionConfiguration": {
+        "access_level": "Read",
+        "action_name": "sso:GetApplicationSessionConfiguration",
+        "condition_keys": [
+          {
+            "name": "sso:ApplicationAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html#awsiamidentitycenter-sso_ApplicationAccount"
+          }
+        ],
+        "description": "Grants permission to get session configuration for an application",
+        "resource_types": [
+          {
+            "name": "Application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html#awsiamidentitycenter-Application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationSessionConfiguration.html"
+      },
       "GetApplicationTemplate": {
         "access_level": "Read",
         "action_name": "sso:GetApplicationTemplate",
@@ -248440,6 +248564,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationGrant.html"
+      },
+      "PutApplicationSessionConfiguration": {
+        "access_level": "Write",
+        "action_name": "sso:PutApplicationSessionConfiguration",
+        "condition_keys": [
+          {
+            "name": "sso:ApplicationAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html#awsiamidentitycenter-sso_ApplicationAccount"
+          }
+        ],
+        "description": "Grants permission to put session configuration for an application",
+        "resource_types": [
+          {
+            "name": "Application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html#awsiamidentitycenter-Application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationSessionConfiguration.html"
       },
       "PutInlinePolicyToPermissionSet": {
         "access_level": "Write",
@@ -253978,6 +254120,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCommandExecution.html"
+      },
+      "DeleteConnection": {
+        "access_level": "Write",
+        "action_name": "iot:DeleteConnection",
+        "condition_keys": [],
+        "description": "Grants permission to disconnect the specified connection",
+        "resource_types": [
+          {
+            "name": "client*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-client"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
       },
       "DeleteCustomMetric": {
         "access_level": "Write",
@@ -280799,6 +280954,19 @@
         ],
         "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html"
       },
+      "GetOutpostBillingInformation": {
+        "access_level": "Read",
+        "action_name": "outposts:GetOutpostBillingInformation",
+        "condition_keys": [],
+        "description": "Grants permission to get Outpost billing information for the specified Outpost",
+        "resource_types": [
+          {
+            "name": "outpost*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html#awsoutposts-outpost"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostBillingInformation.html"
+      },
       "GetOutpostInstanceTypes": {
         "access_level": "Read",
         "action_name": "outposts:GetOutpostInstanceTypes",
@@ -292601,7 +292769,12 @@
           }
         ],
         "description": "Grants permission to create a case",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "case*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityincidentresponse.html#awssecurityincidentresponse-case"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateCase.html"
       },
       "CreateCaseComment": {
@@ -292631,7 +292804,12 @@
           }
         ],
         "description": "Grants permission to create a membership",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "membership*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityincidentresponse.html#awssecurityincidentresponse-membership"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateMembership.html"
       },
       "GetCase": {
