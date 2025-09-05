@@ -1331,6 +1331,14 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_DeleteInvestigationGroupPolicy.html"
       },
+      "GetEphemeralInvestigationResults": {
+        "access_level": "List",
+        "action_name": "aiops:GetEphemeralInvestigationResults",
+        "condition_keys": [],
+        "description": "Grants permission to run and retrieve ephemeral investigation results",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetEphemeralInvestigationResults.html"
+      },
       "GetInvestigation": {
         "access_level": "Read",
         "action_name": "aiops:GetInvestigation",
@@ -7392,6 +7400,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new automated reasoning policy",
@@ -7422,6 +7434,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new automated reasoning policy version",
@@ -7474,6 +7490,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom model into Bedrock",
@@ -7491,6 +7511,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom model deployment for custom model",
@@ -7548,6 +7572,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for evaluation foundation models or custom models",
@@ -7642,6 +7670,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new guardrail",
@@ -7753,6 +7785,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for copying a custom model across region or across account",
@@ -7775,6 +7811,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for customizing the model with your custom training data",
@@ -7801,6 +7841,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for evaluation foundation models or custom models",
@@ -7827,6 +7871,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for importing model into Bedrock",
@@ -7844,6 +7892,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new model invocation job",
@@ -7891,6 +7943,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom prompt router",
@@ -7943,6 +7999,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new provisioned model throughput",
@@ -9261,6 +9321,10 @@
           {
             "name": "bedrock:GuardrailIdentifier",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_GuardrailIdentifier"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to invoke the specified Bedrock model to run inference using the input provided in the request body",
@@ -9323,6 +9387,10 @@
           {
             "name": "bedrock:GuardrailIdentifier",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_GuardrailIdentifier"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to invoke the specified Bedrock model to run inference using the input provided in the request body with streaming response",
@@ -10233,6 +10301,10 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to Tag a Bedrock resource",
@@ -10355,6 +10427,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          },
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to Untag a Bedrock resource",
@@ -95723,7 +95799,7 @@
         "access_level": "Write",
         "action_name": "groundtruthlabeling:CreateBatch",
         "condition_keys": [],
-        "description": "Grants permission to create a GT  Batch",
+        "description": "Grants permission to create a GT+ Batch",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95739,7 +95815,7 @@
         "access_level": "Write",
         "action_name": "groundtruthlabeling:CreateProject",
         "condition_keys": [],
-        "description": "Grants permission to create a GT  Project",
+        "description": "Grants permission to create a GT+ Project",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95747,7 +95823,7 @@
         "access_level": "Write",
         "action_name": "groundtruthlabeling:CreateWorkflowDefinition",
         "condition_keys": [],
-        "description": "Grants permission to create a GT  Workflow Definition",
+        "description": "Grants permission to create a GT+ Workflow Definition",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95771,7 +95847,7 @@
         "access_level": "Read",
         "action_name": "groundtruthlabeling:GetBatch",
         "condition_keys": [],
-        "description": "Grants permission to get a GT  Batch",
+        "description": "Grants permission to get a GT+ Batch",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95787,7 +95863,7 @@
         "access_level": "Read",
         "action_name": "groundtruthlabeling:ListBatches",
         "condition_keys": [],
-        "description": "Grants permission to list a GT  Batchs",
+        "description": "Grants permission to list a GT+ Batchs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95803,7 +95879,7 @@
         "access_level": "Read",
         "action_name": "groundtruthlabeling:ListProjects",
         "condition_keys": [],
-        "description": "Grants permission to list a GT  Projects",
+        "description": "Grants permission to list a GT+ Projects",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       },
@@ -95835,7 +95911,7 @@
         "access_level": "Write",
         "action_name": "groundtruthlabeling:UpdateBatch",
         "condition_keys": [],
-        "description": "Grants permission to update a GT  Batch",
+        "description": "Grants permission to update a GT+ Batch",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
       }
@@ -116896,6 +116972,19 @@
         ],
         "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get"
       },
+      "UpdateBrokerAccessConfiguration": {
+        "access_level": "Write",
+        "action_name": "mq:UpdateBrokerAccessConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to update RabbitMQ broker authentication and authorization configuration",
+        "resource_types": [
+          {
+            "name": "brokers*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html#amazonmq-brokers"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${AuthZDocPage}#security-api-permissions-reference"
+      },
       "UpdateConfiguration": {
         "access_level": "Write",
         "action_name": "mq:UpdateConfiguration",
@@ -117990,6 +118079,24 @@
         ],
         "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartExportTask.html"
       },
+      "StartGraph": {
+        "access_level": "Write",
+        "action_name": "neptune-graph:StartGraph",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonneptuneanalytics.html#amazonneptuneanalytics-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to start a graph",
+        "resource_types": [
+          {
+            "name": "graph*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonneptuneanalytics.html#amazonneptuneanalytics-graph"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartGraph.html"
+      },
       "StartImportTask": {
         "access_level": "Write",
         "action_name": "neptune-graph:StartImportTask",
@@ -118006,6 +118113,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartImportTask.html"
+      },
+      "StopGraph": {
+        "access_level": "Write",
+        "action_name": "neptune-graph:StopGraph",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonneptuneanalytics.html#amazonneptuneanalytics-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to stop a graph",
+        "resource_types": [
+          {
+            "name": "graph*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonneptuneanalytics.html#amazonneptuneanalytics-graph"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StopGraph.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -197665,6 +197790,32 @@
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaboration.html"
       },
+      "CreateCollaborationChangeRequest": {
+        "access_level": "Write",
+        "action_name": "cleanrooms:CreateCollaborationChangeRequest",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a change request in a collaboration",
+        "resource_types": [
+          {
+            "name": "collaboration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-collaboration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaborationChangeRequest.html"
+      },
       "CreateConfiguredAudienceModelAssociation": {
         "access_level": "Write",
         "action_name": "cleanrooms:CreateConfiguredAudienceModelAssociation",
@@ -198205,6 +198356,19 @@
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationAnalysisTemplate.html"
       },
+      "GetCollaborationChangeRequest": {
+        "access_level": "Read",
+        "action_name": "cleanrooms:GetCollaborationChangeRequest",
+        "condition_keys": [],
+        "description": "Grants permission to get a change request in a collaboration",
+        "resource_types": [
+          {
+            "name": "collaboration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-collaboration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationChangeRequest.html"
+      },
       "GetCollaborationConfiguredAudienceModelAssociation": {
         "access_level": "Read",
         "action_name": "cleanrooms:GetCollaborationConfiguredAudienceModelAssociation",
@@ -198470,6 +198634,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationAnalysisTemplates.html"
+      },
+      "ListCollaborationChangeRequests": {
+        "access_level": "List",
+        "action_name": "cleanrooms:ListCollaborationChangeRequests",
+        "condition_keys": [],
+        "description": "Grants permission to list change requests in a collaboration",
+        "resource_types": [
+          {
+            "name": "collaboration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-collaboration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationChangeRequests.html"
       },
       "ListCollaborationConfiguredAudienceModelAssociations": {
         "access_level": "List",
@@ -224516,6 +224693,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeADAssessment.html"
       },
+      "DescribeCAEnrollmentPolicy": {
+        "access_level": "Read",
+        "action_name": "ds:DescribeCAEnrollmentPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to describe the ca enrollment status of a specified directory",
+        "resource_types": [
+          {
+            "name": "directory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html#awsdirectoryservice-directory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCAEnrollmentPolicy.html"
+      },
       "DescribeCertificate": {
         "access_level": "Read",
         "action_name": "ds:DescribeCertificate",
@@ -224696,6 +224886,19 @@
         ],
         "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeUpdateDirectory.html"
       },
+      "DisableCAEnrollmentPolicy": {
+        "access_level": "Write",
+        "action_name": "ds:DisableCAEnrollmentPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to disable the ca enrollment of a specified directory",
+        "resource_types": [
+          {
+            "name": "directory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html#awsdirectoryservice-directory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableCAEnrollmentPolicy.html"
+      },
       "DisableClientAuthentication": {
         "access_level": "Write",
         "action_name": "ds:DisableClientAuthentication",
@@ -224773,6 +224976,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html"
+      },
+      "EnableCAEnrollmentPolicy": {
+        "access_level": "Write",
+        "action_name": "ds:EnableCAEnrollmentPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to enable the ca enrollment of a specified directory",
+        "resource_types": [
+          {
+            "name": "directory*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html#awsdirectoryservice-directory"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableCAEnrollmentPolicy.html"
       },
       "EnableClientAuthentication": {
         "access_level": "Write",
@@ -250391,7 +250607,16 @@
       "CreateServiceSpecificCredential": {
         "access_level": "Write",
         "action_name": "iam:CreateServiceSpecificCredential",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "iam:ServiceSpecificCredentialAgeDays",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-iam_ServiceSpecificCredentialAgeDays"
+          },
+          {
+            "name": "iam:ServiceSpecificCredentialServiceName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-iam_ServiceSpecificCredentialServiceName"
+          }
+        ],
         "description": "Grants permission to create a new service-specific credential for an IAM user",
         "resource_types": [
           {
@@ -250694,7 +250919,12 @@
       "DeleteServiceSpecificCredential": {
         "access_level": "Write",
         "action_name": "iam:DeleteServiceSpecificCredential",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "iam:ServiceSpecificCredentialServiceName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-iam_ServiceSpecificCredentialServiceName"
+          }
+        ],
         "description": "Grants permission to delete the specified service-specific credential for an IAM user",
         "resource_types": [
           {
@@ -251861,7 +252091,12 @@
       "ResetServiceSpecificCredential": {
         "access_level": "Write",
         "action_name": "iam:ResetServiceSpecificCredential",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "iam:ServiceSpecificCredentialServiceName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-iam_ServiceSpecificCredentialServiceName"
+          }
+        ],
         "description": "Grants permission to reset the password for an existing service-specific credential for an IAM user",
         "resource_types": [
           {
@@ -252427,7 +252662,12 @@
       "UpdateServiceSpecificCredential": {
         "access_level": "Write",
         "action_name": "iam:UpdateServiceSpecificCredential",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "iam:ServiceSpecificCredentialServiceName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentityandaccessmanagementiam.html#awsidentityandaccessmanagementiam-iam_ServiceSpecificCredentialServiceName"
+          }
+        ],
         "description": "Grants permission to update the status of a service-specific credential to active or inactive for an IAM user",
         "resource_types": [
           {
