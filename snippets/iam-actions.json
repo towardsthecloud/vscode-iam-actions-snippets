@@ -131045,6 +131045,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateVPCConnection.html"
       },
+      "DeleteAccountCustomPermission": {
+        "access_level": "Write",
+        "action_name": "quicksight:DeleteAccountCustomPermission",
+        "condition_keys": [],
+        "description": "Grants permission to remove the custom permission associated with an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomPermission.html"
+      },
       "DeleteAccountCustomization": {
         "access_level": "Write",
         "action_name": "quicksight:DeleteAccountCustomization",
@@ -131445,7 +131453,7 @@
         "access_level": "Write",
         "action_name": "quicksight:DeleteUserByPrincipalId",
         "condition_keys": [],
-        "description": "Grants permission to deletes a user identified by its principal ID",
+        "description": "Grants permission to delete a user identified by its principal ID",
         "resource_types": [
           {
             "name": "user*",
@@ -131488,6 +131496,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteVPCConnection.html"
+      },
+      "DescribeAccountCustomPermission": {
+        "access_level": "Read",
+        "action_name": "quicksight:DescribeAccountCustomPermission",
+        "condition_keys": [],
+        "description": "Grants permission to describe the custom permission associated with an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomPermission.html"
       },
       "DescribeAccountCustomization": {
         "access_level": "Read",
@@ -133245,6 +133261,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateAccountCustomPermission": {
+        "access_level": "Write",
+        "action_name": "quicksight:UpdateAccountCustomPermission",
+        "condition_keys": [],
+        "description": "Grants permission to update the custom permission associated with an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountCustomPermission.html"
       },
       "UpdateAccountCustomization": {
         "access_level": "Write",
@@ -153250,16 +153274,7 @@
       "AddTagsToVault": {
         "access_level": "Tagging",
         "action_name": "glacier:AddTagsToVault",
-        "condition_keys": [
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3glacier.html#amazons3glacier-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3glacier.html#amazons3glacier-aws_RequestTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to add the specified tags to a vault",
         "resource_types": [
           {
@@ -181871,12 +181886,7 @@
           }
         ],
         "description": "Grants permission to create a new Amplify App",
-        "resource_types": [
-          {
-            "name": "apps*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html#awsamplify-apps"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html"
       },
       "CreateBackendEnvironment": {
@@ -231000,6 +231010,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html"
       },
+      "CreateResourceShare": {
+        "access_level": "Write",
+        "action_name": "mediaconvert:CreateResourceShare",
+        "condition_keys": [],
+        "description": "Grants permission to share an AWS Elemental MediaConvert job",
+        "resource_types": [
+          {
+            "name": "Job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconvert.html#awselementalmediaconvert-Job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/resourceshares.html"
+      },
       "DeleteJobTemplate": {
         "access_level": "Write",
         "action_name": "mediaconvert:DeleteJobTemplate",
@@ -239712,7 +239735,12 @@
       "BatchCreatePartition": {
         "access_level": "Write",
         "action_name": "glue:BatchCreatePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create one or more partitions",
         "resource_types": [
           {
@@ -239737,7 +239765,12 @@
       "BatchDeleteConnection": {
         "access_level": "Write",
         "action_name": "glue:BatchDeleteConnection",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete one or more connections",
         "resource_types": [
           {
@@ -239754,7 +239787,12 @@
       "BatchDeletePartition": {
         "access_level": "Write",
         "action_name": "glue:BatchDeletePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete one or more partitions",
         "resource_types": [
           {
@@ -239779,7 +239817,12 @@
       "BatchDeleteTable": {
         "access_level": "Write",
         "action_name": "glue:BatchDeleteTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete one or more tables",
         "resource_types": [
           {
@@ -239804,7 +239847,12 @@
       "BatchDeleteTableVersion": {
         "access_level": "Write",
         "action_name": "glue:BatchDeleteTableVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete one or more versions of a table",
         "resource_types": [
           {
@@ -239889,7 +239937,12 @@
       "BatchGetPartition": {
         "access_level": "Read",
         "action_name": "glue:BatchGetPartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve one or more partitions",
         "resource_types": [
           {
@@ -239982,7 +240035,12 @@
       "BatchUpdatePartition": {
         "access_level": "Write",
         "action_name": "glue:BatchUpdatePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update one or more partitions",
         "resource_types": [
           {
@@ -240089,7 +240147,12 @@
       "CreateCatalog": {
         "access_level": "Write",
         "action_name": "glue:CreateCatalog",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a catalog",
         "resource_types": [
           {
@@ -240143,6 +240206,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-aws_TagKeys"
+          },
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
           }
         ],
         "description": "Grants permission to create a connection",
@@ -240208,7 +240275,12 @@
       "CreateDatabase": {
         "access_level": "Write",
         "action_name": "glue:CreateDatabase",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a database",
         "resource_types": [
           {
@@ -240389,7 +240461,12 @@
       "CreatePartition": {
         "access_level": "Write",
         "action_name": "glue:CreatePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a partition",
         "resource_types": [
           {
@@ -240414,7 +240491,12 @@
       "CreatePartitionIndex": {
         "access_level": "Write",
         "action_name": "glue:CreatePartitionIndex",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a specified partition index in an existing table",
         "resource_types": [
           {
@@ -240537,7 +240619,12 @@
       "CreateTable": {
         "access_level": "Write",
         "action_name": "glue:CreateTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a table",
         "resource_types": [
           {
@@ -240627,7 +240714,12 @@
       "CreateUserDefinedFunction": {
         "access_level": "Write",
         "action_name": "glue:CreateUserDefinedFunction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to create a function definition",
         "resource_types": [
           {
@@ -240683,7 +240775,12 @@
       "DeleteCatalog": {
         "access_level": "Write",
         "action_name": "glue:DeleteCatalog",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a catalog",
         "resource_types": [
           {
@@ -240708,7 +240805,12 @@
       "DeleteColumnStatisticsForPartition": {
         "access_level": "Write",
         "action_name": "glue:DeleteColumnStatisticsForPartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete the partition column statistics of a column",
         "resource_types": [
           {
@@ -240733,7 +240835,12 @@
       "DeleteColumnStatisticsForTable": {
         "access_level": "Write",
         "action_name": "glue:DeleteColumnStatisticsForTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete the table statistics of columns",
         "resource_types": [
           {
@@ -240779,7 +240886,12 @@
       "DeleteConnection": {
         "access_level": "Write",
         "action_name": "glue:DeleteConnection",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a connection",
         "resource_types": [
           {
@@ -240830,7 +240942,12 @@
       "DeleteDatabase": {
         "access_level": "Write",
         "action_name": "glue:DeleteDatabase",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a database",
         "resource_types": [
           {
@@ -240945,7 +241062,12 @@
       "DeletePartition": {
         "access_level": "Write",
         "action_name": "glue:DeletePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a partition",
         "resource_types": [
           {
@@ -240970,7 +241092,12 @@
       "DeletePartitionIndex": {
         "access_level": "Write",
         "action_name": "glue:DeletePartitionIndex",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a specified partition index from an existing table",
         "resource_types": [
           {
@@ -241076,7 +241203,12 @@
       "DeleteTable": {
         "access_level": "Write",
         "action_name": "glue:DeleteTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a table",
         "resource_types": [
           {
@@ -241122,7 +241254,12 @@
       "DeleteTableVersion": {
         "access_level": "Write",
         "action_name": "glue:DeleteTableVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a version of a table",
         "resource_types": [
           {
@@ -241173,7 +241310,12 @@
       "DeleteUserDefinedFunction": {
         "access_level": "Write",
         "action_name": "glue:DeleteUserDefinedFunction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to delete a function definition",
         "resource_types": [
           {
@@ -241313,6 +241455,10 @@
           {
             "name": "glue:EnabledForRedshiftAutoDiscovery",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_EnabledForRedshiftAutoDiscovery"
+          },
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
           }
         ],
         "description": "Grants permission to retrieve a catalog",
@@ -241331,7 +241477,12 @@
       "GetCatalogImportStatus": {
         "access_level": "Read",
         "action_name": "glue:GetCatalogImportStatus",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve the catalog import status",
         "resource_types": [
           {
@@ -241348,6 +241499,10 @@
           {
             "name": "glue:EnabledForRedshiftAutoDiscovery",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_EnabledForRedshiftAutoDiscovery"
+          },
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
           }
         ],
         "description": "Grants permission to retrieve all catalogs",
@@ -241382,7 +241537,12 @@
       "GetColumnStatisticsForPartition": {
         "access_level": "Read",
         "action_name": "glue:GetColumnStatisticsForPartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve partition statistics of columns",
         "resource_types": [
           {
@@ -241407,7 +241567,12 @@
       "GetColumnStatisticsForTable": {
         "access_level": "Read",
         "action_name": "glue:GetColumnStatisticsForTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve table statistics of columns",
         "resource_types": [
           {
@@ -241469,7 +241634,12 @@
       "GetConnection": {
         "access_level": "Read",
         "action_name": "glue:GetConnection",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a connection",
         "resource_types": [
           {
@@ -241486,7 +241656,12 @@
       "GetConnections": {
         "access_level": "Read",
         "action_name": "glue:GetConnections",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a list of connections",
         "resource_types": [
           {
@@ -241660,7 +241835,12 @@
       "GetDatabase": {
         "access_level": "Read",
         "action_name": "glue:GetDatabase",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a database",
         "resource_types": [
           {
@@ -241681,7 +241861,12 @@
       "GetDatabases": {
         "access_level": "Read",
         "action_name": "glue:GetDatabases",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve all databases",
         "resource_types": [
           {
@@ -241974,7 +242159,12 @@
       "GetPartition": {
         "access_level": "Read",
         "action_name": "glue:GetPartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a partition",
         "resource_types": [
           {
@@ -241999,7 +242189,12 @@
       "GetPartitionIndexes": {
         "access_level": "Read",
         "action_name": "glue:GetPartitionIndexes",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve partition indexes for a table",
         "resource_types": [
           {
@@ -242024,7 +242219,12 @@
       "GetPartitions": {
         "access_level": "Read",
         "action_name": "glue:GetPartitions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve the partitions of a table",
         "resource_types": [
           {
@@ -242294,7 +242494,12 @@
       "GetTable": {
         "access_level": "Read",
         "action_name": "glue:GetTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a table",
         "resource_types": [
           {
@@ -242340,7 +242545,12 @@
       "GetTableVersion": {
         "access_level": "Read",
         "action_name": "glue:GetTableVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a version of a table",
         "resource_types": [
           {
@@ -242365,7 +242575,12 @@
       "GetTableVersions": {
         "access_level": "Read",
         "action_name": "glue:GetTableVersions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a list of versions of a table",
         "resource_types": [
           {
@@ -242390,7 +242605,12 @@
       "GetTables": {
         "access_level": "Read",
         "action_name": "glue:GetTables",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve the tables in a database",
         "resource_types": [
           {
@@ -242490,7 +242710,12 @@
       "GetUserDefinedFunction": {
         "access_level": "Read",
         "action_name": "glue:GetUserDefinedFunction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve a function definition",
         "resource_types": [
           {
@@ -242515,7 +242740,12 @@
       "GetUserDefinedFunctions": {
         "access_level": "Read",
         "action_name": "glue:GetUserDefinedFunctions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve multiple function definitions",
         "resource_types": [
           {
@@ -242608,7 +242838,12 @@
       "ImportCatalogToGlue": {
         "access_level": "Write",
         "action_name": "glue:ImportCatalogToGlue",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to import an Athena data catalog into AWS Glue",
         "resource_types": [
           {
@@ -243154,7 +243389,12 @@
       "SearchTables": {
         "access_level": "Read",
         "action_name": "glue:SearchTables",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to retrieve the tables in the catalog",
         "resource_types": [
           {
@@ -243540,6 +243780,10 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
           }
         ],
         "description": "Grants permission to add tags to a resource",
@@ -243630,6 +243874,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-aws_TagKeys"
+          },
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
           }
         ],
         "description": "Grants permission to remove tags associated with a resource",
@@ -243713,7 +243961,12 @@
       "UpdateCatalog": {
         "access_level": "Write",
         "action_name": "glue:UpdateCatalog",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a catalog",
         "resource_types": [
           {
@@ -243738,7 +243991,12 @@
       "UpdateColumnStatisticsForPartition": {
         "access_level": "Write",
         "action_name": "glue:UpdateColumnStatisticsForPartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update partition statistics of columns",
         "resource_types": [
           {
@@ -243763,7 +244021,12 @@
       "UpdateColumnStatisticsForTable": {
         "access_level": "Write",
         "action_name": "glue:UpdateColumnStatisticsForTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update table statistics of columns",
         "resource_types": [
           {
@@ -243809,7 +244072,12 @@
       "UpdateConnection": {
         "access_level": "Write",
         "action_name": "glue:UpdateConnection",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a connection",
         "resource_types": [
           {
@@ -243860,7 +244128,12 @@
       "UpdateDatabase": {
         "access_level": "Write",
         "action_name": "glue:UpdateDatabase",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a database",
         "resource_types": [
           {
@@ -243996,7 +244269,12 @@
       "UpdatePartition": {
         "access_level": "Write",
         "action_name": "glue:UpdatePartition",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a partition",
         "resource_types": [
           {
@@ -244064,7 +244342,12 @@
       "UpdateTable": {
         "access_level": "Write",
         "action_name": "glue:UpdateTable",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a table",
         "resource_types": [
           {
@@ -244136,7 +244419,12 @@
       "UpdateUserDefinedFunction": {
         "access_level": "Write",
         "action_name": "glue:UpdateUserDefinedFunction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "glue:LakeFormationPermissions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-glue_LakeFormationPermissions"
+          }
+        ],
         "description": "Grants permission to update a function definition",
         "resource_types": [
           {
@@ -274726,7 +275014,7 @@
         "condition_keys": [],
         "description": "Grants permission to post metering records for a set of customers for SaaS applications",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html"
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_BatchMeterUsage.html"
       },
       "MeterUsage": {
         "access_level": "Write",
@@ -274734,7 +275022,7 @@
         "condition_keys": [],
         "description": "Grants permission to emit metering records",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html"
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_MeterUsage.html"
       },
       "RegisterUsage": {
         "access_level": "Write",
@@ -274742,7 +275030,7 @@
         "condition_keys": [],
         "description": "Grants permission to to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html"
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_RegisterUsage.html"
       },
       "ResolveCustomer": {
         "access_level": "Write",
@@ -274750,7 +275038,7 @@
         "condition_keys": [],
         "description": "Grants permission to resolve a registration token to obtain a CustomerIdentifier and product code",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html"
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_ResolveCustomer.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacemeteringservice.html",
@@ -281358,6 +281646,19 @@
         ],
         "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsForParent.html"
       },
+      "ListAccountsWithInvalidEffectivePolicy": {
+        "access_level": "List",
+        "action_name": "organizations:ListAccountsWithInvalidEffectivePolicy",
+        "condition_keys": [
+          {
+            "name": "organizations:PolicyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_PolicyType"
+          }
+        ],
+        "description": "Grants permission to list accounts that have invalid effective policies for a specified policy type",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsWithInvalidEffectivePolicy.html"
+      },
       "ListChildren": {
         "access_level": "List",
         "action_name": "organizations:ListChildren",
@@ -281408,6 +281709,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedServicesForAccount.html"
+      },
+      "ListEffectivePolicyValidationErrors": {
+        "access_level": "List",
+        "action_name": "organizations:ListEffectivePolicyValidationErrors",
+        "condition_keys": [
+          {
+            "name": "organizations:PolicyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_PolicyType"
+          }
+        ],
+        "description": "Grants permission to list validation errors found in the effective policy for a specific account and policy type",
+        "resource_types": [
+          {
+            "name": "account*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-account"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListEffectivePolicyValidationErrors.html"
       },
       "ListHandshakesForAccount": {
         "access_level": "List",
@@ -309427,8 +309746,13 @@
         "action_name": "transform:AssociateConnectorResource",
         "condition_keys": [],
         "description": "Grants permission to invoke AssociateConnectorResource on AWS Transform",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "CreateProfile": {
         "access_level": "Write",
@@ -309441,7 +309765,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-profile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
+      },
+      "DeleteConnector": {
+        "access_level": "Write",
+        "action_name": "transform:DeleteConnector",
+        "condition_keys": [],
+        "description": "Grants permission to invoke DeleteConnector on AWS Transform",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "DeleteProfile": {
         "access_level": "Write",
@@ -309454,15 +309791,28 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-profile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "GetConnector": {
         "access_level": "Read",
         "action_name": "transform:GetConnector",
         "condition_keys": [],
         "description": "Grants permission to invoke GetConnector on AWS Transform",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
+      },
+      "ListConnectors": {
+        "access_level": "List",
+        "action_name": "transform:ListConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to invoke ListConnectors on AWS Transform",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "ListProfiles": {
         "access_level": "List",
@@ -309470,15 +309820,73 @@
         "condition_keys": [],
         "description": "Grants permission to invoke ListProfiles on AWS Transform",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "transform:ListTagsForResource",
+        "condition_keys": [],
+        "description": "Grants permission to invoke ListTagsForResource on AWS Transform",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "RejectConnector": {
         "access_level": "Write",
         "action_name": "transform:RejectConnector",
         "condition_keys": [],
         "description": "Grants permission to invoke RejectConnector on AWS Transform",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "transform:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-aws_RequestTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke TagResource on AWS Transform",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "transform:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to invoke UntagResource on AWS Transform",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       },
       "UpdateProfile": {
         "access_level": "Write",
@@ -309491,7 +309899,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-profile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html",
@@ -309997,6 +310405,19 @@
         ],
         "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateManagedNotificationAdditionalChannel.html"
       },
+      "AssociateOrganizationalUnit": {
+        "access_level": "Write",
+        "action_name": "notifications:AssociateOrganizationalUnit",
+        "condition_keys": [],
+        "description": "Grants permission to associate an Organizational Unit to a particular Notification Configuration",
+        "resource_types": [
+          {
+            "name": "NotificationConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsusernotifications.html#awsusernotifications-NotificationConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateOrganizationalUnit.html"
+      },
       "CreateEventRule": {
         "access_level": "Write",
         "action_name": "notifications:CreateEventRule",
@@ -310057,7 +310478,7 @@
         "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_DeregisterNotificationHub.html"
       },
       "DisableNotificationsAccessForOrganization": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "notifications:DisableNotificationsAccessForOrganization",
         "condition_keys": [],
         "description": "Grants permission to disable Service Trust for AWS User Notifications",
@@ -310103,8 +310524,21 @@
         ],
         "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateManagedNotificationAdditionalChannel.html"
       },
-      "EnableNotificationsAccessForOrganization": {
+      "DisassociateOrganizationalUnit": {
         "access_level": "Write",
+        "action_name": "notifications:DisassociateOrganizationalUnit",
+        "condition_keys": [],
+        "description": "Grants permission to disassociate an Organizational Unit to a particular Notification Configuration",
+        "resource_types": [
+          {
+            "name": "NotificationConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsusernotifications.html#awsusernotifications-NotificationConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateOrganizationalUnit.html"
+      },
+      "EnableNotificationsAccessForOrganization": {
+        "access_level": "Permissions management",
         "action_name": "notifications:EnableNotificationsAccessForOrganization",
         "condition_keys": [],
         "description": "Grants permission to enable Service Trust for AWS User Notifications",
@@ -310263,6 +310697,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListManagedNotificationEvents.html"
       },
+      "ListMemberAccounts": {
+        "access_level": "List",
+        "action_name": "notifications:ListMemberAccounts",
+        "condition_keys": [],
+        "description": "Grants permission to list Member Accounts for a Notification Configuration",
+        "resource_types": [
+          {
+            "name": "NotificationConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsusernotifications.html#awsusernotifications-NotificationConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListMemberAccounts.html"
+      },
       "ListNotificationConfigurations": {
         "access_level": "List",
         "action_name": "notifications:ListNotificationConfigurations",
@@ -310286,6 +310733,19 @@
         "description": "Grants permission to list NotificationHubs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationHubs.html"
+      },
+      "ListOrganizationalUnits": {
+        "access_level": "List",
+        "action_name": "notifications:ListOrganizationalUnits",
+        "condition_keys": [],
+        "description": "Grants permission to list Organizational Units for a Notification Configuration",
+        "resource_types": [
+          {
+            "name": "NotificationConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsusernotifications.html#awsusernotifications-NotificationConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListOrganizationalUnits.html"
       },
       "ListTagsForResource": {
         "access_level": "List",

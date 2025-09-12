@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+1.53.0 (2025-09-05)
+-------------------
+- Build: auto-update snippets to version: 1.53.0. [Github Actions]
+
+
 1.52.0 (2025-08-29)
 -------------------
 - Build: auto-update snippets to version: 1.52.0. [Github Actions]
