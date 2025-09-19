@@ -7328,6 +7328,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
       },
+      "CountTokens": {
+        "access_level": "Read",
+        "action_name": "bedrock:CountTokens",
+        "condition_keys": [],
+        "description": "Grants permission to count the number of tokens in an input prompt",
+        "resource_types": [
+          {
+            "name": "foundation-model*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-foundation-model"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_CountTokens.html"
+      },
       "CreateAgent": {
         "access_level": "Write",
         "action_name": "bedrock:CreateAgent",
@@ -23314,6 +23327,40 @@
   },
   "amazoncloudwatchobservabilityadminservice": {
     "actions": {
+      "CreateCentralizationRuleForOrganization": {
+        "access_level": "Write",
+        "action_name": "observabilityadmin:CreateCentralizationRuleForOrganization",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "observabilityadmin:CentralizationSourceRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationSourceRegions"
+          },
+          {
+            "name": "observabilityadmin:CentralizationDestinationRegion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationDestinationRegion"
+          },
+          {
+            "name": "observabilityadmin:CentralizationBackupRegion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationBackupRegion"
+          }
+        ],
+        "description": "Grants permission to create a new organization centralization rule with the specified name for the organization",
+        "resource_types": [
+          {
+            "name": "organization-centralization-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateCentralizationRuleForOrganization.html"
+      },
       "CreateTelemetryRule": {
         "access_level": "Write",
         "action_name": "observabilityadmin:CreateTelemetryRule",
@@ -23358,6 +23405,19 @@
         ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRuleForOrganization.html"
       },
+      "DeleteCentralizationRuleForOrganization": {
+        "access_level": "Write",
+        "action_name": "observabilityadmin:DeleteCentralizationRuleForOrganization",
+        "condition_keys": [],
+        "description": "Grants permission to delete an organization centralization rule with the specified name for the organization",
+        "resource_types": [
+          {
+            "name": "organization-centralization-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteCentralizationRuleForOrganization.html"
+      },
       "DeleteTelemetryRule": {
         "access_level": "Write",
         "action_name": "observabilityadmin:DeleteTelemetryRule",
@@ -23383,6 +23443,22 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryRuleForOrganization.html"
+      },
+      "GetCentralizationRuleForOrganization": {
+        "access_level": "Read",
+        "action_name": "observabilityadmin:GetCentralizationRuleForOrganization",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html"
+      },
+      "GetTelemetryEnrichmentStatus": {
+        "access_level": "Read",
+        "action_name": "observabilityadmin:GetTelemetryEnrichmentStatus",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the status of the Resource tags for telemetry feature for the account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEnrichmentStatus.html"
       },
       "GetTelemetryEvaluationStatus": {
         "access_level": "Read",
@@ -23416,6 +23492,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRuleForOrganization.html"
       },
+      "ListCentralizationRulesForOrganization": {
+        "access_level": "List",
+        "action_name": "observabilityadmin:ListCentralizationRulesForOrganization",
+        "condition_keys": [],
+        "description": "Grants permission to list the centralization rules for the organization",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListCentralizationRulesForOrganization.html"
+      },
       "ListResourceTelemetry": {
         "access_level": "Read",
         "action_name": "observabilityadmin:ListResourceTelemetry",
@@ -23438,6 +23522,10 @@
         "condition_keys": [],
         "description": "Grants permission to list the tags for the specified resource",
         "resource_types": [
+          {
+            "name": "organization-centralization-rule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          },
           {
             "name": "organization-telemetry-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-telemetry-rule"
@@ -23465,6 +23553,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRulesForOrganization.html"
       },
+      "StartTelemetryEnrichment": {
+        "access_level": "Write",
+        "action_name": "observabilityadmin:StartTelemetryEnrichment",
+        "condition_keys": [],
+        "description": "Grants permission to enable the Resource tags for telemetry feature for the account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEnrichment.html"
+      },
       "StartTelemetryEvaluation": {
         "access_level": "Write",
         "action_name": "observabilityadmin:StartTelemetryEvaluation",
@@ -23480,6 +23576,14 @@
         "description": "Grants permission to start the Telemetry Config feature for the organization",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluationForOrganization.html"
+      },
+      "StopTelemetryEnrichment": {
+        "access_level": "Write",
+        "action_name": "observabilityadmin:StopTelemetryEnrichment",
+        "condition_keys": [],
+        "description": "Grants permission to disable the Resource tags for telemetry feature for the account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEnrichment.html"
       },
       "StopTelemetryEvaluation": {
         "access_level": "Write",
@@ -23513,6 +23617,10 @@
         "description": "Grants permission to add or update the specified tags for the specified resource",
         "resource_types": [
           {
+            "name": "organization-centralization-rule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          },
+          {
             "name": "organization-telemetry-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-telemetry-rule"
           },
@@ -23535,6 +23643,10 @@
         "description": "Grants permission to remove the specified tags from the specified resource",
         "resource_types": [
           {
+            "name": "organization-centralization-rule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          },
+          {
             "name": "organization-telemetry-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-telemetry-rule"
           },
@@ -23544,6 +23656,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UntagResource.html"
+      },
+      "UpdateCentralizationRuleForOrganization": {
+        "access_level": "Write",
+        "action_name": "observabilityadmin:UpdateCentralizationRuleForOrganization",
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:CentralizationSourceRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationSourceRegions"
+          },
+          {
+            "name": "observabilityadmin:CentralizationDestinationRegion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationDestinationRegion"
+          },
+          {
+            "name": "observabilityadmin:CentralizationBackupRegion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationBackupRegion"
+          }
+        ],
+        "description": "Grants permission to update the specified centralization rule for the organization",
+        "resource_types": [
+          {
+            "name": "organization-centralization-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateCentralizationRuleForOrganization.html"
       },
       "UpdateTelemetryRule": {
         "access_level": "Write",
@@ -23562,7 +23700,7 @@
         "access_level": "Write",
         "action_name": "observabilityadmin:UpdateTelemetryRuleForOrganization",
         "condition_keys": [],
-        "description": "Grants permission to retrieve the specified organization telemetry rule for the organization",
+        "description": "Grants permission to update the specified telemetry rule for the organization",
         "resource_types": [
           {
             "name": "organization-telemetry-rule*",
@@ -76434,6 +76572,10 @@
         "action_name": "autoscaling:DeleteAutoScalingGroup",
         "condition_keys": [
           {
+            "name": "autoscaling:ForceDelete",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2autoscaling.html#amazonec2autoscaling-autoscaling_ForceDelete"
+          },
+          {
             "name": "autoscaling:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2autoscaling.html#amazonec2autoscaling-autoscaling_ResourceTag___TagKey_"
           },
@@ -86306,6 +86448,19 @@
   },
   "amazonelasticvmwareservice": {
     "actions": {
+      "AssociateEipToVlan": {
+        "access_level": "Write",
+        "action_name": "evs:AssociateEipToVlan",
+        "condition_keys": [],
+        "description": "Grants permission to associate an Elastic IP address (EIP) with a public VLAN in an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html"
+      },
       "CreateEnvironment": {
         "access_level": "Write",
         "action_name": "evs:CreateEnvironment",
@@ -86361,6 +86516,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentHost.html"
+      },
+      "DisassociateEipFromVlan": {
+        "access_level": "Write",
+        "action_name": "evs:DisassociateEipFromVlan",
+        "condition_keys": [],
+        "description": "Grants permission to disassociate an Elastic IP address (EIP) from a public VLAN in an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html"
       },
       "GetEnvironment": {
         "access_level": "Read",
@@ -129532,6 +129700,19 @@
         ],
         "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RenderMessageTemplate.html"
       },
+      "Retrieve": {
+        "access_level": "Read",
+        "action_name": "wisdom:Retrieve",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve knowledge content from specified assistant associations",
+        "resource_types": [
+          {
+            "name": "Assistant*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqinconnect.html#amazonqinconnect-Assistant"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_Retrieve.html"
+      },
       "SearchContent": {
         "access_level": "Read",
         "action_name": "wisdom:SearchContent",
@@ -146250,6 +146431,10 @@
           {
             "name": "s3:x-amz-content-sha256",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-content-sha256"
+          },
+          {
+            "name": "s3:if-match",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_if-match"
           }
         ],
         "description": "Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object",
@@ -178592,7 +178777,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
           }
         ],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "CreateStandbyWorkspaces": {
         "access_level": "Write",
@@ -178838,7 +179023,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
           }
         ],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "DeleteTags": {
         "access_level": "Tagging",
@@ -179040,7 +179225,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve information about consent agreement to BYOL minimum requirements",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "DescribeCustomWorkspaceImageImport": {
         "access_level": "Read",
@@ -179080,19 +179265,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html"
-      },
-      "DescribeRootClientCertificates": {
-        "access_level": "List",
-        "action_name": "workspaces:DescribeRootClientCertificates",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve information for root client certificates",
-        "resource_types": [
-          {
-            "name": "certificateid*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
       },
       "DescribeTags": {
         "access_level": "Read",
@@ -179218,7 +179390,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-directoryid"
           }
         ],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "DisassociateConnectionAlias": {
         "access_level": "Write",
@@ -179698,7 +179870,7 @@
         "condition_keys": [],
         "description": "Grants permission to update the consent agreement to BYOL minimum requirements",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "UpdateRootClientCertificate": {
         "access_level": "Write",
@@ -179711,7 +179883,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-certificateid"
           }
         ],
-        "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html"
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
       },
       "UpdateRulesOfIpGroup": {
         "access_level": "Write",
@@ -201871,6 +202043,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ImportStacksToStackSet.html"
+      },
+      "ListAllHookResults": {
+        "access_level": "List",
+        "action_name": "cloudformation:ListAllHookResults",
+        "condition_keys": [
+          {
+            "name": "cloudformation:TypeArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudformation.html#awscloudformation-cloudformation_TypeArn"
+          }
+        ],
+        "description": "Grants permission to return Hook invocations result information for a specified Hook, a combination of Hook and status, or all Hooks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html"
       },
       "ListChangeSets": {
         "access_level": "List",
@@ -250570,7 +250755,7 @@
         "access_level": "Write",
         "action_name": "sso-oauth:CreateTokenWithIAM",
         "condition_keys": [],
-        "description": "Grants permission to create OAuth/OIDC tokens to access IAM Identity Center integrated applications",
+        "description": "Grants permission to create and return OAuth 2.0 access tokens and refresh tokens for authorized client applications. These tokens might contain defined scopes that specify permissions such as `read:profile` or `write:data`",
         "resource_types": [
           {
             "name": "Application*",
@@ -253510,6 +253695,14 @@
         ],
         "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html"
       },
+      "CreateIdentityStore": {
+        "access_level": "Write",
+        "action_name": "identitystore:CreateIdentityStore",
+        "condition_keys": [],
+        "description": "Grants permission to create a new IdentityStore in an AWS account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+      },
       "CreateUser": {
         "access_level": "Write",
         "action_name": "identitystore:CreateUser",
@@ -253564,6 +253757,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html"
+      },
+      "DeleteIdentityStore": {
+        "access_level": "Write",
+        "action_name": "identitystore:DeleteIdentityStore",
+        "condition_keys": [],
+        "description": "Grants permission to delete an IdentityStore",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
       },
       "DeleteUser": {
         "access_level": "Write",
@@ -253817,6 +254018,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html"
+      },
+      "UpdateIdentityStore": {
+        "access_level": "Write",
+        "action_name": "identitystore:UpdateIdentityStore",
+        "condition_keys": [],
+        "description": "Grants permission to update the configuration of an IdentityStore",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
       },
       "UpdateUser": {
         "access_level": "Write",
@@ -254154,6 +254363,14 @@
         ],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_DeleteInvoiceUnit.html"
       },
+      "GetInvoiceCorrection": {
+        "access_level": "Read",
+        "action_name": "invoicing:GetInvoiceCorrection",
+        "condition_keys": [],
+        "description": "Grants permission to get Invoice Correction",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceCorrection.html"
+      },
       "GetInvoiceEmailDeliveryPreferences": {
         "access_level": "Read",
         "action_name": "invoicing:GetInvoiceEmailDeliveryPreferences",
@@ -254182,6 +254399,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceUnit.html"
+      },
+      "ListInvoiceCorrections": {
+        "access_level": "List",
+        "action_name": "invoicing:ListInvoiceCorrections",
+        "condition_keys": [],
+        "description": "Grants permission to list Invoice Corrections",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceCorrections.html"
       },
       "ListInvoiceSummaries": {
         "access_level": "Read",
@@ -254224,6 +254449,14 @@
         "description": "Grants permission to put Invoice Email Delivery Preferences",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
+      },
+      "StartInvoiceCorrection": {
+        "access_level": "Write",
+        "action_name": "invoicing:StartInvoiceCorrection",
+        "condition_keys": [],
+        "description": "Grants permission to start Invoice Correction",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_StartInvoiceCorrection.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -307916,6 +308149,22 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
       },
+      "CancelDocument": {
+        "access_level": "Write",
+        "action_name": "tax:CancelDocument",
+        "condition_keys": [],
+        "description": "Grants permission to cancel documents such as withholding slips",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
+      "CreateDocument": {
+        "access_level": "Write",
+        "action_name": "tax:CreateDocument",
+        "condition_keys": [],
+        "description": "Grants permission to upload new documents such as withholding slips",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
       "DeleteSupplementalTaxRegistration": {
         "access_level": "Write",
         "action_name": "tax:DeleteSupplementalTaxRegistration",
@@ -307929,6 +308178,22 @@
         "action_name": "tax:DeleteTaxRegistration",
         "condition_keys": [],
         "description": "Grants permission to delete tax registration data",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
+      "GetDocument": {
+        "access_level": "Read",
+        "action_name": "tax:GetDocument",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve documents such as withholding slips",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
+      "GetDocumentUploadUrl": {
+        "access_level": "Read",
+        "action_name": "tax:GetDocumentUploadUrl",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a generated URL to upload documents",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
       },
@@ -307980,6 +308245,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
       },
+      "ListDocuments": {
+        "access_level": "Read",
+        "action_name": "tax:ListDocuments",
+        "condition_keys": [],
+        "description": "Grants permission to view documents such as withholding slips",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
       "ListSupplementalTaxRegistrations": {
         "access_level": "Read",
         "action_name": "tax:ListSupplementalTaxRegistrations",
@@ -307993,6 +308266,14 @@
         "action_name": "tax:ListTaxRegistrations",
         "condition_keys": [],
         "description": "Grants permission to view tax registrations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+      },
+      "ListWithholdingEligibleInvoices": {
+        "access_level": "Read",
+        "action_name": "tax:ListWithholdingEligibleInvoices",
+        "condition_keys": [],
+        "description": "Grants permission to view eligible withholding invoices",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
       },
