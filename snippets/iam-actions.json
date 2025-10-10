@@ -78790,7 +78790,16 @@
       "StartImagePipelineExecution": {
         "access_level": "Write",
         "action_name": "imagebuilder:StartImagePipelineExecution",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2imagebuilder.html#amazonec2imagebuilder-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new image from a pipeline",
         "resource_types": [
           {
