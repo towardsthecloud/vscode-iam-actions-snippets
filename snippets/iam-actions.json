@@ -7082,6 +7082,19 @@
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_DeleteCluster.html"
       },
+      "DeleteClusterPolicy": {
+        "access_level": "Write",
+        "action_name": "dsql:DeleteClusterPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to remove the inline resource-based policy attached to a cluster",
+        "resource_types": [
+          {
+            "name": "Cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
+      },
       "GetBackupJob": {
         "access_level": "Read",
         "action_name": "dsql:GetBackupJob",
@@ -7107,6 +7120,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_GetCluster.html"
+      },
+      "GetClusterPolicy": {
+        "access_level": "Read",
+        "action_name": "dsql:GetClusterPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the inline resource-based policy attached to a cluster",
+        "resource_types": [
+          {
+            "name": "Cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
       },
       "GetRestoreJob": {
         "access_level": "Read",
@@ -7148,12 +7174,7 @@
           }
         ],
         "description": "Grants permission to inject errors in targeted clusters",
-        "resource_types": [
-          {
-            "name": "Cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html"
       },
       "ListClusters": {
@@ -7176,6 +7197,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListTagsForResource.html"
+      },
+      "PutClusterPolicy": {
+        "access_level": "Write",
+        "action_name": "dsql:PutClusterPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to attach or update the inline resource-based policy attached to a cluster",
+        "resource_types": [
+          {
+            "name": "Cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
       },
       "PutMultiRegionProperties": {
         "access_level": "Write",
@@ -24087,7 +24121,12 @@
         "action_name": "observabilityadmin:GetCentralizationRuleForOrganization",
         "condition_keys": [],
         "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "organization-centralization-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-centralization-rule"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html"
       },
       "GetTelemetryEnrichmentStatus": {
@@ -24119,7 +24158,12 @@
         "action_name": "observabilityadmin:GetTelemetryRule",
         "condition_keys": [],
         "description": "Grants permission to retrieve the specified telemetry rule for the account",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "telemetry-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-telemetry-rule"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRule.html"
       },
       "GetTelemetryRuleForOrganization": {
@@ -24127,7 +24171,12 @@
         "action_name": "observabilityadmin:GetTelemetryRuleForOrganization",
         "condition_keys": [],
         "description": "Grants permission to retrieve the specified organization telemetry rule for the organization",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "organization-telemetry-rule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-organization-telemetry-rule"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRuleForOrganization.html"
       },
       "ListCentralizationRulesForOrganization": {
@@ -131874,7 +131923,16 @@
       "CreateEmailCustomizationTemplate": {
         "access_level": "Write",
         "action_name": "quicksight:CreateEmailCustomizationTemplate",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a QuickSight email customization template",
         "resource_types": [
           {
@@ -133976,6 +134034,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-datasource"
           },
           {
+            "name": "emailCustomizationTemplate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-emailCustomizationTemplate"
+          },
+          {
             "name": "flow",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-flow"
           },
@@ -134572,6 +134634,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-datasource"
           },
           {
+            "name": "emailCustomizationTemplate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-emailCustomizationTemplate"
+          },
+          {
             "name": "flow",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-flow"
           },
@@ -134665,6 +134731,10 @@
           {
             "name": "datasource",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-datasource"
+          },
+          {
+            "name": "emailCustomizationTemplate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-emailCustomizationTemplate"
           },
           {
             "name": "flow",
@@ -234133,6 +234203,14 @@
         ],
         "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html"
       },
+      "ListAlerts": {
+        "access_level": "List",
+        "action_name": "medialive:ListAlerts",
+        "condition_keys": [],
+        "description": "Grants permission to list channel alerts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html"
+      },
       "ListChannelPlacementGroups": {
         "access_level": "List",
         "action_name": "medialive:ListChannelPlacementGroups",
@@ -234164,6 +234242,14 @@
         "description": "Grants permission to list cloudwatch alarm templates",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html"
+      },
+      "ListClusterAlerts": {
+        "access_level": "List",
+        "action_name": "medialive:ListClusterAlerts",
+        "condition_keys": [],
+        "description": "Grants permission to list cluster alerts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-cluster.html"
       },
       "ListClusters": {
         "access_level": "List",
@@ -234220,6 +234306,14 @@
         "description": "Grants permission to list inputs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html"
+      },
+      "ListMultiplexAlerts": {
+        "access_level": "List",
+        "action_name": "medialive:ListMultiplexAlerts",
+        "condition_keys": [],
+        "description": "Grants permission to list multiplex alerts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html"
       },
       "ListMultiplexPrograms": {
         "access_level": "List",
@@ -248044,6 +248138,58 @@
         ],
         "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeFHIRImportJob.html"
       },
+      "ExpandValueSetWithGet": {
+        "access_level": "Read",
+        "action_name": "healthlake:ExpandValueSetWithGet",
+        "condition_keys": [],
+        "description": "Grants permission to search and expand ValueSet resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html"
+      },
+      "ExpandValueSetWithPost": {
+        "access_level": "Read",
+        "action_name": "healthlake:ExpandValueSetWithPost",
+        "condition_keys": [],
+        "description": "Grants permission to search and expand ValueSet resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html"
+      },
+      "GenerateDocumentWithGet": {
+        "access_level": "Write",
+        "action_name": "healthlake:GenerateDocumentWithGet",
+        "condition_keys": [],
+        "description": "Grants permission to generate a clinical document resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html"
+      },
+      "GenerateDocumentWithPost": {
+        "access_level": "Write",
+        "action_name": "healthlake:GenerateDocumentWithPost",
+        "condition_keys": [],
+        "description": "Grants permission to generate a clinical document resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html"
+      },
       "GetCapabilities": {
         "access_level": "Read",
         "action_name": "healthlake:GetCapabilities",
@@ -248129,6 +248275,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListTagsForResource.html"
+      },
+      "LookupCodeSystemWithGet": {
+        "access_level": "Read",
+        "action_name": "healthlake:LookupCodeSystemWithGet",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html"
+      },
+      "LookupCodeSystemWithPost": {
+        "access_level": "Read",
+        "action_name": "healthlake:LookupCodeSystemWithPost",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html"
+      },
+      "PatchResource": {
+        "access_level": "Write",
+        "action_name": "healthlake:PatchResource",
+        "condition_keys": [],
+        "description": "Grants permission to patch a resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/managing-fhir-resources-patch.html"
       },
       "ProcessBundle": {
         "access_level": "Write",
@@ -248303,6 +248488,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+      },
+      "ValidateResource": {
+        "access_level": "Read",
+        "action_name": "healthlake:ValidateResource",
+        "condition_keys": [],
+        "description": "Grants permission to validate a resource",
+        "resource_types": [
+          {
+            "name": "datastore*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthlake.html#awshealthlake-datastore"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-validate.html"
       },
       "VersionReadResource": {
         "access_level": "Read",
@@ -287289,6 +287487,10 @@
         "description": "Grants permission to call ListTagsForResource API to list tags for a resource",
         "resource_types": [
           {
+            "name": "metric-resource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html#awsperformanceinsights-metric-resource"
+          },
+          {
             "name": "perf-reports-resource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html#awsperformanceinsights-perf-reports-resource"
           }
@@ -293902,6 +294104,362 @@
     "serviceName": "AWS RoboMaker",
     "service_prefix": "robomaker"
   },
+  "awsrtbfabric": {
+    "actions": {
+      "AcceptLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:AcceptLink",
+        "condition_keys": [],
+        "description": "Grants permission to accept a link invitation from another Gateway",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AcceptLink.html"
+      },
+      "CreateInboundExternalLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateInboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to create an inbound external link for a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateInboundExternalLink.html"
+      },
+      "CreateLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateLink",
+        "condition_keys": [],
+        "description": "Grants permission to create a new link between RTB applications",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLink.html"
+      },
+      "CreateOutboundExternalLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateOutboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to create an outbound external link for a requester gateway to connect to external public responder endpoints",
+        "resource_types": [
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateOutboundExternalLink.html"
+      },
+      "CreateRequesterGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateRequesterGateway",
+        "condition_keys": [],
+        "description": "Grants permission to create a requester gateway",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateRequesterGateway.html"
+      },
+      "CreateResponderGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateResponderGateway",
+        "condition_keys": [],
+        "description": "Grants permission to create a responder gateway",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateResponderGateway.html"
+      },
+      "DeleteInboundExternalLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteInboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to delete an inbound external link",
+        "resource_types": [
+          {
+            "name": "InboundExternalLink*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-InboundExternalLink"
+          },
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteInboundExternalLink.html"
+      },
+      "DeleteLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteLink",
+        "condition_keys": [],
+        "description": "Grants permission to delete a link between RTB applications",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLink.html"
+      },
+      "DeleteOutboundExternalLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteOutboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to delete an outbound external link",
+        "resource_types": [
+          {
+            "name": "OutboundExternalLink*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-OutboundExternalLink"
+          },
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteOutboundExternalLink.html"
+      },
+      "DeleteRequesterGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteRequesterGateway",
+        "condition_keys": [],
+        "description": "Grants permission to delete a requester gateway",
+        "resource_types": [
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteRequesterGateway.html"
+      },
+      "DeleteResponderGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteResponderGateway",
+        "condition_keys": [],
+        "description": "Grants permission to delete a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteResponderGateway.html"
+      },
+      "GetInboundExternalLink": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetInboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about an inbound external link",
+        "resource_types": [
+          {
+            "name": "InboundExternalLink*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-InboundExternalLink"
+          },
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetInboundExternalLink.html"
+      },
+      "GetLink": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetLink",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a link between RTB applications",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLink.html"
+      },
+      "GetOutboundExternalLink": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetOutboundExternalLink",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about an outbound external link",
+        "resource_types": [
+          {
+            "name": "OutboundExternalLink*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-OutboundExternalLink"
+          },
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetOutboundExternalLink.html"
+      },
+      "GetRequesterGateway": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetRequesterGateway",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a requester gateway",
+        "resource_types": [
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetRequesterGateway.html"
+      },
+      "GetResponderGateway": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetResponderGateway",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetResponderGateway.html"
+      },
+      "ListLinks": {
+        "access_level": "List",
+        "action_name": "rtbfabric:ListLinks",
+        "condition_keys": [],
+        "description": "Grants permission to list links associated with an RTB application",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinks.html"
+      },
+      "ListRequesterGateways": {
+        "access_level": "List",
+        "action_name": "rtbfabric:ListRequesterGateways",
+        "condition_keys": [],
+        "description": "Grants permission to list requester gateways with optional filtering and pagination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListRequesterGateways.html"
+      },
+      "ListResponderGateways": {
+        "access_level": "List",
+        "action_name": "rtbfabric:ListResponderGateways",
+        "condition_keys": [],
+        "description": "Grants permission to list responder gateways with optional filtering and pagination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListResponderGateways.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list tags for a resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListTagsForResource.html"
+      },
+      "RejectLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:RejectLink",
+        "condition_keys": [],
+        "description": "Grants permission to reject a link request between RTB applications",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_RejectLink.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "rtbfabric:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to assign one or more tags (key-value pairs) to the specified resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "rtbfabric:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove a tag or tags from a resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UntagResource.html"
+      },
+      "UpdateLink": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:UpdateLink",
+        "condition_keys": [],
+        "description": "Grants permission to update configuration settings for an existing link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLink.html"
+      },
+      "UpdateLinkModuleFlow": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:UpdateLinkModuleFlow",
+        "condition_keys": [],
+        "description": "Grants permission to update a link module flow",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkModuleFlow.html"
+      },
+      "UpdateRequesterGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:UpdateRequesterGateway",
+        "condition_keys": [],
+        "description": "Grants permission to update a requester gateway",
+        "resource_types": [
+          {
+            "name": "RequesterGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-RequesterGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateRequesterGateway.html"
+      },
+      "UpdateResponderGateway": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:UpdateResponderGateway",
+        "condition_keys": [],
+        "description": "Grants permission to update a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateResponderGateway.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html",
+    "serviceName": "AWS RTB Fabric",
+    "service_prefix": "rtbfabric"
+  },
   "awssavingsplans": {
     "actions": {
       "CreateSavingsPlan": {
@@ -298408,6 +298966,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html"
+      },
+      "UpdateOdbPeeringConnection": {
+        "access_level": "Write",
+        "action_name": "odb:UpdateOdbPeeringConnection",
+        "condition_keys": [],
+        "description": "Grants permission to update properties of a specified ODB Peering Connection",
+        "resource_types": [
+          {
+            "name": "odb-peering-connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-odb-peering-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbPeeringConnection.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html",
