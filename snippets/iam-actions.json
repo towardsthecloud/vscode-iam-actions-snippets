@@ -177468,6 +177468,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html#amazonvpclatticeservices-vpc-lattice-svcs_SourceVpcOwnerAccount"
           },
           {
+            "name": "vpc-lattice-svcs:RequestMethod",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html#amazonvpclatticeservices-vpc-lattice-svcs_RequestMethod"
+          },
+          {
+            "name": "vpc-lattice-svcs:RequestPath",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html#amazonvpclatticeservices-vpc-lattice-svcs_RequestPath"
+          },
+          {
             "name": "vpc-lattice-svcs:RequestHeader/${HeaderName}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclatticeservices.html#amazonvpclatticeservices-vpc-lattice-svcs_RequestHeader___HeaderName_"
           },
