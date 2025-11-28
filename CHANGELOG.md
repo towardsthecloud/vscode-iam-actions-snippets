@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Update README.md. [Danny Steenman]
+
+
+1.64.0 (2025-11-21)
+-------------------
+- Build: auto-update snippets to version: 1.64.0. [Github Actions]
+
+
 1.63.0 (2025-11-14)
 -------------------
 - Build: auto-update snippets to version: 1.63.0. [Github Actions]
