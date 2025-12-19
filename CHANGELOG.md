@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.66.0 (2025-12-12)
+-------------------
+- Build: auto-update snippets to version: 1.66.0. [Github Actions]
 - Update README.md. [Danny Steenman]
 
 

@@ -28043,7 +28043,12 @@
       "DeleteIdentities": {
         "access_level": "Write",
         "action_name": "cognito-identity:DeleteIdentities",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity_IdentityPoolArn"
+          }
+        ],
         "description": "Grants permission to delete identities from an identity pool. You can specify a list of 1-60 identities that you want to delete",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html"
@@ -28064,7 +28069,12 @@
       "DescribeIdentity": {
         "access_level": "Read",
         "action_name": "cognito-identity:DescribeIdentity",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity_IdentityPoolArn"
+          }
+        ],
         "description": "Grants permission to return metadata related to the given identity, including when the identity was created and any associated linked logins",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html"
@@ -28085,7 +28095,24 @@
       "GetCredentialsForIdentity": {
         "access_level": "Read",
         "action_name": "cognito-identity:GetCredentialsForIdentity",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity-unauth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-unauth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_AccountId"
+          },
+          {
+            "name": "cognito-identity-auth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-auth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_AccountId"
+          }
+        ],
         "description": "Grants permission to return credentials for the provided identity ID",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html"
@@ -28093,7 +28120,24 @@
       "GetId": {
         "access_level": "Write",
         "action_name": "cognito-identity:GetId",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity-unauth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-unauth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_AccountId"
+          },
+          {
+            "name": "cognito-identity-auth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-auth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_AccountId"
+          }
+        ],
         "description": "Grants permission to generate (or retrieve) a Cognito ID. Supplying multiple logins will create an implicit linked account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html"
@@ -28153,7 +28197,24 @@
       "GetOpenIdToken": {
         "access_level": "Read",
         "action_name": "cognito-identity:GetOpenIdToken",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity-unauth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-unauth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-unauth_AccountId"
+          },
+          {
+            "name": "cognito-identity-auth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-auth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_AccountId"
+          }
+        ],
         "description": "Grants permission to get an OpenID token, using a known Cognito ID",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html"
@@ -28276,7 +28337,7 @@
         "description": "Grants permission to assign a set of tags to an Amazon Cognito identity pool",
         "resource_types": [
           {
-            "name": "identitypool",
+            "name": "identitypool*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-identitypool"
           }
         ],
@@ -28298,7 +28359,16 @@
       "UnlinkIdentity": {
         "access_level": "Write",
         "action_name": "cognito-identity:UnlinkIdentity",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "cognito-identity-auth:IdentityPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_IdentityPoolArn"
+          },
+          {
+            "name": "cognito-identity-auth:AccountId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-cognito-identity-auth_AccountId"
+          }
+        ],
         "description": "Grants permission to unlink a federated identity from an existing account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html"
@@ -28315,7 +28385,7 @@
         "description": "Grants permission to remove the specified tags from an Amazon Cognito identity pool",
         "resource_types": [
           {
-            "name": "identitypool",
+            "name": "identitypool*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html#amazoncognitoidentity-identitypool"
           }
         ],
@@ -49818,6 +49888,32 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateVpcCidrBlock.html"
       },
+      "AttachApplianceToNatGateway": {
+        "access_level": "Permissions management",
+        "action_name": "ec2:AttachApplianceToNatGateway",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to attach an appliance with a public/private Natgateway",
+        "resource_types": [
+          {
+            "name": "natgateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-natgateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachApplianceToNatGateway.html"
+      },
       "AttachClassicLinkVpc": {
         "access_level": "Write",
         "action_name": "ec2:AttachClassicLinkVpc",
@@ -52018,6 +52114,18 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
           {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Vpc",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Vpc"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ec2:AvailabilityZone",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
           },
@@ -52107,6 +52215,10 @@
           {
             "name": "vpc-flow-log*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-flow-log"
+          },
+          {
+            "name": "natgateway",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-natgateway"
           },
           {
             "name": "network-interface",
@@ -52625,6 +52737,96 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html"
       },
+      "CreateInterruptibleCapacityReservationAllocation": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateInterruptibleCapacityReservationAllocation",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:AvailabilityZoneId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZoneId"
+          },
+          {
+            "name": "ec2:CreateDate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_CreateDate"
+          },
+          {
+            "name": "ec2:EbsOptimized",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EbsOptimized"
+          },
+          {
+            "name": "ec2:EndDate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EndDate"
+          },
+          {
+            "name": "ec2:EndDateType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EndDateType"
+          },
+          {
+            "name": "ec2:InstanceCount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceCount"
+          },
+          {
+            "name": "ec2:InstanceMatchCriteria",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMatchCriteria"
+          },
+          {
+            "name": "ec2:InstancePlatform",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstancePlatform"
+          },
+          {
+            "name": "ec2:InstanceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceType"
+          },
+          {
+            "name": "ec2:InterruptibleCapacityReservationId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InterruptibleCapacityReservationId"
+          },
+          {
+            "name": "ec2:InterruptionType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InterruptionType"
+          },
+          {
+            "name": "ec2:IsInterruptible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IsInterruptible"
+          },
+          {
+            "name": "ec2:SourceCapacityReservationId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_SourceCapacityReservationId"
+          },
+          {
+            "name": "ec2:TargetInstanceCount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_TargetInstanceCount"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create an interruptible Capacity Reservation by specifying the number of unused instances you want to allocate from your source reservation",
+        "resource_types": [
+          {
+            "name": "capacity-reservation*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-reservation"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInterruptibleCapacityReservationAllocation.html"
+      },
       "CreateIpam": {
         "access_level": "Write",
         "action_name": "ec2:CreateIpam",
@@ -52689,6 +52891,44 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamExternalResourceVerificationToken.html"
       },
+      "CreateIpamPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateIpamPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create a policy in Amazon VPC IP Address Manager (IPAM) that defines rules for allocating public IPv4 addresses from IPAM pools to AWS resources",
+        "resource_types": [
+          {
+            "name": "ipam*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam"
+          },
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPolicy.html"
+      },
       "CreateIpamPool": {
         "access_level": "Write",
         "action_name": "ec2:CreateIpamPool",
@@ -52726,6 +52966,94 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPool.html"
+      },
+      "CreateIpamPrefixListResolver": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateIpamPrefixListResolver",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create an IPAM prefix list resolver that defines rules for selecting CIDRs to include in prefix lists",
+        "resource_types": [
+          {
+            "name": "ipam*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam"
+          },
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          },
+          {
+            "name": "ipam-scope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-scope"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolver.html"
+      },
+      "CreateIpamPrefixListResolverTarget": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateIpamPrefixListResolverTarget",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create an IPAM prefix list resolver target that links a resolver to a managed prefix list",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          },
+          {
+            "name": "ipam-prefix-list-resolver-target*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver-target"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolverTarget.html"
       },
       "CreateIpamResourceDiscovery": {
         "access_level": "Write",
@@ -53352,6 +53680,26 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
           {
+            "name": "ec2:AllocationId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AllocationId"
+          },
+          {
+            "name": "ec2:Domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Domain"
+          },
+          {
+            "name": "ec2:PublicIpAddress",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_PublicIpAddress"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ec2:AvailabilityZone",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
           },
@@ -53376,20 +53724,24 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
           {
-            "name": "ec2:AllocationId",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AllocationId"
+            "name": "ec2:Ipv4IpamPoolId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Ipv4IpamPoolId"
           },
           {
-            "name": "ec2:Domain",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Domain"
-          },
-          {
-            "name": "ec2:PublicIpAddress",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_PublicIpAddress"
+            "name": "ec2:Ipv6IpamPoolId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Ipv6IpamPoolId"
           },
           {
             "name": "ec2:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
           },
           {
             "name": "ec2:Region",
@@ -53403,12 +53755,16 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-natgateway"
           },
           {
-            "name": "subnet*",
+            "name": "elastic-ip",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-elastic-ip"
+          },
+          {
+            "name": "subnet",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-subnet"
           },
           {
-            "name": "elastic-ip",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-elastic-ip"
+            "name": "vpc",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html"
@@ -53888,6 +54244,40 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html"
+      },
+      "CreateOdbNetworkPeering": {
+        "access_level": "Permissions management",
+        "action_name": "ec2:CreateOdbNetworkPeering",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to allow Oracle Database@AWS to create a peering connection between an ODB network and a VPC",
+        "resource_types": [
+          {
+            "name": "vpc*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateOdbNetworkPeering.html"
       },
       "CreatePlacementGroup": {
         "access_level": "Write",
@@ -55650,6 +56040,54 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
           },
           {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
             "name": "ec2:KeyPairName",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_KeyPairName"
           },
@@ -55960,6 +56398,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:IpamPrefixListResolverTargetId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IpamPrefixListResolverTargetId"
           },
           {
             "name": "ec2:ResourceTag/${TagKey}",
@@ -56386,6 +56828,26 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
             "name": "ec2:transitGatewayMulticastDomainId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMulticastDomainId"
           },
@@ -56698,6 +57160,22 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
             "name": "ec2:VpceMultiRegion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpceMultiRegion"
           },
@@ -56768,6 +57246,22 @@
           {
             "name": "ec2:VpcPeeringConnectionID",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcPeeringConnectionID"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
             "name": "aws:RequestTag/${TagKey}",
@@ -57001,8 +57495,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-external-resource-verification-token"
           },
           {
+            "name": "ipam-policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          },
+          {
             "name": "ipam-pool",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-pool"
+          },
+          {
+            "name": "ipam-prefix-list-resolver",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          },
+          {
+            "name": "ipam-prefix-list-resolver-target",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver-target"
           },
           {
             "name": "ipam-resource-discovery",
@@ -57173,6 +57679,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-connect-peer"
           },
           {
+            "name": "transit-gateway-metering-policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          },
+          {
             "name": "transit-gateway-multicast-domain",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-multicast-domain"
           },
@@ -57225,6 +57735,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-block-public-access-exclusion"
           },
           {
+            "name": "vpc-encryption-control",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-encryption-control"
+          },
+          {
             "name": "vpc-endpoint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-endpoint"
           },
@@ -57247,6 +57761,10 @@
           {
             "name": "vpc-peering-connection",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-peering-connection"
+          },
+          {
+            "name": "vpn-concentrator",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpn-concentrator"
           },
           {
             "name": "vpn-connection",
@@ -57572,6 +58090,114 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayConnectPeer.html"
+      },
+      "CreateTransitGatewayMeteringPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateTransitGatewayMeteringPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayId"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayAttachmentId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayAttachmentId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create a metering policy for a transit gateway",
+        "resource_types": [
+          {
+            "name": "transit-gateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway"
+          },
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          },
+          {
+            "name": "transit-gateway-attachment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-attachment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicy.html"
+      },
+      "CreateTransitGatewayMeteringPolicyEntry": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateTransitGatewayMeteringPolicyEntry",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayAttachmentId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayAttachmentId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create an entry for a transit gateway metering policy",
+        "resource_types": [
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          },
+          {
+            "name": "transit-gateway-attachment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-attachment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicyEntry.html"
       },
       "CreateTransitGatewayMulticastDomain": {
         "access_level": "Write",
@@ -58471,6 +59097,52 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcBlockPublicAccessExclusion.html"
       },
+      "CreateVpcEncryptionControl": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateVpcEncryptionControl",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create a VPC Encryption Control",
+        "resource_types": [
+          {
+            "name": "vpc*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
+          },
+          {
+            "name": "vpc-encryption-control*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-encryption-control"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEncryptionControl.html"
+      },
       "CreateVpcEndpoint": {
         "access_level": "Write",
         "action_name": "ec2:CreateVpcEndpoint",
@@ -58498,6 +59170,14 @@
           {
             "name": "ec2:VpceMultiRegion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpceMultiRegion"
+          },
+          {
+            "name": "ec2:VpcePrivateDnsPreference",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcePrivateDnsPreference"
+          },
+          {
+            "name": "ec2:VpcePrivateDnsSpecifiedDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcePrivateDnsSpecifiedDomains"
           },
           {
             "name": "ec2:VpceServiceName",
@@ -58719,6 +59399,48 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcPeeringConnection.html"
       },
+      "CreateVpnConcentrator": {
+        "access_level": "Write",
+        "action_name": "ec2:CreateVpnConcentrator",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to create a VPN concentrator that aggregates multiple VPN connections to a transit gateway",
+        "resource_types": [
+          {
+            "name": "vpn-concentrator*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpn-concentrator"
+          },
+          {
+            "name": "transit-gateway",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConcentrator.html"
+      },
       "CreateVpnConnection": {
         "access_level": "Write",
         "action_name": "ec2:CreateVpnConnection",
@@ -58844,6 +59566,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
             "name": "ec2:Region",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
           }
@@ -58865,6 +59595,10 @@
           {
             "name": "transit-gateway-attachment",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-attachment"
+          },
+          {
+            "name": "vpn-concentrator",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpn-concentrator"
           },
           {
             "name": "vpn-gateway",
@@ -59515,6 +60249,32 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamExternalResourceVerificationToken.html"
       },
+      "DeleteIpamPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteIpamPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete an Amazon VPC IP Address Manager (IPAM) policy",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPolicy.html"
+      },
       "DeleteIpamPool": {
         "access_level": "Write",
         "action_name": "ec2:DeleteIpamPool",
@@ -59540,6 +60300,58 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPool.html"
+      },
+      "DeleteIpamPrefixListResolver": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteIpamPrefixListResolver",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete an IPAM prefix list resolver",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolver.html"
+      },
+      "DeleteIpamPrefixListResolverTarget": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteIpamPrefixListResolverTarget",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete an IPAM prefix list resolver target",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver-target*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver-target"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolverTarget.html"
       },
       "DeleteIpamResourceDiscovery": {
         "access_level": "Write",
@@ -59890,6 +60702,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
           {
+            "name": "ec2:IpamPrefixListResolverTargetId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IpamPrefixListResolverTargetId"
+          },
+          {
             "name": "ec2:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
@@ -60197,6 +61013,40 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterfacePermission.html"
       },
+      "DeleteOdbNetworkPeering": {
+        "access_level": "Permissions management",
+        "action_name": "ec2:DeleteOdbNetworkPeering",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to allow Oracle Database@AWS to delete a peering connection between an ODB network and a VPC",
+        "resource_types": [
+          {
+            "name": "vpc*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteOdbNetworkPeering.html"
+      },
       "DeletePlacementGroup": {
         "access_level": "Write",
         "action_name": "ec2:DeletePlacementGroup",
@@ -60225,7 +61075,7 @@
         "description": "Grants permission to delete a placement group",
         "resource_types": [
           {
-            "name": "placement-group",
+            "name": "placement-group*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-placement-group"
           }
         ],
@@ -62156,6 +63006,102 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
           {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_TagKeys"
           },
@@ -62283,8 +63229,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-external-resource-verification-token"
           },
           {
+            "name": "ipam-policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          },
+          {
             "name": "ipam-pool",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-pool"
+          },
+          {
+            "name": "ipam-prefix-list-resolver",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          },
+          {
+            "name": "ipam-prefix-list-resolver-target",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver-target"
           },
           {
             "name": "ipam-resource-discovery",
@@ -62455,6 +63413,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-connect-peer"
           },
           {
+            "name": "transit-gateway-metering-policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          },
+          {
             "name": "transit-gateway-multicast-domain",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-multicast-domain"
           },
@@ -62507,6 +63469,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-block-public-access-exclusion"
           },
           {
+            "name": "vpc-encryption-control",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-encryption-control"
+          },
+          {
             "name": "vpc-endpoint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-endpoint"
           },
@@ -62529,6 +63495,10 @@
           {
             "name": "vpc-peering-connection",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-peering-connection"
+          },
+          {
+            "name": "vpn-concentrator",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpn-concentrator"
           },
           {
             "name": "vpn-connection",
@@ -62746,6 +63716,66 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayConnectPeer.html"
+      },
+      "DeleteTransitGatewayMeteringPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteTransitGatewayMeteringPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete a transit gateway metering policy",
+        "resource_types": [
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicy.html"
+      },
+      "DeleteTransitGatewayMeteringPolicyEntry": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteTransitGatewayMeteringPolicyEntry",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete an entry from a transit gateway metering policy",
+        "resource_types": [
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicyEntry.html"
       },
       "DeleteTransitGatewayMulticastDomain": {
         "access_level": "Write",
@@ -63237,6 +64267,32 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcBlockPublicAccessExclusion.html"
       },
+      "DeleteVpcEncryptionControl": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteVpcEncryptionControl",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete a VPC Encryption Control",
+        "resource_types": [
+          {
+            "name": "vpc-encryption-control*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-encryption-control"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEncryptionControl.html"
+      },
       "DeleteVpcEndpointConnectionNotifications": {
         "access_level": "Write",
         "action_name": "ec2:DeleteVpcEndpointConnectionNotifications",
@@ -63392,6 +64448,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcPeeringConnection.html"
+      },
+      "DeleteVpnConcentrator": {
+        "access_level": "Write",
+        "action_name": "ec2:DeleteVpnConcentrator",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to delete a VPN concentrator",
+        "resource_types": [
+          {
+            "name": "vpn-concentrator*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpn-concentrator"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConcentrator.html"
       },
       "DeleteVpnConnection": {
         "access_level": "Write",
@@ -64038,6 +65120,19 @@
         "description": "Grants permission to describe one or more Capacity Reservation Fleets",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationFleets.html"
+      },
+      "DescribeCapacityReservationTopology": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeCapacityReservationTopology",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe the topology of one or more Capacity Reservations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationTopology.html"
       },
       "DescribeCapacityReservations": {
         "access_level": "List",
@@ -64900,6 +65995,32 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceImageMetadata.html"
       },
+      "DescribeInstanceSqlHaHistoryStates": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeInstanceSqlHaHistoryStates",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe EC2 instance SQL HA history states",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaHistoryStates.html"
+      },
+      "DescribeInstanceSqlHaStates": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeInstanceSqlHaStates",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe EC2 instance SQL HA states",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaStates.html"
+      },
       "DescribeInstanceStatus": {
         "access_level": "List",
         "action_name": "ec2:DescribeInstanceStatus",
@@ -65004,6 +66125,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamExternalResourceVerificationTokens.html"
       },
+      "DescribeIpamPolicies": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeIpamPolicies",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe Amazon VPC IP Address Manager (IPAM) policies",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPolicies.html"
+      },
       "DescribeIpamPools": {
         "access_level": "List",
         "action_name": "ec2:DescribeIpamPools",
@@ -65016,6 +66150,32 @@
         "description": "Grants permission to describe Amazon VPC IP Address Manager (IPAM) pools",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPools.html"
+      },
+      "DescribeIpamPrefixListResolverTargets": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeIpamPrefixListResolverTargets",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe IPAM prefix list resolver targets",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolverTargets.html"
+      },
+      "DescribeIpamPrefixListResolvers": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeIpamPrefixListResolvers",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe IPAM prefix list resolvers",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolvers.html"
       },
       "DescribeIpamResourceDiscoveries": {
         "access_level": "List",
@@ -66032,6 +67192,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayConnects.html"
       },
+      "DescribeTransitGatewayMeteringPolicies": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeTransitGatewayMeteringPolicies",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe one or more transit gateway metering policies",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMeteringPolicies.html"
+      },
       "DescribeTransitGatewayMulticastDomains": {
         "access_level": "List",
         "action_name": "ec2:DescribeTransitGatewayMulticastDomains",
@@ -66413,6 +67586,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLinkDnsSupport.html"
       },
+      "DescribeVpcEncryptionControls": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeVpcEncryptionControls",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe one or more VPC Encryption Controls",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEncryptionControls.html"
+      },
       "DescribeVpcEndpointAssociations": {
         "access_level": "List",
         "action_name": "ec2:DescribeVpcEndpointAssociations",
@@ -66551,6 +67737,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html"
       },
+      "DescribeVpnConcentrators": {
+        "access_level": "List",
+        "action_name": "ec2:DescribeVpnConcentrators",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe one or more VPN concentrators",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConcentrators.html"
+      },
       "DescribeVpnConnections": {
         "access_level": "List",
         "action_name": "ec2:DescribeVpnConnections",
@@ -66576,6 +67775,32 @@
         "description": "Grants permission to describe one or more virtual private gateways",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html"
+      },
+      "DetachApplianceFromNatGateway": {
+        "access_level": "Permissions management",
+        "action_name": "ec2:DetachApplianceFromNatGateway",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to detach an appliance from a public/private Natgateway",
+        "resource_types": [
+          {
+            "name": "natgateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-natgateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachApplianceFromNatGateway.html"
       },
       "DetachClassicLinkVpc": {
         "access_level": "Write",
@@ -67454,6 +68679,92 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableImageDeregistrationProtection.html"
       },
+      "DisableInstanceSqlHaStandbyDetections": {
+        "access_level": "Write",
+        "action_name": "ec2:DisableInstanceSqlHaStandbyDetections",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:AvailabilityZoneId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZoneId"
+          },
+          {
+            "name": "ec2:EbsOptimized",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EbsOptimized"
+          },
+          {
+            "name": "ec2:InstanceAutoRecovery",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceAutoRecovery"
+          },
+          {
+            "name": "ec2:InstanceBandwidthWeighting",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceBandwidthWeighting"
+          },
+          {
+            "name": "ec2:InstanceID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceID"
+          },
+          {
+            "name": "ec2:InstanceMarketType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMarketType"
+          },
+          {
+            "name": "ec2:InstanceMetadataTags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMetadataTags"
+          },
+          {
+            "name": "ec2:InstanceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceProfile"
+          },
+          {
+            "name": "ec2:InstanceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceType"
+          },
+          {
+            "name": "ec2:MetadataHttpEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpEndpoint"
+          },
+          {
+            "name": "ec2:MetadataHttpPutResponseHopLimit",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpPutResponseHopLimit"
+          },
+          {
+            "name": "ec2:MetadataHttpTokens",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpTokens"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:RootDeviceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_RootDeviceType"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to disable EC2 instance SQL HA standby detections",
+        "resource_types": [
+          {
+            "name": "instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableInstanceSqlHaStandbyDetections.html"
+      },
       "DisableIpamOrganizationAdminAccount": {
         "access_level": "Write",
         "action_name": "ec2:DisableIpamOrganizationAdminAccount",
@@ -67466,6 +68777,32 @@
         "description": "Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamOrganizationAdminAccount.html"
+      },
+      "DisableIpamPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:DisableIpamPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to disable a policy in Amazon VPC IP Address Manager (IPAM) that controls public IPv4 address allocation",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamPolicy.html"
       },
       "DisableRouteServerPropagation": {
         "access_level": "Write",
@@ -69068,6 +70405,92 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableImageDeregistrationProtection.html"
       },
+      "EnableInstanceSqlHaStandbyDetections": {
+        "access_level": "Write",
+        "action_name": "ec2:EnableInstanceSqlHaStandbyDetections",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:AvailabilityZoneId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZoneId"
+          },
+          {
+            "name": "ec2:EbsOptimized",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EbsOptimized"
+          },
+          {
+            "name": "ec2:InstanceAutoRecovery",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceAutoRecovery"
+          },
+          {
+            "name": "ec2:InstanceBandwidthWeighting",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceBandwidthWeighting"
+          },
+          {
+            "name": "ec2:InstanceID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceID"
+          },
+          {
+            "name": "ec2:InstanceMarketType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMarketType"
+          },
+          {
+            "name": "ec2:InstanceMetadataTags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMetadataTags"
+          },
+          {
+            "name": "ec2:InstanceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceProfile"
+          },
+          {
+            "name": "ec2:InstanceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceType"
+          },
+          {
+            "name": "ec2:MetadataHttpEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpEndpoint"
+          },
+          {
+            "name": "ec2:MetadataHttpPutResponseHopLimit",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpPutResponseHopLimit"
+          },
+          {
+            "name": "ec2:MetadataHttpTokens",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_MetadataHttpTokens"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:RootDeviceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_RootDeviceType"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to enable EC2 instance SQL HA standby detections",
+        "resource_types": [
+          {
+            "name": "instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableInstanceSqlHaStandbyDetections.html"
+      },
       "EnableIpamOrganizationAdminAccount": {
         "access_level": "Write",
         "action_name": "ec2:EnableIpamOrganizationAdminAccount",
@@ -69080,6 +70503,32 @@
         "description": "Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamOrganizationAdminAccount.html"
+      },
+      "EnableIpamPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:EnableIpamPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to enable an Amazon VPC IP Address Manager (IPAM) policy",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamPolicy.html"
       },
       "EnableReachabilityAnalyzerOrganizationSharing": {
         "access_level": "Write",
@@ -70061,6 +71510,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsEncryptionByDefault.html"
       },
+      "GetEnabledIpamPolicy": {
+        "access_level": "Read",
+        "action_name": "ec2:GetEnabledIpamPolicy",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe the currently enabled policy in Amazon VPC IP Address Manager (IPAM)",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEnabledIpamPolicy.html"
+      },
       "GetFlowLogsIntegrationTemplate": {
         "access_level": "Read",
         "action_name": "ec2:GetFlowLogsIntegrationTemplate",
@@ -70125,6 +71587,52 @@
         "description": "Grants permission to preview a reservation purchase with configurations that match those of a Dedicated Host",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetHostReservationPurchasePreview.html"
+      },
+      "GetImageAncestry": {
+        "access_level": "Read",
+        "action_name": "ec2:GetImageAncestry",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ImageID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ImageID"
+          },
+          {
+            "name": "ec2:ImageType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ImageType"
+          },
+          {
+            "name": "ec2:Owner",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Owner"
+          },
+          {
+            "name": "ec2:Public",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Public"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:RootDeviceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_RootDeviceType"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to retrieve the ancestry chain of an AMI back to its root AMI",
+        "resource_types": [
+          {
+            "name": "image*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-image"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageAncestry.html"
       },
       "GetImageBlockPublicAccessState": {
         "access_level": "Read",
@@ -70469,6 +71977,58 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamDiscoveredResourceCidrs.html"
       },
+      "GetIpamPolicyAllocationRules": {
+        "access_level": "List",
+        "action_name": "ec2:GetIpamPolicyAllocationRules",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyAllocationRules.html"
+      },
+      "GetIpamPolicyOrganizationTargets": {
+        "access_level": "List",
+        "action_name": "ec2:GetIpamPolicyOrganizationTargets",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to retrieve the AWS Organizations targets associated with an Amazon VPC IP Address Manager (IPAM) policy",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyOrganizationTargets.html"
+      },
       "GetIpamPoolAllocations": {
         "access_level": "List",
         "action_name": "ec2:GetIpamPoolAllocations",
@@ -70520,6 +72080,84 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolCidrs.html"
+      },
+      "GetIpamPrefixListResolverRules": {
+        "access_level": "Read",
+        "action_name": "ec2:GetIpamPrefixListResolverRules",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to get rules for an IPAM prefix list resolver",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverRules.html"
+      },
+      "GetIpamPrefixListResolverVersionEntries": {
+        "access_level": "Read",
+        "action_name": "ec2:GetIpamPrefixListResolverVersionEntries",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to get CIDR entries for a specific version of an IPAM prefix list resolver",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersionEntries.html"
+      },
+      "GetIpamPrefixListResolverVersions": {
+        "access_level": "Read",
+        "action_name": "ec2:GetIpamPrefixListResolverVersions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to get versions of an IPAM prefix list resolver",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersions.html"
       },
       "GetIpamResourceCidrs": {
         "access_level": "Read",
@@ -70670,6 +72308,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
           },
           {
+            "name": "ec2:IpamPrefixListResolverTargetId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IpamPrefixListResolverTargetId"
+          },
+          {
             "name": "ec2:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
@@ -70694,6 +72336,10 @@
           {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:IpamPrefixListResolverTargetId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IpamPrefixListResolverTargetId"
           },
           {
             "name": "ec2:ResourceTag/${TagKey}",
@@ -71164,6 +72810,36 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayAttachmentPropagations.html"
       },
+      "GetTransitGatewayMeteringPolicyEntries": {
+        "access_level": "List",
+        "action_name": "ec2:GetTransitGatewayMeteringPolicyEntries",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to list the entries for a transit gateway metering policy",
+        "resource_types": [
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMeteringPolicyEntries.html"
+      },
       "GetTransitGatewayMulticastDomainAssociations": {
         "access_level": "List",
         "action_name": "ec2:GetTransitGatewayMulticastDomainAssociations",
@@ -71396,6 +73072,40 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/verified-access/latest/ug/waf-integration.html"
+      },
+      "GetVpcResourcesBlockingEncryptionEnforcement": {
+        "access_level": "List",
+        "action_name": "ec2:GetVpcResourcesBlockingEncryptionEnforcement",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to describe resources that would block VPC Encryption Control enforcement",
+        "resource_types": [
+          {
+            "name": "vpc*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVpcResourcesBlockingEncryptionEnforcement.html"
       },
       "GetVpnConnectionDeviceSampleConfiguration": {
         "access_level": "List",
@@ -71966,6 +73676,19 @@
         "description": "Grants permission to list the Amazon EBS snapshots that are currently in the Recycle Bin",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListSnapshotsInRecycleBin.html"
+      },
+      "ListVolumesInRecycleBin": {
+        "access_level": "List",
+        "action_name": "ec2:ListVolumesInRecycleBin",
+        "condition_keys": [
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to list EBS volumes in Recycle Bin",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListVolumesInRecycleBin.html"
       },
       "LockSnapshot": {
         "access_level": "Write",
@@ -73783,6 +75506,44 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpam.html"
       },
+      "ModifyIpamPolicyAllocationRules": {
+        "access_level": "Write",
+        "action_name": "ec2:ModifyIpamPolicyAllocationRules",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to modify the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy",
+        "resource_types": [
+          {
+            "name": "ipam-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-policy"
+          },
+          {
+            "name": "ipam-pool",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-pool"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPolicyAllocationRules.html"
+      },
       "ModifyIpamPool": {
         "access_level": "Write",
         "action_name": "ec2:ModifyIpamPool",
@@ -73816,6 +75577,78 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPool.html"
+      },
+      "ModifyIpamPrefixListResolver": {
+        "access_level": "Write",
+        "action_name": "ec2:ModifyIpamPrefixListResolver",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Attribute",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute"
+          },
+          {
+            "name": "ec2:Attribute/${AttributeName}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute___AttributeName_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to modify an IPAM prefix list resolver",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver"
+          },
+          {
+            "name": "ipam-scope",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-scope"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolver.html"
+      },
+      "ModifyIpamPrefixListResolverTarget": {
+        "access_level": "Write",
+        "action_name": "ec2:ModifyIpamPrefixListResolverTarget",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to modify an IPAM prefix list resolver target",
+        "resource_types": [
+          {
+            "name": "ipam-prefix-list-resolver-target*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ipam-prefix-list-resolver-target"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolverTarget.html"
       },
       "ModifyIpamResourceCidr": {
         "access_level": "Write",
@@ -74068,6 +75901,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute___AttributeName_"
           },
           {
+            "name": "ec2:IpamPrefixListResolverTargetId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IpamPrefixListResolverTargetId"
+          },
+          {
             "name": "ec2:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
           },
@@ -74270,6 +76107,44 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+      },
+      "ModifyOdbNetworkPeering": {
+        "access_level": "Permissions management",
+        "action_name": "ec2:ModifyOdbNetworkPeering",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Attribute/${AttributeName}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute___AttributeName_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:VpcID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VpcID"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to allow Oracle Database@AWS to modify the settings of a peering connection between an ODB network and a VPC",
+        "resource_types": [
+          {
+            "name": "vpc*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyOdbNetworkPeering.html"
       },
       "ModifyPrivateDnsNameOptions": {
         "access_level": "Write",
@@ -75025,6 +76900,56 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGateway.html"
       },
+      "ModifyTransitGatewayMeteringPolicy": {
+        "access_level": "Write",
+        "action_name": "ec2:ModifyTransitGatewayMeteringPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Attribute/${AttributeName}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute___AttributeName_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayMeteringPolicyId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayMeteringPolicyId"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:transitGatewayAttachmentId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_transitGatewayAttachmentId"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to modify a transit gateway metering policy",
+        "resource_types": [
+          {
+            "name": "transit-gateway-metering-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-metering-policy"
+          },
+          {
+            "name": "transit-gateway-attachment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-transit-gateway-attachment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayMeteringPolicy.html"
+      },
       "ModifyTransitGatewayPrefixListReference": {
         "access_level": "Write",
         "action_name": "ec2:ModifyTransitGatewayPrefixListReference",
@@ -75691,6 +77616,36 @@
         "description": "Grants permission to modify options for blocked public access on a VPC",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcBlockPublicAccessOptions.html"
+      },
+      "ModifyVpcEncryptionControl": {
+        "access_level": "Write",
+        "action_name": "ec2:ModifyVpcEncryptionControl",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Attribute/${AttributeName}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Attribute___AttributeName_"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to modify an existing VPC Encryption Control",
+        "resource_types": [
+          {
+            "name": "vpc-encryption-control*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-vpc-encryption-control"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEncryptionControl.html"
       },
       "ModifyVpcEndpoint": {
         "access_level": "Write",
@@ -79090,6 +81045,76 @@
         ],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreSnapshotTier.html"
       },
+      "RestoreVolumeFromRecycleBin": {
+        "access_level": "Write",
+        "action_name": "ec2:RestoreVolumeFromRecycleBin",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:AvailabilityZoneId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZoneId"
+          },
+          {
+            "name": "ec2:Encrypted",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Encrypted"
+          },
+          {
+            "name": "ec2:ParentSnapshot",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ParentSnapshot"
+          },
+          {
+            "name": "ec2:ParentVolume",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ParentVolume"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:VolumeID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeID"
+          },
+          {
+            "name": "ec2:VolumeInitializationRate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeInitializationRate"
+          },
+          {
+            "name": "ec2:VolumeIops",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeIops"
+          },
+          {
+            "name": "ec2:VolumeSize",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeSize"
+          },
+          {
+            "name": "ec2:VolumeThroughput",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeThroughput"
+          },
+          {
+            "name": "ec2:VolumeType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_VolumeType"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to restore an EBS volume from Recycle Bin",
+        "resource_types": [
+          {
+            "name": "volume*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-volume"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreVolumeFromRecycleBin.html"
+      },
       "RevokeClientVpnIngress": {
         "access_level": "Write",
         "action_name": "ec2:RevokeClientVpnIngress",
@@ -80750,6 +82775,96 @@
         "description": "Grants permission to update the Organizations access setting for EC2 Capacity Manager",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateCapacityManagerOrganizationsAccess.html"
+      },
+      "UpdateInterruptibleCapacityReservationAllocation": {
+        "access_level": "Write",
+        "action_name": "ec2:UpdateInterruptibleCapacityReservationAllocation",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:AvailabilityZone",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZone"
+          },
+          {
+            "name": "ec2:AvailabilityZoneId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_AvailabilityZoneId"
+          },
+          {
+            "name": "ec2:CreateDate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_CreateDate"
+          },
+          {
+            "name": "ec2:EbsOptimized",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EbsOptimized"
+          },
+          {
+            "name": "ec2:EndDate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EndDate"
+          },
+          {
+            "name": "ec2:EndDateType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_EndDateType"
+          },
+          {
+            "name": "ec2:InstanceCount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceCount"
+          },
+          {
+            "name": "ec2:InstanceMatchCriteria",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceMatchCriteria"
+          },
+          {
+            "name": "ec2:InstancePlatform",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstancePlatform"
+          },
+          {
+            "name": "ec2:InstanceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InstanceType"
+          },
+          {
+            "name": "ec2:InterruptibleCapacityReservationId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InterruptibleCapacityReservationId"
+          },
+          {
+            "name": "ec2:InterruptionType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_InterruptionType"
+          },
+          {
+            "name": "ec2:IsInterruptible",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_IsInterruptible"
+          },
+          {
+            "name": "ec2:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ec2:SourceCapacityReservationId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_SourceCapacityReservationId"
+          },
+          {
+            "name": "ec2:TargetInstanceCount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_TargetInstanceCount"
+          },
+          {
+            "name": "ec2:Tenancy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Tenancy"
+          },
+          {
+            "name": "ec2:Region",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-ec2_Region"
+          }
+        ],
+        "description": "Grants permission to update the number of instances allocated to an interruptible reservation, allowing you to add more capacity or reclaim capacity to your source Capacity Reservation",
+        "resource_types": [
+          {
+            "name": "capacity-reservation*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html#amazonec2-capacity-reservation"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateInterruptibleCapacityReservationAllocation.html"
       },
       "UpdateSecurityGroupRuleDescriptionsEgress": {
         "access_level": "Write",
@@ -138402,6 +140517,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
       },
+      "GetIdentityContext": {
+        "access_level": "Read",
+        "action_name": "quicksight:GetIdentityContext",
+        "condition_keys": [],
+        "description": "Grants permission to get identity context for a user",
+        "resource_types": [
+          {
+            "name": "user*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-user"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html"
+      },
       "GetSessionEmbedUrl": {
         "access_level": "Read",
         "action_name": "quicksight:GetSessionEmbedUrl",
@@ -144828,7 +146956,12 @@
         "action_name": "redshift:DescribeClusters",
         "condition_keys": [],
         "description": "Grants permission to describe properties of provisioned clusters",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html#amazonredshift-cluster"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusters.html"
       },
       "DescribeCustomDomainAssociations": {
@@ -164650,6 +166783,10 @@
           {
             "name": "sagemaker:SpaceSharingType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_SpaceSharingType"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to create an App for a SageMaker UserProfile or Space",
@@ -165068,6 +167205,10 @@
           {
             "name": "sagemaker:ImageVersionArns",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ImageVersionArns"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to create a Domain for SageMaker Studio",
@@ -166401,6 +168542,10 @@
           {
             "name": "sagemaker:SpaceSharingType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_SpaceSharingType"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to create a Space for a SageMaker Domain",
@@ -166663,6 +168808,10 @@
           {
             "name": "sagemaker:ImageVersionArns",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ImageVersionArns"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to create a UserProfile for a SageMaker Domain",
@@ -170795,6 +172944,10 @@
           {
             "name": "sagemaker:VpcSubnets",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_VpcSubnets"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to update a Domain",
@@ -171305,6 +173458,10 @@
           {
             "name": "sagemaker:SpaceSharingType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_SpaceSharingType"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to update a Space",
@@ -171395,6 +173552,10 @@
           {
             "name": "sagemaker:ImageVersionArns",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ImageVersionArns"
+          },
+          {
+            "name": "sagemaker:StudioLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_StudioLifecycleConfigArns"
           }
         ],
         "description": "Grants permission to update a UserProfile",
@@ -180176,6 +182337,36 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListTagsForResource.html"
+      },
+      "RebootDbCluster": {
+        "access_level": "Write",
+        "action_name": "timestream-influxdb:RebootDbCluster",
+        "condition_keys": [],
+        "description": "Grants permission to reboot a Timestream InfluxDB Cluster",
+        "resource_types": [
+          {
+            "name": "db-cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestreaminfluxdb.html#amazontimestreaminfluxdb-db-cluster"
+          },
+          {
+            "name": "db-instance",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestreaminfluxdb.html#amazontimestreaminfluxdb-db-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbCluster.html"
+      },
+      "RebootDbInstance": {
+        "access_level": "Write",
+        "action_name": "timestream-influxdb:RebootDbInstance",
+        "condition_keys": [],
+        "description": "Grants permission to reboot a Timestream InfluxDB instance",
+        "resource_types": [
+          {
+            "name": "db-instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestreaminfluxdb.html#amazontimestreaminfluxdb-db-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbInstance.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -201301,7 +203492,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSearchJob.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchJob.html"
       },
       "GetSearchResultExportJob": {
         "access_level": "Read",
@@ -201314,7 +203505,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchExportJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSearchResultExportJob.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchResultExportJob.html"
       },
       "ListSearchJobBackups": {
         "access_level": "Read",
@@ -201327,7 +203518,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobBackups.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobBackups.html"
       },
       "ListSearchJobResults": {
         "access_level": "Read",
@@ -201340,7 +203531,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobResults.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobResults.html"
       },
       "ListSearchJobs": {
         "access_level": "List",
@@ -201348,7 +203539,7 @@
         "condition_keys": [],
         "description": "Grants permission to list search jobs",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobs.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobs.html"
       },
       "ListSearchResultExportJobs": {
         "access_level": "List",
@@ -201356,7 +203547,7 @@
         "condition_keys": [],
         "description": "Grants permission to list search result export jobs",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchResultExportJobs.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchResultExportJobs.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -201373,7 +203564,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListTagsForResource.html"
       },
       "StartSearchJob": {
         "access_level": "Write",
@@ -201394,7 +203585,7 @@
         ],
         "description": "Grants permission to create a search job",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartSearchJob.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchJob.html"
       },
       "StartSearchResultExportJob": {
         "access_level": "Write",
@@ -201416,7 +203607,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartSearchResultExportJob.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchResultExportJob.html"
       },
       "StopSearchJob": {
         "access_level": "Write",
@@ -201429,7 +203620,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StopSearchJob.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StopSearchJob.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -201455,7 +203646,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -201477,7 +203668,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html#awsbackupsearch-searchJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_UntagResource.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackupsearch.html",
@@ -227553,8 +229744,8 @@
         "description": "Grants permission to delete a metered product",
         "resource_types": [
           {
-            "name": "metered-product*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-metered-product"
+            "name": "license-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteMeteredProduct.html"
@@ -228178,8 +230369,8 @@
         "description": "Grants permission to list all metered products in a license endpoint",
         "resource_types": [
           {
-            "name": "metered-product*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-metered-product"
+            "name": "license-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListMeteredProducts.html"
@@ -228458,8 +230649,8 @@
         "description": "Grants permission to add a metered product to a license endpoint",
         "resource_types": [
           {
-            "name": "metered-product*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-metered-product"
+            "name": "license-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_PutMeteredProduct.html"
@@ -254405,6 +256596,23 @@
         "description": "Grants permission to create a data flow endpoint group",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html"
+      },
+      "CreateDataflowEndpointGroupV2": {
+        "access_level": "Write",
+        "action_name": "groundstation:CreateDataflowEndpointGroupV2",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a data flow endpoint group using the V2 operation",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroupV2.html"
       },
       "CreateEphemeris": {
         "access_level": "Write",
@@ -281325,10 +283533,6 @@
           {
             "name": "lambda:FunctionUrlAuthType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-lambda_FunctionUrlAuthType"
-          },
-          {
-            "name": "lambda:InvokedViaFunctionUrl",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-lambda_InvokedViaFunctionUrl"
           }
         ],
         "description": "Grants permission to give an AWS service or another account permission to use an AWS Lambda function",
@@ -290129,7 +292333,7 @@
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeletePeering.html"
       },
       "DeleteResourcePolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "networkmanager:DeleteResourcePolicy",
         "condition_keys": [],
         "description": "Grants permission to delete a resource",
@@ -290774,7 +292978,7 @@
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html"
       },
       "PutResourcePolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "networkmanager:PutResourcePolicy",
         "condition_keys": [],
         "description": "Grants permission to create or update a resource policy",
@@ -290831,7 +293035,7 @@
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html"
       },
       "StartOrganizationServiceAccessUpdate": {
-        "access_level": "Write",
+        "access_level": "Permissions management",
         "action_name": "networkmanager:StartOrganizationServiceAccessUpdate",
         "condition_keys": [],
         "description": "Grants permission to start organization service access update",
@@ -313525,14 +315729,6 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetFinding.html"
       },
-      "GetNetworkSecurityScan": {
-        "access_level": "Read",
-        "action_name": "network-security-director:GetNetworkSecurityScan",
-        "condition_keys": [],
-        "description": "Grants permission to get the status of network security scan",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetNetworkSecurityScan.html"
-      },
       "GetResource": {
         "access_level": "Read",
         "action_name": "network-security-director:GetResource",
@@ -313540,6 +315736,14 @@
         "description": "Grants permission to get a resource",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetResource.html"
+      },
+      "ListAccountSummaries": {
+        "access_level": "List",
+        "action_name": "network-security-director:ListAccountSummaries",
+        "condition_keys": [],
+        "description": "Grants permission to list account summaries for an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListAccountSummaries.html"
       },
       "ListFindings": {
         "access_level": "List",
@@ -313572,14 +315776,6 @@
         "description": "Grants permission to list resources",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListResources.html"
-      },
-      "StartNetworkSecurityScan": {
-        "access_level": "Write",
-        "action_name": "network-security-director:StartNetworkSecurityScan",
-        "condition_keys": [],
-        "description": "Grants permission to start a network security scan",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_StartNetworkSecurityScan.html"
       },
       "UpdateFinding": {
         "access_level": "Write",
@@ -320776,19 +322972,31 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_TagKeys"
+          },
+          {
+            "name": "ssm:DocumentVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-ssm_DocumentVersion"
           }
         ],
         "description": "Grants permission to initiate the execution of an Automation document",
         "resource_types": [
           {
-            "name": "automation-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-definition"
+            "name": "automation-execution*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-execution"
           },
           {
             "name": "document*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-document"
+          },
+          {
+            "name": "automation-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-definition"
           }
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html"
@@ -320802,23 +323010,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_TagKeys"
           },
           {
             "name": "ssm:AutoApprove",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-ssm_AutoApprove"
+          },
+          {
+            "name": "ssm:DocumentVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-ssm_DocumentVersion"
           }
         ],
         "description": "Grants permission to initiate the execution of an Automation Change Template document",
         "resource_types": [
           {
-            "name": "automation-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-definition"
+            "name": "automation-execution*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-execution"
           },
           {
             "name": "document*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-document"
+          },
+          {
+            "name": "automation-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-definition"
           }
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartChangeRequestExecution.html"
@@ -325070,180 +327290,256 @@
       "CompleteTransformationPackageUpload": {
         "access_level": "Write",
         "action_name": "transform-custom:CompleteTransformationPackageUpload",
-        "condition_keys": [],
-        "description": "Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform custom",
         "resource_types": [
           {
             "name": "package*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ConverseStream": {
         "access_level": "Write",
         "action_name": "transform-custom:ConverseStream",
         "condition_keys": [],
-        "description": "Grants permission to invoke ConverseStream on AWS Transform Custom",
+        "description": "Grants permission to invoke ConverseStream on AWS Transform custom",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "CreateCampaign": {
         "access_level": "Write",
         "action_name": "transform-custom:CreateCampaign",
-        "condition_keys": [],
-        "description": "Grants permission to invoke CreateCampaign on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to invoke CreateCampaign on AWS Transform custom",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "CreateTransformationPackageUrl": {
         "access_level": "Write",
         "action_name": "transform-custom:CreateTransformationPackageUrl",
-        "condition_keys": [],
-        "description": "Grants permission to invoke CompleteTransformationPackageUrl on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to invoke CreateTransformationPackageUrl on AWS Transform custom",
         "resource_types": [
           {
             "name": "package*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "DeleteCampaign": {
         "access_level": "Write",
         "action_name": "transform-custom:DeleteCampaign",
-        "condition_keys": [],
-        "description": "Grants permission to invoke DeleteCampaign on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke DeleteCampaign on AWS Transform custom",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "DeleteKnowledgeItem": {
         "access_level": "Write",
         "action_name": "transform-custom:DeleteKnowledgeItem",
-        "condition_keys": [],
-        "description": "Grants permission to invoke DeleteKnowledgeItem on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke DeleteKnowledgeItem on AWS Transform custom",
         "resource_types": [
           {
             "name": "knowledge-item*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-knowledge-item"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "DeleteTransformationPackage": {
         "access_level": "Write",
         "action_name": "transform-custom:DeleteTransformationPackage",
-        "condition_keys": [],
-        "description": "Grants permission to invoke DeleteTransformationPackage on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke DeleteTransformationPackage on AWS Transform custom",
         "resource_types": [
           {
             "name": "package*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ExecuteTransformation": {
         "access_level": "Write",
         "action_name": "transform-custom:ExecuteTransformation",
-        "condition_keys": [],
-        "description": "Grants permission to invoke ExecuteTransformation on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke ExecuteTransformation on AWS Transform custom",
         "resource_types": [
           {
             "name": "package*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "GetCampaign": {
         "access_level": "Read",
         "action_name": "transform-custom:GetCampaign",
-        "condition_keys": [],
-        "description": "Grants permission to invoke GetCampaign on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke GetCampaign on AWS Transform custom",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "GetKnowledgeItem": {
         "access_level": "Read",
         "action_name": "transform-custom:GetKnowledgeItem",
-        "condition_keys": [],
-        "description": "Grants permission to invoke GetKnowledgeItem on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke GetKnowledgeItem on AWS Transform custom",
         "resource_types": [
           {
             "name": "knowledge-item*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-knowledge-item"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "GetTransformationPackageUrl": {
         "access_level": "Read",
         "action_name": "transform-custom:GetTransformationPackageUrl",
-        "condition_keys": [],
-        "description": "Grants permission to invoke GetTransformationPackageUrl on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke GetTransformationPackageUrl on AWS Transform custom",
         "resource_types": [
           {
             "name": "package*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ListCampaignRepositories": {
         "access_level": "Read",
         "action_name": "transform-custom:ListCampaignRepositories",
-        "condition_keys": [],
-        "description": "Grants permission to invoke ListCampaignRepositories on AWS Transform Custom",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke ListCampaignRepositories on AWS Transform custom",
+        "resource_types": [
+          {
+            "name": "campaign*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ListCampaigns": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "transform-custom:ListCampaigns",
         "condition_keys": [],
-        "description": "Grants permission to invoke ListCampaign on AWS Transform Custom",
+        "description": "Grants permission to invoke ListCampaign on AWS Transform custom",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ListKnowledgeItems": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "transform-custom:ListKnowledgeItems",
         "condition_keys": [],
-        "description": "Grants permission to invoke ListKnowledgeItems on AWS Transform Custom",
+        "description": "Grants permission to invoke ListKnowledgeItems on AWS Transform custom",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "transform-custom:ListTagsForResource",
         "condition_keys": [],
-        "description": "Grants permission to invoke ListTagsForResource on AWS Transform Custom",
+        "description": "Grants permission to invoke ListTagsForResource on AWS Transform custom",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "ListTransformationPackageMetadata": {
-        "access_level": "Read",
+        "access_level": "List",
         "action_name": "transform-custom:ListTransformationPackageMetadata",
         "condition_keys": [],
-        "description": "Grants permission to invoke ListTransformationPackageMetadata on AWS Transform Custom",
+        "description": "Grants permission to invoke ListTransformationPackageMetadata on AWS Transform custom",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -325254,13 +327550,30 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to invoke TagResource on AWS Transform Custom",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "description": "Grants permission to invoke TagResource on AWS Transform custom",
+        "resource_types": [
+          {
+            "name": "campaign",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
+          },
+          {
+            "name": "knowledge-item",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-knowledge-item"
+          },
+          {
+            "name": "package",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -325271,60 +327584,98 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to invoke UntagResource on AWS Transform Custom",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "description": "Grants permission to invoke UntagResource on AWS Transform custom",
+        "resource_types": [
+          {
+            "name": "campaign",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
+          },
+          {
+            "name": "knowledge-item",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-knowledge-item"
+          },
+          {
+            "name": "package",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "UpdateCampaign": {
         "access_level": "Write",
         "action_name": "transform-custom:UpdateCampaign",
-        "condition_keys": [],
-        "description": "Grants permission to invoke UpdateCampaign on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke UpdateCampaign on AWS Transform custom",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "UpdateCampaignRepositoryStatus": {
         "access_level": "Write",
         "action_name": "transform-custom:UpdateCampaignRepositoryStatus",
-        "condition_keys": [],
-        "description": "Grants permission to invoke UpdateCampaignRepositories on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke UpdateCampaignRepositories on AWS Transform custom",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-campaign"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "UpdateKnowledgeItemConfiguration": {
         "access_level": "Write",
         "action_name": "transform-custom:UpdateKnowledgeItemConfiguration",
-        "condition_keys": [],
-        "description": "Grants permission to invoke UpdateKnowledgeItemConfiguration on AWS Transform Custom",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke UpdateKnowledgeItemConfiguration on AWS Transform custom",
+        "resource_types": [
+          {
+            "name": "package*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-package"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       },
       "UpdateKnowledgeItemStatus": {
         "access_level": "Write",
         "action_name": "transform-custom:UpdateKnowledgeItemStatus",
-        "condition_keys": [],
-        "description": "Grants permission to invoke UpdateKnowledgeItemStatus on AWS Transform Custom",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke UpdateKnowledgeItemStatus on AWS Transform custom",
         "resource_types": [
           {
             "name": "knowledge-item*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html#awstransformcustom-knowledge-item"
           }
         ],
-        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html/"
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransformcustom.html",
-    "serviceName": "AWS Transform Custom",
+    "serviceName": "AWS Transform custom",
     "service_prefix": "transform-custom"
   },
   "awstrustedadvisor": {
@@ -332435,6 +334786,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAutoManagementConfiguration.html"
       },
+      "GetQuotaUtilizationReport": {
+        "access_level": "Read",
+        "action_name": "servicequotas:GetQuotaUtilizationReport",
+        "condition_keys": [],
+        "description": "Grants permission to view the generated report",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetQuotaUtilizationReport.html"
+      },
       "GetRequestedServiceQuotaChange": {
         "access_level": "Read",
         "action_name": "servicequotas:GetRequestedServiceQuotaChange",
@@ -332558,6 +334917,14 @@
         "description": "Grants permission to enable automatic management of Service Quotas for an AWS account, including notification preferences and excluded quotas configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartAutoManagement.html"
+      },
+      "StartQuotaUtilizationReport": {
+        "access_level": "Read",
+        "action_name": "servicequotas:StartQuotaUtilizationReport",
+        "condition_keys": [],
+        "description": "Grants permission to query quota utilization and create a report for your account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartQuotaUtilizationReport.html"
       },
       "StopAutoManagement": {
         "access_level": "Write",
