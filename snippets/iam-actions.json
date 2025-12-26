@@ -2434,6 +2434,114 @@
   },
   "amazonapigatewaymanagementv2": {
     "actions": {
+      "CreatePortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:CreatePortal",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/PortalDisplayName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalDisplayName"
+          },
+          {
+            "name": "apigateway:Request/PortalDomainName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalDomainName"
+          },
+          {
+            "name": "apigateway:Request/CognitoUserPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_CognitoUserPoolArn"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalspost"
+      },
+      "CreatePortalProduct": {
+        "access_level": "Write",
+        "action_name": "apigateway:CreatePortalProduct",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/PortalProductDisplayName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalProductDisplayName"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a Portal Product",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductspost"
+      },
+      "CreateProductPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:CreateProductPage",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/ProductPageTitle",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ProductPageTitle"
+          }
+        ],
+        "description": "Grants permission to create a Product Page",
+        "resource_types": [
+          {
+            "name": "ProductPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagespost"
+      },
+      "CreateProductRestEndpointPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:CreateProductRestEndpointPage",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/RestApiId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_RestApiId"
+          },
+          {
+            "name": "apigateway:Request/Stage",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Stage"
+          },
+          {
+            "name": "apigateway:Request/Method",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_Method"
+          },
+          {
+            "name": "apigateway:Request/ProductRestEndpointPageEndpointPrefix",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ProductRestEndpointPageEndpointPrefix"
+          }
+        ],
+        "description": "Grants permission to create a Product REST Endpoint Page",
+        "resource_types": [
+          {
+            "name": "ProductRestEndpointPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductRestEndpointPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagespost"
+      },
       "CreateRoutingRule": {
         "access_level": "Write",
         "action_name": "apigateway:CreateRoutingRule",
@@ -2550,6 +2658,75 @@
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
       },
+      "DeletePortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:DeletePortal",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portaliddelete"
+      },
+      "DeletePortalProduct": {
+        "access_level": "Write",
+        "action_name": "apigateway:DeletePortalProduct",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Portal Product",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductiddelete"
+      },
+      "DeletePortalProductSharingPolicy": {
+        "access_level": "Permissions management",
+        "action_name": "apigateway:DeletePortalProductSharingPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Portal Product Sharing Policy",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicydelete"
+      },
+      "DeleteProductPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:DeleteProductPage",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Product Page",
+        "resource_types": [
+          {
+            "name": "ProductPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageiddelete"
+      },
+      "DeleteProductRestEndpointPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:DeleteProductRestEndpointPage",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Product REST Endpoint Page",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          },
+          {
+            "name": "ProductRestEndpointPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductRestEndpointPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageiddelete"
+      },
       "DeleteRoutingRule": {
         "access_level": "Write",
         "action_name": "apigateway:DeleteRoutingRule",
@@ -2583,6 +2760,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleiddelete"
+      },
+      "DisablePortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:DisablePortal",
+        "condition_keys": [],
+        "description": "Grants permission to disable a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishdelete"
       },
       "GET": {
         "access_level": "Read",
@@ -2709,6 +2899,79 @@
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
       },
+      "GetPortal": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetPortal",
+        "condition_keys": [],
+        "description": "Grants permission to read a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidget"
+      },
+      "GetPortalProduct": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetPortalProduct",
+        "condition_keys": [],
+        "description": "Grants permission to read a Portal Product",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidget"
+      },
+      "GetPortalProductSharingPolicy": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetPortalProductSharingPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to read a Portal Product Sharing Policy",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyget"
+      },
+      "GetProductPage": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetProductPage",
+        "condition_keys": [],
+        "description": "Grants permission to read a Product Page",
+        "resource_types": [
+          {
+            "name": "ProductPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductPage"
+          },
+          {
+            "name": "PortalProduct",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidget"
+      },
+      "GetProductRestEndpointPage": {
+        "access_level": "Read",
+        "action_name": "apigateway:GetProductRestEndpointPage",
+        "condition_keys": [],
+        "description": "Grants permission to read a Product REST Endpoint Page",
+        "resource_types": [
+          {
+            "name": "ProductRestEndpointPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductRestEndpointPage"
+          },
+          {
+            "name": "PortalProduct",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidget"
+      },
       "GetRoutingRule": {
         "access_level": "Read",
         "action_name": "apigateway:GetRoutingRule",
@@ -2726,6 +2989,66 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidget"
+      },
+      "ListPortalProducts": {
+        "access_level": "List",
+        "action_name": "apigateway:ListPortalProducts",
+        "condition_keys": [],
+        "description": "Grants permission to list Portal Products",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductsget"
+      },
+      "ListPortals": {
+        "access_level": "List",
+        "action_name": "apigateway:ListPortals",
+        "condition_keys": [],
+        "description": "Grants permission to list Portals",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalsget"
+      },
+      "ListProductPages": {
+        "access_level": "List",
+        "action_name": "apigateway:ListProductPages",
+        "condition_keys": [],
+        "description": "Grants permission to list Product Pages",
+        "resource_types": [
+          {
+            "name": "ProductPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductPage"
+          },
+          {
+            "name": "PortalProduct",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagesget"
+      },
+      "ListProductRestEndpointPages": {
+        "access_level": "List",
+        "action_name": "apigateway:ListProductRestEndpointPages",
+        "condition_keys": [],
+        "description": "Grants permission to list Product REST Endpoint Pages",
+        "resource_types": [
+          {
+            "name": "ProductRestEndpointPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductRestEndpointPage"
+          },
+          {
+            "name": "PortalProduct",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagesget"
       },
       "ListRoutingRules": {
         "access_level": "List",
@@ -2898,6 +3221,141 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+      },
+      "PreviewPortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:PreviewPortal",
+        "condition_keys": [],
+        "description": "Grants permission to preview a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-preview.html#portals-portalid-previewpost"
+      },
+      "PublishPortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:PublishPortal",
+        "condition_keys": [],
+        "description": "Grants permission to publish a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishpost"
+      },
+      "PutPortalProductSharingPolicy": {
+        "access_level": "Permissions management",
+        "action_name": "apigateway:PutPortalProductSharingPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to put a Portal Product Sharing Policy",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyput"
+      },
+      "UpdatePortal": {
+        "access_level": "Write",
+        "action_name": "apigateway:UpdatePortal",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/PortalDisplayName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalDisplayName"
+          },
+          {
+            "name": "apigateway:Request/PortalDomainName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalDomainName"
+          },
+          {
+            "name": "apigateway:Request/CognitoUserPoolArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_CognitoUserPoolArn"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to update a Portal",
+        "resource_types": [
+          {
+            "name": "Portal*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-Portal"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidpatch"
+      },
+      "UpdatePortalProduct": {
+        "access_level": "Write",
+        "action_name": "apigateway:UpdatePortalProduct",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/PortalProductDisplayName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_PortalProductDisplayName"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to update a Portal Product",
+        "resource_types": [
+          {
+            "name": "PortalProduct*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-PortalProduct"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidpatch"
+      },
+      "UpdateProductPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:UpdateProductPage",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/ProductPageTitle",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ProductPageTitle"
+          }
+        ],
+        "description": "Grants permission to update a Product Page",
+        "resource_types": [
+          {
+            "name": "ProductPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidpatch"
+      },
+      "UpdateProductRestEndpointPage": {
+        "access_level": "Write",
+        "action_name": "apigateway:UpdateProductRestEndpointPage",
+        "condition_keys": [
+          {
+            "name": "apigateway:Request/ProductRestEndpointPageEndpointPrefix",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-apigateway_Request_ProductRestEndpointPageEndpointPrefix"
+          }
+        ],
+        "description": "Grants permission to update a Product REST Endpoint Page",
+        "resource_types": [
+          {
+            "name": "ProductRestEndpointPage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html#amazonapigatewaymanagementv2-ProductRestEndpointPage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidpatch"
       },
       "UpdateRoutingRule": {
         "access_level": "Write",
@@ -5945,6 +6403,19 @@
         ],
         "url": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListRoute53HealthChecks.html"
       },
+      "ListRoute53HealthChecksInRegion": {
+        "access_level": "List",
+        "action_name": "arc-region-switch:ListRoute53HealthChecksInRegion",
+        "condition_keys": [],
+        "description": "Grants permission to list Route 53 health checks in a specific AWS Region using the Region switch Regional data plane",
+        "resource_types": [
+          {
+            "name": "plan*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonarcregionswitch.html#amazonarcregionswitch-plan"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListRoute53HealthChecksInRegion.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "arc-region-switch:ListTagsForResource",
@@ -7634,7 +8105,12 @@
       "CallWithBearerToken": {
         "access_level": "Read",
         "action_name": "bedrock:CallWithBearerToken",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "bedrock:BearerTokenType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
+          }
+        ],
         "description": "Grants permission to use bearer token",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html"
@@ -7737,10 +8213,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new automated reasoning policy",
@@ -7771,10 +8243,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new automated reasoning policy version",
@@ -7827,10 +8295,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom model into Bedrock",
@@ -7848,10 +8312,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom model deployment for custom model",
@@ -7909,10 +8369,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for evaluation foundation models or custom models",
@@ -8007,10 +8463,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new guardrail",
@@ -8122,10 +8574,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for copying a custom model across region or across account",
@@ -8148,10 +8596,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for customizing the model with your custom training data",
@@ -8178,10 +8622,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for evaluation foundation models or custom models",
@@ -8208,10 +8648,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a job for importing model into Bedrock",
@@ -8229,10 +8665,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new model invocation job",
@@ -8280,10 +8712,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a custom prompt router",
@@ -8336,10 +8764,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to create a new provisioned model throughput",
@@ -9705,10 +10129,6 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_GuardrailIdentifier"
           },
           {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
-          },
-          {
             "name": "bedrock:ServiceTier",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_ServiceTier"
           }
@@ -9773,10 +10193,6 @@
           {
             "name": "bedrock:GuardrailIdentifier",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_GuardrailIdentifier"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           },
           {
             "name": "bedrock:ServiceTier",
@@ -10466,7 +10882,7 @@
         "access_level": "Write",
         "action_name": "bedrock:PutFoundationModelEntitlement",
         "condition_keys": [],
-        "description": "Grants permission to put entitlement to access a foundation model",
+        "description": "Grants permission to put entitlement to access a serverless foundation model. Do not use to restrict model access",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html"
       },
@@ -10728,10 +11144,6 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to Tag a Bedrock resource",
@@ -10854,10 +11266,6 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
-          },
-          {
-            "name": "bedrock:BearerTokenType",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-bedrock_BearerTokenType"
           }
         ],
         "description": "Grants permission to Untag a Bedrock resource",
@@ -23470,6 +23878,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html"
       },
+      "CancelImportTask": {
+        "access_level": "Write",
+        "action_name": "logs:CancelImportTask",
+        "condition_keys": [],
+        "description": "Grants permission to cancel an import from CloudTrail Lake to CloudWatch",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelImportTask.html"
+      },
       "CreateDelivery": {
         "access_level": "Write",
         "action_name": "logs:CreateDelivery",
@@ -23512,6 +23928,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html"
+      },
+      "CreateImportTask": {
+        "access_level": "Write",
+        "action_name": "logs:CreateImportTask",
+        "condition_keys": [],
+        "description": "Grants permission to start an asynchronous process to import data from a CloudTrail Lake event data store into a managed log group in CloudWatch",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateImportTask.html"
       },
       "CreateLogAnomalyDetector": {
         "access_level": "Write",
@@ -23901,6 +24325,22 @@
         "description": "Grants permission to return all the indexing attributes that are attached with the log groups",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeFieldIndexes.html"
+      },
+      "DescribeImportTaskBatches": {
+        "access_level": "List",
+        "action_name": "logs:DescribeImportTaskBatches",
+        "condition_keys": [],
+        "description": "Grants permission to return detailed information about the individual batches within an import task, including status and any error",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTaskBatches.html"
+      },
+      "DescribeImportTasks": {
+        "access_level": "List",
+        "action_name": "logs:DescribeImportTasks",
+        "condition_keys": [],
+        "description": "Grants permission to return all the import tasks associated with the AWS account making the request",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTasks.html"
       },
       "DescribeIndexPolicies": {
         "access_level": "List",
@@ -126896,6 +127336,243 @@
     "serviceName": "Amazon Nimble Studio",
     "service_prefix": "nimble"
   },
+  "amazonnovaact": {
+    "actions": {
+      "CreateAct": {
+        "access_level": "Write",
+        "action_name": "nova-act:CreateAct",
+        "condition_keys": [],
+        "description": "Grants permission to create a new AI task (act) within a session that can interact with tools and perform specific actions",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateAct.html"
+      },
+      "CreateSession": {
+        "access_level": "Write",
+        "action_name": "nova-act:CreateSession",
+        "condition_keys": [],
+        "description": "Grants permission to create a new session context within a workflow run to manage conversation state and acts",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateSession.html"
+      },
+      "CreateWorkflowDefinition": {
+        "access_level": "Write",
+        "action_name": "nova-act:CreateWorkflowDefinition",
+        "condition_keys": [],
+        "description": "Grants permission to create a new workflow definition template that can be used to execute multiple workflow runs",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowDefinition.html"
+      },
+      "CreateWorkflowRun": {
+        "access_level": "Write",
+        "action_name": "nova-act:CreateWorkflowRun",
+        "condition_keys": [],
+        "description": "Grants permission to create a new execution instance of a workflow definition with specified parameters",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowRun.html"
+      },
+      "DeleteWorkflowDefinition": {
+        "access_level": "Write",
+        "action_name": "nova-act:DeleteWorkflowDefinition",
+        "condition_keys": [],
+        "description": "Grants permission to delete a workflow definition and all associated resources",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowDefinition.html"
+      },
+      "DeleteWorkflowRun": {
+        "access_level": "Write",
+        "action_name": "nova-act:DeleteWorkflowRun",
+        "condition_keys": [],
+        "description": "Grants permission to terminate and clean up a workflow run, stopping all associated acts and sessions",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowRun.html"
+      },
+      "GetWorkflowDefinition": {
+        "access_level": "Read",
+        "action_name": "nova-act:GetWorkflowDefinition",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details and configuration of a specific workflow definition",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowDefinition.html"
+      },
+      "GetWorkflowRun": {
+        "access_level": "Read",
+        "action_name": "nova-act:GetWorkflowRun",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the current state, configuration, and execution details of a workflow run",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowRun.html"
+      },
+      "InvokeActStep": {
+        "access_level": "Write",
+        "action_name": "nova-act:InvokeActStep",
+        "condition_keys": [],
+        "description": "Grants permission to execute the next step of an act, processing tool call results and returning new tool calls if needed",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_InvokeActStep.html"
+      },
+      "ListActs": {
+        "access_level": "Read",
+        "action_name": "nova-act:ListActs",
+        "condition_keys": [],
+        "description": "Grants permission to list all acts within a specific session with their current status and execution details",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListActs.html"
+      },
+      "ListModels": {
+        "access_level": "Read",
+        "action_name": "nova-act:ListModels",
+        "condition_keys": [],
+        "description": "Grants permission to list all available AI models that can be used for workflow execution, including their status and compatibility information",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListModels.html"
+      },
+      "ListSessions": {
+        "access_level": "Read",
+        "action_name": "nova-act:ListSessions",
+        "condition_keys": [],
+        "description": "Grants permission to list all sessions within a specific workflow run",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListSessions.html"
+      },
+      "ListWorkflowDefinitions": {
+        "access_level": "List",
+        "action_name": "nova-act:ListWorkflowDefinitions",
+        "condition_keys": [],
+        "description": "Grants permission to list all workflow definitions in your account with optional filtering and pagination",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowDefinitions.html"
+      },
+      "ListWorkflowRuns": {
+        "access_level": "List",
+        "action_name": "nova-act:ListWorkflowRuns",
+        "condition_keys": [],
+        "description": "Grants permission to list all workflow runs for a specific workflow definition with optional filtering and pagination",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowRuns.html"
+      },
+      "UpdateAct": {
+        "access_level": "Write",
+        "action_name": "nova-act:UpdateAct",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing act's configuration, status, or error information",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateAct.html"
+      },
+      "UpdateWorkflowRun": {
+        "access_level": "Write",
+        "action_name": "nova-act:UpdateWorkflowRun",
+        "condition_keys": [],
+        "description": "Grants permission to update the configuration or state of an active workflow run",
+        "resource_types": [
+          {
+            "name": "workflow-definition*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-definition"
+          },
+          {
+            "name": "workflow-run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html#amazonnovaact-workflow-run"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateWorkflowRun.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonnovaact.html",
+    "serviceName": "Amazon Nova Act",
+    "service_prefix": "nova-act"
+  },
   "amazononeenterprise": {
     "actions": {
       "CreateDeviceActivationQrCode": {
@@ -167785,6 +168462,14 @@
         "action_name": "sagemaker:CreateMlflowApp",
         "condition_keys": [
           {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
           },
@@ -167806,6 +168491,14 @@
         "access_level": "Write",
         "action_name": "sagemaker:CreateMlflowTrackingServer",
         "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
@@ -168292,6 +168985,14 @@
         "action_name": "sagemaker:CreatePartnerApp",
         "condition_keys": [
           {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
           },
@@ -168312,7 +169013,16 @@
       "CreatePartnerAppPresignedUrl": {
         "access_level": "Write",
         "action_name": "sagemaker:CreatePartnerAppPresignedUrl",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to return a URL that you can use from your browser to connect to the Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -168360,7 +169070,16 @@
       "CreatePresignedMlflowAppUrl": {
         "access_level": "Write",
         "action_name": "sagemaker:CreatePresignedMlflowAppUrl",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to return a URL that you can use from your browser to connect to the MLflow app",
         "resource_types": [
           {
@@ -168373,7 +169092,16 @@
       "CreatePresignedMlflowTrackingServerUrl": {
         "access_level": "Write",
         "action_name": "sagemaker:CreatePresignedMlflowTrackingServerUrl",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to return a URL that you can use from your browser to connect to the MLflow tracking server",
         "resource_types": [
           {
@@ -169332,7 +170060,16 @@
       "DeleteMlflowApp": {
         "access_level": "Write",
         "action_name": "sagemaker:DeleteMlflowApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete an MLflow app",
         "resource_types": [
           {
@@ -169345,7 +170082,16 @@
       "DeleteMlflowTrackingServer": {
         "access_level": "Write",
         "action_name": "sagemaker:DeleteMlflowTrackingServer",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete an MLflow tracking server",
         "resource_types": [
           {
@@ -169527,7 +170273,16 @@
       "DeletePartnerApp": {
         "access_level": "Write",
         "action_name": "sagemaker:DeletePartnerApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -170490,7 +171245,16 @@
       "DescribeMlflowApp": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribeMlflowApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about an MLflow app",
         "resource_types": [
           {
@@ -170503,7 +171267,16 @@
       "DescribeMlflowTrackingServer": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribeMlflowTrackingServer",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about an MLflow tracking server",
         "resource_types": [
           {
@@ -170685,7 +171458,16 @@
       "DescribePartnerApp": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribePartnerApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to describe an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -172431,7 +173213,16 @@
       "StartMlflowTrackingServer": {
         "access_level": "Write",
         "action_name": "sagemaker:StartMlflowTrackingServer",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to start an MLfLow tracking server",
         "resource_types": [
           {
@@ -172618,7 +173409,16 @@
       "StopMlflowTrackingServer": {
         "access_level": "Write",
         "action_name": "sagemaker:StopMlflowTrackingServer",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to stop an MLflow tracking server",
         "resource_types": [
           {
@@ -173143,7 +173943,16 @@
       "UpdateMlflowApp": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdateMlflowApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update an MLflow app",
         "resource_types": [
           {
@@ -173156,7 +173965,16 @@
       "UpdateMlflowTrackingServer": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdateMlflowTrackingServer",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update an MLflow tracking server",
         "resource_types": [
           {
@@ -173342,7 +174160,16 @@
       "UpdatePartnerApp": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdatePartnerApp",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -174001,7 +174828,12 @@
       "CreateExperiment": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:CreateExperiment",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create an MLflow experiment",
         "resource_types": [
           {
@@ -174014,7 +174846,12 @@
       "CreateModelVersion": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:CreateModelVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a new model version",
         "resource_types": [
           {
@@ -174027,7 +174864,12 @@
       "CreateRegisteredModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:CreateRegisteredModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a registered model",
         "resource_types": [
           {
@@ -174040,7 +174882,12 @@
       "CreateRun": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:CreateRun",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a new run within an experiment",
         "resource_types": [
           {
@@ -174053,7 +174900,12 @@
       "DeleteExperiment": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteExperiment",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to mark an MLflow experiment for deletion",
         "resource_types": [
           {
@@ -174066,7 +174918,12 @@
       "DeleteLoggedModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteLoggedModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a logged model in MLflow",
         "resource_types": [
           {
@@ -174079,7 +174936,12 @@
       "DeleteLoggedModelTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteLoggedModelTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a tag for a logged model in MLflow",
         "resource_types": [
           {
@@ -174092,7 +174954,12 @@
       "DeleteModelVersion": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteModelVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a model version",
         "resource_types": [
           {
@@ -174105,7 +174972,12 @@
       "DeleteModelVersionTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteModelVersionTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a model version tag",
         "resource_types": [
           {
@@ -174118,7 +174990,12 @@
       "DeleteRegisteredModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteRegisteredModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a registered model",
         "resource_types": [
           {
@@ -174131,7 +175008,12 @@
       "DeleteRegisteredModelAlias": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteRegisteredModelAlias",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a registered model alias",
         "resource_types": [
           {
@@ -174144,7 +175026,12 @@
       "DeleteRegisteredModelTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteRegisteredModelTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a registered model tag",
         "resource_types": [
           {
@@ -174157,7 +175044,12 @@
       "DeleteRun": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteRun",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to mark a run for deletion",
         "resource_types": [
           {
@@ -174170,7 +175062,12 @@
       "DeleteTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a tag on a run",
         "resource_types": [
           {
@@ -174183,7 +175080,12 @@
       "DeleteTraceTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteTraceTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a trace tag in MLflow",
         "resource_types": [
           {
@@ -174196,7 +175098,12 @@
       "DeleteTraces": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:DeleteTraces",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete traces in MLflow",
         "resource_types": [
           {
@@ -174209,7 +175116,12 @@
       "EndTrace": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:EndTrace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to end a trace in MLflow",
         "resource_types": [
           {
@@ -174222,7 +175134,12 @@
       "FinalizeLoggedModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:FinalizeLoggedModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set status for a logged model in MLflow",
         "resource_types": [
           {
@@ -174235,7 +175152,12 @@
       "GetDownloadURIForModelVersionArtifacts": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetDownloadURIForModelVersionArtifacts",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get a URI to download model artifacts for a specific model version",
         "resource_types": [
           {
@@ -174248,7 +175170,12 @@
       "GetExperiment": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetExperiment",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get metadata for an MLflow experiment",
         "resource_types": [
           {
@@ -174261,7 +175188,12 @@
       "GetExperimentByName": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetExperimentByName",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get metadata for an MLflow experiment by name",
         "resource_types": [
           {
@@ -174274,7 +175206,12 @@
       "GetLatestModelVersions": {
         "access_level": "List",
         "action_name": "sagemaker-mlflow:GetLatestModelVersions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get the latest model versions",
         "resource_types": [
           {
@@ -174287,7 +175224,12 @@
       "GetLoggedModel": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetLoggedModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get a logged model in MLflow",
         "resource_types": [
           {
@@ -174300,7 +175242,12 @@
       "GetMetricHistory": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetMetricHistory",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get a list of all values for the specified metric for a given run",
         "resource_types": [
           {
@@ -174313,7 +175260,12 @@
       "GetModelVersion": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetModelVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get a model version by model name and version",
         "resource_types": [
           {
@@ -174326,7 +175278,12 @@
       "GetModelVersionByAlias": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetModelVersionByAlias",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get model version by alias in MLflow",
         "resource_types": [
           {
@@ -174339,7 +175296,12 @@
       "GetRegisteredModel": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetRegisteredModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get a registered model",
         "resource_types": [
           {
@@ -174352,7 +175314,12 @@
       "GetRun": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetRun",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get metadata, metrics, parameters, and tags for a run",
         "resource_types": [
           {
@@ -174365,7 +175332,12 @@
       "GetTraceInfo": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:GetTraceInfo",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about a trace in MLflow",
         "resource_types": [
           {
@@ -174378,7 +175350,12 @@
       "ListArtifacts": {
         "access_level": "List",
         "action_name": "sagemaker-mlflow:ListArtifacts",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list artifacts for a run",
         "resource_types": [
           {
@@ -174391,7 +175368,12 @@
       "ListLoggedModelArtifacts": {
         "access_level": "List",
         "action_name": "sagemaker-mlflow:ListLoggedModelArtifacts",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list artifacts for a logged model in MLflow",
         "resource_types": [
           {
@@ -174404,7 +175386,12 @@
       "LogBatch": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogBatch",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log a batch of metrics, parameters, and tags for a run",
         "resource_types": [
           {
@@ -174417,7 +175404,12 @@
       "LogInputs": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogInputs",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log inputs for a run",
         "resource_types": [
           {
@@ -174430,7 +175422,12 @@
       "LogLoggedModelParams": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogLoggedModelParams",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log params for a logged model in MLflow",
         "resource_types": [
           {
@@ -174443,7 +175440,12 @@
       "LogMetric": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogMetric",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log a metric for a run",
         "resource_types": [
           {
@@ -174456,7 +175458,12 @@
       "LogModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log the model associated with a run",
         "resource_types": [
           {
@@ -174469,7 +175476,12 @@
       "LogOutputs": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogOutputs",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log outputs, such as models, for a run in MLflow",
         "resource_types": [
           {
@@ -174482,7 +175494,12 @@
       "LogParam": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:LogParam",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to log a parameter tracked during a run",
         "resource_types": [
           {
@@ -174495,7 +175512,12 @@
       "RenameRegisteredModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:RenameRegisteredModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to rename a registered model",
         "resource_types": [
           {
@@ -174508,7 +175530,12 @@
       "RestoreExperiment": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:RestoreExperiment",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to restore an experiment marked for deletion",
         "resource_types": [
           {
@@ -174521,7 +175548,12 @@
       "RestoreRun": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:RestoreRun",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to restore a deleted run",
         "resource_types": [
           {
@@ -174534,7 +175566,12 @@
       "SearchExperiments": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchExperiments",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for MLflow experiments",
         "resource_types": [
           {
@@ -174547,7 +175584,12 @@
       "SearchLoggedModels": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchLoggedModels",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for logged models in MLflow",
         "resource_types": [
           {
@@ -174560,7 +175602,12 @@
       "SearchModelVersions": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchModelVersions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for a model version",
         "resource_types": [
           {
@@ -174573,7 +175620,12 @@
       "SearchRegisteredModels": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchRegisteredModels",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for registered models in MLflow",
         "resource_types": [
           {
@@ -174586,7 +175638,12 @@
       "SearchRuns": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchRuns",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for runs that satisfy expressions",
         "resource_types": [
           {
@@ -174599,7 +175656,12 @@
       "SearchTraces": {
         "access_level": "Read",
         "action_name": "sagemaker-mlflow:SearchTraces",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to search for traces in MLflow",
         "resource_types": [
           {
@@ -174612,7 +175674,12 @@
       "SetExperimentTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetExperimentTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a tag on an experiment",
         "resource_types": [
           {
@@ -174625,7 +175692,12 @@
       "SetLoggedModelTags": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetLoggedModelTags",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set tags for a logged model in MLflow",
         "resource_types": [
           {
@@ -174638,7 +175710,12 @@
       "SetModelVersionTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetModelVersionTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a tag for the model version",
         "resource_types": [
           {
@@ -174651,7 +175728,12 @@
       "SetRegisteredModelAlias": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetRegisteredModelAlias",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a registered model alias",
         "resource_types": [
           {
@@ -174664,7 +175746,12 @@
       "SetRegisteredModelTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetRegisteredModelTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a tag for a registered model",
         "resource_types": [
           {
@@ -174677,7 +175764,12 @@
       "SetTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a tag on a run",
         "resource_types": [
           {
@@ -174690,7 +175782,12 @@
       "SetTraceTag": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:SetTraceTag",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to set a trace tag in MLflow",
         "resource_types": [
           {
@@ -174703,7 +175800,12 @@
       "StartTrace": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:StartTrace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to start a trace in MLflow",
         "resource_types": [
           {
@@ -174716,7 +175818,12 @@
       "TransitionModelVersionStage": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:TransitionModelVersionStage",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to transition a model version to a particular stage",
         "resource_types": [
           {
@@ -174729,7 +175836,12 @@
       "UpdateExperiment": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:UpdateExperiment",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update the metadata for an MLflow experiment",
         "resource_types": [
           {
@@ -174742,7 +175854,12 @@
       "UpdateModelVersion": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:UpdateModelVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update the model version",
         "resource_types": [
           {
@@ -174755,7 +175872,12 @@
       "UpdateRegisteredModel": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:UpdateRegisteredModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update a registered model",
         "resource_types": [
           {
@@ -174768,7 +175890,12 @@
       "UpdateRun": {
         "access_level": "Write",
         "action_name": "sagemaker-mlflow:UpdateRun",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html#amazonsagemakerwithmlflow-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update run metadata",
         "resource_types": [
           {
@@ -177597,6 +178724,14 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_RequestTag___TagKey_"
           }
         ],
         "description": "Grants permission to create a new custom verification email template",
@@ -177715,6 +178850,14 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_RequestTag___TagKey_"
           }
         ],
         "description": "Grants permission to create an email template",
@@ -177936,6 +179079,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an existing custom verification email template",
@@ -178020,6 +179167,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an email template",
@@ -178239,6 +179390,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to return the custom email verification template for the template name you specify",
@@ -178377,6 +179532,19 @@
         ],
         "url": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetDomainStatisticsReport.html"
       },
+      "GetEmailAddressInsights": {
+        "access_level": "Read",
+        "action_name": "ses:GetEmailAddressInsights",
+        "condition_keys": [
+          {
+            "name": "ses:ApiVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          }
+        ],
+        "description": "Grants permission to get insights about email address",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailAddressInsights.html"
+      },
       "GetEmailIdentity": {
         "access_level": "Read",
         "action_name": "ses:GetEmailIdentity",
@@ -178428,6 +179596,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to return the template object, which includes the subject line, HTML part, and text part for the template you specify",
@@ -178843,6 +180015,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-contact-list"
           },
           {
+            "name": "custom-verification-email-template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-custom-verification-email-template"
+          },
+          {
             "name": "dedicated-ip-pool",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-dedicated-ip-pool"
           },
@@ -178853,6 +180029,10 @@
           {
             "name": "identity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-identity"
+          },
+          {
+            "name": "template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-template"
           },
           {
             "name": "tenant",
@@ -179454,6 +180634,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-contact-list"
           },
           {
+            "name": "custom-verification-email-template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-custom-verification-email-template"
+          },
+          {
             "name": "dedicated-ip-pool",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-dedicated-ip-pool"
           },
@@ -179464,6 +180648,10 @@
           {
             "name": "identity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-identity"
+          },
+          {
+            "name": "template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-template"
           },
           {
             "name": "tenant",
@@ -179514,6 +180702,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-contact-list"
           },
           {
+            "name": "custom-verification-email-template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-custom-verification-email-template"
+          },
+          {
             "name": "dedicated-ip-pool",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-dedicated-ip-pool"
           },
@@ -179524,6 +180716,10 @@
           {
             "name": "identity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-identity"
+          },
+          {
+            "name": "template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-template"
           },
           {
             "name": "tenant",
@@ -179605,6 +180801,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update an existing custom verification email template",
@@ -179645,6 +180845,10 @@
           {
             "name": "ses:ApiVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-ses_ApiVersion"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html#amazonsimpleemailservicev2-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update an email template",
@@ -209082,6 +210286,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaboration.html"
+      },
+      "UpdateCollaborationChangeRequest": {
+        "access_level": "Write",
+        "action_name": "cleanrooms:UpdateCollaborationChangeRequest",
+        "condition_keys": [],
+        "description": "Grants permission to update a change request in a collaboration",
+        "resource_types": [
+          {
+            "name": "collaboration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscleanrooms.html#awscleanrooms-collaboration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaborationChangeRequest.html"
       },
       "UpdateConfiguredAudienceModelAssociation": {
         "access_level": "Write",
@@ -290869,6 +292086,23 @@
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateSubnets.html"
       },
+      "AttachRuleGroupsToProxyConfiguration": {
+        "access_level": "Write",
+        "action_name": "network-firewall:AttachRuleGroupsToProxyConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to attach proxy rule groups to a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          },
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AttachRuleGroupsToProxyConfiguration.html"
+      },
       "CreateFirewall": {
         "access_level": "Write",
         "action_name": "network-firewall:CreateFirewall",
@@ -290928,6 +292162,93 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewallPolicy.html"
+      },
+      "CreateProxy": {
+        "access_level": "Write",
+        "action_name": "network-firewall:CreateProxy",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AWS Network Firewall proxy",
+        "resource_types": [
+          {
+            "name": "Proxy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          },
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxy.html"
+      },
+      "CreateProxyConfiguration": {
+        "access_level": "Write",
+        "action_name": "network-firewall:CreateProxyConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AWS Network Firewall proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          },
+          {
+            "name": "ProxyRuleGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyConfiguration.html"
+      },
+      "CreateProxyRuleGroup": {
+        "access_level": "Write",
+        "action_name": "network-firewall:CreateProxyRuleGroup",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AWS Network Firewall proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRuleGroup.html"
+      },
+      "CreateProxyRules": {
+        "access_level": "Write",
+        "action_name": "network-firewall:CreateProxyRules",
+        "condition_keys": [],
+        "description": "Grants permission to add proxy rules to a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRules.html"
       },
       "CreateRuleGroup": {
         "access_level": "Write",
@@ -291041,6 +292362,58 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteNetworkFirewallTransitGatewayAttachment.html"
+      },
+      "DeleteProxy": {
+        "access_level": "Write",
+        "action_name": "network-firewall:DeleteProxy",
+        "condition_keys": [],
+        "description": "Grants permission to delete a proxy",
+        "resource_types": [
+          {
+            "name": "Proxy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxy.html"
+      },
+      "DeleteProxyConfiguration": {
+        "access_level": "Write",
+        "action_name": "network-firewall:DeleteProxyConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyConfiguration.html"
+      },
+      "DeleteProxyRuleGroup": {
+        "access_level": "Write",
+        "action_name": "network-firewall:DeleteProxyRuleGroup",
+        "condition_keys": [],
+        "description": "Grants permission to delete a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRuleGroup.html"
+      },
+      "DeleteProxyRules": {
+        "access_level": "Write",
+        "action_name": "network-firewall:DeleteProxyRules",
+        "condition_keys": [],
+        "description": "Grants permission to remove proxy rules from a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRules.html"
       },
       "DeleteResourcePolicy": {
         "access_level": "Write",
@@ -291187,6 +292560,58 @@
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeLoggingConfiguration.html"
       },
+      "DescribeProxy": {
+        "access_level": "Read",
+        "action_name": "network-firewall:DescribeProxy",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the data objects that define a proxy",
+        "resource_types": [
+          {
+            "name": "Proxy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxy.html"
+      },
+      "DescribeProxyConfiguration": {
+        "access_level": "Read",
+        "action_name": "network-firewall:DescribeProxyConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the data objects that define a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyConfiguration.html"
+      },
+      "DescribeProxyRule": {
+        "access_level": "Read",
+        "action_name": "network-firewall:DescribeProxyRule",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the data objects that define a proxy rule",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRule.html"
+      },
+      "DescribeProxyRuleGroup": {
+        "access_level": "Read",
+        "action_name": "network-firewall:DescribeProxyRuleGroup",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the data objects that define a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRuleGroup.html"
+      },
       "DescribeResourcePolicy": {
         "access_level": "Read",
         "action_name": "network-firewall:DescribeResourcePolicy",
@@ -291288,6 +292713,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeVpcEndpointAssociation.html"
+      },
+      "DetachRuleGroupsFromProxyConfiguration": {
+        "access_level": "Write",
+        "action_name": "network-firewall:DetachRuleGroupsFromProxyConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to detach proxy rule groups from a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          },
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DetachRuleGroupsFromProxyConfiguration.html"
       },
       "DisassociateAvailabilityZones": {
         "access_level": "Write",
@@ -291392,6 +292834,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFlowOperations.html"
+      },
+      "ListProxies": {
+        "access_level": "List",
+        "action_name": "network-firewall:ListProxies",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the metadata for proxies",
+        "resource_types": [
+          {
+            "name": "Proxy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxies.html"
+      },
+      "ListProxyConfigurations": {
+        "access_level": "List",
+        "action_name": "network-firewall:ListProxyConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the metadata for proxy configurations",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyConfigurations.html"
+      },
+      "ListProxyRuleGroups": {
+        "access_level": "List",
+        "action_name": "network-firewall:ListProxyRuleGroups",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the metadata for proxy rule groups",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyRuleGroups.html"
       },
       "ListRuleGroups": {
         "access_level": "List",
@@ -291561,6 +293042,18 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-FirewallPolicy"
           },
           {
+            "name": "Proxy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          },
+          {
+            "name": "ProxyConfiguration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          },
+          {
+            "name": "ProxyRuleGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          },
+          {
             "name": "StatefulRuleGroup",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-StatefulRuleGroup"
           },
@@ -291597,6 +293090,18 @@
           {
             "name": "FirewallPolicy",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-FirewallPolicy"
+          },
+          {
+            "name": "Proxy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          },
+          {
+            "name": "ProxyConfiguration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          },
+          {
+            "name": "ProxyRuleGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
           },
           {
             "name": "StatefulRuleGroup",
@@ -291732,6 +293237,71 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateLoggingConfiguration.html"
+      },
+      "UpdateProxy": {
+        "access_level": "Write",
+        "action_name": "network-firewall:UpdateProxy",
+        "condition_keys": [],
+        "description": "Grants permission to modify a proxy",
+        "resource_types": [
+          {
+            "name": "Proxy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-Proxy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxy.html"
+      },
+      "UpdateProxyConfiguration": {
+        "access_level": "Write",
+        "action_name": "network-firewall:UpdateProxyConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to modify a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyConfiguration.html"
+      },
+      "UpdateProxyRule": {
+        "access_level": "Write",
+        "action_name": "network-firewall:UpdateProxyRule",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing proxy rule on a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRule.html"
+      },
+      "UpdateProxyRuleGroupPriorities": {
+        "access_level": "Write",
+        "action_name": "network-firewall:UpdateProxyRuleGroupPriorities",
+        "condition_keys": [],
+        "description": "Grants permission to modify rule group priorities on a proxy configuration",
+        "resource_types": [
+          {
+            "name": "ProxyConfiguration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyConfiguration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRuleGroupPriorities.html"
+      },
+      "UpdateProxyRulePriorities": {
+        "access_level": "Write",
+        "action_name": "network-firewall:UpdateProxyRulePriorities",
+        "condition_keys": [],
+        "description": "Grants permission to update proxy rule priorities within a proxy rule group",
+        "resource_types": [
+          {
+            "name": "ProxyRuleGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-ProxyRuleGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRulePriorities.html"
       },
       "UpdateRuleGroup": {
         "access_level": "Write",
@@ -299021,6 +300591,23 @@
   },
   "awspaymentcryptography": {
     "actions": {
+      "AddKeyReplicationRegions": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:AddKeyReplicationRegions",
+        "condition_keys": [],
+        "description": "Grants permission to add replication regions to an existing AWS Payment Cryptography key",
+        "resource_types": [
+          {
+            "name": "alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-alias"
+          },
+          {
+            "name": "key*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-key"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html"
+      },
       "CreateAlias": {
         "access_level": "Write",
         "action_name": "payment-cryptography:CreateAlias",
@@ -299106,6 +300693,22 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html"
+      },
+      "DisableDefaultKeyReplicationRegions": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:DisableDefaultKeyReplicationRegions",
+        "condition_keys": [],
+        "description": "Grants permission to disable default key replication regions for account-level replication",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html"
+      },
+      "EnableDefaultKeyReplicationRegions": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:EnableDefaultKeyReplicationRegions",
+        "condition_keys": [],
+        "description": "Grants permission to enable default key replication regions for account-level replication",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html"
       },
       "EncryptData": {
         "access_level": "Write",
@@ -299231,6 +300834,31 @@
         ],
         "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html"
       },
+      "GetCertificateSigningRequest": {
+        "access_level": "Read",
+        "action_name": "payment-cryptography:GetCertificateSigningRequest",
+        "condition_keys": [],
+        "description": "Grants permission to return the Certificate Signing Request for a public key from a key of class PUBLIC_KEY",
+        "resource_types": [
+          {
+            "name": "alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-alias"
+          },
+          {
+            "name": "key*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-key"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetCertificateSigningRequest.html"
+      },
+      "GetDefaultKeyReplicationRegions": {
+        "access_level": "Read",
+        "action_name": "payment-cryptography:GetDefaultKeyReplicationRegions",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the default key replication regions configured at the account level",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html"
+      },
       "GetKey": {
         "access_level": "Read",
         "action_name": "payment-cryptography:GetKey",
@@ -299336,6 +300964,23 @@
         ],
         "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_ReEncryptData.html"
       },
+      "RemoveKeyReplicationRegions": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:RemoveKeyReplicationRegions",
+        "condition_keys": [],
+        "description": "Grants permission to remove replication regions from an existing AWS Payment Cryptography key",
+        "resource_types": [
+          {
+            "name": "alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-alias"
+          },
+          {
+            "name": "key*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-key"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html"
+      },
       "RestoreKey": {
         "access_level": "Write",
         "action_name": "payment-cryptography:RestoreKey",
@@ -299396,6 +301041,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html"
+      },
+      "TranslateKeyMaterial": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:TranslateKeyMaterial",
+        "condition_keys": [],
+        "description": "Grants permission to translate wrapping key type for a wrapped key",
+        "resource_types": [
+          {
+            "name": "alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-alias"
+          },
+          {
+            "name": "key*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-key"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslateKeyMaterial.html"
       },
       "TranslatePinData": {
         "access_level": "Write",
@@ -315009,243 +316671,6 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsserviceprovidingmanagedprivatenetworks.html",
     "serviceName": "AWS service providing managed private networks",
     "service_prefix": "private-networks"
-  },
-  "awsservicetomanageaiagentsforuiworkflows": {
-    "actions": {
-      "CreateAct": {
-        "access_level": "Write",
-        "action_name": "nova-act:CreateAct",
-        "condition_keys": [],
-        "description": "Grants permission to create a new AI task (act) within a session that can interact with tools and perform specific actions",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateAct.html"
-      },
-      "CreateSession": {
-        "access_level": "Write",
-        "action_name": "nova-act:CreateSession",
-        "condition_keys": [],
-        "description": "Grants permission to create a new session context within a workflow run to manage conversation state and acts",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateSession.html"
-      },
-      "CreateWorkflowDefinition": {
-        "access_level": "Write",
-        "action_name": "nova-act:CreateWorkflowDefinition",
-        "condition_keys": [],
-        "description": "Grants permission to create a new workflow definition template that can be used to execute multiple workflow runs",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowDefinition.html"
-      },
-      "CreateWorkflowRun": {
-        "access_level": "Write",
-        "action_name": "nova-act:CreateWorkflowRun",
-        "condition_keys": [],
-        "description": "Grants permission to create a new execution instance of a workflow definition with specified parameters",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowRun.html"
-      },
-      "DeleteWorkflowDefinition": {
-        "access_level": "Write",
-        "action_name": "nova-act:DeleteWorkflowDefinition",
-        "condition_keys": [],
-        "description": "Grants permission to delete a workflow definition and all associated resources",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowDefinition.html"
-      },
-      "DeleteWorkflowRun": {
-        "access_level": "Write",
-        "action_name": "nova-act:DeleteWorkflowRun",
-        "condition_keys": [],
-        "description": "Grants permission to terminate and clean up a workflow run, stopping all associated acts and sessions",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowRun.html"
-      },
-      "GetWorkflowDefinition": {
-        "access_level": "Read",
-        "action_name": "nova-act:GetWorkflowDefinition",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve details and configuration of a specific workflow definition",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowDefinition.html"
-      },
-      "GetWorkflowRun": {
-        "access_level": "Read",
-        "action_name": "nova-act:GetWorkflowRun",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve the current state, configuration, and execution details of a workflow run",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowRun.html"
-      },
-      "InvokeActStep": {
-        "access_level": "Write",
-        "action_name": "nova-act:InvokeActStep",
-        "condition_keys": [],
-        "description": "Grants permission to execute the next step of an act, processing tool call results and returning new tool calls if needed",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_InvokeActStep.html"
-      },
-      "ListActs": {
-        "access_level": "Read",
-        "action_name": "nova-act:ListActs",
-        "condition_keys": [],
-        "description": "Grants permission to list all acts within a specific session with their current status and execution details",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListActs.html"
-      },
-      "ListModels": {
-        "access_level": "Read",
-        "action_name": "nova-act:ListModels",
-        "condition_keys": [],
-        "description": "Grants permission to list all available AI models that can be used for workflow execution, including their status and compatibility information",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListModels.html"
-      },
-      "ListSessions": {
-        "access_level": "Read",
-        "action_name": "nova-act:ListSessions",
-        "condition_keys": [],
-        "description": "Grants permission to list all sessions within a specific workflow run",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListSessions.html"
-      },
-      "ListWorkflowDefinitions": {
-        "access_level": "List",
-        "action_name": "nova-act:ListWorkflowDefinitions",
-        "condition_keys": [],
-        "description": "Grants permission to list all workflow definitions in your account with optional filtering and pagination",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowDefinitions.html"
-      },
-      "ListWorkflowRuns": {
-        "access_level": "List",
-        "action_name": "nova-act:ListWorkflowRuns",
-        "condition_keys": [],
-        "description": "Grants permission to list all workflow runs for a specific workflow definition with optional filtering and pagination",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowRuns.html"
-      },
-      "UpdateAct": {
-        "access_level": "Write",
-        "action_name": "nova-act:UpdateAct",
-        "condition_keys": [],
-        "description": "Grants permission to update an existing act's configuration, status, or error information",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateAct.html"
-      },
-      "UpdateWorkflowRun": {
-        "access_level": "Write",
-        "action_name": "nova-act:UpdateWorkflowRun",
-        "condition_keys": [],
-        "description": "Grants permission to update the configuration or state of an active workflow run",
-        "resource_types": [
-          {
-            "name": "workflow-definition*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-definition"
-          },
-          {
-            "name": "workflow-run*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html#awsservicetomanageaiagentsforuiworkflows-workflow-run"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateWorkflowRun.html"
-      }
-    },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicetomanageaiagentsforuiworkflows.html",
-    "serviceName": "AWS service to manage AI agents for UI workflows",
-    "service_prefix": "nova-act"
   },
   "awsshield": {
     "actions": {
@@ -333109,6 +334534,84 @@
   },
   "awswickr": {
     "actions": {
+      "BatchCreateUser": {
+        "access_level": "Write",
+        "action_name": "wickr:BatchCreateUser",
+        "condition_keys": [],
+        "description": "Grants permission to batch create users in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "BatchDeleteUser": {
+        "access_level": "Write",
+        "action_name": "wickr:BatchDeleteUser",
+        "condition_keys": [],
+        "description": "Grants permission to batch delete users from a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "BatchLookupUserUname": {
+        "access_level": "Read",
+        "action_name": "wickr:BatchLookupUserUname",
+        "condition_keys": [],
+        "description": "Grants permission to batch lookup user unames in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "BatchReinviteUser": {
+        "access_level": "Write",
+        "action_name": "wickr:BatchReinviteUser",
+        "condition_keys": [],
+        "description": "Grants permission to batch reinvite users in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "BatchResetDevicesForUser": {
+        "access_level": "Write",
+        "action_name": "wickr:BatchResetDevicesForUser",
+        "condition_keys": [],
+        "description": "Grants permission to batch reset devices for a user in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "BatchToggleUserSuspendStatus": {
+        "access_level": "Write",
+        "action_name": "wickr:BatchToggleUserSuspendStatus",
+        "condition_keys": [],
+        "description": "Grants permission to batch toggle user suspend status in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
       "CreateAdminSession": {
         "access_level": "Write",
         "action_name": "wickr:CreateAdminSession",
@@ -333122,28 +334625,346 @@
         ],
         "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
       },
+      "CreateBot": {
+        "access_level": "Write",
+        "action_name": "wickr:CreateBot",
+        "condition_keys": [],
+        "description": "Grants permission to create a bot in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "CreateDataRetentionBot": {
+        "access_level": "Write",
+        "action_name": "wickr:CreateDataRetentionBot",
+        "condition_keys": [],
+        "description": "Grants permission to create a data retention bot in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "CreateDataRetentionBotChallenge": {
+        "access_level": "Write",
+        "action_name": "wickr:CreateDataRetentionBotChallenge",
+        "condition_keys": [],
+        "description": "Grants permission to create a data retention bot challenge in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
       "CreateNetwork": {
         "access_level": "Write",
         "action_name": "wickr:CreateNetwork",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "CreateSecurityGroup": {
+        "access_level": "Write",
+        "action_name": "wickr:CreateSecurityGroup",
         "condition_keys": [],
-        "description": "Grants permission to create a new wickr network",
-        "resource_types": [],
+        "description": "Grants permission to create a security group in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "DeleteBot": {
+        "access_level": "Write",
+        "action_name": "wickr:DeleteBot",
+        "condition_keys": [],
+        "description": "Grants permission to delete a bot from a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "DeleteDataRetentionBot": {
+        "access_level": "Write",
+        "action_name": "wickr:DeleteDataRetentionBot",
+        "condition_keys": [],
+        "description": "Grants permission to delete a data retention bot from a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
       },
       "DeleteNetwork": {
         "access_level": "Write",
         "action_name": "wickr:DeleteNetwork",
         "condition_keys": [],
-        "description": "Grants permission to create a delete Wickr networks",
-        "resource_types": [],
+        "description": "Grants permission to delete Wickr networks",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "DeleteSecurityGroup": {
+        "access_level": "Write",
+        "action_name": "wickr:DeleteSecurityGroup",
+        "condition_keys": [],
+        "description": "Grants permission to delete a security group from a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetBot": {
+        "access_level": "Read",
+        "action_name": "wickr:GetBot",
+        "condition_keys": [],
+        "description": "Grants permission to get bot information in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetBotsCount": {
+        "access_level": "Read",
+        "action_name": "wickr:GetBotsCount",
+        "condition_keys": [],
+        "description": "Grants permission to get bot count for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetDataRetentionBot": {
+        "access_level": "Read",
+        "action_name": "wickr:GetDataRetentionBot",
+        "condition_keys": [],
+        "description": "Grants permission to get data retention bot information in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetGuestUserHistoryCount": {
+        "access_level": "Read",
+        "action_name": "wickr:GetGuestUserHistoryCount",
+        "condition_keys": [],
+        "description": "Grants permission to get guest user history count for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetNetwork": {
+        "access_level": "Read",
+        "action_name": "wickr:GetNetwork",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetNetworkSettings": {
+        "access_level": "Read",
+        "action_name": "wickr:GetNetworkSettings",
+        "condition_keys": [],
+        "description": "Grants permission to get network settings for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetOidcInfo": {
+        "access_level": "Read",
+        "action_name": "wickr:GetOidcInfo",
+        "condition_keys": [],
+        "description": "Grants permission to get OIDC information for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetSecurityGroup": {
+        "access_level": "Read",
+        "action_name": "wickr:GetSecurityGroup",
+        "condition_keys": [],
+        "description": "Grants permission to get security group information in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetUser": {
+        "access_level": "Read",
+        "action_name": "wickr:GetUser",
+        "condition_keys": [],
+        "description": "Grants permission to get information about a user in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "GetUsersCount": {
+        "access_level": "Read",
+        "action_name": "wickr:GetUsersCount",
+        "condition_keys": [],
+        "description": "Grants permission to get user count for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListBlockedGuestUsers": {
+        "access_level": "Read",
+        "action_name": "wickr:ListBlockedGuestUsers",
+        "condition_keys": [],
+        "description": "Grants permission to list blocked guest users in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListBots": {
+        "access_level": "Read",
+        "action_name": "wickr:ListBots",
+        "condition_keys": [],
+        "description": "Grants permission to list bots in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListDevicesForUser": {
+        "access_level": "Read",
+        "action_name": "wickr:ListDevicesForUser",
+        "condition_keys": [],
+        "description": "Grants permission to list devices for a user in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListGuestUsers": {
+        "access_level": "Read",
+        "action_name": "wickr:ListGuestUsers",
+        "condition_keys": [],
+        "description": "Grants permission to list guest users in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
       },
       "ListNetworks": {
-        "access_level": "Write",
+        "access_level": "Read",
         "action_name": "wickr:ListNetworks",
         "condition_keys": [],
-        "description": "Grants permission to view Wickr networks",
+        "description": "Grants permission to list Wickr networks",
         "resource_types": [],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListSecurityGroupUsers": {
+        "access_level": "Read",
+        "action_name": "wickr:ListSecurityGroupUsers",
+        "condition_keys": [],
+        "description": "Grants permission to list users in a security group in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListSecurityGroups": {
+        "access_level": "Read",
+        "action_name": "wickr:ListSecurityGroups",
+        "condition_keys": [],
+        "description": "Grants permission to list security groups in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
       },
       "ListTagsForResource": {
@@ -333151,7 +334972,51 @@
         "action_name": "wickr:ListTagsForResource",
         "condition_keys": [],
         "description": "Grants permission to list the tags applied to a Wickr resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "ListUsers": {
+        "access_level": "Read",
+        "action_name": "wickr:ListUsers",
+        "condition_keys": [],
+        "description": "Grants permission to list users in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "RegisterOidcConfig": {
+        "access_level": "Write",
+        "action_name": "wickr:RegisterOidcConfig",
+        "condition_keys": [],
+        "description": "Grants permission to register OIDC configuration for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "RegisterOidcConfigTest": {
+        "access_level": "Write",
+        "action_name": "wickr:RegisterOidcConfigTest",
+        "condition_keys": [],
+        "description": "Grants permission to test OIDC configuration for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
       },
       "TagResource": {
@@ -333171,7 +335036,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-aws_ResourceTag___TagKey_"
           }
         ],
-        "description": "Grants permission to add tags to a specified wickr resource",
+        "description": "Grants permission to add tags to a specified Wickr resource",
         "resource_types": [
           {
             "name": "network*",
@@ -333189,7 +335054,46 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to untag the specified tags from the specified wickr resource",
+        "description": "Grants permission to untag the specified tags from the specified Wickr resource",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateBot": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateBot",
+        "condition_keys": [],
+        "description": "Grants permission to update a bot in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateDataRetention": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateDataRetention",
+        "condition_keys": [],
+        "description": "Grants permission to update data retention settings in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateGuestUser": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateGuestUser",
+        "condition_keys": [],
+        "description": "Grants permission to update guest user status in a Wickr network",
         "resource_types": [
           {
             "name": "network*",
@@ -333203,6 +335107,45 @@
         "action_name": "wickr:UpdateNetworkDetails",
         "condition_keys": [],
         "description": "Grants permission to update Wickr network details",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateNetworkSettings": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateNetworkSettings",
+        "condition_keys": [],
+        "description": "Grants permission to update network settings for a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateSecurityGroup": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateSecurityGroup",
+        "condition_keys": [],
+        "description": "Grants permission to update a security group in a Wickr network",
+        "resource_types": [
+          {
+            "name": "network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswickr.html#awswickr-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html"
+      },
+      "UpdateUser": {
+        "access_level": "Write",
+        "action_name": "wickr:UpdateUser",
+        "condition_keys": [],
+        "description": "Grants permission to update user information in a Wickr network",
         "resource_types": [
           {
             "name": "network*",
