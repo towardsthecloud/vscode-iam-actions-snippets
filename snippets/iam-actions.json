@@ -147559,6 +147559,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DescribeAuthenticationProfiles.html"
       },
+      "DescribeAutonomicsDenylist": {
+        "access_level": "Read",
+        "action_name": "redshift:DescribeAutonomicsDenylist",
+        "condition_keys": [],
+        "description": "Grants permission to describe the list of resources that are denylisted from global autonomics decisions for a specified cluster",
+        "resource_types": [
+          {
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html#amazonredshift-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
+      },
       "DescribeClusterDbRevisions": {
         "access_level": "List",
         "action_name": "redshift:DescribeClusterDbRevisions",
@@ -148258,6 +148271,19 @@
         "description": "Grants permission to modify an existing Amazon Redshift authentication profile",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyAuthenticationProfile.html"
+      },
+      "ModifyAutonomicsDenylist": {
+        "access_level": "Write",
+        "action_name": "redshift:ModifyAutonomicsDenylist",
+        "condition_keys": [],
+        "description": "Grants permission to add or remove resources from the global autonomics denylist for a specified cluster",
+        "resource_types": [
+          {
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html#amazonredshift-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
       },
       "ModifyCluster": {
         "access_level": "Write",
@@ -149336,6 +149362,19 @@
         ],
         "url": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetWorkgroup.html"
       },
+      "ListAutonomicsDenylist": {
+        "access_level": "Read",
+        "action_name": "redshift-serverless:ListAutonomicsDenylist",
+        "condition_keys": [],
+        "description": "Grants permission to list the resources that are denylisted from global autonomics decisions for a specified workgroup",
+        "resource_types": [
+          {
+            "name": "workgroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftserverless.html#amazonredshiftserverless-workgroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
+      },
       "ListCustomDomainAssociations": {
         "access_level": "List",
         "action_name": "redshift-serverless:ListCustomDomainAssociations",
@@ -149625,6 +149664,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateAutonomicsDenylist": {
+        "access_level": "Write",
+        "action_name": "redshift-serverless:UpdateAutonomicsDenylist",
+        "condition_keys": [],
+        "description": "Grants permission to add or remove resources from the global autonomics denylist for a specified workgroup",
+        "resource_types": [
+          {
+            "name": "workgroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftserverless.html#amazonredshiftserverless-workgroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html"
       },
       "UpdateCustomDomainAssociation": {
         "access_level": "Write",
