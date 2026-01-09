@@ -1684,20 +1684,20 @@
         "access_level": "Write",
         "action_name": "execute-api:InvalidateCache",
         "condition_keys": [],
-        "description": "Used to invalidate API cache upon a client request",
+        "description": "Grants permission to invalidate API cache upon a client request",
         "resource_types": [
           {
             "name": "execute-api-general*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html#amazonapigateway-execute-api-general"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html"
+        "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html"
       },
       "Invoke": {
         "access_level": "Write",
         "action_name": "execute-api:Invoke",
         "condition_keys": [],
-        "description": "Used to invoke an API upon a client request",
+        "description": "Grants permission to invoke an API upon a client request",
         "resource_types": [
           {
             "name": "execute-api-domain",
@@ -1708,20 +1708,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html#amazonapigateway-execute-api-general"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html"
+        "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
       },
       "ManageConnections": {
         "access_level": "Write",
         "action_name": "execute-api:ManageConnections",
         "condition_keys": [],
-        "description": "ManageConnections controls access to the @connections API",
+        "description": "Grants permission to access the Websocket @connections Route",
         "resource_types": [
           {
             "name": "execute-api-general*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html#amazonapigateway-execute-api-general"
           }
         ],
-        "url": "https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html"
+        "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-control-access-iam.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html",
@@ -13853,7 +13853,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
       "CreateInference": {
         "access_level": "Write",
@@ -13875,7 +13875,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.htmlwelcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
       "DeleteInference": {
         "access_level": "Write",
@@ -13888,7 +13888,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
       "GetInference": {
         "access_level": "Read",
@@ -13901,7 +13901,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
       "GetModel": {
         "access_level": "Read",
@@ -13914,7 +13914,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
       "ListModels": {
         "access_level": "List",
@@ -13927,7 +13927,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
           }
         ],
-        "url": "https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome"
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html",
@@ -139233,6 +139233,22 @@
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeleteTopicReviewedAnswer.html"
       },
+      "BatchGetPreferences": {
+        "access_level": "Read",
+        "action_name": "quicksight:BatchGetPreferences",
+        "condition_keys": [],
+        "description": "Grants permission to get user preferences",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+      },
+      "BatchUpdatePreferences": {
+        "access_level": "Write",
+        "action_name": "quicksight:BatchUpdatePreferences",
+        "condition_keys": [],
+        "description": "Grants permission to update user preferences",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+      },
       "CancelIngestion": {
         "access_level": "Write",
         "action_name": "quicksight:CancelIngestion",
@@ -140865,6 +140881,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRoleCustomPermission.html"
       },
+      "DescribeSelfUpgradeConfiguration": {
+        "access_level": "Read",
+        "action_name": "quicksight:DescribeSelfUpgradeConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to describe the administrative self upgrade configuration associated with an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSelfUpgradeConfiguration.html"
+      },
       "DescribeTemplate": {
         "access_level": "Read",
         "action_name": "quicksight:DescribeTemplate",
@@ -141538,6 +141562,19 @@
         "description": "Grants permission to list the members of a role",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListRoleMemberships.html"
+      },
+      "ListSelfUpgrades": {
+        "access_level": "List",
+        "action_name": "quicksight:ListSelfUpgrades",
+        "condition_keys": [],
+        "description": "Grants permission to list all of the pending self upgrade requests associated with an account",
+        "resource_types": [
+          {
+            "name": "user*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-user"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListSelfUpgrades.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -142812,6 +142849,27 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSPICECapacityConfiguration.html"
       },
+      "UpdateSelfUpgrade": {
+        "access_level": "Write",
+        "action_name": "quicksight:UpdateSelfUpgrade",
+        "condition_keys": [],
+        "description": "Grants permission to take action on pending self upgrade requests associated with an account",
+        "resource_types": [
+          {
+            "name": "user*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-user"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgrade.html"
+      },
+      "UpdateSelfUpgradeConfiguration": {
+        "access_level": "Write",
+        "action_name": "quicksight:UpdateSelfUpgradeConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to update the administrative self upgrade configuration associated with an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgradeConfiguration.html"
+      },
       "UpdateTemplate": {
         "access_level": "Write",
         "action_name": "quicksight:UpdateTemplate",
@@ -143060,6 +143118,10 @@
           {
             "name": "rds:req-tag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_req-tag___TagKey_"
+          },
+          {
+            "name": "rds:TagsFromRequest",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html#amazonrds-rds_TagsFromRequest"
           }
         ],
         "description": "Grants permission to add metadata tags to an Amazon RDS resource",
@@ -153320,7 +153382,12 @@
           }
         ],
         "description": "Grants permission to create a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "resolver-query-log-config*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html#amazonroute53resolver-resolver-query-log-config"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html"
       },
       "CreateResolverRule": {
@@ -241062,6 +241129,14 @@
         ],
         "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTrustStore.html"
       },
+      "CreateWebACLAssociation": {
+        "access_level": "Permissions management",
+        "action_name": "elasticloadbalancing:CreateWebACLAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to create WebAcl association to WAF",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
+      },
       "DeleteListener": {
         "access_level": "Write",
         "action_name": "elasticloadbalancing:DeleteListener",
@@ -241214,6 +241289,14 @@
         ],
         "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTrustStore.html"
       },
+      "DeleteWebACLAssociation": {
+        "access_level": "Permissions management",
+        "action_name": "elasticloadbalancing:DeleteWebACLAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to delete WebAcl association to WAF",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
+      },
       "DeregisterTargets": {
         "access_level": "Write",
         "action_name": "elasticloadbalancing:DeregisterTargets",
@@ -241363,6 +241446,22 @@
         "description": "Grants permission to describe the specified trust stores or all of your trust stores",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTrustStores.html"
+      },
+      "DescribeWebACLAssociation": {
+        "access_level": "Permissions management",
+        "action_name": "elasticloadbalancing:DescribeWebACLAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to describe WebAcl association to WAF",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
+      },
+      "GetLoadBalancerWebACL": {
+        "access_level": "Permissions management",
+        "action_name": "elasticloadbalancing:GetLoadBalancerWebACL",
+        "condition_keys": [],
+        "description": "Grants permission to get Load Balancer WebAcl to WAF",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
       },
       "GetResourcePolicy": {
         "access_level": "Read",
@@ -241925,7 +242024,7 @@
         "condition_keys": [],
         "description": "Grants permission to give WebAcl permission to WAF",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetWebAcl.html"
+        "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticloadbalancingv2.html",
@@ -279158,7 +279257,7 @@
         ],
         "description": "Grants permission to link partner accounts with AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateAwsAccountWithPartnerAccount.html"
       },
       "AssociateMulticastGroupWithFuotaTask": {
         "access_level": "Write",
@@ -279175,7 +279274,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateMulticastGroupWithFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateMulticastGroupWithFuotaTask.html"
       },
       "AssociateWirelessDeviceWithFuotaTask": {
         "access_level": "Write",
@@ -279192,7 +279291,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithFuotaTask.html"
       },
       "AssociateWirelessDeviceWithMulticastGroup": {
         "access_level": "Write",
@@ -279209,7 +279308,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithMulticastGroup.html"
       },
       "AssociateWirelessDeviceWithThing": {
         "access_level": "Write",
@@ -279226,7 +279325,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-thing"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithThing.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithThing.html"
       },
       "AssociateWirelessGatewayWithCertificate": {
         "access_level": "Write",
@@ -279243,7 +279342,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-cert"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithCertificate.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessGatewayWithCertificate.html"
       },
       "AssociateWirelessGatewayWithThing": {
         "access_level": "Write",
@@ -279260,7 +279359,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-thing"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithThing.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessGatewayWithThing.html"
       },
       "CancelMulticastGroupSession": {
         "access_level": "Write",
@@ -279273,7 +279372,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CancelMulticastGroupSession.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CancelMulticastGroupSession.html"
       },
       "CreateDestination": {
         "access_level": "Write",
@@ -279290,7 +279389,7 @@
         ],
         "description": "Grants permission to create a Destination resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDestination.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDestination.html"
       },
       "CreateDeviceProfile": {
         "access_level": "Write",
@@ -279307,7 +279406,7 @@
         ],
         "description": "Grants permission to create a DeviceProfile resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDeviceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDeviceProfile.html"
       },
       "CreateFuotaTask": {
         "access_level": "Write",
@@ -279324,7 +279423,7 @@
         ],
         "description": "Grants permission to create a FuotaTask resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateFuotaTask.html"
       },
       "CreateMulticastGroup": {
         "access_level": "Write",
@@ -279341,7 +279440,7 @@
         ],
         "description": "Grants permission to create a MulticastGroup resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateMulticastGroup.html"
       },
       "CreateNetworkAnalyzerConfiguration": {
         "access_level": "Write",
@@ -279371,7 +279470,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateNetworkAnalyzerConfiguration.html"
       },
       "CreateServiceProfile": {
         "access_level": "Write",
@@ -279388,7 +279487,7 @@
         ],
         "description": "Grants permission to create a ServiceProfile resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateServiceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateServiceProfile.html"
       },
       "CreateWirelessDevice": {
         "access_level": "Write",
@@ -279404,8 +279503,21 @@
           }
         ],
         "description": "Grants permission to create a WirelessDevice resource with given Destination",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html"
+        "resource_types": [
+          {
+            "name": "Destination",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
+          },
+          {
+            "name": "DeviceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-DeviceProfile"
+          },
+          {
+            "name": "ServiceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ServiceProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html"
       },
       "CreateWirelessGateway": {
         "access_level": "Write",
@@ -279422,7 +279534,7 @@
         ],
         "description": "Grants permission to create a WirelessGateway resource",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGateway.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGateway.html"
       },
       "CreateWirelessGatewayTask": {
         "access_level": "Write",
@@ -279435,7 +279547,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTask.html"
       },
       "CreateWirelessGatewayTaskDefinition": {
         "access_level": "Write",
@@ -279452,7 +279564,7 @@
         ],
         "description": "Grants permission to create a WirelessGateway task definition",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTaskDefinition.html"
       },
       "DeleteDestination": {
         "access_level": "Write",
@@ -279465,7 +279577,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDestination.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteDestination.html"
       },
       "DeleteDeviceProfile": {
         "access_level": "Write",
@@ -279478,7 +279590,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-DeviceProfile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDeviceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteDeviceProfile.html"
       },
       "DeleteFuotaTask": {
         "access_level": "Write",
@@ -279491,7 +279603,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-FuotaTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteFuotaTask.html"
       },
       "DeleteMulticastGroup": {
         "access_level": "Write",
@@ -279504,7 +279616,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteMulticastGroup.html"
       },
       "DeleteNetworkAnalyzerConfiguration": {
         "access_level": "Write",
@@ -279517,7 +279629,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-NetworkAnalyzerConfiguration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteNetworkAnalyzerConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteNetworkAnalyzerConfiguration.html"
       },
       "DeleteQueuedMessages": {
         "access_level": "Write",
@@ -279525,7 +279637,7 @@
         "condition_keys": [],
         "description": "Grants permission to delete QueuedMessages",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteQueuedMessages.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteQueuedMessages.html"
       },
       "DeleteServiceProfile": {
         "access_level": "Write",
@@ -279538,7 +279650,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ServiceProfile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteServiceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteServiceProfile.html"
       },
       "DeleteWirelessDevice": {
         "access_level": "Write",
@@ -279551,7 +279663,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessDevice.html"
       },
       "DeleteWirelessDeviceImportTask": {
         "access_level": "Write",
@@ -279564,7 +279676,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ImportTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDeviceImportTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessDeviceImportTask.html"
       },
       "DeleteWirelessGateway": {
         "access_level": "Write",
@@ -279577,7 +279689,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGateway.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGateway.html"
       },
       "DeleteWirelessGatewayTask": {
         "access_level": "Write",
@@ -279590,7 +279702,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGatewayTask.html"
       },
       "DeleteWirelessGatewayTaskDefinition": {
         "access_level": "Write",
@@ -279603,7 +279715,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGatewayTaskDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTaskDefinition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGatewayTaskDefinition.html"
       },
       "DeregisterWirelessDevice": {
         "access_level": "Write",
@@ -279616,7 +279728,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeregisterWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeregisterWirelessDevice.html"
       },
       "DisassociateAwsAccountFromPartnerAccount": {
         "access_level": "Write",
@@ -279629,7 +279741,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-SidewalkAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateAwsAccountFromPartnerAccount.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateAwsAccountFromPartnerAccount.html"
       },
       "DisassociateMulticastGroupFromFuotaTask": {
         "access_level": "Write",
@@ -279646,7 +279758,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateMulticastGroupFromFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateMulticastGroupFromFuotaTask.html"
       },
       "DisassociateWirelessDeviceFromFuotaTask": {
         "access_level": "Write",
@@ -279663,7 +279775,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromFuotaTask.html"
       },
       "DisassociateWirelessDeviceFromMulticastGroup": {
         "access_level": "Write",
@@ -279680,7 +279792,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromMulticastGroup.html"
       },
       "DisassociateWirelessDeviceFromThing": {
         "access_level": "Write",
@@ -279697,7 +279809,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-thing"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromThing.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromThing.html"
       },
       "DisassociateWirelessGatewayFromCertificate": {
         "access_level": "Write",
@@ -279714,7 +279826,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-cert"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromCertificate.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessGatewayFromCertificate.html"
       },
       "DisassociateWirelessGatewayFromThing": {
         "access_level": "Write",
@@ -279731,7 +279843,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-thing"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromThing.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessGatewayFromThing.html"
       },
       "GetDestination": {
         "access_level": "Read",
@@ -279744,7 +279856,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDestination.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetDestination.html"
       },
       "GetDeviceProfile": {
         "access_level": "Read",
@@ -279757,7 +279869,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-DeviceProfile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDeviceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetDeviceProfile.html"
       },
       "GetEventConfigurationByResourceTypes": {
         "access_level": "Read",
@@ -279765,7 +279877,7 @@
         "condition_keys": [],
         "description": "Grants permission to get event configuration by resource types",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetEventConfigurationByResourceTypes.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetEventConfigurationByResourceTypes.html"
       },
       "GetFuotaTask": {
         "access_level": "Read",
@@ -279778,7 +279890,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-FuotaTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetFuotaTask.html"
       },
       "GetLogLevelsByResourceTypes": {
         "access_level": "Read",
@@ -279786,7 +279898,7 @@
         "condition_keys": [],
         "description": "Grants permission to get log levels by resource types",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetLogLevelsByResourceTypes.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetLogLevelsByResourceTypes.html"
       },
       "GetMetricConfiguration": {
         "access_level": "Read",
@@ -279794,7 +279906,7 @@
         "condition_keys": [],
         "description": "Grants permission to get metric configuration",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetricConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMetricConfiguration.html"
       },
       "GetMetrics": {
         "access_level": "Read",
@@ -279802,7 +279914,7 @@
         "condition_keys": [],
         "description": "Grants permission to get metrics",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetrics.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMetrics.html"
       },
       "GetMulticastGroup": {
         "access_level": "Read",
@@ -279815,7 +279927,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMulticastGroup.html"
       },
       "GetMulticastGroupSession": {
         "access_level": "Read",
@@ -279828,7 +279940,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroupSession.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMulticastGroupSession.html"
       },
       "GetNetworkAnalyzerConfiguration": {
         "access_level": "Read",
@@ -279841,7 +279953,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-NetworkAnalyzerConfiguration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetNetworkAnalyzerConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetNetworkAnalyzerConfiguration.html"
       },
       "GetPartnerAccount": {
         "access_level": "Read",
@@ -279854,7 +279966,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-SidewalkAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPartnerAccount.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPartnerAccount.html"
       },
       "GetPosition": {
         "access_level": "Read",
@@ -279871,7 +279983,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPosition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPosition.html"
       },
       "GetPositionConfiguration": {
         "access_level": "Read",
@@ -279888,7 +280000,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPositionConfiguration.html"
       },
       "GetPositionEstimate": {
         "access_level": "Read",
@@ -279896,7 +280008,7 @@
         "condition_keys": [],
         "description": "Grants permission to get position estimate",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionEstimate.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPositionEstimate.html"
       },
       "GetResourceEventConfiguration": {
         "access_level": "Read",
@@ -279917,7 +280029,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceEventConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourceEventConfiguration.html"
       },
       "GetResourceLogLevel": {
         "access_level": "Read",
@@ -279934,7 +280046,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceLogLevel.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourceLogLevel.html"
       },
       "GetResourcePosition": {
         "access_level": "Read",
@@ -279951,7 +280063,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html"
       },
       "GetServiceEndpoint": {
         "access_level": "Read",
@@ -279959,7 +280071,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the customer account specific endpoint for CUPS protocol connection or LoRaWAN Network Server (LNS) protocol connection, and optionally server trust certificate in PEM format",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceEndpoint.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetServiceEndpoint.html"
       },
       "GetServiceProfile": {
         "access_level": "Read",
@@ -279972,7 +280084,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ServiceProfile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceProfile.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetServiceProfile.html"
       },
       "GetWirelessDevice": {
         "access_level": "Read",
@@ -279985,7 +280097,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDevice.html"
       },
       "GetWirelessDeviceImportTask": {
         "access_level": "Read",
@@ -279998,7 +280110,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ImportTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceImportTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDeviceImportTask.html"
       },
       "GetWirelessDeviceStatistics": {
         "access_level": "Read",
@@ -280011,7 +280123,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceStatistics.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDeviceStatistics.html"
       },
       "GetWirelessGateway": {
         "access_level": "Read",
@@ -280024,7 +280136,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGateway.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGateway.html"
       },
       "GetWirelessGatewayCertificate": {
         "access_level": "Read",
@@ -280037,7 +280149,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayCertificate.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayCertificate.html"
       },
       "GetWirelessGatewayFirmwareInformation": {
         "access_level": "Read",
@@ -280050,7 +280162,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayFirmwareInformation.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayFirmwareInformation.html"
       },
       "GetWirelessGatewayStatistics": {
         "access_level": "Read",
@@ -280063,7 +280175,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayStatistics.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayStatistics.html"
       },
       "GetWirelessGatewayTask": {
         "access_level": "Read",
@@ -280076,7 +280188,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayTask.html"
       },
       "GetWirelessGatewayTaskDefinition": {
         "access_level": "Read",
@@ -280089,7 +280201,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGatewayTaskDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTaskDefinition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayTaskDefinition.html"
       },
       "ListDestinations": {
         "access_level": "Read",
@@ -280097,7 +280209,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available Destinations based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDestinations.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDestinations.html"
       },
       "ListDeviceProfiles": {
         "access_level": "Read",
@@ -280105,7 +280217,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available DeviceProfiles based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDeviceProfiles.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDeviceProfiles.html"
       },
       "ListDevicesForWirelessDeviceImportTask": {
         "access_level": "Read",
@@ -280118,7 +280230,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ImportTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDevicesForWirelessDeviceImportTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDevicesForWirelessDeviceImportTask.html"
       },
       "ListEventConfigurations": {
         "access_level": "Read",
@@ -280126,7 +280238,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available event configurations based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListEventConfigurations.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListEventConfigurations.html"
       },
       "ListFuotaTasks": {
         "access_level": "Read",
@@ -280134,7 +280246,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available FuotaTasks based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListFuotaTasks.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListFuotaTasks.html"
       },
       "ListMulticastGroups": {
         "access_level": "Read",
@@ -280142,7 +280254,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available MulticastGroups based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroups.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListMulticastGroups.html"
       },
       "ListMulticastGroupsByFuotaTask": {
         "access_level": "Read",
@@ -280155,7 +280267,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-FuotaTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroupsByFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListMulticastGroupsByFuotaTask.html"
       },
       "ListNetworkAnalyzerConfigurations": {
         "access_level": "Read",
@@ -280163,7 +280275,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available NetworkAnalyzerConfigurations based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListNetworkAnalyzerConfigurations.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListNetworkAnalyzerConfigurations.html"
       },
       "ListPartnerAccounts": {
         "access_level": "Read",
@@ -280171,7 +280283,7 @@
         "condition_keys": [],
         "description": "Grants permission to list the available partner accounts",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPartnerAccounts.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListPartnerAccounts.html"
       },
       "ListPositionConfigurations": {
         "access_level": "Read",
@@ -280179,7 +280291,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available position configurations based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPositionConfigurations.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListPositionConfigurations.html"
       },
       "ListQueuedMessages": {
         "access_level": "Read",
@@ -280187,7 +280299,7 @@
         "condition_keys": [],
         "description": "Grants permission to list the Queued Messages",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListQueuedMessages.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListQueuedMessages.html"
       },
       "ListServiceProfiles": {
         "access_level": "Read",
@@ -280195,7 +280307,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available ServiceProfiles based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListServiceProfiles.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListServiceProfiles.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -280248,7 +280360,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGatewayTaskDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListTagsForResource.html"
       },
       "ListWirelessDeviceImportTasks": {
         "access_level": "Read",
@@ -280256,7 +280368,7 @@
         "condition_keys": [],
         "description": "Grants permission to list wireless device import tasks information of based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDeviceImportTasks.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessDeviceImportTasks.html"
       },
       "ListWirelessDevices": {
         "access_level": "Read",
@@ -280264,7 +280376,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available WirelessDevices based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDevices.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessDevices.html"
       },
       "ListWirelessGatewayTaskDefinitions": {
         "access_level": "Read",
@@ -280272,7 +280384,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available WirelessGateway task definitions based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGatewayTaskDefinitions.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessGatewayTaskDefinitions.html"
       },
       "ListWirelessGateways": {
         "access_level": "Read",
@@ -280280,7 +280392,7 @@
         "condition_keys": [],
         "description": "Grants permission to list information of available WirelessGateways based on the AWS account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGateways.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessGateways.html"
       },
       "PutPositionConfiguration": {
         "access_level": "Write",
@@ -280297,7 +280409,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutPositionConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_PutPositionConfiguration.html"
       },
       "PutResourceLogLevel": {
         "access_level": "Write",
@@ -280314,7 +280426,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutResourceLogLevel.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_PutResourceLogLevel.html"
       },
       "ResetAllResourceLogLevels": {
         "access_level": "Write",
@@ -280322,7 +280434,7 @@
         "condition_keys": [],
         "description": "Grants permission to reset all resource log levels",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetAllResourceLogLevels.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ResetAllResourceLogLevels.html"
       },
       "ResetResourceLogLevel": {
         "access_level": "Write",
@@ -280339,7 +280451,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetResourceLogLevel.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ResetResourceLogLevel.html"
       },
       "SendDataToMulticastGroup": {
         "access_level": "Write",
@@ -280352,7 +280464,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_SendDataToMulticastGroup.html"
       },
       "SendDataToWirelessDevice": {
         "access_level": "Write",
@@ -280365,7 +280477,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_SendDataToWirelessDevice.html"
       },
       "StartBulkAssociateWirelessDeviceWithMulticastGroup": {
         "access_level": "Write",
@@ -280378,7 +280490,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkAssociateWirelessDeviceWithMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartBulkAssociateWirelessDeviceWithMulticastGroup.html"
       },
       "StartBulkDisassociateWirelessDeviceFromMulticastGroup": {
         "access_level": "Write",
@@ -280391,7 +280503,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkDisassociateWirelessDeviceFromMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartBulkDisassociateWirelessDeviceFromMulticastGroup.html"
       },
       "StartFuotaTask": {
         "access_level": "Write",
@@ -280404,7 +280516,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-FuotaTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartFuotaTask.html"
       },
       "StartMulticastGroupSession": {
         "access_level": "Write",
@@ -280417,7 +280529,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartMulticastGroupSession.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartMulticastGroupSession.html"
       },
       "StartNetworkAnalyzerStream": {
         "access_level": "Write",
@@ -280446,8 +280558,13 @@
           }
         ],
         "description": "Grants permission to start the single wireless device import task",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartSingleWirelessDeviceImportTask.html"
+        "resource_types": [
+          {
+            "name": "Destination",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartSingleWirelessDeviceImportTask.html"
       },
       "StartWirelessDeviceImportTask": {
         "access_level": "Write",
@@ -280467,9 +280584,13 @@
           {
             "name": "ImportTask*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ImportTask"
+          },
+          {
+            "name": "Destination",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -280531,7 +280652,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGatewayTaskDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_TagResource.html"
       },
       "TestWirelessDevice": {
         "access_level": "Write",
@@ -280544,7 +280665,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TestWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_TestWirelessDevice.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -280602,7 +280723,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGatewayTaskDefinition"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UntagResource.html"
       },
       "UpdateDestination": {
         "access_level": "Write",
@@ -280615,7 +280736,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateDestination.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateDestination.html"
       },
       "UpdateEventConfigurationByResourceTypes": {
         "access_level": "Write",
@@ -280623,7 +280744,7 @@
         "condition_keys": [],
         "description": "Grants permission to update event configuration by resource types",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateEventConfigurationByResourceTypes.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateEventConfigurationByResourceTypes.html"
       },
       "UpdateFuotaTask": {
         "access_level": "Write",
@@ -280636,7 +280757,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-FuotaTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateFuotaTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateFuotaTask.html"
       },
       "UpdateLogLevelsByResourceTypes": {
         "access_level": "Write",
@@ -280644,7 +280765,7 @@
         "condition_keys": [],
         "description": "Grants permission to update log levels by resource types",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateLogLevelsByResourceTypes.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateLogLevelsByResourceTypes.html"
       },
       "UpdateMetricConfiguration": {
         "access_level": "Write",
@@ -280652,7 +280773,7 @@
         "condition_keys": [],
         "description": "Grants permission to update metric configuration",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMetricConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateMetricConfiguration.html"
       },
       "UpdateMulticastGroup": {
         "access_level": "Write",
@@ -280665,7 +280786,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-MulticastGroup"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMulticastGroup.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateMulticastGroup.html"
       },
       "UpdateNetworkAnalyzerConfiguration": {
         "access_level": "Write",
@@ -280690,7 +280811,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateNetworkAnalyzerConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateNetworkAnalyzerConfiguration.html"
       },
       "UpdatePartnerAccount": {
         "access_level": "Write",
@@ -280703,7 +280824,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-SidewalkAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePartnerAccount.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdatePartnerAccount.html"
       },
       "UpdatePosition": {
         "access_level": "Write",
@@ -280720,7 +280841,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePosition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdatePosition.html"
       },
       "UpdateResourceEventConfiguration": {
         "access_level": "Write",
@@ -280741,7 +280862,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourceEventConfiguration.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourceEventConfiguration.html"
       },
       "UpdateResourcePosition": {
         "access_level": "Write",
@@ -280758,7 +280879,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html"
       },
       "UpdateWirelessDevice": {
         "access_level": "Write",
@@ -280769,9 +280890,21 @@
           {
             "name": "WirelessDevice*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessDevice"
+          },
+          {
+            "name": "Destination",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-Destination"
+          },
+          {
+            "name": "DeviceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-DeviceProfile"
+          },
+          {
+            "name": "ServiceProfile",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ServiceProfile"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDevice.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessDevice.html"
       },
       "UpdateWirelessDeviceImportTask": {
         "access_level": "Write",
@@ -280784,7 +280917,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-ImportTask"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDeviceImportTask.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessDeviceImportTask.html"
       },
       "UpdateWirelessGateway": {
         "access_level": "Write",
@@ -280797,7 +280930,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html#awsiotwireless-WirelessGateway"
           }
         ],
-        "url": "https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessGateway.html"
+        "url": "https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessGateway.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html",
@@ -293600,6 +293733,19 @@
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetwork.html"
       },
+      "CreateCoreNetworkPrefixListAssociation": {
+        "access_level": "Write",
+        "action_name": "networkmanager:CreateCoreNetworkPrefixListAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to create a prefix list core network association",
+        "resource_types": [
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetworkPrefixListAssociation.html"
+      },
       "CreateDevice": {
         "access_level": "Write",
         "action_name": "networkmanager:CreateDevice",
@@ -293893,6 +294039,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPolicyVersion.html"
+      },
+      "DeleteCoreNetworkPrefixListAssociation": {
+        "access_level": "Write",
+        "action_name": "networkmanager:DeleteCoreNetworkPrefixListAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to delete a prefix list core network association",
+        "resource_types": [
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPrefixListAssociation.html"
       },
       "DeleteDevice": {
         "access_level": "Write",
@@ -294512,6 +294671,32 @@
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPolicyVersions.html"
       },
+      "ListCoreNetworkPrefixListAssociations": {
+        "access_level": "List",
+        "action_name": "networkmanager:ListCoreNetworkPrefixListAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list core network prefix list associaitons",
+        "resource_types": [
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPrefixListAssociations.html"
+      },
+      "ListCoreNetworkRoutingInformation": {
+        "access_level": "List",
+        "action_name": "networkmanager:ListCoreNetworkRoutingInformation",
+        "condition_keys": [],
+        "description": "Grants permission to list core network routing information",
+        "resource_types": [
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkRoutingInformation.html"
+      },
       "ListCoreNetworks": {
         "access_level": "List",
         "action_name": "networkmanager:ListCoreNetworks",
@@ -294586,6 +294771,23 @@
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html"
       },
+      "PutAttachmentRoutingPolicyLabel": {
+        "access_level": "Write",
+        "action_name": "networkmanager:PutAttachmentRoutingPolicyLabel",
+        "condition_keys": [],
+        "description": "Grants permission to put an attachment routing policy label",
+        "resource_types": [
+          {
+            "name": "attachment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-attachment"
+          },
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutAttachmentRoutingPolicyLabel.html"
+      },
       "PutCoreNetworkPolicy": {
         "access_level": "Write",
         "action_name": "networkmanager:PutCoreNetworkPolicy",
@@ -294642,6 +294844,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RejectAttachment.html"
+      },
+      "RemoveAttachmentRoutingPolicyLabel": {
+        "access_level": "Write",
+        "action_name": "networkmanager:RemoveAttachmentRoutingPolicyLabel",
+        "condition_keys": [],
+        "description": "Grants permission to remove an attachment routing policy label",
+        "resource_types": [
+          {
+            "name": "attachment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-attachment"
+          },
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RemoveAttachmentRoutingPolicyLabel.html"
       },
       "RestoreCoreNetworkPolicyVersion": {
         "access_level": "Write",
@@ -296600,6 +296819,10 @@
           {
             "name": "organizations:TransferType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_TransferType"
+          },
+          {
+            "name": "organizations:TransferDirection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_TransferDirection"
           }
         ],
         "description": "Grants permission to send an invitation to another AWS account, asking it to transfer a particular responsibility to your organization",
@@ -296869,6 +297092,14 @@
         "access_level": "List",
         "action_name": "organizations:ListTagsForResource",
         "condition_keys": [
+          {
+            "name": "organizations:TransferType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_TransferType"
+          },
+          {
+            "name": "organizations:TransferDirection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_TransferDirection"
+          },
           {
             "name": "organizations:PolicyType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-organizations_PolicyType"
@@ -300646,7 +300877,12 @@
       "AddKeyReplicationRegions": {
         "access_level": "Write",
         "action_name": "payment-cryptography:AddKeyReplicationRegions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to add replication regions to an existing AWS Payment Cryptography key",
         "resource_types": [
           {
@@ -300688,6 +300924,18 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-aws_TagKeys"
+          },
+          {
+            "name": "payment-cryptography:KeyClass",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_KeyClass"
+          },
+          {
+            "name": "payment-cryptography:KeyUsage",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_KeyUsage"
+          },
+          {
+            "name": "payment-cryptography:KeyAlgorithm",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_KeyAlgorithm"
           }
         ],
         "description": "Grants permission to create a unique customer managed key in the caller's AWS account and region",
@@ -300697,7 +300945,12 @@
       "DecryptData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:DecryptData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to decrypt ciphertext data to plaintext using symmetric, asymmetric or DUKPT data encryption key",
         "resource_types": [
           {
@@ -300736,7 +300989,12 @@
       "DeleteKey": {
         "access_level": "Write",
         "action_name": "payment-cryptography:DeleteKey",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to schedule the deletion of a Key",
         "resource_types": [
           {
@@ -300765,7 +301023,12 @@
       "EncryptData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:EncryptData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to encrypt plaintext data to ciphertext using symmetric, asymmetric or DUKPT data encryption key",
         "resource_types": [
           {
@@ -300782,7 +301045,20 @@
       "ExportKey": {
         "access_level": "Write",
         "action_name": "payment-cryptography:ExportKey",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          },
+          {
+            "name": "payment-cryptography:CertificateAuthorityPublicKeyIdentifier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_CertificateAuthorityPublicKeyIdentifier"
+          },
+          {
+            "name": "payment-cryptography:WrappingKeyIdentifier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_WrappingKeyIdentifier"
+          }
+        ],
         "description": "Grants permission to export a key from the service",
         "resource_types": [
           {
@@ -300795,7 +301071,12 @@
       "GenerateCardValidationData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:GenerateCardValidationData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to generate card-related data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) or Card Security Codes (CSC) that check the validity of a magnetic stripe card",
         "resource_types": [
           {
@@ -300812,7 +301093,12 @@
       "GenerateMac": {
         "access_level": "Write",
         "action_name": "payment-cryptography:GenerateMac",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to generate a MAC (Message Authentication Code) cryptogram",
         "resource_types": [
           {
@@ -300829,7 +301115,12 @@
       "GenerateMacEmvPinChange": {
         "access_level": "Write",
         "action_name": "payment-cryptography:GenerateMacEmvPinChange",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to generate a MAC (Message Authentication Code) cryptogram",
         "resource_types": [
           {
@@ -300846,7 +301137,12 @@
       "GeneratePinData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:GeneratePinData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to generate pin-related data such as PIN, PIN Verification Value (PVV), PIN Block and PIN Offset during new card issuance or card re-issuance",
         "resource_types": [
           {
@@ -300889,7 +301185,12 @@
       "GetCertificateSigningRequest": {
         "access_level": "Read",
         "action_name": "payment-cryptography:GetCertificateSigningRequest",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to return the Certificate Signing Request for a public key from a key of class PUBLIC_KEY",
         "resource_types": [
           {
@@ -300914,7 +301215,12 @@
       "GetKey": {
         "access_level": "Read",
         "action_name": "payment-cryptography:GetKey",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to return the detailed information about the specified key",
         "resource_types": [
           {
@@ -300943,7 +301249,12 @@
       "GetPublicKeyCertificate": {
         "access_level": "Read",
         "action_name": "payment-cryptography:GetPublicKeyCertificate",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to return the public key from a key of class PUBLIC_KEY",
         "resource_types": [
           {
@@ -300964,6 +301275,18 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-aws_TagKeys"
+          },
+          {
+            "name": "payment-cryptography:ImportKeyMaterial",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_ImportKeyMaterial"
+          },
+          {
+            "name": "payment-cryptography:CertificateAuthorityPublicKeyIdentifier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_CertificateAuthorityPublicKeyIdentifier"
+          },
+          {
+            "name": "payment-cryptography:WrappingKeyIdentifier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_WrappingKeyIdentifier"
           }
         ],
         "description": "Grants permission to imports keys and public key certificates",
@@ -301002,7 +301325,12 @@
       "ReEncryptData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:ReEncryptData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption Keys",
         "resource_types": [
           {
@@ -301019,7 +301347,12 @@
       "RemoveKeyReplicationRegions": {
         "access_level": "Write",
         "action_name": "payment-cryptography:RemoveKeyReplicationRegions",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to remove replication regions from an existing AWS Payment Cryptography key",
         "resource_types": [
           {
@@ -301036,7 +301369,12 @@
       "RestoreKey": {
         "access_level": "Write",
         "action_name": "payment-cryptography:RestoreKey",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to cancel a scheduled key deletion if at any point during the waiting period a Key needs to be revived",
         "resource_types": [
           {
@@ -301049,7 +301387,12 @@
       "StartKeyUsage": {
         "access_level": "Write",
         "action_name": "payment-cryptography:StartKeyUsage",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to enable a disabled Key",
         "resource_types": [
           {
@@ -301062,7 +301405,12 @@
       "StopKeyUsage": {
         "access_level": "Write",
         "action_name": "payment-cryptography:StopKeyUsage",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to disable an enabled Key",
         "resource_types": [
           {
@@ -301097,7 +301445,12 @@
       "TranslateKeyMaterial": {
         "access_level": "Write",
         "action_name": "payment-cryptography:TranslateKeyMaterial",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to translate wrapping key type for a wrapped key",
         "resource_types": [
           {
@@ -301114,7 +301467,12 @@
       "TranslatePinData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:TranslatePinData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to translate encrypted PIN block from and to ISO 9564 formats 0,1,3,4",
         "resource_types": [
           {
@@ -301175,7 +301533,12 @@
       "VerifyAuthRequestCryptogram": {
         "access_level": "Write",
         "action_name": "payment-cryptography:VerifyAuthRequestCryptogram",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to verify Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization",
         "resource_types": [
           {
@@ -301192,7 +301555,12 @@
       "VerifyCardValidationData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:VerifyCardValidationData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to verify card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) and Card Security Codes (CSC)",
         "resource_types": [
           {
@@ -301209,7 +301577,12 @@
       "VerifyMac": {
         "access_level": "Write",
         "action_name": "payment-cryptography:VerifyMac",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to verify MAC (Message Authentication Code) of input data against a provided MAC",
         "resource_types": [
           {
@@ -301226,7 +301599,12 @@
       "VerifyPinData": {
         "access_level": "Write",
         "action_name": "payment-cryptography:VerifyPinData",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
         "description": "Grants permission to verify pin-related data such as PIN and PIN Offset using algorithms including VISA PVV and IBM3624",
         "resource_types": [
           {
@@ -314015,6 +314393,14 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateDbNode.html"
       },
+      "CreateGrantShare": {
+        "access_level": "Write",
+        "action_name": "odb:CreateGrantShare",
+        "condition_keys": [],
+        "description": "Grants permission to create an ODB Grant Share",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateGrantShare.html"
+      },
       "CreateOdbNetwork": {
         "access_level": "Write",
         "action_name": "odb:CreateOdbNetwork",
@@ -314122,6 +314508,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteDbNode.html"
+      },
+      "DeleteGrantShare": {
+        "access_level": "Write",
+        "action_name": "odb:DeleteGrantShare",
+        "condition_keys": [],
+        "description": "Grants permission to delete an ODB Grant Share",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteGrantShare.html"
       },
       "DeleteOdbNetwork": {
         "access_level": "Write",
@@ -314627,6 +315021,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html"
+      },
+      "UpdateGrantShare": {
+        "access_level": "Write",
+        "action_name": "odb:UpdateGrantShare",
+        "condition_keys": [],
+        "description": "Grants permission to update an ODB Grant Share",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_UpdateGrantShare.html"
       },
       "UpdateOdbNetwork": {
         "access_level": "Write",
