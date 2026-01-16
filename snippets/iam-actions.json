@@ -86042,6 +86042,29 @@
     "serviceName": "Amazon EC2 Instance Connect",
     "service_prefix": "ec2-instance-connect"
   },
+  "amazonecsmcpservice": {
+    "actions": {
+      "InvokeReadOnlyTools": {
+        "access_level": "Read",
+        "action_name": "ecs-mcp:InvokeReadOnlyTools",
+        "condition_keys": [],
+        "description": "Grants permission to call read-only tools in MCP service",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-mcp-getting-started.html"
+      },
+      "UseMcp": {
+        "access_level": "Read",
+        "action_name": "ecs-mcp:UseMcp",
+        "condition_keys": [],
+        "description": "Grants permission to use MCP service",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-mcp-getting-started.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonecsmcpservice.html",
+    "serviceName": "Amazon ECS MCP Service",
+    "service_prefix": "ecs-mcp"
+  },
   "amazoneksauth": {
     "actions": {
       "AssumeRoleForPodIdentity": {
@@ -128498,6 +128521,24 @@
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_APIAccessAll.html"
       },
+      "AddCollectionToCollectionGroup": {
+        "access_level": "Write",
+        "action_name": "aoss:AddCollectionToCollectionGroup",
+        "condition_keys": [
+          {
+            "name": "aoss:collection-group",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_collection-group"
+          }
+        ],
+        "description": "Grants permission to add a serverless collection to a specified collection group",
+        "resource_types": [
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-CollectionGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html"
+      },
       "BatchGetCollection": {
         "access_level": "Read",
         "action_name": "aoss:BatchGetCollection",
@@ -128510,6 +128551,19 @@
         "description": "Grants permission to get attributes for one or more collections",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollection.html"
+      },
+      "BatchGetCollectionGroup": {
+        "access_level": "Read",
+        "action_name": "aoss:BatchGetCollectionGroup",
+        "condition_keys": [
+          {
+            "name": "aoss:collection-group",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aoss_collection-group"
+          }
+        ],
+        "description": "Grants permission to get attributes for one or more collection groups",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollectionGroup.html"
       },
       "BatchGetEffectiveLifecyclePolicy": {
         "access_level": "Read",
@@ -128572,6 +128626,23 @@
         "description": "Grants permission to create a serverless collection",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html"
+      },
+      "CreateCollectionGroup": {
+        "access_level": "Write",
+        "action_name": "aoss:CreateCollectionGroup",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a serverless collection group",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollectionGroup.html"
       },
       "CreateIndex": {
         "access_level": "Write",
@@ -128674,6 +128745,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollection.html"
+      },
+      "DeleteCollectionGroup": {
+        "access_level": "Write",
+        "action_name": "aoss:DeleteCollectionGroup",
+        "condition_keys": [],
+        "description": "Grants permission to delete a serverless collection group",
+        "resource_types": [
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-CollectionGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollectionGroup.html"
       },
       "DeleteIndex": {
         "access_level": "Write",
@@ -128795,6 +128879,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListAccessPolicies.html"
       },
+      "ListCollectionGroups": {
+        "access_level": "List",
+        "action_name": "aoss:ListCollectionGroups",
+        "condition_keys": [],
+        "description": "Grants permission to list collection groups",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollectionGroups.html"
+      },
       "ListCollections": {
         "access_level": "List",
         "action_name": "aoss:ListCollections",
@@ -128914,6 +129006,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollection.html"
+      },
+      "UpdateCollectionGroup": {
+        "access_level": "Write",
+        "action_name": "aoss:UpdateCollectionGroup",
+        "condition_keys": [],
+        "description": "Grants permission to update a collection group",
+        "resource_types": [
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchserverless.html#amazonopensearchserverless-CollectionGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollectionGroup.html"
       },
       "UpdateIndex": {
         "access_level": "Write",
@@ -165736,6 +165841,19 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketEncryption.html"
       },
+      "DeleteTableBucketMetricsConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3tables:DeleteTableBucketMetricsConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete a metrics configuration on a table bucket",
+        "resource_types": [
+          {
+            "name": "TableBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3tables.html#amazons3tables-TableBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketMetricsConfiguration.html"
+      },
       "DeleteTableBucketPolicy": {
         "access_level": "Permissions management",
         "action_name": "s3tables:DeleteTableBucketPolicy",
@@ -165884,6 +166002,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMaintenanceConfiguration.html"
+      },
+      "GetTableBucketMetricsConfiguration": {
+        "access_level": "Read",
+        "action_name": "s3tables:GetTableBucketMetricsConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a metrics configuration on a bucket",
+        "resource_types": [
+          {
+            "name": "TableBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3tables.html#amazons3tables-TableBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMetricsConfiguration.html"
       },
       "GetTableBucketPolicy": {
         "access_level": "Read",
@@ -166266,6 +166397,19 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMaintenanceConfiguration.html"
       },
+      "PutTableBucketMetricsConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3tables:PutTableBucketMetricsConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to create or overwrite a metrics configuration on a table bucket",
+        "resource_types": [
+          {
+            "name": "TableBucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3tables.html#amazons3tables-TableBucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMetricsConfiguration.html"
+      },
       "PutTableBucketPolicy": {
         "access_level": "Permissions management",
         "action_name": "s3tables:PutTableBucketPolicy",
@@ -166308,7 +166452,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3tables.html#amazons3tables-TableBucket"
           }
         ],
-        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ss3Buckets_PutTableBucketStorageClass.html"
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketStorageClass.html"
       },
       "PutTableData": {
         "access_level": "Write",
@@ -196836,6 +196980,14 @@
         ],
         "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_FinalizeCutover.html"
       },
+      "GetAccountSettings": {
+        "access_level": "Read",
+        "action_name": "mgn:GetAccountSettings",
+        "condition_keys": [],
+        "description": "Grants permission to get account settings",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetAccountSettings.html"
+      },
       "GetAgentCommandForMgn": {
         "access_level": "Read",
         "action_name": "mgn:GetAgentCommandForMgn",
@@ -197903,6 +198055,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateAccountSettings": {
+        "access_level": "Write",
+        "action_name": "mgn:UpdateAccountSettings",
+        "condition_keys": [],
+        "description": "Grants permission to update account settings",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateAccountSettings.html"
       },
       "UpdateAgentBacklogForMgn": {
         "access_level": "Write",
@@ -200368,6 +200528,23 @@
         ],
         "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateSourceGraphqlApi.html"
       },
+      "AssociateWebACL": {
+        "access_level": "Write",
+        "action_name": "appsync:AssociateWebACL",
+        "condition_keys": [],
+        "description": "Grants permission to associate a web ACL and a resource",
+        "resource_types": [
+          {
+            "name": "api",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-api"
+          },
+          {
+            "name": "graphqlapi",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-graphqlapi"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+      },
       "CreateApi": {
         "access_level": "Write",
         "action_name": "appsync:CreateApi",
@@ -200672,6 +200849,23 @@
         ],
         "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateSourceGraphqlApi.html"
       },
+      "DisassociateWebACL": {
+        "access_level": "Write",
+        "action_name": "appsync:DisassociateWebACL",
+        "condition_keys": [],
+        "description": "Grants permission to disassociate a web ACL and a resource",
+        "resource_types": [
+          {
+            "name": "api",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-api"
+          },
+          {
+            "name": "graphqlapi",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-graphqlapi"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+      },
       "EvaluateCode": {
         "access_level": "Read",
         "action_name": "appsync:EvaluateCode",
@@ -200913,6 +201107,23 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetType.html"
       },
+      "GetWebACLForResource": {
+        "access_level": "Read",
+        "action_name": "appsync:GetWebACLForResource",
+        "condition_keys": [],
+        "description": "Grants permission to get associated web ACLs for a resource",
+        "resource_types": [
+          {
+            "name": "api",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-api"
+          },
+          {
+            "name": "graphqlapi",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-graphqlapi"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+      },
       "GraphQL": {
         "access_level": "Write",
         "action_name": "appsync:GraphQL",
@@ -201021,6 +201232,14 @@
         "description": "Grants permission to list the resolvers that are associated with a specific function",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolversByFunction.html"
+      },
+      "ListResourcesForWebACL": {
+        "access_level": "List",
+        "action_name": "appsync:ListResourcesForWebACL",
+        "condition_keys": [],
+        "description": "Grants permission to get associated resources for a web ACL",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
       },
       "ListSourceApiAssociations": {
         "access_level": "List",
@@ -230780,7 +230999,16 @@
       "CreateBudget": {
         "access_level": "Write",
         "action_name": "deadline:CreateBudget",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a budget",
         "resource_types": [
           {
@@ -231926,6 +232154,10 @@
         "description": "Grants permission to list all tags on specified Deadline Cloud resources",
         "resource_types": [
           {
+            "name": "budget",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-budget"
+          },
+          {
             "name": "farm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
           },
@@ -232088,6 +232320,10 @@
         "description": "Grants permission to add or overwrite one or more tags for the specified Deadline Cloud resource",
         "resource_types": [
           {
+            "name": "budget",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-budget"
+          },
+          {
             "name": "farm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
           },
@@ -232125,6 +232361,10 @@
         ],
         "description": "Grants permission to disassociate one or more tags from the specified Deadline Cloud resource",
         "resource_types": [
+          {
+            "name": "budget",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-budget"
+          },
           {
             "name": "farm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
@@ -292244,7 +292484,16 @@
       "AssociateFirewallPolicy": {
         "access_level": "Write",
         "action_name": "network-firewall:AssociateFirewallPolicy",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkfirewall.html#awsnetworkfirewall-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an association between a firewall policy and a firewall",
         "resource_types": [
           {
@@ -294631,6 +294880,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetVpcAttachment.html"
+      },
+      "ListAttachmentRoutingPolicyAssociations": {
+        "access_level": "List",
+        "action_name": "networkmanager:ListAttachmentRoutingPolicyAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list all routing policies associated to core network attachments",
+        "resource_types": [
+          {
+            "name": "core-network*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html#awsnetworkmanager-core-network"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachmentRoutingPolicyAssociations.html"
       },
       "ListAttachments": {
         "access_level": "List",
@@ -307169,7 +307431,7 @@
         "condition_keys": [],
         "description": "Grants permission to create resource explorer setup",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateResourceExplorerSetup.html"
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateResourceExplorerSetup.html"
       },
       "CreateStreamingAccessForService": {
         "access_level": "Write",
@@ -307177,7 +307439,7 @@
         "condition_keys": [],
         "description": "Grants permission to create resource explorer streaming access",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateStreamingAccessForService.html"
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_CreateStreamingAccessForService.html"
       },
       "CreateView": {
         "access_level": "Write",
@@ -307208,6 +307470,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteIndex.html"
+      },
+      "DeleteResourceExplorerSetup": {
+        "access_level": "Write",
+        "action_name": "resource-explorer-2:DeleteResourceExplorerSetup",
+        "condition_keys": [],
+        "description": "Grants permission to delete resource explorer setup",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteResourceExplorerSetup.html"
       },
       "DeleteResourcePolicy": {
         "access_level": "Permissions management",
@@ -307280,6 +307550,14 @@
         ],
         "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetManagedView.html"
       },
+      "GetResourceExplorerSetup": {
+        "access_level": "Read",
+        "action_name": "resource-explorer-2:GetResourceExplorerSetup",
+        "condition_keys": [],
+        "description": "Grants permission to get resource explorer setup",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetResourceExplorerSetup.html"
+      },
       "GetResourcePolicy": {
         "access_level": "Read",
         "action_name": "resource-explorer-2:GetResourcePolicy",
@@ -307292,6 +307570,22 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html"
+      },
+      "GetServiceIndex": {
+        "access_level": "Read",
+        "action_name": "resource-explorer-2:GetServiceIndex",
+        "condition_keys": [],
+        "description": "Grants permission to get service index",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceIndex.html"
+      },
+      "GetServiceView": {
+        "access_level": "Read",
+        "action_name": "resource-explorer-2:GetServiceView",
+        "condition_keys": [],
+        "description": "Grants permission to get service view",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceView.html"
       },
       "GetView": {
         "access_level": "Read",
@@ -307329,6 +307623,30 @@
         "description": "Grants permission to list managed views",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListManagedViews.html"
+      },
+      "ListServiceIndexes": {
+        "access_level": "List",
+        "action_name": "resource-explorer-2:ListServiceIndexes",
+        "condition_keys": [],
+        "description": "Grants permission to list service indexes in all AWS Regions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceIndexes.html"
+      },
+      "ListServiceViews": {
+        "access_level": "List",
+        "action_name": "resource-explorer-2:ListServiceViews",
+        "condition_keys": [],
+        "description": "Grants permission to list service views in all AWS Regions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceViews.html"
+      },
+      "ListStreamingAccessForServices": {
+        "access_level": "List",
+        "action_name": "resource-explorer-2:ListStreamingAccessForServices",
+        "condition_keys": [],
+        "description": "Grants permission to list streaming access for services",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListStreamingAccessForServices.html"
       },
       "ListSupportedResourceTypes": {
         "access_level": "List",
