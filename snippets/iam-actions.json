@@ -44330,6 +44330,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_DeleteConnection.html"
       },
+      "DeleteDataExportConfiguration": {
+        "access_level": "Write",
+        "action_name": "datazone:DeleteDataExportConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete DataZone catalog data export configuration",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_DeleteDataExportConfiguration.html"
+      },
       "DeleteDataProduct": {
         "access_level": "Write",
         "action_name": "datazone:DeleteDataProduct",
@@ -45317,6 +45325,14 @@
         "description": "Grants permission to put environment blueprint configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_PutEnvironmentBlueprintConfiguration.html"
+      },
+      "QueryGraph": {
+        "access_level": "List",
+        "action_name": "datazone:QueryGraph",
+        "condition_keys": [],
+        "description": "Grants permission to query graph",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_QueryGraph.html"
       },
       "RefreshToken": {
         "access_level": "Write",
@@ -94232,6 +94248,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetEnvironment.html"
+      },
+      "GetVersions": {
+        "access_level": "Read",
+        "action_name": "evs:GetVersions",
+        "condition_keys": [],
+        "description": "Grants permission to get versions provided for launch by Amazon EVS",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetVersions.html"
       },
       "ListEnvironmentHosts": {
         "access_level": "List",
@@ -232613,1133 +232637,6 @@
     "serviceName": "AWS Deadline Cloud",
     "service_prefix": "deadline"
   },
-  "awsdeepracer": {
-    "actions": {
-      "AddLeaderboardAccessPermission": {
-        "access_level": "Write",
-        "action_name": "deepracer:AddLeaderboardAccessPermission",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to add access for a private leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html"
-      },
-      "AdminDescribeAccountKey": {
-        "access_level": "Read",
-        "action_name": "deepracer:AdminDescribeAccountKey",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information of the KMS key that the user currently has assigned to their account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-describe-account-key.html"
-      },
-      "AdminGetAccountConfig": {
-        "access_level": "Read",
-        "action_name": "deepracer:AdminGetAccountConfig",
-        "condition_keys": [],
-        "description": "Grants permission to get current admin multiuser configuration for this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html"
-      },
-      "AdminListAssociatedResources": {
-        "access_level": "Read",
-        "action_name": "deepracer:AdminListAssociatedResources",
-        "condition_keys": [],
-        "description": "Grants permission to list all deepracer users with their associated resources created under this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-list-associated-resources.html"
-      },
-      "AdminListAssociatedUsers": {
-        "access_level": "Read",
-        "action_name": "deepracer:AdminListAssociatedUsers",
-        "condition_keys": [],
-        "description": "Grants permission to list user data for all users associated with this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-list-associated-users.html"
-      },
-      "AdminManageUser": {
-        "access_level": "Write",
-        "action_name": "deepracer:AdminManageUser",
-        "condition_keys": [],
-        "description": "Grants permission to manage a user associated with this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-manage-user.html"
-      },
-      "AdminSetAccountConfig": {
-        "access_level": "Write",
-        "action_name": "deepracer:AdminSetAccountConfig",
-        "condition_keys": [],
-        "description": "Grants permission to set configuration options for this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html"
-      },
-      "AdminUpdateAccountKey": {
-        "access_level": "Write",
-        "action_name": "deepracer:AdminUpdateAccountKey",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to update the KMS key that is assigned to the user's account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-update-account-key.html"
-      },
-      "CloneReinforcementLearningModel": {
-        "access_level": "Write",
-        "action_name": "deepracer:CloneReinforcementLearningModel",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to clone an existing DeepRacer model",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          },
-          {
-            "name": "track*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-track"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model"
-      },
-      "CreateCar": {
-        "access_level": "Write",
-        "action_name": "deepracer:CreateCar",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to create a DeepRacer car in your garage",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html"
-      },
-      "CreateLeaderboard": {
-        "access_level": "Write",
-        "action_name": "deepracer:CreateLeaderboard",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to create a leaderboard",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-create-community-race.html"
-      },
-      "CreateLeaderboardAccessToken": {
-        "access_level": "Write",
-        "action_name": "deepracer:CreateLeaderboardAccessToken",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to create an access token for a private leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html"
-      },
-      "CreateLeaderboardSubmission": {
-        "access_level": "Write",
-        "action_name": "deepracer:CreateLeaderboardSubmission",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to submit a DeepRacer model to be evaluated for leaderboards",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          },
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "CreateReinforcementLearningModel": {
-        "access_level": "Write",
-        "action_name": "deepracer:CreateReinforcementLearningModel",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to create ra einforcement learning model for DeepRacer",
-        "resource_types": [
-          {
-            "name": "track*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-track"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "DeleteLeaderboard": {
-        "access_level": "Write",
-        "action_name": "deepracer:DeleteLeaderboard",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to delete a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html"
-      },
-      "DeleteModel": {
-        "access_level": "Write",
-        "action_name": "deepracer:DeleteModel",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to delete a DeepRacer model",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "EditLeaderboard": {
-        "access_level": "Write",
-        "action_name": "deepracer:EditLeaderboard",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to edit a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html"
-      },
-      "GetAccountConfig": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetAccountConfig",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to get current multiuser configuration for this account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html"
-      },
-      "GetAlias": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetAlias",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve the user's alias for submitting a DeepRacer model to leaderboards",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "GetAssetUrl": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetAssetUrl",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to download artifacts for an existing DeepRacer model",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html"
-      },
-      "GetCar": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetCar",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve a specific DeepRacer car from your garage",
-        "resource_types": [
-          {
-            "name": "car*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-car"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html"
-      },
-      "GetCars": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetCars",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to view all the DeepRacer cars in your garage",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html"
-      },
-      "GetEvaluation": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetEvaluation",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about an existing DeepRacer model's evaluation jobs",
-        "resource_types": [
-          {
-            "name": "evaluation_job*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-evaluation_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html"
-      },
-      "GetLatestUserSubmission": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetLatestUserSubmission",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about how the latest submitted DeepRacer model for a user performed on a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "GetLeaderboard": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetLeaderboard",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about leaderboards",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "GetModel": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetModel",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about an existing DeepRacer model",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "GetPrivateLeaderboard": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetPrivateLeaderboard",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about private leaderboards",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html"
-      },
-      "GetRankedUserSubmission": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetRankedUserSubmission",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about the performance of a user's DeepRacer model that got placed on a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "GetTrack": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetTrack",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve information about DeepRacer tracks",
-        "resource_types": [
-          {
-            "name": "track*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-track"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html"
-      },
-      "GetTrainingJob": {
-        "access_level": "Read",
-        "action_name": "deepracer:GetTrainingJob",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve information about an existing DeepRacer model's training job",
-        "resource_types": [
-          {
-            "name": "training_job*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-training_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "ImportModel": {
-        "access_level": "Write",
-        "action_name": "deepracer:ImportModel",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to import a reinforcement learning model for DeepRacer",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-troubleshooting-service-migration-errors.html"
-      },
-      "ListEvaluations": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListEvaluations",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list a DeepRacer model's evaluation jobs",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html"
-      },
-      "ListLeaderboardEvaluations": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListLeaderboardEvaluations",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all the user's leaderboard evaluation jobs for a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "ListLeaderboardSubmissions": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListLeaderboardSubmissions",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all the DeepRacer model submissions of a user on a leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "ListLeaderboards": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListLeaderboards",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all the available leaderboards",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "ListModels": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListModels",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all existing DeepRacer models",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "ListPrivateLeaderboardParticipants": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListPrivateLeaderboardParticipants",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to retrieve participant information about private leaderboards",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html"
-      },
-      "ListPrivateLeaderboards": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListPrivateLeaderboards",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all the available private leaderboards",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html"
-      },
-      "ListSubscribedPrivateLeaderboards": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListSubscribedPrivateLeaderboards",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list all the subscribed private leaderboards",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html"
-      },
-      "ListTagsForResource": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListTagsForResource",
-        "condition_keys": [
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to lists tag for a resource",
-        "resource_types": [
-          {
-            "name": "car",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-car"
-          },
-          {
-            "name": "evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-evaluation_job"
-          },
-          {
-            "name": "leaderboard",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          },
-          {
-            "name": "leaderboard_evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard_evaluation_job"
-          },
-          {
-            "name": "reinforcement_learning_model",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          },
-          {
-            "name": "training_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-training_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html"
-      },
-      "ListTracks": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListTracks",
-        "condition_keys": [],
-        "description": "Grants permission to list all DeepRacer tracks",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html"
-      },
-      "ListTrainingJobs": {
-        "access_level": "Read",
-        "action_name": "deepracer:ListTrainingJobs",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to list a DeepRacer model's training jobs",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "MigrateModels": {
-        "access_level": "Write",
-        "action_name": "deepracer:MigrateModels",
-        "condition_keys": [],
-        "description": "Grants permission to migrate previous reinforcement learning models for DeepRacer",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-troubleshooting-service-migration-errors.html"
-      },
-      "PerformLeaderboardOperation": {
-        "access_level": "Write",
-        "action_name": "deepracer:PerformLeaderboardOperation",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to performs the leaderboard operation mentioned in the operation attribute",
-        "resource_types": [
-          {
-            "name": "leaderboard",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-perform-leaderboard-operation.html"
-      },
-      "RemoveLeaderboardAccessPermission": {
-        "access_level": "Write",
-        "action_name": "deepracer:RemoveLeaderboardAccessPermission",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to remove access for a private leaderboard",
-        "resource_types": [
-          {
-            "name": "leaderboard*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html"
-      },
-      "SetAlias": {
-        "access_level": "Write",
-        "action_name": "deepracer:SetAlias",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to set the user's alias for submitting a DeepRacer model to leaderboards",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html"
-      },
-      "StartEvaluation": {
-        "access_level": "Write",
-        "action_name": "deepracer:StartEvaluation",
-        "condition_keys": [
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to evaluate a DeepRacer model in a simulated environment",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          },
-          {
-            "name": "track*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-track"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html"
-      },
-      "StopEvaluation": {
-        "access_level": "Write",
-        "action_name": "deepracer:StopEvaluation",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to stop DeepRacer model evaluations",
-        "resource_types": [
-          {
-            "name": "evaluation_job*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-evaluation_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html"
-      },
-      "StopTrainingReinforcementLearningModel": {
-        "access_level": "Write",
-        "action_name": "deepracer:StopTrainingReinforcementLearningModel",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to stop training a DeepRacer model",
-        "resource_types": [
-          {
-            "name": "reinforcement_learning_model*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html"
-      },
-      "TagResource": {
-        "access_level": "Tagging",
-        "action_name": "deepracer:TagResource",
-        "condition_keys": [
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_RequestTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_ResourceTag___TagKey_"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to tag a resource",
-        "resource_types": [
-          {
-            "name": "car",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-car"
-          },
-          {
-            "name": "evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-evaluation_job"
-          },
-          {
-            "name": "leaderboard",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          },
-          {
-            "name": "leaderboard_evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard_evaluation_job"
-          },
-          {
-            "name": "reinforcement_learning_model",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          },
-          {
-            "name": "training_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-training_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html"
-      },
-      "TestRewardFunction": {
-        "access_level": "Write",
-        "action_name": "deepracer:TestRewardFunction",
-        "condition_keys": [],
-        "description": "Grants permission to test reward functions for correctness",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function"
-      },
-      "UntagResource": {
-        "access_level": "Tagging",
-        "action_name": "deepracer:UntagResource",
-        "condition_keys": [
-          {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-aws_TagKeys"
-          },
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to untag a resource",
-        "resource_types": [
-          {
-            "name": "car",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-car"
-          },
-          {
-            "name": "evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-evaluation_job"
-          },
-          {
-            "name": "leaderboard",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard"
-          },
-          {
-            "name": "leaderboard_evaluation_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-leaderboard_evaluation_job"
-          },
-          {
-            "name": "reinforcement_learning_model",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-reinforcement_learning_model"
-          },
-          {
-            "name": "training_job",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-training_job"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html"
-      },
-      "UpdateCar": {
-        "access_level": "Write",
-        "action_name": "deepracer:UpdateCar",
-        "condition_keys": [
-          {
-            "name": "deepracer:UserToken",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_UserToken"
-          },
-          {
-            "name": "deepracer:MultiUser",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-deepracer_MultiUser"
-          }
-        ],
-        "description": "Grants permission to update a DeepRacer car in your garage",
-        "resource_types": [
-          {
-            "name": "car*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html#awsdeepracer-car"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html"
-      }
-    },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html",
-    "serviceName": "AWS DeepRacer",
-    "service_prefix": "deepracer"
-  },
   "awsdevicefarm": {
     "actions": {
       "CreateDevicePool": {
@@ -286643,6 +285540,14 @@
         ],
         "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeployment.html"
       },
+      "GetDeploymentPatternVersion": {
+        "access_level": "Read",
+        "action_name": "launchwizard:GetDeploymentPatternVersion",
+        "condition_keys": [],
+        "description": "Grants permission to get a version of a deployment pattern",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeploymentPatternVersion.html"
+      },
       "GetInfrastructureSuggestion": {
         "access_level": "Read",
         "action_name": "launchwizard:GetInfrastructureSuggestion",
@@ -286739,6 +285644,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentEvents.html"
       },
+      "ListDeploymentPatternVersions": {
+        "access_level": "List",
+        "action_name": "launchwizard:ListDeploymentPatternVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list the versions of a deployment pattern",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentPatternVersions.html"
+      },
       "ListDeployments": {
         "access_level": "List",
         "action_name": "launchwizard:ListDeployments",
@@ -286780,7 +285693,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html#awslaunchwizard-aws_ResourceTag___TagKey_"
           }
         ],
-        "description": "Grants permission to list tags for a LaunchWizard resource.",
+        "description": "Grants permission to list tags for a LaunchWizard resource",
         "resource_types": [
           {
             "name": "deployment",
@@ -286846,7 +285759,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html#awslaunchwizard-aws_ResourceTag___TagKey_"
           }
         ],
-        "description": "Grants permission to tag a LaunchWizard resource.",
+        "description": "Grants permission to tag a LaunchWizard resource",
         "resource_types": [
           {
             "name": "deployment",
@@ -286864,7 +285777,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html#awslaunchwizard-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to untag a LaunchWizard resource.",
+        "description": "Grants permission to untag a LaunchWizard resource",
         "resource_types": [
           {
             "name": "deployment",
@@ -286872,6 +285785,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateDeployment": {
+        "access_level": "Write",
+        "action_name": "launchwizard:UpdateDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html#awslaunchwizard-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a deployment",
+        "resource_types": [
+          {
+            "name": "deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html#awslaunchwizard-deployment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UpdateDeployment.html"
       },
       "UpdateSettingsSet": {
         "access_level": "Write",
@@ -298985,7 +297916,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ChannelHandshake"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptChannelHandshake.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_AcceptChannelHandshake.html"
       },
       "AcceptConnectionInvitation": {
         "access_level": "Write",
@@ -299003,7 +297934,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ConnectionInvitation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptConnectionInvitation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AcceptConnectionInvitation.html"
       },
       "AcceptEngagementInvitation": {
         "access_level": "Write",
@@ -299034,6 +297965,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to amend benefit applications in AWS Partner Central",
@@ -299043,7 +297982,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AmendBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AmendBenefitApplication.html"
       },
       "AssignOpportunity": {
         "access_level": "Write",
@@ -299083,7 +298022,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateAwsTrainingCertificationEmailDomain.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AssociateAwsTrainingCertificationEmailDomain.html"
       },
       "AssociateBenefitApplicationResource": {
         "access_level": "Write",
@@ -299096,6 +298035,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to associate benefit application resources in AWS Partner Central",
@@ -299113,7 +298060,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Opportunity"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateBenefitApplicationResource.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AssociateBenefitApplicationResource.html"
       },
       "AssociateOpportunity": {
         "access_level": "Write",
@@ -299148,6 +298095,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to cancel benefit applications in AWS Partner Central",
@@ -299157,7 +298112,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CancelBenefitApplication.html"
       },
       "CancelChannelHandshake": {
         "access_level": "Write",
@@ -299183,7 +298138,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ChannelHandshake"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelChannelHandshake.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CancelChannelHandshake.html"
       },
       "CancelConnection": {
         "access_level": "Write",
@@ -299201,7 +298156,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnection.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnection.html"
       },
       "CancelConnectionInvitation": {
         "access_level": "Write",
@@ -299219,7 +298174,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ConnectionInvitation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnectionInvitation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnectionInvitation.html"
       },
       "CancelProfileUpdateTask": {
         "access_level": "Write",
@@ -299241,7 +298196,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelProfileUpdateTask.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelProfileUpdateTask.html"
       },
       "CreateBenefitApplication": {
         "access_level": "Write",
@@ -299266,11 +298221,15 @@
           {
             "name": "partnercentral:FulfillmentTypes",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to create benefit applications in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CreateBenefitApplication.html"
       },
       "CreateBusinessPlan": {
         "access_level": "Write",
@@ -299316,7 +298275,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Relationship"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateChannelHandshake.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateChannelHandshake.html"
       },
       "CreateCollaborationChannelMembers": {
         "access_level": "Write",
@@ -299345,7 +298304,7 @@
         ],
         "description": "Grants permission to create connection invitations in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateConnectionInvitation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreateConnectionInvitation.html"
       },
       "CreateEngagement": {
         "access_level": "Write",
@@ -299450,7 +298409,7 @@
         ],
         "description": "Grants permission to create partners in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreatePartner.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreatePartner.html"
       },
       "CreateProgramManagementAccount": {
         "access_level": "Write",
@@ -299475,7 +298434,7 @@
         ],
         "description": "Grants permission to create program management accounts in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateProgramManagementAccount.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateProgramManagementAccount.html"
       },
       "CreateRelationship": {
         "access_level": "Write",
@@ -299505,7 +298464,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ProgramManagementAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateRelationship.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateRelationship.html"
       },
       "CreateResourceSnapshot": {
         "access_level": "Write",
@@ -299571,7 +298530,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ProgramManagementAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteProgramManagementAccount.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteProgramManagementAccount.html"
       },
       "DeleteRelationship": {
         "access_level": "Write",
@@ -299593,7 +298552,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Relationship"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteRelationship.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteRelationship.html"
       },
       "DeleteResourceSnapshotJob": {
         "access_level": "Write",
@@ -299633,7 +298592,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateAwsTrainingCertificationEmailDomain.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_DisassociateAwsTrainingCertificationEmailDomain.html"
       },
       "DisassociateBenefitApplicationResource": {
         "access_level": "Write",
@@ -299646,6 +298605,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to disassociate benefit application resources in AWS Partner Central",
@@ -299663,7 +298630,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Opportunity"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateBenefitApplicationResource.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_DisassociateBenefitApplicationResource.html"
       },
       "DisassociateOpportunity": {
         "access_level": "Write",
@@ -299715,7 +298682,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetAllianceLeadContact.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetAllianceLeadContact.html"
       },
       "GetAwsOpportunitySummary": {
         "access_level": "Read",
@@ -299746,6 +298713,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to retrieve benefit details in AWS Partner Central",
@@ -299755,7 +298730,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Benefit"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefit.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefit.html"
       },
       "GetBenefitAllocation": {
         "access_level": "Read",
@@ -299768,6 +298743,10 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
           }
         ],
         "description": "Grants permission to retrieve benefit allocation details in AWS Partner Central",
@@ -299777,7 +298756,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitAllocation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitAllocation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitAllocation.html"
       },
       "GetBenefitApplication": {
         "access_level": "Read",
@@ -299790,6 +298769,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to retrieve benefit application details in AWS Partner Central",
@@ -299799,7 +298786,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitApplication.html"
       },
       "GetBusinessPlan": {
         "access_level": "Read",
@@ -299833,7 +298820,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Connection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnection.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnection.html"
       },
       "GetConnectionInvitation": {
         "access_level": "Read",
@@ -299851,7 +298838,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ConnectionInvitation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionInvitation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionInvitation.html"
       },
       "GetConnectionPreferences": {
         "access_level": "Read",
@@ -299864,7 +298851,7 @@
         ],
         "description": "Grants permission to retrieve connection preferences in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionPreferences.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionPreferences.html"
       },
       "GetEngagement": {
         "access_level": "Read",
@@ -299940,7 +298927,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetPartner.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetPartner.html"
       },
       "GetPartnerDashboard": {
         "access_level": "Read",
@@ -299988,7 +298975,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileUpdateTask.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileUpdateTask.html"
       },
       "GetProfileVisibility": {
         "access_level": "Read",
@@ -300010,7 +298997,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileVisibility.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileVisibility.html"
       },
       "GetProgramManagementAccount": {
         "access_level": "Read",
@@ -300045,7 +299032,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Relationship"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetRelationship.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_GetRelationship.html"
       },
       "GetResourceSnapshot": {
         "access_level": "Read",
@@ -300111,7 +299098,7 @@
         ],
         "description": "Grants permission to retrieve verification details in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetVerification.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetVerification.html"
       },
       "ListBenefitAllocations": {
         "access_level": "List",
@@ -300133,7 +299120,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitAllocation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitAllocations.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitAllocations.html"
       },
       "ListBenefitApplications": {
         "access_level": "List",
@@ -300159,7 +299146,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitApplications.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitApplications.html"
       },
       "ListBenefits": {
         "access_level": "List",
@@ -300185,7 +299172,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Benefit"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefits.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefits.html"
       },
       "ListBusinessPlans": {
         "access_level": "List",
@@ -300215,7 +299202,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ChannelHandshake"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListChannelHandshakes.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListChannelHandshakes.html"
       },
       "ListCollaborationChannels": {
         "access_level": "List",
@@ -300236,7 +299223,7 @@
         ],
         "description": "Grants permission to list connection invitations in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnectionInvitations.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnectionInvitations.html"
       },
       "ListConnections": {
         "access_level": "List",
@@ -300249,7 +299236,7 @@
         ],
         "description": "Grants permission to list connections in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnections.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnections.html"
       },
       "ListEngagementByAcceptingInvitationTasks": {
         "access_level": "List",
@@ -300384,7 +299371,7 @@
         ],
         "description": "Grants permission to list partners in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListPartners.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListPartners.html"
       },
       "ListProgramManagementAccounts": {
         "access_level": "List",
@@ -300402,7 +299389,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ProgramManagementAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListProgramManagementAccounts.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListProgramManagementAccounts.html"
       },
       "ListRelationships": {
         "access_level": "List",
@@ -300420,7 +299407,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Relationship"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListRelationships.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListRelationships.html"
       },
       "ListResourceSnapshotJobs": {
         "access_level": "List",
@@ -300481,6 +299468,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to add lists tags to a resource. Supported resource: ResourceSnapshotJob",
@@ -300507,7 +299502,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutAllianceLeadContact.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutAllianceLeadContact.html"
       },
       "PutBusinessPlan": {
         "access_level": "Write",
@@ -300537,7 +299532,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutProfileVisibility.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutProfileVisibility.html"
       },
       "PutSellingSystemSettings": {
         "access_level": "Write",
@@ -300558,6 +299553,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to recall benefit applications in AWS Partner Central",
@@ -300567,7 +299570,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RecallBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_RecallBenefitApplication.html"
       },
       "RejectChannelHandshake": {
         "access_level": "Write",
@@ -300589,7 +299592,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ChannelHandshake"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectChannelHandshake.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_RejectChannelHandshake.html"
       },
       "RejectConnectionInvitation": {
         "access_level": "Write",
@@ -300607,7 +299610,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ConnectionInvitation"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectConnectionInvitation.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_RejectConnectionInvitation.html"
       },
       "RejectEngagementInvitation": {
         "access_level": "Write",
@@ -300646,7 +299649,7 @@
         ],
         "description": "Grants permission to send email verification codes in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SendEmailVerificationCode.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_SendEmailVerificationCode.html"
       },
       "StartEngagementByAcceptingInvitationTask": {
         "access_level": "Write",
@@ -300758,7 +299761,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Partner"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartProfileUpdateTask.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartProfileUpdateTask.html"
       },
       "StartResourceSnapshotJob": {
         "access_level": "Write",
@@ -300793,7 +299796,7 @@
         ],
         "description": "Grants permission to start verification processes in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartVerification.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartVerification.html"
       },
       "StopResourceSnapshotJob": {
         "access_level": "Write",
@@ -300824,6 +299827,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to submit benefit applications in AWS Partner Central",
@@ -300833,7 +299844,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SubmitBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_SubmitBenefitApplication.html"
       },
       "SubmitOpportunity": {
         "access_level": "Write",
@@ -300872,6 +299883,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to add new tags to a resource. Supported resource: ResourceSnapshotJob",
@@ -300922,6 +299941,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to remove tags from a resource. Supported resource: ResourceSnapshotJob",
@@ -300968,6 +299995,14 @@
           {
             "name": "partnercentral:Catalog",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          },
+          {
+            "name": "partnercentral:FulfillmentTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_FulfillmentTypes"
+          },
+          {
+            "name": "partnercentral:Programs",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Programs"
           }
         ],
         "description": "Grants permission to update benefit applications in AWS Partner Central",
@@ -300977,7 +300012,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-BenefitApplication"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateBenefitApplication.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_UpdateBenefitApplication.html"
       },
       "UpdateConnectionPreferences": {
         "access_level": "Write",
@@ -300990,7 +300025,7 @@
         ],
         "description": "Grants permission to update connection preferences in AWS Partner Central",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateConnectionPreferences.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_UpdateConnectionPreferences.html"
       },
       "UpdateEngagementContext": {
         "access_level": "Write",
@@ -301048,7 +300083,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-ProgramManagementAccount"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateProgramManagementAccount.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateProgramManagementAccount.html"
       },
       "UpdateRelationship": {
         "access_level": "Write",
@@ -301070,7 +300105,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-Relationship"
           }
         ],
-        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateRelationship.html"
+        "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateRelationship.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html",
@@ -302855,7 +301890,12 @@
           }
         ],
         "description": "Grants permission to create a Challenge for a Connector",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatecaconnectorforscep.html#awsprivatecaconnectorforscep-Connector"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html"
       },
       "CreateConnector": {
