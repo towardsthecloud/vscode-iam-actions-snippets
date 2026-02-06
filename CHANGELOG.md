@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+1.73.0 (2026-01-30)
+-------------------
+- Build: auto-update snippets to version: 1.73.0. [Github Actions]
+
+
 1.72.0 (2026-01-23)
 -------------------
 - Build: auto-update snippets to version: 1.72.0. [Github Actions]
