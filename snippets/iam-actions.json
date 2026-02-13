@@ -106593,6 +106593,45 @@
     "serviceName": "Amazon Inspector2",
     "service_prefix": "inspector2"
   },
+  "amazoninspector2telemetrychannel": {
+    "actions": {
+      "NotifyHeartbeat": {
+        "access_level": "Write",
+        "action_name": "inspector2-telemetry:NotifyHeartbeat",
+        "condition_keys": [],
+        "description": "Grants permission to notify heartbeat for an active telemetry session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_NotifyHeartbeat.html"
+      },
+      "SendTelemetry": {
+        "access_level": "Write",
+        "action_name": "inspector2-telemetry:SendTelemetry",
+        "condition_keys": [],
+        "description": "Grants permission to send telemetry for an active telemetry session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetry.html"
+      },
+      "StartSession": {
+        "access_level": "Write",
+        "action_name": "inspector2-telemetry:StartSession",
+        "condition_keys": [],
+        "description": "Grants permission to start a telemetry session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartSession.html"
+      },
+      "StopSession": {
+        "access_level": "Write",
+        "action_name": "inspector2-telemetry:StopSession",
+        "condition_keys": [],
+        "description": "Grants permission to stop a telemetry session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StopSession.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2telemetrychannel.html",
+    "serviceName": "Amazon Inspector2 Telemetry Channel",
+    "service_prefix": "inspector2-telemetry"
+  },
   "amazoninspectorscan": {
     "actions": {
       "ScanSbom": {
@@ -122371,6 +122410,19 @@
         ],
         "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#CreateReplicator"
       },
+      "CreateTopic": {
+        "access_level": "Write",
+        "action_name": "kafka:CreateTopic",
+        "condition_keys": [],
+        "description": "Grants permission to create a Kafka topic in an MSK cluster",
+        "resource_types": [
+          {
+            "name": "topic*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html#amazonmanagedstreamingforapachekafka-topic"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html"
+      },
       "CreateVpcConnection": {
         "access_level": "Write",
         "action_name": "kafka:CreateVpcConnection",
@@ -122448,6 +122500,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#DeleteReplicator"
+      },
+      "DeleteTopic": {
+        "access_level": "Write",
+        "action_name": "kafka:DeleteTopic",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Kafka topic from an MSK cluster",
+        "resource_types": [
+          {
+            "name": "topic*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html#amazonmanagedstreamingforapachekafka-topic"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html"
       },
       "DeleteVpcConnection": {
         "access_level": "Write",
@@ -123018,6 +123083,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-storage.html#UpdateStorage"
+      },
+      "UpdateTopic": {
+        "access_level": "Write",
+        "action_name": "kafka:UpdateTopic",
+        "condition_keys": [],
+        "description": "Grants permission to update the configuration of a Kafka topic in an MSK cluster",
+        "resource_types": [
+          {
+            "name": "topic*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html#amazonmanagedstreamingforapachekafka-topic"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html",
@@ -190260,6 +190338,22 @@
         "action_name": "workspaces:CreateWorkspaces",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-aws_TagKeys"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-aws_RequestTag___TagKey_"
           },
@@ -207233,7 +207327,16 @@
       "CreateBillScenario": {
         "access_level": "Write",
         "action_name": "bcm-pricing-calculator:CreateBillScenario",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new bill scenario",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateBillScenario.html"
@@ -207267,7 +207370,16 @@
       "CreateWorkloadEstimate": {
         "access_level": "Write",
         "action_name": "bcm-pricing-calculator:CreateWorkloadEstimate",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new Workload estimate",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateWorkloadEstimate.html"
@@ -207538,6 +207650,14 @@
         "action_name": "bcm-pricing-calculator:TagResource",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_RequestTag___TagKey_"
           },
@@ -207547,7 +207667,16 @@
           }
         ],
         "description": "Grants permission to add a tag to a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "bill-scenario",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-bill-scenario"
+          },
+          {
+            "name": "workload-estimate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-workload-estimate"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_TagResource.html"
       },
       "UntagResource": {
@@ -207555,12 +207684,29 @@
         "action_name": "bcm-pricing-calculator:UntagResource",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-aws_TagKeys"
           }
         ],
         "description": "Grants permission to remove a tag from a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "bill-scenario",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-bill-scenario"
+          },
+          {
+            "name": "workload-estimate",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementpricingcalculator.html#awsbillingandcostmanagementpricingcalculator-workload-estimate"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_UntagResource.html"
       },
       "UpdateBillEstimate": {
@@ -231466,7 +231612,16 @@
       "CreateJob": {
         "access_level": "Write",
         "action_name": "deadline:CreateJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a job",
         "resource_types": [
           {
@@ -231897,7 +232052,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
           }
         ],
-        "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetApplicationVersion.html"
+        "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html"
       },
       "GetBudget": {
         "access_level": "Read",
@@ -231950,6 +232105,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetJob.html"
+      },
+      "GetJobTemplate": {
+        "access_level": "Read",
+        "action_name": "deadline:GetJobTemplate",
+        "condition_keys": [],
+        "description": "Grants permission to read job template",
+        "resource_types": [
+          {
+            "name": "job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html"
       },
       "GetLicenseEndpoint": {
         "access_level": "Read",
@@ -232083,7 +232251,7 @@
         "description": "Grants permission to get all collected statistics for sessions",
         "resource_types": [
           {
-            "name": "farm",
+            "name": "farm*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
           },
           {
@@ -232177,7 +232345,7 @@
         "description": "Grants permission to list all budgets for a farm",
         "resource_types": [
           {
-            "name": "budget*",
+            "name": "budget",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-budget"
           }
         ],
@@ -232377,11 +232545,11 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
           },
           {
-            "name": "fleet*",
+            "name": "fleet",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-fleet"
           },
           {
-            "name": "queue*",
+            "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           }
         ],
@@ -232398,7 +232566,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-farm"
           },
           {
-            "name": "queue*",
+            "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           }
         ],
@@ -232411,7 +232579,7 @@
         "description": "Grants permission to list all members in a queue",
         "resource_types": [
           {
-            "name": "queue*",
+            "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           }
         ],
@@ -232472,7 +232640,7 @@
         "description": "Grants permission to list all sessions for a worker",
         "resource_types": [
           {
-            "name": "worker*",
+            "name": "worker",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-worker"
           }
         ],
@@ -232498,7 +232666,7 @@
         "description": "Grants permission to list dependencies for a job step",
         "resource_types": [
           {
-            "name": "job*",
+            "name": "job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-job"
           }
         ],
@@ -232537,14 +232705,14 @@
         "description": "Grants permission to list all storage profiles in a queue",
         "resource_types": [
           {
-            "name": "queue*",
+            "name": "queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-queue"
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListStorageProfilesForQueue.html"
       },
       "ListTagsForResource": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "deadline:ListTagsForResource",
         "condition_keys": [
           {
@@ -232565,6 +232733,10 @@
           {
             "name": "fleet",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-fleet"
+          },
+          {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-job"
           },
           {
             "name": "license-endpoint",
@@ -232625,7 +232797,7 @@
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_PutMeteredProduct.html"
       },
       "SearchJobs": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "deadline:SearchJobs",
         "condition_keys": [],
         "description": "Grants permission to search for jobs in multiple queues",
@@ -232638,7 +232810,7 @@
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchJobs.html"
       },
       "SearchSteps": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "deadline:SearchSteps",
         "condition_keys": [],
         "description": "Grants permission to search the steps within a single job or to search the steps for multiple queues",
@@ -232655,7 +232827,7 @@
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchSteps.html"
       },
       "SearchTasks": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "deadline:SearchTasks",
         "condition_keys": [],
         "description": "Grants permission to search the tasks within a single job or to search the tasks for multiple queues",
@@ -232672,16 +232844,11 @@
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchTasks.html"
       },
       "SearchWorkers": {
-        "access_level": "List",
+        "access_level": "Read",
         "action_name": "deadline:SearchWorkers",
         "condition_keys": [],
         "description": "Grants permission to search for workers in multiple fleets",
-        "resource_types": [
-          {
-            "name": "fleet*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-fleet"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchWorkers.html"
       },
       "StartSessionsStatisticsAggregation": {
@@ -232733,6 +232900,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-fleet"
           },
           {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-job"
+          },
+          {
             "name": "license-endpoint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-license-endpoint"
           },
@@ -232773,6 +232944,10 @@
           {
             "name": "fleet",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-fleet"
+          },
+          {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-job"
           },
           {
             "name": "license-endpoint",
@@ -310962,12 +311137,7 @@
         "action_name": "securityagent:CreateAgentSpace",
         "condition_keys": [],
         "description": "Grants permission to create an agent space record",
-        "resource_types": [
-          {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html"
       },
       "CreateApplication": {
@@ -311037,8 +311207,8 @@
         "description": "Grants permission to create a one time login session",
         "resource_types": [
           {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
+            "name": "AgentSpace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateOneTimeLoginSession.html"
@@ -311347,12 +311517,7 @@
         "action_name": "securityagent:GetLoginSessionCredentials",
         "condition_keys": [],
         "description": "Grants permission to retrieve credentials for a one time login session",
-        "resource_types": [
-          {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetLoginSessionCredentials.html"
       },
       "GetSecurityRequirement": {
@@ -311373,12 +311538,7 @@
         "action_name": "securityagent:HandleOneTimeLoginSession",
         "condition_keys": [],
         "description": "Grants permission to process and invalidate a one time login session",
-        "resource_types": [
-          {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_HandleOneTimeLoginSession.html"
       },
       "InitiateProviderRegistration": {
@@ -314012,162 +314172,6 @@
           {
             "name": "accounts.google.com:sub",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-accounts.google.com_sub"
-          },
-          {
-            "name": "accounts.google.com:organization_number",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-accounts.google.com_organization_number"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:actor",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_actor"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:actor_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_actor_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:enterprise_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_enterprise_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:environment",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_environment"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:job_workflow_ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_job_workflow_ref"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_ref"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:repository",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_repository"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:repository_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_repository_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com:workflow",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com_workflow"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:actor",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__actor"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:actor_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__actor_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:enterprise_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__enterprise_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:environment",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__environment"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:job_workflow_ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__job_workflow_ref"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__ref"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:repository",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__repository"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:repository_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__repository_id"
-          },
-          {
-            "name": "token.actions.githubusercontent.com/${SubPath}:workflow",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.githubusercontent.com___SubPath__workflow"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:actor",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_actor"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:actor_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_actor_id"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:enterprise_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_enterprise_id"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:environment",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_environment"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:job_workflow_ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_job_workflow_ref"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_ref"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:repository",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_repository"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:repository_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_repository_id"
-          },
-          {
-            "name": "token.actions.${Domain}.ghe.com:workflow",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-token.actions.__Domain_.ghe.com_workflow"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:actor",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__actor"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:actor_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__actor_id"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:enterprise_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__enterprise_id"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:environment",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__environment"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:job_workflow_ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__job_workflow_ref"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:ref",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__ref"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:repository",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__repository"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:repository_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__repository_id"
-          },
-          {
-            "name": "github.com/enterprises/${EnterpriseName}:workflow",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-github.com_enterprises___EnterpriseName__workflow"
-          },
-          {
-            "name": "oidc.circleci.com/org/${OrgId}:project_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-oidc.circleci.com_org___OrgId__project_id"
-          },
-          {
-            "name": "idcs-${OciUniqueIdentifier}.identity.oraclecloud.com:rpst_id",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-idcs-__OciUniqueIdentifier_.identity.oraclecloud.com_rpst_id"
           },
           {
             "name": "aws:TagKeys",
@@ -318602,7 +318606,16 @@
         "action_name": "signin:AuthorizeOAuth2Access",
         "condition_keys": [],
         "description": "Grants permission to authenticate through a browser and obtain an OAuth 2.0 authorization code for credential exchange",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "oauth2-public-client-localhost*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html#awssignin-oauth2-public-client-localhost"
+          },
+          {
+            "name": "oauth2-public-client-remote*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html#awssignin-oauth2-public-client-remote"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_AuthorizeOAuth2Access.html"
       },
       "CreateOAuth2Token": {
@@ -318610,7 +318623,16 @@
         "action_name": "signin:CreateOAuth2Token",
         "condition_keys": [],
         "description": "Grants permission to exchange an authorization code for OAuth 2.0 access token and refresh token that can be used to access AWS services from developer tools and applications",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "oauth2-public-client-localhost*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html#awssignin-oauth2-public-client-localhost"
+          },
+          {
+            "name": "oauth2-public-client-remote*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html#awssignin-oauth2-public-client-remote"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2Token.html"
       },
       "CreateTrustedIdentityPropagationApplicationForConsole": {
