@@ -14017,11 +14017,64 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#welcome"
       },
+      "CancelFineTuningJob": {
+        "access_level": "Write",
+        "action_name": "bedrock-mantle:CancelFineTuningJob",
+        "condition_keys": [
+          {
+            "name": "bedrock-mantle:FineTuningJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_FineTuningJob"
+          }
+        ],
+        "description": "Grants permission to cancel an in-progress fine tuning job",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
       "CancelInference": {
         "access_level": "Write",
         "action_name": "bedrock-mantle:CancelInference",
         "condition_keys": [],
         "description": "Grants permission to cancel an in-progress inference request",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "CreateFile": {
+        "access_level": "Write",
+        "action_name": "bedrock-mantle:CreateFile",
+        "condition_keys": [],
+        "description": "Grants permission to create a file in a project",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "CreateFineTuningJob": {
+        "access_level": "Write",
+        "action_name": "bedrock-mantle:CreateFineTuningJob",
+        "condition_keys": [
+          {
+            "name": "bedrock-mantle:Model",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_Model"
+          },
+          {
+            "name": "bedrock-mantle:Files",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_Files"
+          }
+        ],
+        "description": "Grants permission to create a fine tuning job",
         "resource_types": [
           {
             "name": "project*",
@@ -14052,11 +14105,65 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
       },
+      "DeleteFile": {
+        "access_level": "Write",
+        "action_name": "bedrock-mantle:DeleteFile",
+        "condition_keys": [
+          {
+            "name": "bedrock-mantle:Files",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_Files"
+          }
+        ],
+        "description": "Grants permission to delete a specific file",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
       "DeleteInference": {
         "access_level": "Write",
         "action_name": "bedrock-mantle:DeleteInference",
         "condition_keys": [],
         "description": "Grants permission to delete a specific inference request",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "GetFile": {
+        "access_level": "Read",
+        "action_name": "bedrock-mantle:GetFile",
+        "condition_keys": [
+          {
+            "name": "bedrock-mantle:Files",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_Files"
+          }
+        ],
+        "description": "Grants permission to retrieve information about a specific file",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "GetFineTuningJob": {
+        "access_level": "Read",
+        "action_name": "bedrock-mantle:GetFineTuningJob",
+        "condition_keys": [
+          {
+            "name": "bedrock-mantle:FineTuningJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-bedrock-mantle_FineTuningJob"
+          }
+        ],
+        "description": "Grants permission to retrieve details of a specific fine tuning job",
         "resource_types": [
           {
             "name": "project*",
@@ -14083,6 +14190,32 @@
         "action_name": "bedrock-mantle:GetModel",
         "condition_keys": [],
         "description": "Grants permission to retrieve information about a specific model",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "ListFiles": {
+        "access_level": "List",
+        "action_name": "bedrock-mantle:ListFiles",
+        "condition_keys": [],
+        "description": "Grants permission to list all available files in a project",
+        "resource_types": [
+          {
+            "name": "project*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockpoweredbyawsmantle.html#amazonbedrockpoweredbyawsmantle-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+      },
+      "ListFineTuningJobs": {
+        "access_level": "List",
+        "action_name": "bedrock-mantle:ListFineTuningJobs",
+        "condition_keys": [],
+        "description": "Grants permission to list all available fine tuning jobs in a project",
         "resource_types": [
           {
             "name": "project*",
@@ -24040,6 +24173,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateSourceToS3TableIntegration.html"
       },
+      "CallWithBearerToken": {
+        "access_level": "Write",
+        "action_name": "logs:CallWithBearerToken",
+        "condition_keys": [],
+        "description": "Grants permission to authenticate requests using bearer token",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"
+      },
       "CancelExportTask": {
         "access_level": "Write",
         "action_name": "logs:CancelExportTask",
@@ -25003,6 +25144,19 @@
         "description": "Grants permission to attach an account policy",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html"
+      },
+      "PutBearerTokenAuthentication": {
+        "access_level": "Write",
+        "action_name": "logs:PutBearerTokenAuthentication",
+        "condition_keys": [],
+        "description": "Grants permission to enable or disable bearer token based authentication for the specified log group",
+        "resource_types": [
+          {
+            "name": "log-group*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-log-group"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutBearerTokenAuthentication.html"
       },
       "PutDataProtectionPolicy": {
         "access_level": "Write",
@@ -169204,14 +169358,6 @@
         "action_name": "sagemaker:CreateMlflowApp",
         "condition_keys": [
           {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          },
-          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
           },
@@ -169727,14 +169873,6 @@
         "action_name": "sagemaker:CreatePartnerApp",
         "condition_keys": [
           {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          },
-          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
           },
@@ -169755,16 +169893,7 @@
       "CreatePartnerAppPresignedUrl": {
         "access_level": "Write",
         "action_name": "sagemaker:CreatePartnerAppPresignedUrl",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to return a URL that you can use from your browser to connect to the Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -169812,16 +169941,7 @@
       "CreatePresignedMlflowAppUrl": {
         "access_level": "Write",
         "action_name": "sagemaker:CreatePresignedMlflowAppUrl",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to return a URL that you can use from your browser to connect to the MLflow app",
         "resource_types": [
           {
@@ -170802,16 +170922,7 @@
       "DeleteMlflowApp": {
         "access_level": "Write",
         "action_name": "sagemaker:DeleteMlflowApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to delete an MLflow app",
         "resource_types": [
           {
@@ -171015,16 +171126,7 @@
       "DeletePartnerApp": {
         "access_level": "Write",
         "action_name": "sagemaker:DeletePartnerApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to delete an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -171270,6 +171372,10 @@
           {
             "name": "labeling-job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-labeling-job"
+          },
+          {
+            "name": "mlflow-app",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-mlflow-app"
           },
           {
             "name": "mlflow-tracking-server",
@@ -171987,16 +172093,7 @@
       "DescribeMlflowApp": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribeMlflowApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to get information about an MLflow app",
         "resource_types": [
           {
@@ -172200,16 +172297,7 @@
       "DescribePartnerApp": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribePartnerApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to describe an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -173555,6 +173643,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-labeling-job"
           },
           {
+            "name": "mlflow-app",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-mlflow-app"
+          },
+          {
             "name": "mlflow-tracking-server",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-mlflow-tracking-server"
           },
@@ -174685,16 +174777,7 @@
       "UpdateMlflowApp": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdateMlflowApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to update an MLflow app",
         "resource_types": [
           {
@@ -174902,16 +174985,7 @@
       "UpdatePartnerApp": {
         "access_level": "Write",
         "action_name": "sagemaker:UpdatePartnerApp",
-        "condition_keys": [
-          {
-            "name": "sagemaker:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_ResourceTag___TagKey_"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_ResourceTag___TagKey_"
-          }
-        ],
+        "condition_keys": [],
         "description": "Grants permission to update an Amazon SageMaker Partner AI App",
         "resource_types": [
           {
@@ -188414,7 +188488,12 @@
       "AssumeImpersonationRole": {
         "access_level": "Write",
         "action_name": "workmail:AssumeImpersonationRole",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "workmail:ImpersonationRoleId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkmail.html#amazonworkmail-workmail_ImpersonationRoleId"
+          }
+        ],
         "description": "Grants permission to assume an impersonation role for the given Amazon WorkMail organization",
         "resource_types": [
           {
@@ -202370,6 +202449,10 @@
         ],
         "description": "Grants permission to create a framework for use in AWS Audit Manager",
         "resource_types": [
+          {
+            "name": "assessmentFramework*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html#awsauditmanager-assessmentFramework"
+          },
           {
             "name": "control*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html#awsauditmanager-control"
@@ -234303,6 +234386,10 @@
         "description": "Grants permission to associate service",
         "resource_types": [
           {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          },
+          {
             "name": "AssociationResource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
           }
@@ -234413,6 +234500,10 @@
         "description": "Grants permission to disassociate service",
         "resource_types": [
           {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          },
+          {
             "name": "AssociationResource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
           }
@@ -234475,6 +234566,10 @@
         "condition_keys": [],
         "description": "Grants permission to get association",
         "resource_types": [
+          {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          },
           {
             "name": "AssociationResource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
@@ -234569,7 +234664,12 @@
         "action_name": "aidevops:ListAssociations",
         "condition_keys": [],
         "description": "Grants permission to list associations",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListBacklogTasks": {
@@ -234643,6 +234743,10 @@
         "description": "Grants permission to list webhooks for association",
         "resource_types": [
           {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          },
+          {
             "name": "AssociationResource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
           }
@@ -234697,6 +234801,10 @@
         "condition_keys": [],
         "description": "Grants permission to update association",
         "resource_types": [
+          {
+            "name": "AgentSpaceResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+          },
           {
             "name": "AssociationResource*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
@@ -252684,7 +252792,16 @@
       "CreateIntegrationResourceProperty": {
         "access_level": "Write",
         "action_name": "glue:CreateIntegrationResourceProperty",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create integration resource property",
         "resource_types": [
           {
@@ -252698,6 +252815,10 @@
           {
             "name": "database*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-database"
+          },
+          {
+            "name": "integrationResourceProperty*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
           }
         ],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegrationResourceProperty"
@@ -253352,6 +253473,31 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegration"
+      },
+      "DeleteIntegrationResourceProperty": {
+        "access_level": "Write",
+        "action_name": "glue:DeleteIntegrationResourceProperty",
+        "condition_keys": [],
+        "description": "Grants permission to delete the integration resource property",
+        "resource_types": [
+          {
+            "name": "catalog*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-catalog"
+          },
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-connection"
+          },
+          {
+            "name": "database*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-database"
+          },
+          {
+            "name": "integrationResourceProperty*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegrationResourceProperty"
       },
       "DeleteIntegrationTableProperties": {
         "access_level": "Write",
@@ -254387,6 +254533,10 @@
           {
             "name": "database*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-database"
+          },
+          {
+            "name": "integrationResourceProperty*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
           }
         ],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-GetIntegrationResourceProperty"
@@ -255399,6 +255549,31 @@
         ],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations"
       },
+      "ListIntegrationResourceProperties": {
+        "access_level": "List",
+        "action_name": "glue:ListIntegrationResourceProperties",
+        "condition_keys": [],
+        "description": "Grants permission to list zero-ETL integration resource properties",
+        "resource_types": [
+          {
+            "name": "catalog*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-catalog"
+          },
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-connection"
+          },
+          {
+            "name": "database*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-database"
+          },
+          {
+            "name": "integrationResourceProperty*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ListIntegrationResourceProperties"
+      },
       "ListJobUpgradeAnalyses": {
         "access_level": "List",
         "action_name": "glue:ListJobUpgradeAnalyses",
@@ -256289,6 +256464,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integration"
           },
           {
+            "name": "integrationResourceProperty",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
+          },
+          {
             "name": "job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-job"
           },
@@ -256390,6 +256569,10 @@
           {
             "name": "integration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integration"
+          },
+          {
+            "name": "integrationResourceProperty",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
           },
           {
             "name": "job",
@@ -256682,6 +256865,10 @@
           {
             "name": "database*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-database"
+          },
+          {
+            "name": "integrationResourceProperty*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-integrationResourceProperty"
           }
         ],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-UpdateIntegrationResourceProperty"
@@ -301087,6 +301274,28 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html"
+      },
+      "GenerateAs2805KekValidation": {
+        "access_level": "Write",
+        "action_name": "payment-cryptography:GenerateAs2805KekValidation",
+        "condition_keys": [
+          {
+            "name": "payment-cryptography:RequestAlias",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-payment-cryptography_RequestAlias"
+          }
+        ],
+        "description": "Grants permission to generate a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)",
+        "resource_types": [
+          {
+            "name": "alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-alias"
+          },
+          {
+            "name": "key*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspaymentcryptography.html#awspaymentcryptography-key"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAs2805KekValidation.html"
       },
       "GenerateCardValidationData": {
         "access_level": "Write",
