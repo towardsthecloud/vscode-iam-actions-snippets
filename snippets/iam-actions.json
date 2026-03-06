@@ -19947,7 +19947,16 @@
       "CreateDistribution": {
         "access_level": "Write",
         "action_name": "cloudfront:CreateDistribution",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new web distribution",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html"
@@ -43775,6 +43784,708 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html",
     "serviceName": "Amazon Connect Customer Profiles",
     "service_prefix": "profile"
+  },
+  "amazonconnecthealth": {
+    "actions": {
+      "ActivateSubscription": {
+        "access_level": "Write",
+        "action_name": "health-agent:ActivateSubscription",
+        "condition_keys": [],
+        "description": "Grants permission to activate a subscription to enable billing for a user",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_ActivateSubscription.html"
+      },
+      "CancelAppointment": {
+        "access_level": "Write",
+        "action_name": "health-agent:CancelAppointment",
+        "condition_keys": [],
+        "description": "Grants permission to cancel an appointment",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "CreateAgent": {
+        "access_level": "Write",
+        "action_name": "health-agent:CreateAgent",
+        "condition_keys": [],
+        "description": "Grants permission to create a new agent with an initial version in DRAFT state",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "CreateDomain": {
+        "access_level": "Write",
+        "action_name": "health-agent:CreateDomain",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new domain for managing HealthAgent resources",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "CreateIntegration": {
+        "access_level": "Write",
+        "action_name": "health-agent:CreateIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to create a new integration for a domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "CreateSession": {
+        "access_level": "Write",
+        "action_name": "health-agent:CreateSession",
+        "condition_keys": [],
+        "description": "Grants permission to create a new session with specified agent configurations",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "CreateSubscription": {
+        "access_level": "Write",
+        "action_name": "health-agent:CreateSubscription",
+        "condition_keys": [],
+        "description": "Grants permission to create a new subscription within a domain for billing and user management",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "DeactivateSubscription": {
+        "access_level": "Write",
+        "action_name": "health-agent:DeactivateSubscription",
+        "condition_keys": [],
+        "description": "Grants permission to deactivate a subscription to stop billing for a user",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeactivateSubscription.html"
+      },
+      "DeleteAgent": {
+        "access_level": "Write",
+        "action_name": "health-agent:DeleteAgent",
+        "condition_keys": [],
+        "description": "Grants permission to delete an agent configuration and all its versions",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeleteAgent.html"
+      },
+      "DeleteDomain": {
+        "access_level": "Write",
+        "action_name": "health-agent:DeleteDomain",
+        "condition_keys": [],
+        "description": "Grants permission to delete a domain and all associated resources",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeleteDomain.html"
+      },
+      "DeleteIntegration": {
+        "access_level": "Write",
+        "action_name": "health-agent:DeleteIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to delete an integration",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetAgent": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetAgent",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an agent configuration, defaulting to the most recent version if not specified",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetCareTeamProvider": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetCareTeamProvider",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the care team provider of a patient",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetDomain": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetDomain",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetIntegration": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to get an existing integration",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetMedicalScribeListeningSession": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetMedicalScribeListeningSession",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details about an existing Medical Scribe listening session",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_GetMedicalScribeListeningSession.html"
+      },
+      "GetPatient": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetPatient",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve patient information",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetPatientInsightsJob": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetPatientInsightsJob",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a started patient insights job",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "PatientInsightsJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-PatientInsightsJob"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetPractitioner": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetPractitioner",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve practitioner information",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetSessionContext": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetSessionContext",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve structured session context including attributes and collected data",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "GetSubscription": {
+        "access_level": "Read",
+        "action_name": "health-agent:GetSubscription",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a subscription",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "InvokeAgent": {
+        "access_level": "Write",
+        "action_name": "health-agent:InvokeAgent",
+        "condition_keys": [],
+        "description": "Grants permission to invoke an agent within a session with streaming response support",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListAgents": {
+        "access_level": "List",
+        "action_name": "health-agent:ListAgents",
+        "condition_keys": [],
+        "description": "Grants permission to list all agents in a domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListAppointmentSlots": {
+        "access_level": "Read",
+        "action_name": "health-agent:ListAppointmentSlots",
+        "condition_keys": [],
+        "description": "Grants permission to list available appointment slots",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListDomains": {
+        "access_level": "List",
+        "action_name": "health-agent:ListDomains",
+        "condition_keys": [],
+        "description": "Grants permission to list domains for a given account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListIntegrations": {
+        "access_level": "List",
+        "action_name": "health-agent:ListIntegrations",
+        "condition_keys": [],
+        "description": "Grants permission to list integrations for a domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListPatientAppointments": {
+        "access_level": "Read",
+        "action_name": "health-agent:ListPatientAppointments",
+        "condition_keys": [],
+        "description": "Grants permission to list patient appointments",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListPatientInsuranceCoverages": {
+        "access_level": "Read",
+        "action_name": "health-agent:ListPatientInsuranceCoverages",
+        "condition_keys": [],
+        "description": "Grants permission to list patient insurance coverages",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListProviders": {
+        "access_level": "Read",
+        "action_name": "health-agent:ListProviders",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve active providers available for scheduling appointments with a patient",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListSubscriptions": {
+        "access_level": "List",
+        "action_name": "health-agent:ListSubscriptions",
+        "condition_keys": [],
+        "description": "Grants permission to list all subscriptions within a domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ListTagsForResource": {
+        "access_level": "List",
+        "action_name": "health-agent:ListTagsForResource",
+        "condition_keys": [],
+        "description": "Grants permission to list the tags for the specified resource",
+        "resource_types": [
+          {
+            "name": "Domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_ListTagsForResource.html"
+      },
+      "MatchPatient": {
+        "access_level": "Read",
+        "action_name": "health-agent:MatchPatient",
+        "condition_keys": [],
+        "description": "Grants permission to match a patient",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "PublishAgent": {
+        "access_level": "Write",
+        "action_name": "health-agent:PublishAgent",
+        "condition_keys": [],
+        "description": "Grants permission to publish an agent configuration version",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "RescheduleAppointment": {
+        "access_level": "Write",
+        "action_name": "health-agent:RescheduleAppointment",
+        "condition_keys": [],
+        "description": "Grants permission to reschedule an appointment",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "ScheduleAppointment": {
+        "access_level": "Write",
+        "action_name": "health-agent:ScheduleAppointment",
+        "condition_keys": [],
+        "description": "Grants permission to schedule an appointment for a patient",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "StartMedicalScribeListeningSession": {
+        "access_level": "Write",
+        "action_name": "health-agent:StartMedicalScribeListeningSession",
+        "condition_keys": [],
+        "description": "Grants permission to start a new Medical Scribe listening session for real-time audio transcription",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_StartMedicalScribeListeningSession.html"
+      },
+      "StartPatientInsightsJob": {
+        "access_level": "Write",
+        "action_name": "health-agent:StartPatientInsightsJob",
+        "condition_keys": [],
+        "description": "Grants permission to start a new patient insights job",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "PatientInsightsJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-PatientInsightsJob"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "health-agent:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_RequestTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to add the specified tags to the specified resource",
+        "resource_types": [
+          {
+            "name": "Domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "health-agent:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove the tags identified by the TagKeys list from a resource",
+        "resource_types": [
+          {
+            "name": "Domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_UntagResource.html"
+      },
+      "UpdateAgent": {
+        "access_level": "Write",
+        "action_name": "health-agent:UpdateAgent",
+        "condition_keys": [],
+        "description": "Grants permission to update a draft agent configuration, creating a new draft version if none exists",
+        "resource_types": [
+          {
+            "name": "Agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Agent"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "UpdateIntegration": {
+        "access_level": "Write",
+        "action_name": "health-agent:UpdateIntegration",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing integration",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Integration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      },
+      "UpdateSession": {
+        "access_level": "Write",
+        "action_name": "health-agent:UpdateSession",
+        "condition_keys": [],
+        "description": "Grants permission to update session attributes such as departmentId and appointmentType",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
+          },
+          {
+            "name": "Session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html",
+    "serviceName": "Amazon Connect Health",
+    "service_prefix": "health-agent"
   },
   "amazonconnectoutboundcampaigns": {
     "actions": {
@@ -235401,6 +236112,14 @@
   },
   "awsdevopsagentservice": {
     "actions": {
+      "AllowVendedLogDeliveryForResource": {
+        "access_level": "Permissions management",
+        "action_name": "aidevops:AllowVendedLogDeliveryForResource",
+        "condition_keys": [],
+        "description": "Grants permission to authorize vended logs",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
       "AssociateService": {
         "access_level": "Write",
         "action_name": "aidevops:AssociateService",
@@ -235436,6 +236155,14 @@
         "action_name": "aidevops:CreateBacklogTask",
         "condition_keys": [],
         "description": "Grants permission to create a new backlog task",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "CreateChat": {
+        "access_level": "Write",
+        "action_name": "aidevops:CreateChat",
+        "condition_keys": [],
+        "description": "Grants permission to create a new chat session",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
@@ -235702,6 +236429,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
+      "ListChats": {
+        "access_level": "List",
+        "action_name": "aidevops:ListChats",
+        "condition_keys": [],
+        "description": "Grants permission to list existing chat sessions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
       "ListExecutions": {
         "access_level": "List",
         "action_name": "aidevops:ListExecutions",
@@ -235804,6 +236539,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
+      "StreamMessage": {
+        "access_level": "Write",
+        "action_name": "aidevops:StreamMessage",
+        "condition_keys": [],
+        "description": "Grants permission to invoke an agent",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
       "UpdateAgentSpace": {
         "access_level": "Write",
         "action_name": "aidevops:UpdateAgentSpace",
@@ -235839,6 +236582,14 @@
         "action_name": "aidevops:UpdateBacklogTask",
         "condition_keys": [],
         "description": "Grants permission to update a task",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "UpdateGoal": {
+        "access_level": "Write",
+        "action_name": "aidevops:UpdateGoal",
+        "condition_keys": [],
+        "description": "Grants permission to update a goal",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
@@ -338931,6 +339682,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/mpa/latest/APIReference/API_StartActiveApprovalTeamDeletion.html"
+      },
+      "StartApprovalTeamBaseline": {
+        "access_level": "Write",
+        "action_name": "mpa:StartApprovalTeamBaseline",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_multi-partyapproval.html#multi-partyapproval-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to start a baseline for an active approval team",
+        "resource_types": [
+          {
+            "name": "approval-team*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_multi-partyapproval.html#multi-partyapproval-approval-team"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/mpa/latest/APIReference/API_StartApprovalTeamBaseline.html"
       },
       "StartSession": {
         "access_level": "Write",
