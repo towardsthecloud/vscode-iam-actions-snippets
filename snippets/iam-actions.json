@@ -29777,6 +29777,19 @@
         ],
         "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html"
       },
+      "AddUserPoolClientSecret": {
+        "access_level": "Write",
+        "action_name": "cognito-idp:AddUserPoolClientSecret",
+        "condition_keys": [],
+        "description": "Grants permission to add a new secret to a confidential client",
+        "resource_types": [
+          {
+            "name": "userpool*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html#amazoncognitouserpools-userpool"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddUserPoolClientSecret.html"
+      },
       "AdminAddUserToGroup": {
         "access_level": "Write",
         "action_name": "cognito-idp:AdminAddUserToGroup",
@@ -30404,6 +30417,19 @@
         ],
         "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html"
       },
+      "DeleteUserPoolClientSecret": {
+        "access_level": "Write",
+        "action_name": "cognito-idp:DeleteUserPoolClientSecret",
+        "condition_keys": [],
+        "description": "Grants permission to delete a secret from a list of secrets associated with a client",
+        "resource_types": [
+          {
+            "name": "userpool*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html#amazoncognitouserpools-userpool"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClientSecret.html"
+      },
       "DeleteUserPoolDomain": {
         "access_level": "Write",
         "action_name": "cognito-idp:DeleteUserPoolDomain",
@@ -30821,6 +30847,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html"
+      },
+      "ListUserPoolClientSecrets": {
+        "access_level": "List",
+        "action_name": "cognito-idp:ListUserPoolClientSecrets",
+        "condition_keys": [],
+        "description": "Grants permission to list all secrets associated with a client",
+        "resource_types": [
+          {
+            "name": "userpool*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitouserpools.html#amazoncognitouserpools-userpool"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClientSecrets.html"
       },
       "ListUserPoolClients": {
         "access_level": "List",
@@ -33594,6 +33633,10 @@
         "action_name": "connect:BatchGetAttachedFileMetadata",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
           },
@@ -33727,6 +33770,10 @@
         "access_level": "Write",
         "action_name": "connect:CompleteAttachedFileUpload",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
@@ -34171,6 +34218,10 @@
         "action_name": "connect:CreateParticipant",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           }
@@ -34192,6 +34243,10 @@
         "access_level": "Write",
         "action_name": "connect:CreatePersistentContactAssociation",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -34719,6 +34774,10 @@
         "access_level": "Write",
         "action_name": "connect:DeleteAttachedFile",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
@@ -35525,6 +35584,10 @@
         "access_level": "Read",
         "action_name": "connect:DescribeContact",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -36639,6 +36702,10 @@
         "action_name": "connect:GetAttachedFile",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
           },
@@ -36664,6 +36731,10 @@
         "access_level": "Read",
         "action_name": "connect:GetContactAttributes",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -37072,6 +37143,10 @@
         "action_name": "connect:ListAssociatedContacts",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           }
@@ -37125,6 +37200,10 @@
         "access_level": "List",
         "action_name": "connect:ListContactEvaluations",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -37244,6 +37323,10 @@
         "access_level": "List",
         "action_name": "connect:ListContactReferences",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -37751,7 +37834,12 @@
       "ListRealtimeContactAnalysisSegments": {
         "access_level": "Read",
         "action_name": "connect:ListRealtimeContactAnalysisSegments",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list the analysis segments for a real-time analysis session",
         "resource_types": [
           {
@@ -37765,6 +37853,10 @@
         "access_level": "List",
         "action_name": "connect:ListRealtimeContactAnalysisSegmentsV2",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:ListRealtimeContactAnalysisSegmentsByOutputType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_ListRealtimeContactAnalysisSegmentsByOutputType"
@@ -38480,6 +38572,10 @@
         "action_name": "connect:ResumeContactRecording",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:ContactAssociationId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_ContactAssociationId"
           },
@@ -38610,6 +38706,10 @@
         "access_level": "Read",
         "action_name": "connect:SearchContacts",
         "condition_keys": [
+          {
+            "name": "connect:SearchTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_SearchTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -39115,6 +39215,10 @@
         "action_name": "connect:StartAttachedFileUpload",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
           },
@@ -39167,6 +39271,10 @@
         "action_name": "connect:StartContactEvaluation",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           }
@@ -39215,6 +39323,10 @@
         "action_name": "connect:StartContactRecording",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:ContactAssociationId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_ContactAssociationId"
           },
@@ -39239,7 +39351,12 @@
       "StartContactStreaming": {
         "access_level": "Write",
         "action_name": "connect:StartContactStreaming",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to start chat streaming using the Amazon Connect API",
         "resource_types": [
           {
@@ -39362,6 +39479,10 @@
         "access_level": "Write",
         "action_name": "connect:StartScreenSharing",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -39505,6 +39626,10 @@
         "action_name": "connect:StopContactRecording",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:ContactAssociationId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_ContactAssociationId"
           },
@@ -39529,7 +39654,12 @@
       "StopContactStreaming": {
         "access_level": "Write",
         "action_name": "connect:StopContactStreaming",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to stop chat streaming using the Amazon Connect API",
         "resource_types": [
           {
@@ -39580,6 +39710,10 @@
         "action_name": "connect:SuspendContactRecording",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:ContactAssociationId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_ContactAssociationId"
           },
@@ -39605,6 +39739,14 @@
         "access_level": "Write",
         "action_name": "connect:TagContact",
         "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_RequestTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -39750,6 +39892,10 @@
         "action_name": "connect:TransferContact",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           },
@@ -39787,6 +39933,10 @@
         "access_level": "Write",
         "action_name": "connect:UntagContact",
         "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_TagKeys"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -39968,6 +40118,10 @@
         "action_name": "connect:UpdateContact",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           },
@@ -39997,6 +40151,10 @@
         "access_level": "Write",
         "action_name": "connect:UpdateContactAttributes",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -40190,6 +40348,10 @@
         "action_name": "connect:UpdateContactRoutingData",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
           },
@@ -40219,6 +40381,10 @@
         "access_level": "Write",
         "action_name": "connect:UpdateContactSchedule",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -40487,6 +40653,10 @@
         "access_level": "Write",
         "action_name": "connect:UpdateParticipantRoleConfig",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "connect:InstanceId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
@@ -43802,7 +43972,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_ActivateSubscription.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ActivateSubscription.html"
       },
       "CancelAppointment": {
         "access_level": "Write",
@@ -43819,7 +43989,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "CreateAgent": {
         "access_level": "Write",
@@ -43836,7 +44006,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "CreateDomain": {
         "access_level": "Write",
@@ -43853,7 +44023,7 @@
         ],
         "description": "Grants permission to create a new domain for managing HealthAgent resources",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateDomain.html"
       },
       "CreateIntegration": {
         "access_level": "Write",
@@ -43870,7 +44040,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "CreateSession": {
         "access_level": "Write",
@@ -43891,7 +44061,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "CreateSubscription": {
         "access_level": "Write",
@@ -43908,7 +44078,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateSubscription.html"
       },
       "DeactivateSubscription": {
         "access_level": "Write",
@@ -43925,7 +44095,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeactivateSubscription.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeactivateSubscription.html"
       },
       "DeleteAgent": {
         "access_level": "Write",
@@ -43942,7 +44112,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeleteAgent.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "DeleteDomain": {
         "access_level": "Write",
@@ -43955,7 +44125,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_DeleteDomain.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeleteDomain.html"
       },
       "DeleteIntegration": {
         "access_level": "Write",
@@ -43972,7 +44142,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetAgent": {
         "access_level": "Read",
@@ -43989,7 +44159,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetCareTeamProvider": {
         "access_level": "Read",
@@ -44006,7 +44176,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetDomain": {
         "access_level": "Read",
@@ -44019,7 +44189,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDomain.html"
       },
       "GetIntegration": {
         "access_level": "Read",
@@ -44036,7 +44206,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetMedicalScribeListeningSession": {
         "access_level": "Read",
@@ -44053,7 +44223,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_GetMedicalScribeListeningSession.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetMedicalScribeListeningSession.html"
       },
       "GetPatient": {
         "access_level": "Read",
@@ -44070,7 +44240,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetPatientInsightsJob": {
         "access_level": "Read",
@@ -44087,7 +44257,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-PatientInsightsJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetPatientInsightsJob.html"
       },
       "GetPractitioner": {
         "access_level": "Read",
@@ -44104,7 +44274,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetSessionContext": {
         "access_level": "Read",
@@ -44121,7 +44291,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "GetSubscription": {
         "access_level": "Read",
@@ -44138,7 +44308,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetSubscription.html"
       },
       "InvokeAgent": {
         "access_level": "Write",
@@ -44155,7 +44325,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListAgents": {
         "access_level": "List",
@@ -44168,7 +44338,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListAppointmentSlots": {
         "access_level": "Read",
@@ -44185,7 +44355,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListDomains": {
         "access_level": "List",
@@ -44193,7 +44363,7 @@
         "condition_keys": [],
         "description": "Grants permission to list domains for a given account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListDomains.html"
       },
       "ListIntegrations": {
         "access_level": "List",
@@ -44206,7 +44376,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListPatientAppointments": {
         "access_level": "Read",
@@ -44223,7 +44393,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListPatientInsuranceCoverages": {
         "access_level": "Read",
@@ -44240,7 +44410,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListProviders": {
         "access_level": "Read",
@@ -44257,7 +44427,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ListSubscriptions": {
         "access_level": "List",
@@ -44270,7 +44440,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListSubscriptions.html"
       },
       "ListTagsForResource": {
         "access_level": "List",
@@ -44283,7 +44453,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListTagsForResource.html"
       },
       "MatchPatient": {
         "access_level": "Read",
@@ -44300,7 +44470,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "PublishAgent": {
         "access_level": "Write",
@@ -44317,7 +44487,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "RescheduleAppointment": {
         "access_level": "Write",
@@ -44334,7 +44504,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "ScheduleAppointment": {
         "access_level": "Write",
@@ -44351,7 +44521,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "StartMedicalScribeListeningSession": {
         "access_level": "Write",
@@ -44368,7 +44538,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Subscription"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_StartMedicalScribeListeningSession.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartMedicalScribeListeningSession.html"
       },
       "StartPatientInsightsJob": {
         "access_level": "Write",
@@ -44385,7 +44555,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-PatientInsightsJob"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartPatientInsightsJob.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -44411,7 +44581,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -44429,7 +44599,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/api/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_UntagResource.html"
       },
       "UpdateAgent": {
         "access_level": "Write",
@@ -44446,7 +44616,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Domain"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "UpdateIntegration": {
         "access_level": "Write",
@@ -44463,7 +44633,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Integration"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       },
       "UpdateSession": {
         "access_level": "Write",
@@ -44480,7 +44650,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html#amazonconnecthealth-Session"
           }
         ],
-        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/"
+        "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnecthealth.html",
@@ -46469,6 +46639,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_GetNotebookCompute.html"
       },
+      "GetNotebookExport": {
+        "access_level": "Read",
+        "action_name": "datazone:GetNotebookExport",
+        "condition_keys": [],
+        "description": "Grants permission to get notebook exports",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_GetNotebookExport.html"
+      },
       "GetProject": {
         "access_level": "Read",
         "action_name": "datazone:GetProject",
@@ -47118,6 +47296,22 @@
         "description": "Grants permission to start notebook compute",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartNotebookCompute.html"
+      },
+      "StartNotebookExport": {
+        "access_level": "Write",
+        "action_name": "datazone:StartNotebookExport",
+        "condition_keys": [],
+        "description": "Grants permission to export notebooks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartNotebookExport.html"
+      },
+      "StartNotebookImport": {
+        "access_level": "Write",
+        "action_name": "datazone:StartNotebookImport",
+        "condition_keys": [],
+        "description": "Grants permission to import notebooks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartNotebookImport.html"
       },
       "StopMetadataGenerationRun": {
         "access_level": "Write",
@@ -132509,6 +132703,32 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RevokeVpcEndpointAccess.html"
       },
+      "RollbackElasticsearchServiceSoftwareUpdate": {
+        "access_level": "Write",
+        "action_name": "es:RollbackElasticsearchServiceSoftwareUpdate",
+        "condition_keys": [],
+        "description": "Grants permission to rollback a service software update of an elasticsearch domain to its previous version",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RollbackServiceSoftwareUpdate.html"
+      },
+      "RollbackServiceSoftwareUpdate": {
+        "access_level": "Write",
+        "action_name": "es:RollbackServiceSoftwareUpdate",
+        "condition_keys": [],
+        "description": "Grants permission to rollback a service software update of an opensearch domain to its previous version",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RollbackServiceSoftwareUpdate.html"
+      },
       "StartDomainMaintenance": {
         "access_level": "Write",
         "action_name": "es:StartDomainMaintenance",
@@ -157173,6 +157393,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-grant-write-acp"
           },
           {
+            "name": "s3:x-amz-bucket-namespace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-bucket-namespace"
+          },
+          {
             "name": "s3:x-amz-object-ownership",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_x-amz-object-ownership"
           },
@@ -179936,7 +180160,7 @@
         "access_level": "Write",
         "action_name": "sdb:BatchDeleteAttributes",
         "condition_keys": [],
-        "description": "Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies",
+        "description": "Grants permission to perform multiple DeleteAttributes operations in a single call, which reduces round trips and latencies",
         "resource_types": [
           {
             "name": "domain*",
@@ -179949,7 +180173,7 @@
         "access_level": "Write",
         "action_name": "sdb:BatchPutAttributes",
         "condition_keys": [],
-        "description": "With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call. With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call",
+        "description": "Grants permission to perform multiple PutAttribute operations in a single call, which reduces round trips and latencies",
         "resource_types": [
           {
             "name": "domain*",
@@ -179962,7 +180186,7 @@
         "access_level": "Write",
         "action_name": "sdb:CreateDomain",
         "condition_keys": [],
-        "description": "The CreateDomain operation creates a new domain",
+        "description": "Grants permission to create a new domain",
         "resource_types": [
           {
             "name": "domain*",
@@ -179975,7 +180199,7 @@
         "access_level": "Write",
         "action_name": "sdb:DeleteAttributes",
         "condition_keys": [],
-        "description": "Deletes one or more attributes associated with the item",
+        "description": "Grants permission to delete one or more attributes associated with the item",
         "resource_types": [
           {
             "name": "domain*",
@@ -179988,7 +180212,7 @@
         "access_level": "Write",
         "action_name": "sdb:DeleteDomain",
         "condition_keys": [],
-        "description": "The DeleteDomain operation deletes a domain",
+        "description": "Grants permission to delete a domain",
         "resource_types": [
           {
             "name": "domain*",
@@ -180001,7 +180225,7 @@
         "access_level": "Read",
         "action_name": "sdb:DomainMetadata",
         "condition_keys": [],
-        "description": "Returns information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values",
+        "description": "Grants permission to return information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values",
         "resource_types": [
           {
             "name": "domain*",
@@ -180014,7 +180238,7 @@
         "access_level": "Read",
         "action_name": "sdb:GetAttributes",
         "condition_keys": [],
-        "description": "Returns all of the attributes associated with the item",
+        "description": "Grants permission to return all of the attributes associated with the item",
         "resource_types": [
           {
             "name": "domain*",
@@ -180023,19 +180247,45 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_GetAttributes.html"
       },
+      "GetExport": {
+        "access_level": "Read",
+        "action_name": "sdb:GetExport",
+        "condition_keys": [],
+        "description": "Grants permission to return information for an existing domain export arn",
+        "resource_types": [
+          {
+            "name": "export*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html#amazonsimpledb-export"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_GetExport.html"
+      },
       "ListDomains": {
         "access_level": "List",
         "action_name": "sdb:ListDomains",
         "condition_keys": [],
-        "description": "Description for ListDomains",
+        "description": "Grants permission to list all domains",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_ListDomains.html"
+      },
+      "ListExports": {
+        "access_level": "List",
+        "action_name": "sdb:ListExports",
+        "condition_keys": [],
+        "description": "Grants permission to list all exports that were created. The results are paginated and can be filtered by domain name",
+        "resource_types": [
+          {
+            "name": "domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html#amazonsimpledb-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_ListExports.html"
       },
       "PutAttributes": {
         "access_level": "Write",
         "action_name": "sdb:PutAttributes",
         "condition_keys": [],
-        "description": "The PutAttributes operation creates or replaces attributes in an item",
+        "description": "Grants permission to create or replace attributes in an item",
         "resource_types": [
           {
             "name": "domain*",
@@ -180048,7 +180298,7 @@
         "access_level": "Read",
         "action_name": "sdb:Select",
         "condition_keys": [],
-        "description": "Description for Select",
+        "description": "Grants permission to execute a query against the items in a domain",
         "resource_types": [
           {
             "name": "domain*",
@@ -180056,6 +180306,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Select.html"
+      },
+      "StartDomainExport": {
+        "access_level": "Write",
+        "action_name": "sdb:StartDomainExport",
+        "condition_keys": [],
+        "description": "Grants permission to initiates the export of a SimpleDB domain to an S3 bucket",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html#amazonsimpledb-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_StartDomainExport.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html",
@@ -303141,6 +303404,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateRelationship.html"
+      },
+      "UseSession": {
+        "access_level": "Write",
+        "action_name": "partnercentral:UseSession",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to use Partner Central Agents sessions in AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${UserGuideDocPage}controlling-access-in-aws-partner-central.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html",
@@ -308837,6 +309113,10 @@
           {
             "name": "ram:ResourceArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_ResourceArn"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to associate resource(s) and/or principal(s) to a resource share",
@@ -308951,6 +309231,10 @@
           {
             "name": "ram:AllowsExternalPrincipals",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_AllowsExternalPrincipals"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to create a resource share with provided resource(s) and/or principal(s)",
@@ -309024,6 +309308,10 @@
           {
             "name": "ram:AllowsExternalPrincipals",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_AllowsExternalPrincipals"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to delete resource share",
@@ -309066,6 +309354,10 @@
           {
             "name": "ram:ResourceArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_ResourceArn"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to disassociate resource(s) and/or principal(s) from a resource share",
@@ -309260,6 +309552,10 @@
           {
             "name": "ram:AllowsExternalPrincipals",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_AllowsExternalPrincipals"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to list the Permissions associated with a Resource Share",
@@ -309286,6 +309582,14 @@
         "description": "Grants permission to list the resources that you added to resource shares or the resources that are shared with you",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html"
+      },
+      "ListSourceAssociations": {
+        "access_level": "List",
+        "action_name": "ram:ListSourceAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list source associations for resource shares",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListSourceAssociations.html"
       },
       "PromotePermissionCreatedFromPolicy": {
         "access_level": "Write",
@@ -309463,6 +309767,10 @@
           {
             "name": "ram:RequestedAllowsExternalPrincipals",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RequestedAllowsExternalPrincipals"
+          },
+          {
+            "name": "ram:RetainSharingOnAccountLeaveOrganization",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanagerram.html#awsresourceaccessmanagerram-ram_RetainSharingOnAccountLeaveOrganization"
           }
         ],
         "description": "Grants permission to update attributes of the resource share",
@@ -313440,6 +313748,19 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_BatchGetSecurityTestContentMetadata.html"
       },
+      "BatchGetTargetDomains": {
+        "access_level": "Read",
+        "action_name": "securityagent:BatchGetTargetDomains",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve multiple target domains in a single request",
+        "resource_types": [
+          {
+            "name": "TargetDomain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_BatchGetTargetDomains.html"
+      },
       "BatchGetTasks": {
         "access_level": "Read",
         "action_name": "securityagent:BatchGetTasks",
@@ -313573,6 +313894,14 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirement.html"
       },
+      "CreateTargetDomain": {
+        "access_level": "Write",
+        "action_name": "securityagent:CreateTargetDomain",
+        "condition_keys": [],
+        "description": "Grants permission to create a target domain record",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/securityagent/API_CreateTargetDomain.html"
+      },
       "DeleteAgentInstance": {
         "access_level": "Write",
         "action_name": "securityagent:DeleteAgentInstance",
@@ -313703,6 +314032,19 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_DeleteSecurityRequirement.html"
       },
+      "DeleteTargetDomain": {
+        "access_level": "Write",
+        "action_name": "securityagent:DeleteTargetDomain",
+        "condition_keys": [],
+        "description": "Grants permission to delete a target domain record",
+        "resource_types": [
+          {
+            "name": "TargetDomain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_DeleteTargetDomain.html"
+      },
       "DescribeFindings": {
         "access_level": "Read",
         "action_name": "securityagent:DescribeFindings",
@@ -313793,6 +314135,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetDesignReviewArtifact.html"
+      },
+      "GetDesignReviewFeedback": {
+        "access_level": "Read",
+        "action_name": "securityagent:GetDesignReviewFeedback",
+        "condition_keys": [],
+        "description": "Grants permission to get feedback for a design review comment",
+        "resource_types": [
+          {
+            "name": "AgentSpace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_GetDesignReviewFeedback.html"
       },
       "GetDocReviewTask": {
         "access_level": "Read",
@@ -314118,6 +314473,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html"
       },
+      "ListTargetDomains": {
+        "access_level": "List",
+        "action_name": "securityagent:ListTargetDomains",
+        "condition_keys": [],
+        "description": "Grants permission to list target domains",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/securityagent/API_ListTargetDomains.html"
+      },
       "ListTasks": {
         "access_level": "List",
         "action_name": "securityagent:ListTasks",
@@ -314130,6 +314493,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_ListTasks.html"
+      },
+      "PutDesignReviewFeedback": {
+        "access_level": "Write",
+        "action_name": "securityagent:PutDesignReviewFeedback",
+        "condition_keys": [],
+        "description": "Grants permission to submit feedback for a design review comment",
+        "resource_types": [
+          {
+            "name": "AgentSpace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_PutDesignReviewFeedback.html"
       },
       "StartCodeRemediation": {
         "access_level": "Write",
@@ -314326,15 +314702,28 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_UpdateSecurityRequirement.html"
       },
+      "UpdateTargetDomain": {
+        "access_level": "Write",
+        "action_name": "securityagent:UpdateTargetDomain",
+        "condition_keys": [],
+        "description": "Grants permission to update a target domain record",
+        "resource_types": [
+          {
+            "name": "TargetDomain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_UpdateTargetDomain.html"
+      },
       "VerifyTargetDomain": {
         "access_level": "Write",
         "action_name": "securityagent:VerifyTargetDomain",
         "condition_keys": [],
-        "description": "Grants permission to verify ownership for a registered target domain in an agent instance",
+        "description": "Grants permission to verify ownership for a registered target domain",
         "resource_types": [
           {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+            "name": "TargetDomain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_VerifyTargetDomain.html"
