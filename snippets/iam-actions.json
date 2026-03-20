@@ -13005,6 +13005,23 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html"
       },
+      "InvokeAgentRuntimeCommand": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:InvokeAgentRuntimeCommand",
+        "condition_keys": [],
+        "description": "Grants permission to invoke commands on an agent runtime endpoint",
+        "resource_types": [
+          {
+            "name": "runtime*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
+          },
+          {
+            "name": "runtime-endpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime-endpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommand.html"
+      },
       "InvokeAgentRuntimeForUser": {
         "access_level": "Write",
         "action_name": "bedrock-agentcore:InvokeAgentRuntimeForUser",
@@ -91705,6 +91722,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
           },
           {
+            "name": "ecs:instance-metadata-tags-propagation",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_instance-metadata-tags-propagation"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
           },
@@ -93106,6 +93127,10 @@
           {
             "name": "ecs:propagate-tags",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
+          },
+          {
+            "name": "ecs:instance-metadata-tags-propagation",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_instance-metadata-tags-propagation"
           },
           {
             "name": "aws:ResourceTag/${TagKey}",
@@ -132385,6 +132410,19 @@
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDataSource.html"
       },
+      "GetDefaultApplicationSetting": {
+        "access_level": "Read",
+        "action_name": "es:GetDefaultApplicationSetting",
+        "condition_keys": [],
+        "description": "Grants permission to get the default application setting for OpenSearch Service",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDefaultApplicationSetting.html"
+      },
       "GetDirectQueryDataSource": {
         "access_level": "Read",
         "action_name": "es:GetDirectQueryDataSource",
@@ -132652,6 +132690,19 @@
         "description": "Grants permission to purchase OpenSearch reserved instances",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PurchaseReservedInstanceOffering.html"
+      },
+      "PutDefaultApplicationSetting": {
+        "access_level": "Write",
+        "action_name": "es:PutDefaultApplicationSetting",
+        "condition_keys": [],
+        "description": "Grants permission to set or remove the default application setting for OpenSearch Service",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PutDefaultApplicationSetting.html"
       },
       "RejectInboundConnection": {
         "access_level": "Write",
@@ -154978,12 +155029,7 @@
           }
         ],
         "description": "Grants permission to create a cluster",
-        "resource_types": [
-          {
-            "name": "cluster*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-cluster"
-          }
-        ],
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html"
       },
       "CreateControlPanel": {
@@ -155002,8 +155048,8 @@
         "description": "Grants permission to create a control panel",
         "resource_types": [
           {
-            "name": "controlpanel*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-controlpanel"
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel.html"
@@ -155015,8 +155061,8 @@
         "description": "Grants permission to create a routing control",
         "resource_types": [
           {
-            "name": "routingcontrol*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-routingcontrol"
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol.html"
@@ -155037,8 +155083,8 @@
         "description": "Grants permission to create a safety rule",
         "resource_types": [
           {
-            "name": "safetyrule*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-safetyrule"
+            "name": "cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-cluster"
           }
         ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/safetyrule.html"
@@ -155147,19 +155193,6 @@
         ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn.html"
       },
-      "DescribeRoutingControlByName": {
-        "access_level": "Read",
-        "action_name": "route53-recovery-control-config:DescribeRoutingControlByName",
-        "condition_keys": [],
-        "description": "Grants permission to describe a routing control",
-        "resource_types": [
-          {
-            "name": "routingcontrol*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-routingcontrol"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn.html"
-      },
       "DescribeSafetyRule": {
         "access_level": "Read",
         "action_name": "route53-recovery-control-config:DescribeSafetyRule",
@@ -155191,7 +155224,12 @@
         "action_name": "route53-recovery-control-config:ListAssociatedRoute53HealthChecks",
         "condition_keys": [],
         "description": "Grants permission to list associated Route 53 health checks",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "routingcontrol*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-routingcontrol"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn-associatedroute53healthchecks.html"
       },
       "ListClusters": {
@@ -155215,7 +155253,12 @@
         "action_name": "route53-recovery-control-config:ListRoutingControls",
         "condition_keys": [],
         "description": "Grants permission to list routing controls",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "controlpanel*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-controlpanel"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel-controlpanelarn-routingcontrols.html"
       },
       "ListSafetyRules": {
@@ -155236,7 +155279,20 @@
         "action_name": "route53-recovery-control-config:ListTagsForResource",
         "condition_keys": [],
         "description": "Grants permission to list tags for a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-cluster"
+          },
+          {
+            "name": "controlpanel",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-controlpanel"
+          },
+          {
+            "name": "safetyrule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53recoverycontrols.html#amazonroute53recoverycontrols-safetyrule"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html"
       },
       "PutResourcePolicy": {
@@ -187875,6 +187931,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-aws_TagKeys"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create an access log subscription",
@@ -187917,6 +187977,10 @@
           {
             "name": "vpc-lattice:TargetGroupArns",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_TargetGroupArns"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a listener",
@@ -187939,6 +188003,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-aws_TagKeys"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a resource configuration",
@@ -187973,6 +188041,10 @@
           {
             "name": "vpc-lattice:VpcId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_VpcId"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a resource gateway",
@@ -187999,6 +188071,10 @@
           {
             "name": "vpc-lattice:TargetGroupArns",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_TargetGroupArns"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a rule",
@@ -188025,6 +188101,10 @@
           {
             "name": "vpc-lattice:AuthType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_AuthType"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a service",
@@ -188051,6 +188131,10 @@
           {
             "name": "vpc-lattice:AuthType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_AuthType"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a service network",
@@ -188081,6 +188165,10 @@
           {
             "name": "vpc-lattice:ServiceNetworkArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_ServiceNetworkArn"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create an association between a service network and a resource",
@@ -188119,6 +188207,10 @@
           {
             "name": "vpc-lattice:ServiceNetworkArn",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_ServiceNetworkArn"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a service network and service association",
@@ -188169,6 +188261,10 @@
           {
             "name": "vpc-lattice:VpcId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_VpcId"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a service network and VPC association",
@@ -188207,6 +188303,10 @@
           {
             "name": "vpc-lattice:VpcId",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_VpcId"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to create a target group",
@@ -189015,6 +189115,10 @@
           {
             "name": "vpc-lattice:DomainName",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_DomainName"
+          },
+          {
+            "name": "vpc-lattice:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonvpclattice.html#amazonvpclattice-vpc-lattice_CreateAction"
           }
         ],
         "description": "Grants permission to start a domain verification",
@@ -260925,7 +261029,16 @@
       "GetDICOMBulkdata": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMBulkdata",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to get dicom bulkdata in binary format",
         "resource_types": [
           {
@@ -260951,7 +261064,16 @@
       "GetDICOMInstance": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMInstance",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to get dicom instance in dcm format",
         "resource_types": [
           {
@@ -260964,7 +261086,16 @@
       "GetDICOMInstanceFrames": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMInstanceFrames",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to get dicom instance frames in format requested by the customer",
         "resource_types": [
           {
@@ -260977,7 +261108,16 @@
       "GetDICOMInstanceMetadata": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMInstanceMetadata",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to get dicom instance metadata in DICOM JSON format",
         "resource_types": [
           {
@@ -260990,7 +261130,16 @@
       "GetDICOMSeriesMetadata": {
         "access_level": "Read",
         "action_name": "medical-imaging:GetDICOMSeriesMetadata",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to retrieve metadata for all DICOM instances belonging to a given DICOM series in DICOM JSON format",
         "resource_types": [
           {
@@ -261122,7 +261271,16 @@
       "SearchDICOMInstances": {
         "access_level": "Read",
         "action_name": "medical-imaging:SearchDICOMInstances",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          },
+          {
+            "name": "medical-imaging:SeriesInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_SeriesInstanceUID"
+          }
+        ],
         "description": "Grants permission to search dicom instances that returns data in DICOM JSON format",
         "resource_types": [
           {
@@ -261135,7 +261293,12 @@
       "SearchDICOMSeries": {
         "access_level": "Read",
         "action_name": "medical-imaging:SearchDICOMSeries",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          }
+        ],
         "description": "Grants permission to search dicom series that returns data in DICOM JSON format",
         "resource_types": [
           {
@@ -261200,7 +261363,12 @@
       "StoreDICOMStudy": {
         "access_level": "Write",
         "action_name": "medical-imaging:StoreDICOMStudy",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "medical-imaging:StudyInstanceUID",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-medical-imaging_StudyInstanceUID"
+          }
+        ],
         "description": "Grants permission to store a dicom study that returns result in DICOM JSON format",
         "resource_types": [
           {
@@ -269893,6 +270061,184 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsimportexportdiskservice.html",
     "serviceName": "AWS Import Export Disk Service",
     "service_prefix": "importexport"
+  },
+  "awsinterconnect": {
+    "actions": {
+      "AcceptConnectionProposal": {
+        "access_level": "Write",
+        "action_name": "interconnect:AcceptConnectionProposal",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to accept a connection proposal generated elsewhere",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_AcceptConnectionProposal.html"
+      },
+      "CreateConnection": {
+        "access_level": "Write",
+        "action_name": "interconnect:CreateConnection",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a connection",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_CreateConnection.html"
+      },
+      "DeleteConnection": {
+        "access_level": "Write",
+        "action_name": "interconnect:DeleteConnection",
+        "condition_keys": [],
+        "description": "Grants permission to delete an existing connection",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_DeleteConnection.html"
+      },
+      "DescribeConnectionProposal": {
+        "access_level": "Read",
+        "action_name": "interconnect:DescribeConnectionProposal",
+        "condition_keys": [],
+        "description": "Grants permission to describe a connection proposal",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_DescribeConnectionProposal.html"
+      },
+      "GetConnection": {
+        "access_level": "Read",
+        "action_name": "interconnect:GetConnection",
+        "condition_keys": [],
+        "description": "Grants permission to describe a connection",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_GetConnection.html"
+      },
+      "GetEnvironment": {
+        "access_level": "Read",
+        "action_name": "interconnect:GetEnvironment",
+        "condition_keys": [],
+        "description": "Grants permission to describe an environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_GetEnvironment.html"
+      },
+      "ListAttachPoints": {
+        "access_level": "Read",
+        "action_name": "interconnect:ListAttachPoints",
+        "condition_keys": [],
+        "description": "Grants permission to list available attach points",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListAttachPoints.html"
+      },
+      "ListConnections": {
+        "access_level": "List",
+        "action_name": "interconnect:ListConnections",
+        "condition_keys": [],
+        "description": "Grants permission to list connections",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListConnections.html"
+      },
+      "ListEnvironments": {
+        "access_level": "List",
+        "action_name": "interconnect:ListEnvironments",
+        "condition_keys": [],
+        "description": "Grants permission to list available environments",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListEnvironments.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "interconnect:ListTagsForResource",
+        "condition_keys": [],
+        "description": "Grants permission to list tags on a resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListTagsForResource.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "interconnect:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to apply tags to a resource",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "interconnect:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to remove tags from a resource",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_UntagResource.html"
+      },
+      "UpdateConnection": {
+        "access_level": "Write",
+        "action_name": "interconnect:UpdateConnection",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing connection",
+        "resource_types": [
+          {
+            "name": "connection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html#awsinterconnect-connection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_UpdateConnection.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsinterconnect.html",
+    "serviceName": "AWS Interconnect",
+    "service_prefix": "interconnect"
   },
   "awsinvoicingservice": {
     "actions": {
@@ -291480,8 +291826,13 @@
         "action_name": "aws-marketplace:DescribeAssessment",
         "condition_keys": [],
         "description": "Grants permission to return the details of an existing assessment",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+        "resource_types": [
+          {
+            "name": "Assessment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-Assessment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeAssessment.html"
       },
       "DescribeChangeSet": {
         "access_level": "Read",
@@ -291528,7 +291879,7 @@
         "condition_keys": [],
         "description": "Grants permission to list existing assessments",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html"
+        "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListAssessments.html"
       },
       "ListChangeSets": {
         "access_level": "List",
@@ -314761,6 +315112,23 @@
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html"
       },
+      "AllowVendedLogDeliveryForResource": {
+        "access_level": "Permissions management",
+        "action_name": "securityhub:AllowVendedLogDeliveryForResource",
+        "condition_keys": [],
+        "description": "Grants permission to log delivery for resources",
+        "resource_types": [
+          {
+            "name": "hub",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hub"
+          },
+          {
+            "name": "hubv2",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hubv2"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html"
+      },
       "BatchDeleteAutomationRules": {
         "access_level": "Write",
         "action_name": "securityhub:BatchDeleteAutomationRules",
@@ -315979,8 +316347,8 @@
         "description": "Grants permission to associate a configuration policy with a member account or organizational unit in the calling account's organization",
         "resource_types": [
           {
-            "name": "configuration-policy",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-configuration-policy"
+            "name": "hub",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hub"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyAssociation.html"
@@ -315992,8 +316360,8 @@
         "description": "Grants permission to remove a configuration policy association from a member account or organizational unit in the calling account's organization",
         "resource_types": [
           {
-            "name": "configuration-policy",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-configuration-policy"
+            "name": "hub",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hub"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyDisassociation.html"
@@ -320011,37 +320379,6 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicecatalog.html",
     "serviceName": "AWS Service Catalog",
     "service_prefix": "servicecatalog"
-  },
-  "awsserviceformanagingawsconsoleuserexperiencecapabilities.": {
-    "actions": {
-      "DeleteAccountColor": {
-        "access_level": "Write",
-        "action_name": "uxc:DeleteAccountColor",
-        "condition_keys": [],
-        "description": "Grants permission to delete the color associated with the account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/DeleteAccountColor.html"
-      },
-      "GetAccountColor": {
-        "access_level": "Read",
-        "action_name": "uxc:GetAccountColor",
-        "condition_keys": [],
-        "description": "Grants permission to get the color associated with the account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/GetAccountColor.html"
-      },
-      "PutAccountColor": {
-        "access_level": "Write",
-        "action_name": "uxc:PutAccountColor",
-        "condition_keys": [],
-        "description": "Grants permission to sets the color associated with an account",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/PutAccountColor.html"
-      }
-    },
-    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsserviceformanagingawsconsoleuserexperiencecapabilities..html",
-    "serviceName": "AWS Service for managing AWS Management Console user experience capabilities.",
-    "service_prefix": "uxc"
   },
   "awsserviceprovidingmanagedprivatenetworks": {
     "actions": {
@@ -333404,6 +333741,61 @@
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstrustedadvisor.html",
     "serviceName": "AWS Trusted Advisor",
     "service_prefix": "trustedadvisor"
+  },
+  "awsuserexperiencecustomization": {
+    "actions": {
+      "DeleteAccountColor": {
+        "access_level": "Write",
+        "action_name": "uxc:DeleteAccountColor",
+        "condition_keys": [],
+        "description": "Grants permission to delete account color setting",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/DeleteAccountColor.html"
+      },
+      "GetAccountColor": {
+        "access_level": "Read",
+        "action_name": "uxc:GetAccountColor",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve account color for given account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/GetAccountColor.html"
+      },
+      "GetAccountCustomizations": {
+        "access_level": "Read",
+        "action_name": "uxc:GetAccountCustomizations",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve account customizations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_GetAccountCustomizations.html"
+      },
+      "ListServices": {
+        "access_level": "Read",
+        "action_name": "uxc:ListServices",
+        "condition_keys": [],
+        "description": "Grants permission to list available services",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_ListServices.html"
+      },
+      "PutAccountColor": {
+        "access_level": "Write",
+        "action_name": "uxc:PutAccountColor",
+        "condition_keys": [],
+        "description": "Grants permission to set account color",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/PutAccountColor.html"
+      },
+      "UpdateAccountCustomizations": {
+        "access_level": "Write",
+        "action_name": "uxc:UpdateAccountCustomizations",
+        "condition_keys": [],
+        "description": "Grants permission to update account customizations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_UpdateAccountCustomizations.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsuserexperiencecustomization.html",
+    "serviceName": "AWS User Experience Customization",
+    "service_prefix": "uxc"
   },
   "awsusernotifications": {
     "actions": {
