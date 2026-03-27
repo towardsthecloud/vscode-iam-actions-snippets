@@ -105024,6 +105024,14 @@
         ],
         "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetInstanceAccess.html"
       },
+      "GetPlayerConnectionDetails": {
+        "access_level": "Read",
+        "action_name": "gamelift:GetPlayerConnectionDetails",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve player connection endpoints and player gateway tokens for a game session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetPlayerConnectionDetails.html"
+      },
       "ListAliases": {
         "access_level": "List",
         "action_name": "gamelift:ListAliases",
@@ -116508,7 +116516,16 @@
       "CreateContactMethod": {
         "access_level": "Write",
         "action_name": "lightsail:CreateContactMethod",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an email or SMS text message contact method",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContactMethod.html"
@@ -118029,6 +118046,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Certificate"
           },
           {
+            "name": "ContactMethod",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-ContactMethod"
+          },
+          {
             "name": "ContainerService",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-ContainerService"
           },
@@ -118118,6 +118139,10 @@
           {
             "name": "Certificate",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Certificate"
+          },
+          {
+            "name": "ContactMethod",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-ContactMethod"
           },
           {
             "name": "ContainerService",
@@ -132169,6 +132194,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInboundConnections.html"
       },
+      "DescribeInsightDetails": {
+        "access_level": "Read",
+        "action_name": "es:DescribeInsightDetails",
+        "condition_keys": [],
+        "description": "Grants permission to view detailed information about insights for an OpenSearch Service domain",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInsightDetails.html"
+      },
       "DescribeInstanceTypeLimits": {
         "access_level": "List",
         "action_name": "es:DescribeInstanceTypeLimits",
@@ -132587,6 +132625,19 @@
         "description": "Grants permission to list all supported OpenSearch versions on Amazon OpenSearch Service. This permission is deprecated. Use ListVersions instead",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListVersions.html"
+      },
+      "ListInsights": {
+        "access_level": "List",
+        "action_name": "es:ListInsights",
+        "condition_keys": [],
+        "description": "Grants permission to list insights for OpenSearch Service domains in the account",
+        "resource_types": [
+          {
+            "name": "domain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListInsights.html"
       },
       "ListInstanceTypeDetails": {
         "access_level": "List",
@@ -136803,6 +136854,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html"
+      },
+      "StartSpeechSynthesisStream": {
+        "access_level": "Read",
+        "action_name": "polly:StartSpeechSynthesisStream",
+        "condition_keys": [],
+        "description": "Grants permission to perform synthesis with bidirectional streaming",
+        "resource_types": [
+          {
+            "name": "lexicon",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpolly.html#amazonpolly-lexicon"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisStream.html"
       },
       "StartSpeechSynthesisTask": {
         "access_level": "Write",
@@ -154751,6 +154815,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-aws_TagKeys"
+          },
+          {
+            "name": "route53profiles:ResourceIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceIds"
           }
         ],
         "description": "Grants permission to associates a Profile to the customer VPC",
@@ -154760,7 +154828,28 @@
       "AssociateResourceToProfile": {
         "access_level": "Write",
         "action_name": "route53profiles:AssociateResourceToProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "route53profiles:ResourceTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceTypes"
+          },
+          {
+            "name": "route53profiles:HostedZoneDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_HostedZoneDomains"
+          },
+          {
+            "name": "route53profiles:ResolverRuleDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResolverRuleDomains"
+          },
+          {
+            "name": "route53profiles:FirewallRuleGroupPriority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_FirewallRuleGroupPriority"
+          },
+          {
+            "name": "route53profiles:ResourceArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceArns"
+          }
+        ],
         "description": "Grants permission to associates a resource, such as DNS Firewall rule group, private hosted zone, resolver rule, etc. to a specified Profile",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html"
@@ -154793,7 +154882,12 @@
       "DisassociateProfile": {
         "access_level": "Write",
         "action_name": "route53profiles:DisassociateProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "route53profiles:ResourceIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceIds"
+          }
+        ],
         "description": "Grants permission to delete an association between a customer VPC and the specified Profile",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateProfile.html"
@@ -154801,7 +154895,28 @@
       "DisassociateResourceFromProfile": {
         "access_level": "Write",
         "action_name": "route53profiles:DisassociateResourceFromProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "route53profiles:ResourceTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceTypes"
+          },
+          {
+            "name": "route53profiles:HostedZoneDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_HostedZoneDomains"
+          },
+          {
+            "name": "route53profiles:ResolverRuleDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResolverRuleDomains"
+          },
+          {
+            "name": "route53profiles:FirewallRuleGroupPriority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_FirewallRuleGroupPriority"
+          },
+          {
+            "name": "route53profiles:ResourceArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceArns"
+          }
+        ],
         "description": "Grants permission to delete the asoociation between the resource. such as DNS Firewall rule group, private hosted zone, resolver rule, etc. and the specified Profile",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html"
@@ -154939,7 +155054,24 @@
       "UpdateProfileResourceAssociation": {
         "access_level": "Write",
         "action_name": "route53profiles:UpdateProfileResourceAssociation",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "route53profiles:ResourceTypes",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResourceTypes"
+          },
+          {
+            "name": "route53profiles:HostedZoneDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_HostedZoneDomains"
+          },
+          {
+            "name": "route53profiles:ResolverRuleDomains",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_ResolverRuleDomains"
+          },
+          {
+            "name": "route53profiles:FirewallRuleGroupPriority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html#amazonroute53profiles-route53profiles_FirewallRuleGroupPriority"
+          }
+        ],
         "description": "Grants permission to update the Profile resource association name or the resource properties or both, if both name and resource properties are null, the api returns the existing Profile resource association",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html"
@@ -203308,7 +203440,12 @@
           }
         ],
         "description": "Grants permission to create a custom domain name in AppSync",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html#awsappsync-domain"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDomainName.html"
       },
       "CreateFunction": {
@@ -208115,6 +208252,32 @@
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html"
       },
+      "CreateQuotaShare": {
+        "access_level": "Write",
+        "action_name": "batch:CreateQuotaShare",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AWS Batch quota share in your account",
+        "resource_types": [
+          {
+            "name": "job-queue*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-job-queue"
+          },
+          {
+            "name": "quota-share*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateQuotaShare.html"
+      },
       "CreateSchedulingPolicy": {
         "access_level": "Write",
         "action_name": "batch:CreateSchedulingPolicy",
@@ -208197,6 +208360,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html"
+      },
+      "DeleteQuotaShare": {
+        "access_level": "Write",
+        "action_name": "batch:DeleteQuotaShare",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AWS Batch quota share in your account",
+        "resource_types": [
+          {
+            "name": "quota-share*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteQuotaShare.html"
       },
       "DeleteSchedulingPolicy": {
         "access_level": "Write",
@@ -208282,6 +208458,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html"
       },
+      "DescribeQuotaShare": {
+        "access_level": "Read",
+        "action_name": "batch:DescribeQuotaShare",
+        "condition_keys": [],
+        "description": "Grants permission to describe an AWS Batch quota share in your account",
+        "resource_types": [
+          {
+            "name": "quota-share*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeQuotaShare.html"
+      },
       "DescribeSchedulingPolicies": {
         "access_level": "Read",
         "action_name": "batch:DescribeSchedulingPolicies",
@@ -208348,6 +208537,19 @@
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobsByConsumableResource.html"
       },
+      "ListQuotaShares": {
+        "access_level": "List",
+        "action_name": "batch:ListQuotaShares",
+        "condition_keys": [],
+        "description": "Grants permission to list AWS Batch quota shares in your account",
+        "resource_types": [
+          {
+            "name": "job-queue*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-job-queue"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListQuotaShares.html"
+      },
       "ListSchedulingPolicies": {
         "access_level": "Read",
         "action_name": "batch:ListSchedulingPolicies",
@@ -208389,6 +208591,10 @@
           {
             "name": "job-queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-job-queue"
+          },
+          {
+            "name": "quota-share",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
           },
           {
             "name": "scheduling-policy",
@@ -208556,6 +208762,10 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-aws_TagKeys"
+          },
+          {
+            "name": "batch:SchedulingPriority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-batch_SchedulingPriority"
           }
         ],
         "description": "Grants permission to submit an AWS Batch service job",
@@ -208567,6 +208777,10 @@
           {
             "name": "service-job*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-service-job"
+          },
+          {
+            "name": "quota-share",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
           }
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html"
@@ -208605,6 +208819,10 @@
           {
             "name": "job-queue",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-job-queue"
+          },
+          {
+            "name": "quota-share",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
           },
           {
             "name": "scheduling-policy",
@@ -208679,6 +208897,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-job-queue"
           },
           {
+            "name": "quota-share",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
+          },
+          {
             "name": "scheduling-policy",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-scheduling-policy"
           },
@@ -208740,6 +208962,19 @@
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html"
       },
+      "UpdateQuotaShare": {
+        "access_level": "Write",
+        "action_name": "batch:UpdateQuotaShare",
+        "condition_keys": [],
+        "description": "Grants permission to update an AWS Batch quota share in your account",
+        "resource_types": [
+          {
+            "name": "quota-share*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-quota-share"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateQuotaShare.html"
+      },
       "UpdateSchedulingPolicy": {
         "access_level": "Write",
         "action_name": "batch:UpdateSchedulingPolicy",
@@ -208765,6 +209000,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceEnvironment.html"
+      },
+      "UpdateServiceJob": {
+        "access_level": "Write",
+        "action_name": "batch:UpdateServiceJob",
+        "condition_keys": [
+          {
+            "name": "batch:SchedulingPriority",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-batch_SchedulingPriority"
+          }
+        ],
+        "description": "Grants permission to update a service job in an AWS Batch job queue in your account",
+        "resource_types": [
+          {
+            "name": "service-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-service-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceJob.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html",
@@ -236494,12 +236747,12 @@
         "description": "Grants permission to associate service",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           },
           {
-            "name": "AssociationResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
+            "name": "associations*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-associations"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236507,12 +236760,25 @@
       "CreateAgentSpace": {
         "access_level": "Write",
         "action_name": "aidevops:CreateAgentSpace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create agentspace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236522,15 +236788,25 @@
         "action_name": "aidevops:CreateBacklogTask",
         "condition_keys": [],
         "description": "Grants permission to create a new backlog task",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "CreateChat": {
         "access_level": "Write",
         "action_name": "aidevops:CreateChat",
         "condition_keys": [],
-        "description": "Grants permission to create a new chat session",
-        "resource_types": [],
+        "description": "Grants permission to create a chat",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "CreateKnowledgeItem": {
@@ -236538,18 +236814,10 @@
         "action_name": "aidevops:CreateKnowledgeItem",
         "condition_keys": [],
         "description": "Grants permission to create a new knowledge item",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
-      },
-      "CreateOneTimeLoginSession": {
-        "access_level": "Write",
-        "action_name": "aidevops:CreateOneTimeLoginSession",
-        "condition_keys": [],
-        "description": "Grants permission to generate secure one-time session for initiating off-console Application login",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236557,12 +236825,17 @@
       "DeleteAgentSpace": {
         "access_level": "Write",
         "action_name": "aidevops:DeleteAgentSpace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete agentspace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236572,18 +236845,28 @@
         "action_name": "aidevops:DeleteKnowledgeItem",
         "condition_keys": [],
         "description": "Grants permission to delete a knowledge item",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "DeregisterService": {
         "access_level": "Write",
         "action_name": "aidevops:DeregisterService",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to deregister a service",
         "resource_types": [
           {
-            "name": "ServiceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-ServiceResource"
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236593,7 +236876,12 @@
         "action_name": "aidevops:DescribeSupportLevel",
         "condition_keys": [],
         "description": "Grants permission to describe a chat for a case",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "DisableOperatorApp": {
@@ -236603,8 +236891,8 @@
         "description": "Grants permission to disable the Operator App access to the given AgentSpace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236616,12 +236904,12 @@
         "description": "Grants permission to disassociate service",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           },
           {
-            "name": "AssociationResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
+            "name": "associations*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-associations"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236631,7 +236919,12 @@
         "action_name": "aidevops:DiscoverTopology",
         "condition_keys": [],
         "description": "Grants permission to discover topology information",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "EnableOperatorApp": {
@@ -236641,8 +236934,8 @@
         "description": "Grants permission to enable the Operator App to access the given AgentSpace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236652,26 +236945,36 @@
         "action_name": "aidevops:EndChatForCase",
         "condition_keys": [],
         "description": "Grants permission to end a chat for a case",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "GetAccountUsage": {
         "access_level": "Read",
         "action_name": "aidevops:GetAccountUsage",
         "condition_keys": [],
-        "description": "Grants permission to get account usage",
+        "description": "Grants permission to retrieve account usage information",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "GetAgentSpace": {
         "access_level": "Read",
         "action_name": "aidevops:GetAgentSpace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get agentspace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236683,12 +236986,12 @@
         "description": "Grants permission to get association",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           },
           {
-            "name": "AssociationResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
+            "name": "associations*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-associations"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236698,7 +237001,12 @@
         "action_name": "aidevops:GetBacklogTask",
         "condition_keys": [],
         "description": "Grants permission to get a backlog task",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "GetKnowledgeItem": {
@@ -236706,18 +237014,23 @@
         "action_name": "aidevops:GetKnowledgeItem",
         "condition_keys": [],
         "description": "Grants permission to get a knowledge item",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
-      },
-      "GetOperatorAppTeams": {
-        "access_level": "Read",
-        "action_name": "aidevops:GetOperatorAppTeams",
-        "condition_keys": [],
-        "description": "Grants permission to enable operator auth config for any enabled auth flow",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "GetOperatorApp": {
+        "access_level": "Read",
+        "action_name": "aidevops:GetOperatorApp",
+        "condition_keys": [],
+        "description": "Grants permission to get operator auth config for any enabled auth flow",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236727,28 +237040,30 @@
         "action_name": "aidevops:GetRecommendation",
         "condition_keys": [],
         "description": "Grants permission to get a recommendation",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "GetService": {
         "access_level": "Read",
         "action_name": "aidevops:GetService",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get services",
         "resource_types": [
           {
-            "name": "ServiceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-ServiceResource"
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
           }
         ],
-        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
-      },
-      "HandleServiceRegistrationCallback": {
-        "access_level": "Read",
-        "action_name": "aidevops:HandleServiceRegistrationCallback",
-        "condition_keys": [],
-        "description": "Grants permission to handle OAuth callback from external service",
-        "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "InitiateChatForCase": {
@@ -236756,15 +237071,12 @@
         "action_name": "aidevops:InitiateChatForCase",
         "condition_keys": [],
         "description": "Grants permission to initiate a chat for a case",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
-      },
-      "InitiateServiceRegistration": {
-        "access_level": "Read",
-        "action_name": "aidevops:InitiateServiceRegistration",
-        "condition_keys": [],
-        "description": "Grants permission to initiate OAuth flow",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListAgentSpaces": {
@@ -236782,8 +237094,8 @@
         "description": "Grants permission to list associations",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236793,15 +237105,25 @@
         "action_name": "aidevops:ListBacklogTasks",
         "condition_keys": [],
         "description": "Grants permission to list backlog tasks",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListChats": {
         "access_level": "List",
         "action_name": "aidevops:ListChats",
         "condition_keys": [],
-        "description": "Grants permission to list existing chat sessions",
-        "resource_types": [],
+        "description": "Grants permission to list chats",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListExecutions": {
@@ -236809,7 +237131,12 @@
         "action_name": "aidevops:ListExecutions",
         "condition_keys": [],
         "description": "Grants permission to list executions",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListGoals": {
@@ -236817,7 +237144,12 @@
         "action_name": "aidevops:ListGoals",
         "condition_keys": [],
         "description": "Grants permission to list goals",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListJournalRecords": {
@@ -236825,7 +237157,25 @@
         "action_name": "aidevops:ListJournalRecords",
         "condition_keys": [],
         "description": "Grants permission to list journal records",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "ListKnowledgeItemVersions": {
+        "access_level": "List",
+        "action_name": "aidevops:ListKnowledgeItemVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list knowledge item versions",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListKnowledgeItems": {
@@ -236833,7 +237183,12 @@
         "action_name": "aidevops:ListKnowledgeItems",
         "condition_keys": [],
         "description": "Grants permission to list knowledge items",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListPendingMessages": {
@@ -236841,7 +237196,12 @@
         "action_name": "aidevops:ListPendingMessages",
         "condition_keys": [],
         "description": "Grants permission to list pending messages",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListRecommendations": {
@@ -236849,7 +237209,12 @@
         "action_name": "aidevops:ListRecommendations",
         "condition_keys": [],
         "description": "Grants permission to list recommendations",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "ListServices": {
@@ -236860,6 +237225,52 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "aidevops:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list tags for a resource",
+        "resource_types": [
+          {
+            "name": "agentspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
       "ListWebhooks": {
         "access_level": "List",
         "action_name": "aidevops:ListWebhooks",
@@ -236867,12 +237278,12 @@
         "description": "Grants permission to list webhooks for association",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           },
           {
-            "name": "AssociationResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
+            "name": "associations*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-associations"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236880,12 +237291,25 @@
       "RegisterService": {
         "access_level": "Write",
         "action_name": "aidevops:RegisterService",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to register specific service",
         "resource_types": [
           {
-            "name": "ServiceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-ServiceResource"
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236898,31 +237322,129 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
-      "SendChatMessage": {
+      "SendMessage": {
         "access_level": "Write",
-        "action_name": "aidevops:SendChatMessage",
+        "action_name": "aidevops:SendMessage",
         "condition_keys": [],
-        "description": "Grants permission to invoke an agent",
-        "resource_types": [],
+        "description": "Grants permission to send chat messages",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
-      "StreamMessage": {
-        "access_level": "Write",
-        "action_name": "aidevops:StreamMessage",
-        "condition_keys": [],
-        "description": "Grants permission to invoke an agent",
-        "resource_types": [],
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "aidevops:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to tag a resource",
+        "resource_types": [
+          {
+            "name": "agentspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "aidevops:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to untag a resource",
+        "resource_types": [
+          {
+            "name": "agentspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-service"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "UpdateAgentSpace": {
         "access_level": "Write",
         "action_name": "aidevops:UpdateAgentSpace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update agentspace",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236934,12 +237456,12 @@
         "description": "Grants permission to update association",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           },
           {
-            "name": "AssociationResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AssociationResource"
+            "name": "associations*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-associations"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236949,7 +237471,12 @@
         "action_name": "aidevops:UpdateBacklogTask",
         "condition_keys": [],
         "description": "Grants permission to update a task",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "UpdateGoal": {
@@ -236957,7 +237484,12 @@
         "action_name": "aidevops:UpdateGoal",
         "condition_keys": [],
         "description": "Grants permission to update a goal",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       },
       "UpdateKnowledgeItem": {
@@ -236965,18 +237497,23 @@
         "action_name": "aidevops:UpdateKnowledgeItem",
         "condition_keys": [],
         "description": "Grants permission to update a knowledge item",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
-      },
-      "UpdateOperatorAppTeams": {
-        "access_level": "Write",
-        "action_name": "aidevops:UpdateOperatorAppTeams",
-        "condition_keys": [],
-        "description": "Grants permission to update the list of teams that the Operator App is enabled for",
         "resource_types": [
           {
-            "name": "AgentSpaceResource*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-AgentSpaceResource"
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "UpdateOperatorAppIdpConfig": {
+        "access_level": "Write",
+        "action_name": "aidevops:UpdateOperatorAppIdpConfig",
+        "condition_keys": [],
+        "description": "Grants permission to update the external Identity Provider configuration for the Operator App",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
           }
         ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
@@ -236986,7 +237523,25 @@
         "action_name": "aidevops:UpdateRecommendation",
         "condition_keys": [],
         "description": "Grants permission to update a recommendation",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
+      },
+      "ValidateAwsAssociations": {
+        "access_level": "Write",
+        "action_name": "aidevops:ValidateAwsAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to validate aws association",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevopsagentservice.html#awsdevopsagentservice-agentspace"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html"
       }
     },
@@ -303802,6 +304357,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html"
       },
+      "AccessProServeTools": {
+        "access_level": "Write",
+        "action_name": "partnercentral-account-management:AccessProServeTools",
+        "condition_keys": [
+          {
+            "name": "partnercentral-account-management:ProServeRole",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentralaccountmanagement.html#awspartnercentralaccountmanagement-partnercentral-account-management_ProServeRole"
+          }
+        ],
+        "description": "Grants permission to Single Sign-On from AWS Partner Central into ProServe Tools",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html"
+      },
       "AssociatePartnerAccount": {
         "access_level": "Write",
         "action_name": "partnercentral-account-management:AssociatePartnerAccount",
@@ -313947,7 +314515,7 @@
         "access_level": "Write",
         "action_name": "securityagent:AddArtifact",
         "condition_keys": [],
-        "description": "Grants permission to add an Artifact for the given Agent Instance",
+        "description": "Grants permission to add an Artifact for the given Agent Space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -313955,19 +314523,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_AddArtifact.html"
-      },
-      "AddControl": {
-        "access_level": "Write",
-        "action_name": "securityagent:AddControl",
-        "condition_keys": [],
-        "description": "Grants permission to add a customer managed Control",
-        "resource_types": [
-          {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_AddControl.html"
       },
       "BatchDeletePentests": {
         "access_level": "Write",
@@ -313981,19 +314536,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_BatchDeletePentests.html"
-      },
-      "BatchGetAgentInstances": {
-        "access_level": "Read",
-        "action_name": "securityagent:BatchGetAgentInstances",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve multiple agent instances in a single request",
-        "resource_types": [
-          {
-            "name": "AgentInstance*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentInstance"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_BatchGetAgentInstances.html"
       },
       "BatchGetAgentSpaces": {
         "access_level": "Read",
@@ -314012,7 +314554,7 @@
         "access_level": "Read",
         "action_name": "securityagent:BatchGetArtifactMetadata",
         "condition_keys": [],
-        "description": "Grants permission to retrieve one or more Artifact Metadata records for the given Agent Instance",
+        "description": "Grants permission to retrieve one or more Artifact Metadata records for the given Agent Space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314125,23 +314667,19 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_BatchGetTasks.html"
       },
-      "CreateAgentInstance": {
-        "access_level": "Write",
-        "action_name": "securityagent:CreateAgentInstance",
-        "condition_keys": [],
-        "description": "Grants permission to create an agent instance record",
-        "resource_types": [
-          {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_CreateAgentInstance.html"
-      },
       "CreateAgentSpace": {
         "access_level": "Write",
         "action_name": "securityagent:CreateAgentSpace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an agent space record",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html"
@@ -314149,7 +314687,16 @@
       "CreateApplication": {
         "access_level": "Write",
         "action_name": "securityagent:CreateApplication",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new application",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateApplication.html"
@@ -314167,23 +314714,19 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateDesignReview.html"
       },
-      "CreateDocumentReview": {
-        "access_level": "Write",
-        "action_name": "securityagent:CreateDocumentReview",
-        "condition_keys": [],
-        "description": "Grants permission to create a document review",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_CreateDocumentReview.html"
-      },
       "CreateIntegration": {
         "access_level": "Write",
         "action_name": "securityagent:CreateIntegration",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a security testing integration",
         "resource_types": [
           {
@@ -314197,7 +314740,7 @@
         "access_level": "Write",
         "action_name": "securityagent:CreateMembership",
         "condition_keys": [],
-        "description": "Grants permission to add a single member to a agent instance with specified role",
+        "description": "Grants permission to add a single member to a agent space with specified role",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314239,8 +314782,8 @@
         "description": "Grants permission to add a customer managed Security Requirement",
         "resource_types": [
           {
-            "name": "Application*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirement.html"
@@ -314252,19 +314795,6 @@
         "description": "Grants permission to create a target domain record",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityagent/API_CreateTargetDomain.html"
-      },
-      "DeleteAgentInstance": {
-        "access_level": "Write",
-        "action_name": "securityagent:DeleteAgentInstance",
-        "condition_keys": [],
-        "description": "Grants permission to delete an agent instance record",
-        "resource_types": [
-          {
-            "name": "AgentInstance*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentInstance"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_DeleteAgentInstance.html"
       },
       "DeleteAgentSpace": {
         "access_level": "Write",
@@ -314305,19 +314835,6 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_DeleteArtifact.html"
       },
-      "DeleteControl": {
-        "access_level": "Write",
-        "action_name": "securityagent:DeleteControl",
-        "condition_keys": [],
-        "description": "Grants permission to delete a customer managed Control",
-        "resource_types": [
-          {
-            "name": "Control*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Control"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_DeleteControl.html"
-      },
       "DeleteDesignReview": {
         "access_level": "Write",
         "action_name": "securityagent:DeleteDesignReview",
@@ -314330,19 +314847,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_DeleteDesignReview.html"
-      },
-      "DeleteDocumentReview": {
-        "access_level": "Write",
-        "action_name": "securityagent:DeleteDocumentReview",
-        "condition_keys": [],
-        "description": "Grants permission to delete a document review",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_DeleteDocumentReview.html"
       },
       "DeleteIntegration": {
         "access_level": "Write",
@@ -314361,7 +314865,7 @@
         "access_level": "Write",
         "action_name": "securityagent:DeleteMembership",
         "condition_keys": [],
-        "description": "Grants permission to remove a single member associated to an agent instance",
+        "description": "Grants permission to remove a single member associated to an agent space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314377,8 +314881,8 @@
         "description": "Grants permission to delete a customer managed Security Requirement",
         "resource_types": [
           {
-            "name": "SecurityRequirement*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirement"
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_DeleteSecurityRequirement.html"
@@ -314426,7 +314930,7 @@
         "access_level": "Read",
         "action_name": "securityagent:GetArtifact",
         "condition_keys": [],
-        "description": "Grants permission to retrieve an Artifact for the given Agent Instance",
+        "description": "Grants permission to retrieve an Artifact for the given Agent Space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314447,19 +314951,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetCodeReviewTask.html"
-      },
-      "GetControl": {
-        "access_level": "Read",
-        "action_name": "securityagent:GetControl",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve a Control",
-        "resource_types": [
-          {
-            "name": "Control*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Control"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_GetControl.html"
       },
       "GetDesignReview": {
         "access_level": "Read",
@@ -314513,32 +315004,6 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetDocReviewTask.html"
       },
-      "GetDocumentReview": {
-        "access_level": "Read",
-        "action_name": "securityagent:GetDocumentReview",
-        "condition_keys": [],
-        "description": "Grants permission to get the status of the associated agent instance document review",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_GetDocumentReview.html"
-      },
-      "GetDocumentReviewArtifact": {
-        "access_level": "Read",
-        "action_name": "securityagent:GetDocumentReviewArtifact",
-        "condition_keys": [],
-        "description": "Grants permission to get document review artifact for a specific document",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_GetDocumentReviewArtifact.html"
-      },
       "GetIntegration": {
         "access_level": "Read",
         "action_name": "securityagent:GetIntegration",
@@ -314552,14 +315017,6 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetIntegration.html"
       },
-      "GetLoginSessionCredentials": {
-        "access_level": "Read",
-        "action_name": "securityagent:GetLoginSessionCredentials",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve credentials for a one time login session",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/securityagent/API_GetLoginSessionCredentials.html"
-      },
       "GetSecurityRequirement": {
         "access_level": "Read",
         "action_name": "securityagent:GetSecurityRequirement",
@@ -314567,19 +315024,11 @@
         "description": "Grants permission to retrieve a Security Requirement",
         "resource_types": [
           {
-            "name": "SecurityRequirement*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirement"
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_GetSecurityRequirement.html"
-      },
-      "HandleOneTimeLoginSession": {
-        "access_level": "Write",
-        "action_name": "securityagent:HandleOneTimeLoginSession",
-        "condition_keys": [],
-        "description": "Grants permission to process and invalidate a one time login session",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/securityagent/API_HandleOneTimeLoginSession.html"
       },
       "InitiateProviderRegistration": {
         "access_level": "Write",
@@ -314593,27 +315042,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_InitiateProviderRegistration.html"
-      },
-      "ListAgentInstanceTasks": {
-        "access_level": "List",
-        "action_name": "securityagent:ListAgentInstanceTasks",
-        "condition_keys": [],
-        "description": "Grants permission to list tasks for a specific agent instance",
-        "resource_types": [
-          {
-            "name": "AgentInstance*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentInstance"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ListAgentInstanceTasks.html"
-      },
-      "ListAgentInstances": {
-        "access_level": "List",
-        "action_name": "securityagent:ListAgentInstances",
-        "condition_keys": [],
-        "description": "Grants permission to list agent instances",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ListAgentInstances.html"
       },
       "ListAgentSpaces": {
         "access_level": "List",
@@ -314643,14 +315071,6 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_ListArtifacts.html"
-      },
-      "ListControls": {
-        "access_level": "List",
-        "action_name": "securityagent:ListControls",
-        "condition_keys": [],
-        "description": "Grants permission to list all Controls",
-        "resource_types": [],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ListControls.html"
       },
       "ListDesignReviewComments": {
         "access_level": "List",
@@ -314691,32 +315111,6 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_ListDiscoveredEndpoints.html"
       },
-      "ListDocumentReviewComments": {
-        "access_level": "List",
-        "action_name": "securityagent:ListDocumentReviewComments",
-        "condition_keys": [],
-        "description": "Grants permission to list document review comments",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ListDocumentReviewComments.html"
-      },
-      "ListDocumentReviews": {
-        "access_level": "List",
-        "action_name": "securityagent:ListDocumentReviews",
-        "condition_keys": [],
-        "description": "Grants permission to list all document reviews for the given project",
-        "resource_types": [
-          {
-            "name": "AgentSpace*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ListDocumentReviews.html"
-      },
       "ListFindings": {
         "access_level": "List",
         "action_name": "securityagent:ListFindings",
@@ -314734,7 +315128,7 @@
         "access_level": "List",
         "action_name": "securityagent:ListIntegratedResources",
         "condition_keys": [],
-        "description": "Grants permission to list integrated resources for an agent instance",
+        "description": "Grants permission to list integrated resources for an agent space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314755,7 +315149,7 @@
         "access_level": "List",
         "action_name": "securityagent:ListMemberships",
         "condition_keys": [],
-        "description": "Grants permission to list all members associated to an agent instance with pagination support",
+        "description": "Grants permission to list all members associated to an agent space with pagination support",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -314821,8 +315215,42 @@
         "action_name": "securityagent:ListSecurityRequirements",
         "condition_keys": [],
         "description": "Grants permission to list all Security Requirements",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "securityagent:ListTagsForResource",
+        "condition_keys": [],
+        "description": "Grants permission to list the tags for a resource",
+        "resource_types": [
+          {
+            "name": "AgentSpace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+          },
+          {
+            "name": "Application",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
+          },
+          {
+            "name": "Integration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Integration"
+          },
+          {
+            "name": "SecurityRequirementPack",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
+          },
+          {
+            "name": "TargetDomain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_ListTagsForResource.html"
       },
       "ListTargetDomains": {
         "access_level": "List",
@@ -314923,18 +315351,43 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_StopPentestJob.html"
       },
-      "ToggleManagedControl": {
-        "access_level": "Write",
-        "action_name": "securityagent:ToggleManagedControl",
-        "condition_keys": [],
-        "description": "Grants permission to toggle the status",
-        "resource_types": [
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "securityagent:TagResource",
+        "condition_keys": [
           {
-            "name": "Control*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Control"
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_TagKeys"
           }
         ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_ToggleManagedControl.html"
+        "description": "Grants permission to add tags to a resource",
+        "resource_types": [
+          {
+            "name": "AgentSpace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+          },
+          {
+            "name": "Application",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
+          },
+          {
+            "name": "Integration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Integration"
+          },
+          {
+            "name": "SecurityRequirementPack",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
+          },
+          {
+            "name": "TargetDomain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_TagResource.html"
       },
       "ToggleManagedSecurityRequirement": {
         "access_level": "Write",
@@ -314943,24 +315396,45 @@
         "description": "Grants permission to toggle the status of a managed Security Requirement",
         "resource_types": [
           {
-            "name": "SecurityRequirement*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirement"
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_ToggleManagedSecurityRequirement.html"
       },
-      "UpdateAgentInstance": {
-        "access_level": "Write",
-        "action_name": "securityagent:UpdateAgentInstance",
-        "condition_keys": [],
-        "description": "Grants permission to update an agent instance record",
-        "resource_types": [
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "securityagent:UntagResource",
+        "condition_keys": [
           {
-            "name": "AgentInstance*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentInstance"
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-aws_TagKeys"
           }
         ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_UpdateAgentInstance.html"
+        "description": "Grants permission to remove tags from a resource",
+        "resource_types": [
+          {
+            "name": "AgentSpace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-AgentSpace"
+          },
+          {
+            "name": "Application",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Application"
+          },
+          {
+            "name": "Integration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Integration"
+          },
+          {
+            "name": "SecurityRequirementPack",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
+          },
+          {
+            "name": "TargetDomain",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-TargetDomain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityagent/API_UntagResource.html"
       },
       "UpdateAgentSpace": {
         "access_level": "Write",
@@ -314988,19 +315462,6 @@
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_UpdateApplication.html"
       },
-      "UpdateControl": {
-        "access_level": "Write",
-        "action_name": "securityagent:UpdateControl",
-        "condition_keys": [],
-        "description": "Grants permission to update a customer managed Control",
-        "resource_types": [
-          {
-            "name": "Control*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-Control"
-          }
-        ],
-        "url": "https://docs.aws.amazon.com/securityagent/API_UpdateControl.html"
-      },
       "UpdateFinding": {
         "access_level": "Write",
         "action_name": "securityagent:UpdateFinding",
@@ -315018,7 +315479,7 @@
         "access_level": "Write",
         "action_name": "securityagent:UpdateIntegratedResources",
         "condition_keys": [],
-        "description": "Grants permission to update integrated resources for an agent instance",
+        "description": "Grants permission to update integrated resources for an agent space",
         "resource_types": [
           {
             "name": "AgentSpace*",
@@ -315047,8 +315508,8 @@
         "description": "Grants permission to update a customer managed Security Requirement",
         "resource_types": [
           {
-            "name": "SecurityRequirement*",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirement"
+            "name": "SecurityRequirementPack*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html#awssecurityagent-SecurityRequirementPack"
           }
         ],
         "url": "https://docs.aws.amazon.com/securityagent/API_UpdateSecurityRequirement.html"
@@ -333750,7 +334211,7 @@
         "condition_keys": [],
         "description": "Grants permission to delete account color setting",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/DeleteAccountColor.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_DeleteAccountColor.html"
       },
       "GetAccountColor": {
         "access_level": "Read",
@@ -333758,7 +334219,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve account color for given account",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/GetAccountColor.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountColor.html"
       },
       "GetAccountCustomizations": {
         "access_level": "Read",
@@ -333766,7 +334227,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve account customizations",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_GetAccountCustomizations.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountCustomizations.html"
       },
       "ListServices": {
         "access_level": "Read",
@@ -333774,7 +334235,7 @@
         "condition_keys": [],
         "description": "Grants permission to list available services",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_ListServices.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_ListServices.html"
       },
       "PutAccountColor": {
         "access_level": "Write",
@@ -333782,7 +334243,7 @@
         "condition_keys": [],
         "description": "Grants permission to set account color",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/PutAccountColor.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_PutAccountColor.html"
       },
       "UpdateAccountCustomizations": {
         "access_level": "Write",
@@ -333790,7 +334251,7 @@
         "condition_keys": [],
         "description": "Grants permission to update account customizations",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_UpdateAccountCustomizations.html"
+        "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_UpdateAccountCustomizations.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsuserexperiencecustomization.html",
