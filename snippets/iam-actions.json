@@ -8336,6 +8336,23 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html"
       },
+      "CreateDataAutomationLibrary": {
+        "access_level": "Write",
+        "action_name": "bedrock:CreateDataAutomationLibrary",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a Data Automation Library",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationLibrary.html"
+      },
       "CreateDataAutomationProject": {
         "access_level": "Write",
         "action_name": "bedrock:CreateDataAutomationProject",
@@ -8354,6 +8371,10 @@
           {
             "name": "blueprint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-blueprint"
+          },
+          {
+            "name": "data-automation-library",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html"
@@ -8955,6 +8976,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html"
+      },
+      "DeleteDataAutomationLibrary": {
+        "access_level": "Write",
+        "action_name": "bedrock:DeleteDataAutomationLibrary",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Data Automation Library",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteDataAutomationLibrary.html"
       },
       "DeleteDataAutomationProject": {
         "access_level": "Write",
@@ -9565,6 +9599,49 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html"
       },
+      "GetDataAutomationLibrary": {
+        "access_level": "Read",
+        "action_name": "bedrock:GetDataAutomationLibrary",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an existing Data Automation Library",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibrary.html"
+      },
+      "GetDataAutomationLibraryEntity": {
+        "access_level": "Read",
+        "action_name": "bedrock:GetDataAutomationLibraryEntity",
+        "condition_keys": [],
+        "description": "Grants permission to get a Data Automation Library entity",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryEntity.html"
+      },
+      "GetDataAutomationLibraryIngestionJob": {
+        "access_level": "Read",
+        "action_name": "bedrock:GetDataAutomationLibraryIngestionJob",
+        "condition_keys": [],
+        "description": "Grants permission to get details about a Data Automation Library ingestion job",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          },
+          {
+            "name": "data-automation-library-ingestion-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library-ingestion-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryIngestionJob.html"
+      },
       "GetDataAutomationProject": {
         "access_level": "Read",
         "action_name": "bedrock:GetDataAutomationProject",
@@ -10130,6 +10207,28 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html"
       },
+      "InvokeDataAutomationLibraryIngestionJob": {
+        "access_level": "Write",
+        "action_name": "bedrock:InvokeDataAutomationLibraryIngestionJob",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to invoke a Data Automation Library ingestion job",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_InvokeDataAutomationLibraryIngestionJob.html"
+      },
       "InvokeFlow": {
         "access_level": "Read",
         "action_name": "bedrock:InvokeFlow",
@@ -10467,6 +10566,45 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModels.html"
       },
+      "ListDataAutomationLibraries": {
+        "access_level": "List",
+        "action_name": "bedrock:ListDataAutomationLibraries",
+        "condition_keys": [],
+        "description": "Grants permission to list Data Automation Libraries",
+        "resource_types": [
+          {
+            "name": "data-automation-project",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-project"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraries.html"
+      },
+      "ListDataAutomationLibraryEntities": {
+        "access_level": "List",
+        "action_name": "bedrock:ListDataAutomationLibraryEntities",
+        "condition_keys": [],
+        "description": "Grants permission to list Data Automation Library entities",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryEntities.html"
+      },
+      "ListDataAutomationLibraryIngestionJobs": {
+        "access_level": "List",
+        "action_name": "bedrock:ListDataAutomationLibraryIngestionJobs",
+        "condition_keys": [],
+        "description": "Grants permission to list Data Automation Library ingestion jobs",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryIngestionJobs.html"
+      },
       "ListDataAutomationProjects": {
         "access_level": "List",
         "action_name": "bedrock:ListDataAutomationProjects",
@@ -10476,6 +10614,10 @@
           {
             "name": "blueprint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-blueprint"
+          },
+          {
+            "name": "data-automation-project",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-project"
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationProjects.html"
@@ -10820,6 +10962,14 @@
           {
             "name": "data-automation-invocation-job*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-invocation-job"
+          },
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          },
+          {
+            "name": "data-automation-library-ingestion-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library-ingestion-job"
           },
           {
             "name": "data-automation-project*",
@@ -11249,6 +11399,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-invocation-job"
           },
           {
+            "name": "data-automation-library",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          },
+          {
+            "name": "data-automation-library-ingestion-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library-ingestion-job"
+          },
+          {
             "name": "data-automation-project",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-project"
           },
@@ -11373,6 +11531,14 @@
           {
             "name": "data-automation-invocation-job",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-invocation-job"
+          },
+          {
+            "name": "data-automation-library",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          },
+          {
+            "name": "data-automation-library-ingestion-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library-ingestion-job"
           },
           {
             "name": "data-automation-project",
@@ -11583,6 +11749,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateCustomModelDeployment.html"
       },
+      "UpdateDataAutomationLibrary": {
+        "access_level": "Write",
+        "action_name": "bedrock:UpdateDataAutomationLibrary",
+        "condition_keys": [],
+        "description": "Grants permission to update a Data Automation Library",
+        "resource_types": [
+          {
+            "name": "data-automation-library*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-library"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationLibrary.html"
+      },
       "UpdateDataAutomationProject": {
         "access_level": "Write",
         "action_name": "bedrock:UpdateDataAutomationProject",
@@ -11596,6 +11775,10 @@
           {
             "name": "blueprint",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-blueprint"
+          },
+          {
+            "name": "data-automation-project",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-data-automation-project"
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationProject.html"
@@ -12199,6 +12382,27 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html"
       },
+      "CreateRegistry": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateRegistry",
+        "condition_keys": [],
+        "description": "Grants permission to create a new registry",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistry.html"
+      },
+      "CreateRegistryRecord": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateRegistryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to create a new registry record",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistryRecord.html"
+      },
       "CreateWorkloadIdentity": {
         "access_level": "Write",
         "action_name": "bedrock-agentcore:CreateWorkloadIdentity",
@@ -12457,6 +12661,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicyEngine.html"
+      },
+      "DeleteRegistry": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteRegistry",
+        "condition_keys": [],
+        "description": "Grants permission to delete an existing registry",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistry.html"
+      },
+      "DeleteRegistryRecord": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteRegistryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to delete an existing registry record",
+        "resource_types": [
+          {
+            "name": "registry-record*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry-record"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistryRecord.html"
       },
       "DeleteResourcePolicy": {
         "access_level": "Write",
@@ -12810,6 +13040,32 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGeneration.html"
       },
+      "GetRegistry": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetRegistry",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an existing registry",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistry.html"
+      },
+      "GetRegistryRecord": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetRegistryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an existing registry record",
+        "resource_types": [
+          {
+            "name": "registry-record*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry-record"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistryRecord.html"
+      },
       "GetResourceApiKey": {
         "access_level": "Read",
         "action_name": "bedrock-agentcore:GetResourceApiKey",
@@ -13103,6 +13359,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
       },
+      "InvokeRegistryMcp": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:InvokeRegistryMcp",
+        "condition_keys": [],
+        "description": "Grants permission to invoke an MCP operation against an existing registry",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+      },
       "ListActors": {
         "access_level": "List",
         "action_name": "bedrock-agentcore:ListActors",
@@ -13376,6 +13645,27 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerations.html"
       },
+      "ListRegistries": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListRegistries",
+        "condition_keys": [],
+        "description": "Grants permission to list existing registries",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistries.html"
+      },
+      "ListRegistryRecords": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListRegistryRecords",
+        "condition_keys": [],
+        "description": "Grants permission to list existing registry records in a registry",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistryRecords.html"
+      },
       "ListSessions": {
         "access_level": "List",
         "action_name": "bedrock-agentcore:ListSessions",
@@ -13578,6 +13868,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html"
       },
+      "SearchRegistryRecords": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:SearchRegistryRecords",
+        "condition_keys": [],
+        "description": "Grants permission to search for registry records",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SearchRegistryRecords.html"
+      },
       "SetTokenVaultCMK": {
         "access_level": "Read",
         "action_name": "bedrock-agentcore:SetTokenVaultCMK",
@@ -13718,6 +14021,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopRuntimeSession.html"
+      },
+      "SubmitRegistryRecordForApproval": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:SubmitRegistryRecordForApproval",
+        "condition_keys": [],
+        "description": "Grants permission to submit a registry record for approval",
+        "resource_types": [
+          {
+            "name": "registry-record*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry-record"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SubmitRegistryRecordForApproval.html"
       },
       "SynchronizeGatewayTargets": {
         "access_level": "Permissions management",
@@ -14060,6 +14376,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicyEngine.html"
+      },
+      "UpdateRegistry": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateRegistry",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing registry",
+        "resource_types": [
+          {
+            "name": "registry*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistry.html"
+      },
+      "UpdateRegistryRecord": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateRegistryRecord",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing registry record",
+        "resource_types": [
+          {
+            "name": "registry-record*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry-record"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecord.html"
+      },
+      "UpdateRegistryRecordStatus": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateRegistryRecordStatus",
+        "condition_keys": [],
+        "description": "Grants permission to update the status of a registry record",
+        "resource_types": [
+          {
+            "name": "registry-record*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-registry-record"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecordStatus.html"
       },
       "UpdateWorkloadIdentity": {
         "access_level": "Write",
@@ -26952,6 +27307,18 @@
           {
             "name": "observabilityadmin:CentralizationBackupRegion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationBackupRegion"
+          },
+          {
+            "name": "observabilityadmin:CentralizationRuleName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationRuleName"
+          },
+          {
+            "name": "observabilityadmin:CentralizationSourceId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationSourceId"
+          },
+          {
+            "name": "observabilityadmin:CentralizationDestinationAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationDestinationAccount"
           }
         ],
         "description": "Grants permission to create a new organization centralization rule with the specified name for the organization",
@@ -27022,6 +27389,10 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
           }
         ],
         "description": "Grants permission to create a new telemetry rule with the specified name for the account",
@@ -27044,6 +27415,10 @@
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
           }
         ],
         "description": "Grants permission to create a new organization telemetry rule with the specified name for the organization",
@@ -27058,7 +27433,12 @@
       "DeleteCentralizationRuleForOrganization": {
         "access_level": "Write",
         "action_name": "observabilityadmin:DeleteCentralizationRuleForOrganization",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:CentralizationRuleName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationRuleName"
+          }
+        ],
         "description": "Grants permission to delete an organization centralization rule with the specified name for the organization",
         "resource_types": [
           {
@@ -27123,7 +27503,12 @@
       "GetCentralizationRuleForOrganization": {
         "access_level": "Read",
         "action_name": "observabilityadmin:GetCentralizationRuleForOrganization",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:CentralizationRuleName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationRuleName"
+          }
+        ],
         "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
         "resource_types": [
           {
@@ -27220,7 +27605,12 @@
       "ListResourceTelemetry": {
         "access_level": "Read",
         "action_name": "observabilityadmin:ListResourceTelemetry",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to retrieve telemetry configurations for resources associated with the account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetry.html"
@@ -27228,7 +27618,12 @@
       "ListResourceTelemetryForOrganization": {
         "access_level": "Read",
         "action_name": "observabilityadmin:ListResourceTelemetryForOrganization",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to retrieve telemetry configurations for resources associated with accounts in the organization",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetryForOrganization.html"
@@ -27305,7 +27700,12 @@
       "StartTelemetryEvaluation": {
         "access_level": "Write",
         "action_name": "observabilityadmin:StartTelemetryEvaluation",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to start the Telemetry Config feature for the account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluation.html"
@@ -27313,7 +27713,12 @@
       "StartTelemetryEvaluationForOrganization": {
         "access_level": "Write",
         "action_name": "observabilityadmin:StartTelemetryEvaluationForOrganization",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to start the Telemetry Config feature for the organization",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluationForOrganization.html"
@@ -27437,6 +27842,18 @@
           {
             "name": "observabilityadmin:CentralizationBackupRegion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationBackupRegion"
+          },
+          {
+            "name": "observabilityadmin:CentralizationRuleName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationRuleName"
+          },
+          {
+            "name": "observabilityadmin:CentralizationSourceId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationSourceId"
+          },
+          {
+            "name": "observabilityadmin:CentralizationDestinationAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_CentralizationDestinationAccount"
           }
         ],
         "description": "Grants permission to update the specified centralization rule for the organization",
@@ -27464,7 +27881,12 @@
       "UpdateTelemetryRule": {
         "access_level": "Write",
         "action_name": "observabilityadmin:UpdateTelemetryRule",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to update the specified telemetry rule for the account",
         "resource_types": [
           {
@@ -27477,7 +27899,12 @@
       "UpdateTelemetryRuleForOrganization": {
         "access_level": "Write",
         "action_name": "observabilityadmin:UpdateTelemetryRuleForOrganization",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "observabilityadmin:TargetRegions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchobservabilityadminservice.html#amazoncloudwatchobservabilityadminservice-observabilityadmin_TargetRegions"
+          }
+        ],
         "description": "Grants permission to update the specified telemetry rule for the organization",
         "resource_types": [
           {
@@ -92144,20 +92571,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
-            "name": "ecs:propagate-tags",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
-          },
-          {
-            "name": "ecs:instance-metadata-tags-propagation",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_instance-metadata-tags-propagation"
-          },
-          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
+          },
+          {
+            "name": "ecs:instance-metadata-tags-propagation",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_instance-metadata-tags-propagation"
+          },
+          {
+            "name": "ecs:propagate-tags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
           }
         ],
         "description": "Grants permission to create a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling",
@@ -92208,12 +92635,12 @@
         "action_name": "ecs:CreateDaemon",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "aws:RequestTag/${TagKey}",
@@ -92266,12 +92693,12 @@
         "action_name": "ecs:CreateExpressGatewayService",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "aws:RequestTag/${TagKey}",
@@ -92282,14 +92709,6 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
           },
           {
-            "name": "ecs:task-definition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
-          },
-          {
-            "name": "ecs:subnet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_subnet"
-          },
-          {
             "name": "ecs:enable-ecs-managed-tags",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ecs-managed-tags"
           },
@@ -92298,8 +92717,16 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
           },
           {
+            "name": "ecs:subnet",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_subnet"
+          },
+          {
             "name": "ecs:task-cpu",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-cpu"
+          },
+          {
+            "name": "ecs:task-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
           },
           {
             "name": "ecs:task-memory",
@@ -92320,12 +92747,12 @@
         "action_name": "ecs:CreateService",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "aws:RequestTag/${TagKey}",
@@ -92336,16 +92763,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
           },
           {
+            "name": "ecs:auto-assign-public-ip",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_auto-assign-public-ip"
+          },
+          {
             "name": "ecs:capacity-provider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_capacity-provider"
           },
           {
-            "name": "ecs:task-definition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
-          },
-          {
             "name": "ecs:enable-ebs-volumes",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ebs-volumes"
+          },
+          {
+            "name": "ecs:enable-ecs-managed-tags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ecs-managed-tags"
           },
           {
             "name": "ecs:enable-execute-command",
@@ -92356,24 +92787,16 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-service-connect"
           },
           {
-            "name": "ecs:namespace",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_namespace"
-          },
-          {
             "name": "ecs:enable-vpc-lattice",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-vpc-lattice"
           },
           {
-            "name": "ecs:enable-ecs-managed-tags",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ecs-managed-tags"
+            "name": "ecs:namespace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_namespace"
           },
           {
             "name": "ecs:propagate-tags",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
-          },
-          {
-            "name": "ecs:auto-assign-public-ip",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_auto-assign-public-ip"
           },
           {
             "name": "ecs:subnet",
@@ -92382,6 +92805,10 @@
           {
             "name": "ecs:task-cpu",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-cpu"
+          },
+          {
+            "name": "ecs:task-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
           },
           {
             "name": "ecs:task-memory",
@@ -92410,12 +92837,12 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
           },
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "ecs:capacity-provider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_capacity-provider"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "ecs:service",
@@ -92511,12 +92938,12 @@
         "action_name": "ecs:DeleteDaemon",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           }
         ],
         "description": "Grants permission to delete a specified daemon within a cluster",
@@ -92551,12 +92978,12 @@
         "action_name": "ecs:DeleteExpressGatewayService",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           }
         ],
         "description": "Grants permission to delete a specified Express Gateway service",
@@ -92723,12 +93150,12 @@
         "action_name": "ecs:DescribeDaemon",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           }
         ],
         "description": "Grants permission to describe the specified daemon running in your cluster",
@@ -92745,6 +93172,10 @@
         "action_name": "ecs:DescribeDaemonDeployments",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
@@ -92759,10 +93190,6 @@
           {
             "name": "ecs:daemon",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_daemon"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to describe one or more of your daemon deployments",
@@ -92783,6 +93210,10 @@
         "action_name": "ecs:DescribeDaemonRevisions",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
@@ -92797,10 +93228,6 @@
           {
             "name": "ecs:daemon",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_daemon"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to describe one or more of your daemon revisions",
@@ -92839,12 +93266,12 @@
         "action_name": "ecs:DescribeExpressGatewayService",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           }
         ],
         "description": "Grants permission to describe the specified Express Gateway service",
@@ -92861,6 +93288,10 @@
         "action_name": "ecs:DescribeServiceDeployments",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
@@ -92875,10 +93306,6 @@
           {
             "name": "ecs:service",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_service"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to describe one or more of your service deployments",
@@ -92899,6 +93326,10 @@
         "action_name": "ecs:DescribeServiceRevisions",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
@@ -92913,10 +93344,6 @@
           {
             "name": "ecs:service",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_service"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to describe one or more of your service revisions",
@@ -93398,12 +93825,12 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "ecs:capacity-provider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_capacity-provider"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           }
         ],
         "description": "Grants permission to collect system logs from the container instances",
@@ -93530,24 +93957,24 @@
         "action_name": "ecs:RunTask",
         "condition_keys": [
           {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
-          },
-          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
           },
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "ecs:capacity-provider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_capacity-provider"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "ecs:enable-ebs-volumes",
@@ -93572,12 +93999,12 @@
         "action_name": "ecs:StartTask",
         "condition_keys": [
           {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
-          },
-          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
             "name": "aws:TagKeys",
@@ -93632,6 +94059,10 @@
         "action_name": "ecs:StopServiceDeployment",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
@@ -93646,10 +94077,6 @@
           {
             "name": "ecs:service",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_service"
-          },
-          {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to stop an ongoing service deployment",
@@ -93746,16 +94173,16 @@
         "action_name": "ecs:TagResource",
         "condition_keys": [
           {
-            "name": "aws:TagKeys",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
           },
           {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_RequestTag___TagKey_"
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_TagKeys"
           },
           {
             "name": "ecs:CreateAction",
@@ -93862,16 +94289,16 @@
         "action_name": "ecs:UpdateCapacityProvider",
         "condition_keys": [
           {
-            "name": "ecs:propagate-tags",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
             "name": "ecs:instance-metadata-tags-propagation",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_instance-metadata-tags-propagation"
           },
           {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+            "name": "ecs:propagate-tags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
           }
         ],
         "description": "Grants permission to update the specified capacity provider",
@@ -93972,12 +94399,12 @@
         "action_name": "ecs:UpdateDaemon",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "ecs:capacity-provider",
@@ -94022,16 +94449,12 @@
         "action_name": "ecs:UpdateExpressGatewayService",
         "condition_keys": [
           {
-            "name": "ecs:cluster",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
-          },
-          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
           },
           {
-            "name": "ecs:subnet",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_subnet"
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
             "name": "ecs:enable-ecs-managed-tags",
@@ -94040,6 +94463,10 @@
           {
             "name": "ecs:propagate-tags",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
+          },
+          {
+            "name": "ecs:subnet",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_subnet"
           },
           {
             "name": "ecs:task-cpu",
@@ -94064,12 +94491,16 @@
         "action_name": "ecs:UpdateService",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "ecs:cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
           },
           {
-            "name": "aws:ResourceTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+            "name": "ecs:auto-assign-public-ip",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_auto-assign-public-ip"
           },
           {
             "name": "ecs:capacity-provider",
@@ -94080,6 +94511,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ebs-volumes"
           },
           {
+            "name": "ecs:enable-ecs-managed-tags",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ecs-managed-tags"
+          },
+          {
             "name": "ecs:enable-execute-command",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-execute-command"
           },
@@ -94088,28 +94523,16 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-service-connect"
           },
           {
-            "name": "ecs:namespace",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_namespace"
-          },
-          {
-            "name": "ecs:task-definition",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
-          },
-          {
             "name": "ecs:enable-vpc-lattice",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-vpc-lattice"
           },
           {
-            "name": "ecs:enable-ecs-managed-tags",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_enable-ecs-managed-tags"
+            "name": "ecs:namespace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_namespace"
           },
           {
             "name": "ecs:propagate-tags",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_propagate-tags"
-          },
-          {
-            "name": "ecs:auto-assign-public-ip",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_auto-assign-public-ip"
           },
           {
             "name": "ecs:subnet",
@@ -94118,6 +94541,10 @@
           {
             "name": "ecs:task-cpu",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-cpu"
+          },
+          {
+            "name": "ecs:task-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
           },
           {
             "name": "ecs:task-memory",
@@ -118584,7 +119011,16 @@
       "PutAlarm": {
         "access_level": "Write",
         "action_name": "lightsail:PutAlarm",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to creates or update an alarm, and associate it with the specified metric",
         "resource_types": [
           {
@@ -118825,6 +119261,10 @@
         "description": "Grants permission to tag a resource",
         "resource_types": [
           {
+            "name": "Alarm",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Alarm"
+          },
+          {
             "name": "Bucket",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Bucket"
           },
@@ -118919,6 +119359,10 @@
         ],
         "description": "Grants permission to untag a resource",
         "resource_types": [
+          {
+            "name": "Alarm",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Alarm"
+          },
           {
             "name": "Bucket",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlightsail.html#amazonlightsail-Bucket"
@@ -166460,6 +166904,383 @@
     "serviceName": "Amazon S3 Express",
     "service_prefix": "s3express"
   },
+  "amazons3files": {
+    "actions": {
+      "ClientMount": {
+        "access_level": "Read",
+        "action_name": "s3files:ClientMount",
+        "condition_keys": [
+          {
+            "name": "s3files:AccessPointArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-s3files_AccessPointArn"
+          }
+        ],
+        "description": "Grants permission to allow an NFS client read-access to a file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+      },
+      "ClientRootAccess": {
+        "access_level": "Write",
+        "action_name": "s3files:ClientRootAccess",
+        "condition_keys": [
+          {
+            "name": "s3files:AccessPointArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-s3files_AccessPointArn"
+          }
+        ],
+        "description": "Grants permission to allow an NFS client root-access to a file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+      },
+      "ClientWrite": {
+        "access_level": "Write",
+        "action_name": "s3files:ClientWrite",
+        "condition_keys": [
+          {
+            "name": "s3files:AccessPointArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-s3files_AccessPointArn"
+          }
+        ],
+        "description": "Grants permission to allow an NFS client write-access to a file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+      },
+      "CreateAccessPoint": {
+        "access_level": "Write",
+        "action_name": "s3files:CreateAccessPoint",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_RequestTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create an access point for the specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateAccessPoint.html"
+      },
+      "CreateFileSystem": {
+        "access_level": "Write",
+        "action_name": "s3files:CreateFileSystem",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new file system",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateFileSystem.html"
+      },
+      "CreateMountTarget": {
+        "access_level": "Write",
+        "action_name": "s3files:CreateMountTarget",
+        "condition_keys": [],
+        "description": "Grants permission to create a mount target for a file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateMountTarget.html"
+      },
+      "DeleteAccessPoint": {
+        "access_level": "Write",
+        "action_name": "s3files:DeleteAccessPoint",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified access point",
+        "resource_types": [
+          {
+            "name": "access-point*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteAccessPoint.html"
+      },
+      "DeleteFileSystem": {
+        "access_level": "Write",
+        "action_name": "s3files:DeleteFileSystem",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteFileSystem.html"
+      },
+      "DeleteFileSystemPolicy": {
+        "access_level": "Permissions management",
+        "action_name": "s3files:DeleteFileSystemPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete the IAM resource policy for a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteFileSystemPolicy.html"
+      },
+      "DeleteMountTarget": {
+        "access_level": "Write",
+        "action_name": "s3files:DeleteMountTarget",
+        "condition_keys": [],
+        "description": "Grants permission to delete a specified mount target",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteMountTarget.html"
+      },
+      "GetAccessPoint": {
+        "access_level": "Read",
+        "action_name": "s3files:GetAccessPoint",
+        "condition_keys": [],
+        "description": "Grants permission to get resource information for a specified access point",
+        "resource_types": [
+          {
+            "name": "access-point*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetAccessPoint.html"
+      },
+      "GetFileSystem": {
+        "access_level": "Read",
+        "action_name": "s3files:GetFileSystem",
+        "condition_keys": [],
+        "description": "Grants permission to get resource information for a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetFileSystem.html"
+      },
+      "GetFileSystemPolicy": {
+        "access_level": "Read",
+        "action_name": "s3files:GetFileSystemPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to get the IAM resource policy for a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetFileSystemPolicy.html"
+      },
+      "GetMountTarget": {
+        "access_level": "Read",
+        "action_name": "s3files:GetMountTarget",
+        "condition_keys": [],
+        "description": "Grants permission to get resource information for a specified mount target",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetMountTarget.html"
+      },
+      "GetSynchronizationConfiguration": {
+        "access_level": "Read",
+        "action_name": "s3files:GetSynchronizationConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to get a synchronization configuration for a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetSynchronizationConfiguration.html"
+      },
+      "ListAccessPoints": {
+        "access_level": "List",
+        "action_name": "s3files:ListAccessPoints",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all access points in the account",
+        "resource_types": [
+          {
+            "name": "access-point*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListAccessPoints.html"
+      },
+      "ListFileSystems": {
+        "access_level": "List",
+        "action_name": "s3files:ListFileSystems",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all file systems in the account",
+        "resource_types": [
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListFileSystems.html"
+      },
+      "ListMountTargets": {
+        "access_level": "List",
+        "action_name": "s3files:ListMountTargets",
+        "condition_keys": [],
+        "description": "Grants permission to get a paginated list of all mount targets in the account",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListMountTargets.html"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "s3files:ListTagsForResource",
+        "condition_keys": [],
+        "description": "Grants permission to list tags for a specified S3 Files resource",
+        "resource_types": [
+          {
+            "name": "access-point",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          },
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListTagsForResource.html"
+      },
+      "PutFileSystemPolicy": {
+        "access_level": "Permissions management",
+        "action_name": "s3files:PutFileSystemPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to add an IAM resource policy to a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_PutFileSystemPolicy.html"
+      },
+      "PutSynchronizationConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3files:PutSynchronizationConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to add a synchronization configuration to a specified file system",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_PutSynchronizationConfiguration.html"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "s3files:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_TagKeys"
+          },
+          {
+            "name": "s3files:CreateAction",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-s3files_CreateAction"
+          }
+        ],
+        "description": "Grants permission to tag a specified S3 Files resource",
+        "resource_types": [
+          {
+            "name": "access-point",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          },
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_TagResource.html"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "s3files:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to untag a specified S3 Files resource",
+        "resource_types": [
+          {
+            "name": "access-point",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-access-point"
+          },
+          {
+            "name": "file-system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_UntagResource.html"
+      },
+      "UpdateMountTarget": {
+        "access_level": "Write",
+        "action_name": "s3files:UpdateMountTarget",
+        "condition_keys": [],
+        "description": "Grants permission to update resource information for a specified mount target",
+        "resource_types": [
+          {
+            "name": "file-system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html#amazons3files-file-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_UpdateMountTarget.html"
+      }
+    },
+    "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3files.html",
+    "serviceName": "Amazon S3 Files",
+    "service_prefix": "s3files"
+  },
   "amazons3glacier": {
     "actions": {
       "AbortMultipartUpload": {
@@ -179833,6 +180654,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html#amazonsecuritylake-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html#amazonsecuritylake-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsecuritylake.html#amazonsecuritylake-aws_TagKeys"
           }
@@ -181443,7 +182268,16 @@
       "AllowVendedLogDeliveryForResource": {
         "access_level": "Permissions management",
         "action_name": "ses:AllowVendedLogDeliveryForResource",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to configure vended log delivery for Mail Manager resources",
         "resource_types": [
           {
@@ -181462,6 +182296,10 @@
         "action_name": "ses:CreateAddonInstance",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
           },
@@ -181475,13 +182313,22 @@
           }
         ],
         "description": "Grants permission to create an addon instance",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "addon-instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-addon-instance"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddonInstance.html"
       },
       "CreateAddonSubscription": {
         "access_level": "Write",
         "action_name": "ses:CreateAddonSubscription",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181492,13 +182339,22 @@
           }
         ],
         "description": "Grants permission to create an addon subscription",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "addon-subscription*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-addon-subscription"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddonSubscription.html"
       },
       "CreateAddressList": {
         "access_level": "Write",
         "action_name": "ses:CreateAddressList",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181509,7 +182365,12 @@
           }
         ],
         "description": "Grants permission to create an address list",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-address-list*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-address-list"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddressList.html"
       },
       "CreateAddressListImportJob": {
@@ -181535,6 +182396,10 @@
         "action_name": "ses:CreateArchive",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
           },
@@ -181544,13 +182409,26 @@
           }
         ],
         "description": "Grants permission to create an archive",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-archive*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-archive"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateArchive.html"
       },
       "CreateIngressPoint": {
         "access_level": "Write",
         "action_name": "ses:CreateIngressPoint",
         "condition_keys": [
+          {
+            "name": "ses:MailManagerIngressPointType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-ses_MailManagerIngressPointType"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181569,13 +182447,22 @@
           }
         ],
         "description": "Grants permission to create an ingress point",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-ingress-point*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-ingress-point"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateIngressPoint.html"
       },
       "CreateRelay": {
         "access_level": "Write",
         "action_name": "ses:CreateRelay",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181586,13 +182473,22 @@
           }
         ],
         "description": "Grants permission to create a SMTP relay",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-smtp-relay*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-smtp-relay"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateRelay.html"
       },
       "CreateRuleSet": {
         "access_level": "Write",
         "action_name": "ses:CreateRuleSet",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181603,13 +182499,22 @@
           }
         ],
         "description": "Grants permission to create a rule set",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-rule-set*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-rule-set"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateRuleSet.html"
       },
       "CreateTrafficPolicy": {
         "access_level": "Write",
         "action_name": "ses:CreateTrafficPolicy",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
@@ -181620,7 +182525,12 @@
           }
         ],
         "description": "Grants permission to create a traffic policy",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "mailmanager-traffic-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-mailmanager-traffic-policy"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateTrafficPolicy.html"
       },
       "DeleteAddonInstance": {
@@ -181628,8 +182538,8 @@
         "action_name": "ses:DeleteAddonInstance",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an addon instance",
@@ -181646,8 +182556,8 @@
         "action_name": "ses:DeleteAddonSubscription",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an addon subscription",
@@ -181682,8 +182592,8 @@
         "action_name": "ses:DeleteArchive",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an archive",
@@ -181700,8 +182610,8 @@
         "action_name": "ses:DeleteIngressPoint",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete an ingress point",
@@ -181718,8 +182628,8 @@
         "action_name": "ses:DeleteRelay",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete a SMTP relay",
@@ -181736,8 +182646,8 @@
         "action_name": "ses:DeleteRuleSet",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete a rule set",
@@ -181754,8 +182664,8 @@
         "action_name": "ses:DeleteTrafficPolicy",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to delete a traffic point",
@@ -181790,8 +182700,8 @@
         "action_name": "ses:GetAddonInstance",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about an addon instance",
@@ -181808,8 +182718,8 @@
         "action_name": "ses:GetAddonSubscription",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about an addon subscription",
@@ -181862,8 +182772,8 @@
         "action_name": "ses:GetArchive",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about an archive",
@@ -181878,7 +182788,12 @@
       "GetArchiveExport": {
         "access_level": "Read",
         "action_name": "ses:GetArchiveExport",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about an archive export",
         "resource_types": [
           {
@@ -181891,7 +182806,12 @@
       "GetArchiveMessage": {
         "access_level": "Read",
         "action_name": "ses:GetArchiveMessage",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve archived message",
         "resource_types": [
           {
@@ -181904,7 +182824,12 @@
       "GetArchiveMessageContent": {
         "access_level": "Read",
         "action_name": "ses:GetArchiveMessageContent",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve archived message content",
         "resource_types": [
           {
@@ -181917,7 +182842,12 @@
       "GetArchiveSearch": {
         "access_level": "Read",
         "action_name": "ses:GetArchiveSearch",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about a search",
         "resource_types": [
           {
@@ -181930,7 +182860,12 @@
       "GetArchiveSearchResults": {
         "access_level": "Read",
         "action_name": "ses:GetArchiveSearchResults",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to get information about search results",
         "resource_types": [
           {
@@ -181945,8 +182880,8 @@
         "action_name": "ses:GetIngressPoint",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about an ingress point",
@@ -181981,8 +182916,8 @@
         "action_name": "ses:GetRelay",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about a SMTP relay",
@@ -181999,8 +182934,8 @@
         "action_name": "ses:GetRuleSet",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about a rule set",
@@ -182017,8 +182952,8 @@
         "action_name": "ses:GetTrafficPolicy",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to get information about a traffic policy",
@@ -182222,7 +183157,12 @@
       "StartArchiveExport": {
         "access_level": "Write",
         "action_name": "ses:StartArchiveExport",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to start an archive export",
         "resource_types": [
           {
@@ -182235,7 +183175,12 @@
       "StartArchiveSearch": {
         "access_level": "Write",
         "action_name": "ses:StartArchiveSearch",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to start an archive search",
         "resource_types": [
           {
@@ -182266,7 +183211,12 @@
       "StopArchiveExport": {
         "access_level": "Write",
         "action_name": "ses:StopArchiveExport",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to stop archive export",
         "resource_types": [
           {
@@ -182279,7 +183229,12 @@
       "StopArchiveSearch": {
         "access_level": "Write",
         "action_name": "ses:StopArchiveSearch",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to stop archive search",
         "resource_types": [
           {
@@ -182390,8 +183345,8 @@
         "action_name": "ses:UpdateArchive",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update an archive",
@@ -182408,8 +183363,8 @@
         "action_name": "ses:UpdateIngressPoint",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           },
           {
             "name": "ses:MailManagerTrafficPolicyArn",
@@ -182434,8 +183389,8 @@
         "action_name": "ses:UpdateRelay",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update a SMTP relay",
@@ -182452,8 +183407,8 @@
         "action_name": "ses:UpdateRuleSet",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update a rule set",
@@ -182470,8 +183425,8 @@
         "action_name": "ses:UpdateTrafficPolicy",
         "condition_keys": [
           {
-            "name": "aws:RequestTag/${TagKey}",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_RequestTag___TagKey_"
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservice-mailmanager.html#amazonsimpleemailservice-mailmanager-aws_ResourceTag___TagKey_"
           }
         ],
         "description": "Grants permission to update a traffic policy",
@@ -194145,6 +195100,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_GetAccountLink.html"
       },
+      "GetTroubleshootingRecommendation": {
+        "access_level": "Read",
+        "action_name": "workspaces:GetTroubleshootingRecommendation",
+        "condition_keys": [],
+        "description": "Grants permission to get troubleshooting recommendations",
+        "resource_types": [
+          {
+            "name": "workspaceid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-workspaceid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
+      },
       "ImportClientBranding": {
         "access_level": "Write",
         "action_name": "workspaces:ImportClientBranding",
@@ -194174,6 +195142,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html"
       },
+      "InvokeTroubleshootingInvestigation": {
+        "access_level": "Read",
+        "action_name": "workspaces:InvokeTroubleshootingInvestigation",
+        "condition_keys": [],
+        "description": "Grants permission to invoke troubleshooting investigation",
+        "resource_types": [
+          {
+            "name": "workspaceid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-workspaceid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
+      },
       "ListAccountLinks": {
         "access_level": "List",
         "action_name": "workspaces:ListAccountLinks",
@@ -194189,6 +195170,19 @@
         "description": "Grants permission to list the available CIDR ranges for enabling Bring Your Own License (BYOL) for WorkSpaces accounts",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html"
+      },
+      "ListTroubleshootingRecommendations": {
+        "access_level": "Read",
+        "action_name": "workspaces:ListTroubleshootingRecommendations",
+        "condition_keys": [],
+        "description": "Grants permission to list troubleshooting recommendations",
+        "resource_types": [
+          {
+            "name": "workspaceid*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html#amazonworkspaces-workspaceid"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
       },
       "MigrateWorkspace": {
         "access_level": "Write",
@@ -235548,6 +236542,19 @@
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitor.html"
       },
+      "GetMonitorSettings": {
+        "access_level": "Read",
+        "action_name": "deadline:GetMonitorSettings",
+        "condition_keys": [],
+        "description": "Grants permission to get settings for a monitor",
+        "resource_types": [
+          {
+            "name": "monitor*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitorSettings.html"
+      },
       "GetQueue": {
         "access_level": "Read",
         "action_name": "deadline:GetQueue",
@@ -236435,6 +237442,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateMonitor.html"
+      },
+      "UpdateMonitorSettings": {
+        "access_level": "Write",
+        "action_name": "deadline:UpdateMonitorSettings",
+        "condition_keys": [],
+        "description": "Grants permission to update settings for a monitor",
+        "resource_types": [
+          {
+            "name": "monitor*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeadlinecloud.html#awsdeadlinecloud-monitor"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateMonitorSettings.html"
       },
       "UpdateQueue": {
         "access_level": "Write",
@@ -259654,6 +260674,14 @@
         "description": "Grants permission to retrieve all workflows",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListWorkflows"
+      },
+      "ManagedConnector": {
+        "access_level": "Permissions management",
+        "action_name": "glue:ManagedConnector",
+        "condition_keys": [],
+        "description": "Grants permission to use Glue managed connectors to query data",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations"
       },
       "ModifyIntegration": {
         "access_level": "Write",
@@ -294254,6 +295282,84 @@
   },
   "awsmarketplacediscovery": {
     "actions": {
+      "GetListing": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetListing",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a listing",
+        "resource_types": [
+          {
+            "name": "Listing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Listing"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "GetOffer": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetOffer",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about an offer",
+        "resource_types": [
+          {
+            "name": "Offer*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Offer"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "GetOfferSet": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetOfferSet",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about an offer set",
+        "resource_types": [
+          {
+            "name": "OfferSet*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-OfferSet"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "GetOfferTerms": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetOfferTerms",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve terms for an offer",
+        "resource_types": [
+          {
+            "name": "Offer*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Offer"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "GetProduct": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetProduct",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a product",
+        "resource_types": [
+          {
+            "name": "Product*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Product"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "ListFulfillmentOptions": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:ListFulfillmentOptions",
+        "condition_keys": [],
+        "description": "Grants permission to list fulfillment options for a product",
+        "resource_types": [
+          {
+            "name": "Product*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Product"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
       "ListPrivateListings": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListPrivateListings",
@@ -294261,6 +295367,45 @@
         "description": "Grants permission to users to list their private offers",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-offers-page.html"
+      },
+      "ListPurchaseOptions": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:ListPurchaseOptions",
+        "condition_keys": [],
+        "description": "Grants permission to list purchase options available to the buyer",
+        "resource_types": [
+          {
+            "name": "PurchaseOption*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-PurchaseOption"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "SearchFacets": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:SearchFacets",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve facet values for filtering listings",
+        "resource_types": [
+          {
+            "name": "Listing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Listing"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
+      },
+      "SearchListings": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:SearchListings",
+        "condition_keys": [],
+        "description": "Grants permission to search for product listings",
+        "resource_types": [
+          {
+            "name": "Listing*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html#awsmarketplacediscovery-Listing"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html",
@@ -334676,6 +335821,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransform.html#awstransform-connector"
           }
         ],
+        "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+      },
+      "GetWebAppUrl": {
+        "access_level": "Read",
+        "action_name": "transform:GetWebAppUrl",
+        "condition_keys": [],
+        "description": "Grants permission to invoke GetWebAppUrl on AWS Transform",
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
       },
       "ListAgents": {
