@@ -23425,6 +23425,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html"
       },
+      "GetOTelEnrichment": {
+        "access_level": "Read",
+        "action_name": "cloudwatch:GetOTelEnrichment",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the status of OTel Enrichment of vended metrics for PromQL querying",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+      },
       "GetService": {
         "access_level": "Read",
         "action_name": "cloudwatch:GetService",
@@ -23802,6 +23810,14 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartMetricStreams.html"
       },
+      "StartOTelEnrichment": {
+        "access_level": "Write",
+        "action_name": "cloudwatch:StartOTelEnrichment",
+        "condition_keys": [],
+        "description": "Grants permission to enable OTel Enrichment of vended metrics for PromQL querying",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+      },
       "StopMetricStreams": {
         "access_level": "Write",
         "action_name": "cloudwatch:StopMetricStreams",
@@ -23814,6 +23830,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StopMetricStreams.html"
+      },
+      "StopOTelEnrichment": {
+        "access_level": "Write",
+        "action_name": "cloudwatch:StopOTelEnrichment",
+        "condition_keys": [],
+        "description": "Grants permission to disable OTel Enrichment of vended metrics for PromQL querying",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -133258,6 +133282,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteVpcEndpoint.html"
       },
+      "DeregisterCapability": {
+        "access_level": "Write",
+        "action_name": "es:DeregisterCapability",
+        "condition_keys": [],
+        "description": "Grants permission to deregister a capability from an OpenSearch Application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeregisterCapability.html"
+      },
       "DescribeDomain": {
         "access_level": "Read",
         "action_name": "es:DescribeDomain",
@@ -133640,6 +133677,19 @@
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetApplication.html"
       },
+      "GetCapability": {
+        "access_level": "Read",
+        "action_name": "es:GetCapability",
+        "condition_keys": [],
+        "description": "Grants permission to get a registered capability for an OpenSearch Application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetCapability.html"
+      },
       "GetCompatibleElasticsearchVersions": {
         "access_level": "List",
         "action_name": "es:GetCompatibleElasticsearchVersions",
@@ -133986,6 +134036,19 @@
         ],
         "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PutDefaultApplicationSetting.html"
       },
+      "RegisterCapability": {
+        "access_level": "Write",
+        "action_name": "es:RegisterCapability",
+        "condition_keys": [],
+        "description": "Grants permission to register a capability for an OpenSearch Application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html#amazonopensearchservice-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RegisterCapability.html"
+      },
       "RejectInboundConnection": {
         "access_level": "Write",
         "action_name": "es:RejectInboundConnection",
@@ -134252,12 +134315,25 @@
       "CreateBatchInferenceJob": {
         "access_level": "Write",
         "action_name": "personalize:CreateBatchInferenceJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a batch inference job",
         "resource_types": [
           {
             "name": "batchInferenceJob*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchInferenceJob"
+          },
+          {
+            "name": "solution*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
           }
         ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchInferenceJob.html"
@@ -134265,7 +134341,16 @@
       "CreateBatchSegmentJob": {
         "access_level": "Write",
         "action_name": "personalize:CreateBatchSegmentJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a batch segment job",
         "resource_types": [
           {
@@ -134278,12 +134363,25 @@
       "CreateCampaign": {
         "access_level": "Write",
         "action_name": "personalize:CreateCampaign",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a campaign",
         "resource_types": [
           {
             "name": "campaign*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-campaign"
+          },
+          {
+            "name": "solution*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
           }
         ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html"
@@ -134291,12 +134389,25 @@
       "CreateDataDeletionJob": {
         "access_level": "Write",
         "action_name": "personalize:CreateDataDeletionJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a data deletion job",
         "resource_types": [
           {
             "name": "dataDeletionJob*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataDeletionJob"
+          },
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
           }
         ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html"
@@ -134317,12 +134428,25 @@
       "CreateDataset": {
         "access_level": "Write",
         "action_name": "personalize:CreateDataset",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a dataset",
         "resource_types": [
           {
             "name": "dataset*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
           }
         ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html"
@@ -134330,9 +134454,22 @@
       "CreateDatasetExportJob": {
         "access_level": "Write",
         "action_name": "personalize:CreateDatasetExportJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a dataset export job",
         "resource_types": [
+          {
+            "name": "dataset*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
           {
             "name": "datasetExportJob*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetExportJob"
@@ -134343,7 +134480,16 @@
       "CreateDatasetGroup": {
         "access_level": "Write",
         "action_name": "personalize:CreateDatasetGroup",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a dataset group",
         "resource_types": [
           {
@@ -134356,9 +134502,22 @@
       "CreateDatasetImportJob": {
         "access_level": "Write",
         "action_name": "personalize:CreateDatasetImportJob",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a dataset import job",
         "resource_types": [
+          {
+            "name": "dataset*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
           {
             "name": "datasetImportJob*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetImportJob"
@@ -134369,9 +134528,22 @@
       "CreateEventTracker": {
         "access_level": "Write",
         "action_name": "personalize:CreateEventTracker",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create an event tracker",
         "resource_types": [
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
           {
             "name": "eventTracker*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-eventTracker"
@@ -134382,9 +134554,22 @@
       "CreateFilter": {
         "access_level": "Write",
         "action_name": "personalize:CreateFilter",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a filter",
         "resource_types": [
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
           {
             "name": "filter*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-filter"
@@ -134399,6 +134584,10 @@
         "description": "Grants permission to create a metric attribution",
         "resource_types": [
           {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
+          {
             "name": "metricAttribution*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-metricAttribution"
           }
@@ -134408,9 +134597,22 @@
       "CreateRecommender": {
         "access_level": "Write",
         "action_name": "personalize:CreateRecommender",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a recommender",
         "resource_types": [
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
           {
             "name": "recommender*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-recommender"
@@ -134434,9 +134636,22 @@
       "CreateSolution": {
         "access_level": "Write",
         "action_name": "personalize:CreateSolution",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a solution",
         "resource_types": [
+          {
+            "name": "datasetGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
           {
             "name": "solution*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
@@ -134447,7 +134662,16 @@
       "CreateSolutionVersion": {
         "access_level": "Write",
         "action_name": "personalize:CreateSolutionVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a solution version",
         "resource_types": [
           {
@@ -135035,7 +135259,56 @@
         "action_name": "personalize:ListTagsForResource",
         "condition_keys": [],
         "description": "Grants permission to list tags for a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "batchInferenceJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchInferenceJob"
+          },
+          {
+            "name": "batchSegmentJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchSegmentJob"
+          },
+          {
+            "name": "campaign",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-campaign"
+          },
+          {
+            "name": "dataDeletionJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataDeletionJob"
+          },
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
+          {
+            "name": "datasetExportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetExportJob"
+          },
+          {
+            "name": "datasetGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
+          {
+            "name": "datasetImportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetImportJob"
+          },
+          {
+            "name": "eventTracker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-eventTracker"
+          },
+          {
+            "name": "filter",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-filter"
+          },
+          {
+            "name": "recommender",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-recommender"
+          },
+          {
+            "name": "solution",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_ListTagsForResource.html"
       },
       "PutActionInteractions": {
@@ -135135,17 +135408,129 @@
       "TagResource": {
         "access_level": "Tagging",
         "action_name": "personalize:TagResource",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to tag a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "batchInferenceJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchInferenceJob"
+          },
+          {
+            "name": "batchSegmentJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchSegmentJob"
+          },
+          {
+            "name": "campaign",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-campaign"
+          },
+          {
+            "name": "dataDeletionJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataDeletionJob"
+          },
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
+          {
+            "name": "datasetExportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetExportJob"
+          },
+          {
+            "name": "datasetGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
+          {
+            "name": "datasetImportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetImportJob"
+          },
+          {
+            "name": "eventTracker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-eventTracker"
+          },
+          {
+            "name": "filter",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-filter"
+          },
+          {
+            "name": "recommender",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-recommender"
+          },
+          {
+            "name": "solution",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
         "action_name": "personalize:UntagResource",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to untag a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "batchInferenceJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchInferenceJob"
+          },
+          {
+            "name": "batchSegmentJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-batchSegmentJob"
+          },
+          {
+            "name": "campaign",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-campaign"
+          },
+          {
+            "name": "dataDeletionJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataDeletionJob"
+          },
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-dataset"
+          },
+          {
+            "name": "datasetExportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetExportJob"
+          },
+          {
+            "name": "datasetGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetGroup"
+          },
+          {
+            "name": "datasetImportJob",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-datasetImportJob"
+          },
+          {
+            "name": "eventTracker",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-eventTracker"
+          },
+          {
+            "name": "filter",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-filter"
+          },
+          {
+            "name": "recommender",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-recommender"
+          },
+          {
+            "name": "solution",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpersonalize.html#amazonpersonalize-solution"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_UntagResource.html"
       },
       "UpdateCampaign": {
@@ -189588,6 +189973,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStore.html"
       },
+      "CreatePolicyStoreAlias": {
+        "access_level": "Write",
+        "action_name": "verifiedpermissions:CreatePolicyStoreAlias",
+        "condition_keys": [],
+        "description": "Grants permission to create an alias against a policy store",
+        "resource_types": [
+          {
+            "name": "policy-store*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html#amazonverifiedpermissions-policy-store"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStoreAlias.html"
+      },
       "CreatePolicyTemplate": {
         "access_level": "Write",
         "action_name": "verifiedpermissions:CreatePolicyTemplate",
@@ -189640,6 +190038,19 @@
         ],
         "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyStore.html"
       },
+      "DeletePolicyStoreAlias": {
+        "access_level": "Write",
+        "action_name": "verifiedpermissions:DeletePolicyStoreAlias",
+        "condition_keys": [],
+        "description": "Grants permission to delete an alias for a policy store",
+        "resource_types": [
+          {
+            "name": "policy-store-alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html#amazonverifiedpermissions-policy-store-alias"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyStoreAlias.html"
+      },
       "DeletePolicyTemplate": {
         "access_level": "Write",
         "action_name": "verifiedpermissions:DeletePolicyTemplate",
@@ -189691,6 +190102,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStore.html"
+      },
+      "GetPolicyStoreAlias": {
+        "access_level": "Read",
+        "action_name": "verifiedpermissions:GetPolicyStoreAlias",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details about an alias for a policy store",
+        "resource_types": [
+          {
+            "name": "policy-store-alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html#amazonverifiedpermissions-policy-store-alias"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStoreAlias.html"
       },
       "GetPolicyTemplate": {
         "access_level": "Read",
@@ -189769,6 +190193,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html"
+      },
+      "ListPolicyStoreAliases": {
+        "access_level": "List",
+        "action_name": "verifiedpermissions:ListPolicyStoreAliases",
+        "condition_keys": [],
+        "description": "Grants permission to return a paginated list of all policy store aliases",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html"
       },
       "ListPolicyStores": {
         "access_level": "List",
@@ -211355,6 +211787,23 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_CreateDashboard.html"
       },
+      "CreateScheduledReport": {
+        "access_level": "Write",
+        "action_name": "bcm-dashboards:CreateScheduledReport",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementdashboards.html#awsbillingandcostmanagementdashboards-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementdashboards.html#awsbillingandcostmanagementdashboards-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a scheduled report",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_CreateScheduledReport.html"
+      },
       "DeleteDashboard": {
         "access_level": "Write",
         "action_name": "bcm-dashboards:DeleteDashboard",
@@ -211362,6 +211811,22 @@
         "description": "Grants permission to delete a dashboard",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_DeleteDashboard.html"
+      },
+      "DeleteScheduledReport": {
+        "access_level": "Write",
+        "action_name": "bcm-dashboards:DeleteScheduledReport",
+        "condition_keys": [],
+        "description": "Grants permission to delete a scheduled report",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_DeleteScheduledReport.html"
+      },
+      "ExecuteScheduledReport": {
+        "access_level": "Write",
+        "action_name": "bcm-dashboards:ExecuteScheduledReport",
+        "condition_keys": [],
+        "description": "Grants permission to execute a scheduled report",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ExecuteScheduledReport.html"
       },
       "GetDashboard": {
         "access_level": "Read",
@@ -211379,6 +211844,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_GetResourcePolicy.html"
       },
+      "GetScheduledReport": {
+        "access_level": "Read",
+        "action_name": "bcm-dashboards:GetScheduledReport",
+        "condition_keys": [],
+        "description": "Grants permission to get scheduled report information",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_GetScheduledReport.html"
+      },
       "ListDashboards": {
         "access_level": "Read",
         "action_name": "bcm-dashboards:ListDashboards",
@@ -211386,6 +211859,14 @@
         "description": "Grants permission to list information about all of the dashboards for a user",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ListDashboards.html"
+      },
+      "ListScheduledReports": {
+        "access_level": "List",
+        "action_name": "bcm-dashboards:ListScheduledReports",
+        "condition_keys": [],
+        "description": "Grants permission to list information about all of the scheduled reports for a user",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_ListScheduledReports.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -211432,6 +211913,14 @@
         "description": "Grants permission to update an existing dashboard",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_UpdateDashboard.html"
+      },
+      "UpdateScheduledReport": {
+        "access_level": "Write",
+        "action_name": "bcm-dashboards:UpdateScheduledReport",
+        "condition_keys": [],
+        "description": "Grants permission to update an existing scheduled report",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_bcmDashboards_UpdateScheduledReport.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbillingandcostmanagementdashboards.html",
@@ -264724,6 +265213,19 @@
         ],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_CancelRun.html"
       },
+      "CancelRunBatch": {
+        "access_level": "Write",
+        "action_name": "omics:CancelRunBatch",
+        "condition_keys": [],
+        "description": "Grants permission to cancel a batch of workflow runs",
+        "resource_types": [
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_CancelRunBatch.html"
+      },
       "CancelVariantImportJob": {
         "access_level": "Write",
         "action_name": "omics:CancelVariantImportJob",
@@ -264976,6 +265478,19 @@
         ],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_DeleteAnnotationStoreVersions.html"
       },
+      "DeleteBatch": {
+        "access_level": "Write",
+        "action_name": "omics:DeleteBatch",
+        "condition_keys": [],
+        "description": "Grants permission to delete a batch",
+        "resource_types": [
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_DeleteBatch.html"
+      },
       "DeleteConfiguration": {
         "access_level": "Write",
         "action_name": "omics:DeleteConfiguration",
@@ -265031,6 +265546,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_DeleteRun.html"
+      },
+      "DeleteRunBatch": {
+        "access_level": "Write",
+        "action_name": "omics:DeleteRunBatch",
+        "condition_keys": [],
+        "description": "Grants permission to delete a batch of workflow runs",
+        "resource_types": [
+          {
+            "name": "run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-run"
+          },
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_DeleteRunBatch.html"
       },
       "DeleteRunCache": {
         "access_level": "Write",
@@ -265168,6 +265700,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_GetAnnotationStoreVersion.html"
+      },
+      "GetBatch": {
+        "access_level": "Read",
+        "action_name": "omics:GetBatch",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve batch details and status",
+        "resource_types": [
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_GetBatch.html"
       },
       "GetConfiguration": {
         "access_level": "Read",
@@ -265485,6 +266030,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_ListAnnotationStores.html"
       },
+      "ListBatch": {
+        "access_level": "List",
+        "action_name": "omics:ListBatch",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve list of batches",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_ListBatch.html"
+      },
       "ListConfigurations": {
         "access_level": "List",
         "action_name": "omics:ListConfigurations",
@@ -265641,6 +266194,19 @@
         "description": "Grants permission to retrieve a list of workflow runs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_ListRuns.html"
+      },
+      "ListRunsInBatch": {
+        "access_level": "List",
+        "action_name": "omics:ListRunsInBatch",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve list of workflow runs in batch",
+        "resource_types": [
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_ListRunsInBatch.html"
       },
       "ListSequenceStores": {
         "access_level": "List",
@@ -265809,6 +266375,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-configuration"
           },
           {
+            "name": "runBatch",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          },
+          {
             "name": "runCache",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runCache"
           },
@@ -265822,6 +266392,44 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/omics/latest/api/API_StartRun.html"
+      },
+      "StartRunBatch": {
+        "access_level": "Write",
+        "action_name": "omics:StartRunBatch",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to start batch of workflow runs",
+        "resource_types": [
+          {
+            "name": "run*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-run"
+          },
+          {
+            "name": "runBatch*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          },
+          {
+            "name": "runCache",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runCache"
+          },
+          {
+            "name": "runGroup",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runGroup"
+          },
+          {
+            "name": "workflow",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-workflow"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/omics/latest/api/API_StartRunBatch.html"
       },
       "StartVariantImportJob": {
         "access_level": "Write",
@@ -265888,6 +266496,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-run"
           },
           {
+            "name": "runBatch",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
+          },
+          {
             "name": "runCache",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runCache"
           },
@@ -265952,6 +266564,10 @@
           {
             "name": "run",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-run"
+          },
+          {
+            "name": "runBatch",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthomics.html#awshealthomics-runBatch"
           },
           {
             "name": "runCache",
