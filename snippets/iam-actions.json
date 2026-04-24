@@ -10325,6 +10325,10 @@
           {
             "name": "provisioned-model*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-provisioned-model"
+          },
+          {
+            "name": "system-tool*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-system-tool"
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html"
@@ -10387,6 +10391,10 @@
           {
             "name": "provisioned-model*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-provisioned-model"
+          },
+          {
+            "name": "system-tool*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-system-tool"
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html"
@@ -12099,6 +12107,10 @@
           {
             "name": "bedrock-agentcore:securityGroups",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_securityGroups"
+          },
+          {
+            "name": "bedrock-agentcore:RuntimeAuthorizerType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_RuntimeAuthorizerType"
           }
         ],
         "description": "Grants permission to create a new agent runtime",
@@ -12292,6 +12304,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayTarget.html"
+      },
+      "CreateHarness": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:CreateHarness",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new harness",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarness.html"
       },
       "CreateMemory": {
         "access_level": "Write",
@@ -12575,6 +12604,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayTarget.html"
+      },
+      "DeleteHarness": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:DeleteHarness",
+        "condition_keys": [],
+        "description": "Grants permission to delete a harness",
+        "resource_types": [
+          {
+            "name": "harness*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarness.html"
       },
       "DeleteMemory": {
         "access_level": "Write",
@@ -12936,6 +12978,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayTarget.html"
+      },
+      "GetHarness": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetHarness",
+        "condition_keys": [],
+        "description": "Grants permission to get details of a harness",
+        "resource_types": [
+          {
+            "name": "harness*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarness.html"
       },
       "GetMemory": {
         "access_level": "Read",
@@ -13359,6 +13414,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
       },
+      "InvokeHarness": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:InvokeHarness",
+        "condition_keys": [],
+        "description": "Grants permission to invoke a harness",
+        "resource_types": [
+          {
+            "name": "harness*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeHarness.html"
+      },
       "InvokeRegistryMcp": {
         "access_level": "Read",
         "action_name": "bedrock-agentcore:InvokeRegistryMcp",
@@ -13525,6 +13593,14 @@
         "description": "Grants permission to list existing gateways",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGateways.html"
+      },
+      "ListHarnesses": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListHarnesses",
+        "condition_keys": [],
+        "description": "Grants permission to list harnesses",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnesses.html"
       },
       "ListMemories": {
         "access_level": "List",
@@ -13713,6 +13789,10 @@
           {
             "name": "gateway",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
+          },
+          {
+            "name": "harness",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
           },
           {
             "name": "memory",
@@ -14088,6 +14168,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
           },
           {
+            "name": "harness",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          },
+          {
             "name": "memory",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
           },
@@ -14158,6 +14242,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-gateway"
           },
           {
+            "name": "harness",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          },
+          {
             "name": "memory",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-memory"
           },
@@ -14203,6 +14291,10 @@
           {
             "name": "bedrock-agentcore:securityGroups",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_securityGroups"
+          },
+          {
+            "name": "bedrock-agentcore:RuntimeAuthorizerType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-bedrock-agentcore_RuntimeAuthorizerType"
           }
         ],
         "description": "Grants permission to update an agent runtime",
@@ -14303,6 +14395,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayTarget.html"
+      },
+      "UpdateHarness": {
+        "access_level": "Write",
+        "action_name": "bedrock-agentcore:UpdateHarness",
+        "condition_keys": [],
+        "description": "Grants permission to update a harness",
+        "resource_types": [
+          {
+            "name": "harness*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-harness"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarness.html"
       },
       "UpdateMemory": {
         "access_level": "Write",
@@ -42915,6 +43020,19 @@
         ],
         "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_PutCaseEventConfiguration.html"
       },
+      "SearchAllRelatedItems": {
+        "access_level": "Read",
+        "action_name": "cases:SearchAllRelatedItems",
+        "condition_keys": [],
+        "description": "Grants permission to search for related items in the case domain",
+        "resource_types": [
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-Domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_SearchAllRelatedItems.html"
+      },
       "SearchCases": {
         "access_level": "Read",
         "action_name": "cases:SearchCases",
@@ -43109,6 +43227,27 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateLayout.html"
+      },
+      "UpdateRelatedItem": {
+        "access_level": "Write",
+        "action_name": "cases:UpdateRelatedItem",
+        "condition_keys": [],
+        "description": "Grants permission to update a related item associated to a case in the case domain",
+        "resource_types": [
+          {
+            "name": "Case*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-Case"
+          },
+          {
+            "name": "Domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-Domain"
+          },
+          {
+            "name": "RelatedItem*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcases.html#amazonconnectcases-RelatedItem"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateRelatedItem.html"
       },
       "UpdateTemplate": {
         "access_level": "Write",
@@ -43367,6 +43506,58 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommender.html"
+      },
+      "CreateRecommenderFilter": {
+        "access_level": "Write",
+        "action_name": "profile:CreateRecommenderFilter",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a recommender filter in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-filters*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderFilter.html"
+      },
+      "CreateRecommenderSchema": {
+        "access_level": "Write",
+        "action_name": "profile:CreateRecommenderSchema",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a recommender schema in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-schemas*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderSchema.html"
       },
       "CreateSegmentDefinition": {
         "access_level": "Write",
@@ -43641,6 +43832,40 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommender.html"
+      },
+      "DeleteRecommenderFilter": {
+        "access_level": "Write",
+        "action_name": "profile:DeleteRecommenderFilter",
+        "condition_keys": [],
+        "description": "Grants permission to delete a recommender filter in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-filters*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderFilter.html"
+      },
+      "DeleteRecommenderSchema": {
+        "access_level": "Write",
+        "action_name": "profile:DeleteRecommenderSchema",
+        "condition_keys": [],
+        "description": "Grants permission to delete a recommender schema in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-schemas*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderSchema.html"
       },
       "DeleteSegmentDefinition": {
         "access_level": "Write",
@@ -43957,6 +44182,40 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommender.html"
+      },
+      "GetRecommenderFilter": {
+        "access_level": "Read",
+        "action_name": "profile:GetRecommenderFilter",
+        "condition_keys": [],
+        "description": "Grants permission to get recommender filter details in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-filters*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderFilter.html"
+      },
+      "GetRecommenderSchema": {
+        "access_level": "Read",
+        "action_name": "profile:GetRecommenderSchema",
+        "condition_keys": [],
+        "description": "Grants permission to get recommender schema details in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          },
+          {
+            "name": "recommender-schemas*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderSchema.html"
       },
       "GetSegmentDefinition": {
         "access_level": "Read",
@@ -44335,6 +44594,19 @@
         ],
         "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjects.html"
       },
+      "ListRecommenderFilters": {
+        "access_level": "List",
+        "action_name": "profile:ListRecommenderFilters",
+        "condition_keys": [],
+        "description": "Grants permission to list all recommender filters in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderFilters.html"
+      },
       "ListRecommenderRecipes": {
         "access_level": "List",
         "action_name": "profile:ListRecommenderRecipes",
@@ -44342,6 +44614,19 @@
         "description": "Grants permission to list all the Recommenders Recipes in the domain",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderRecipes.html"
+      },
+      "ListRecommenderSchemas": {
+        "access_level": "List",
+        "action_name": "profile:ListRecommenderSchemas",
+        "condition_keys": [],
+        "description": "Grants permission to list all recommender schemas in the domain",
+        "resource_types": [
+          {
+            "name": "domains*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-domains"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderSchemas.html"
       },
       "ListRecommenders": {
         "access_level": "List",
@@ -44419,6 +44704,14 @@
           {
             "name": "object-types",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-object-types"
+          },
+          {
+            "name": "recommender-filters",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          },
+          {
+            "name": "recommender-schemas",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
           },
           {
             "name": "recommenders",
@@ -44686,6 +44979,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-object-types"
           },
           {
+            "name": "recommender-filters",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          },
+          {
+            "name": "recommender-schemas",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
+          },
+          {
             "name": "recommenders",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommenders"
           },
@@ -44738,6 +45039,14 @@
           {
             "name": "object-types",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-object-types"
+          },
+          {
+            "name": "recommender-filters",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-filters"
+          },
+          {
+            "name": "recommender-schemas",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html#amazonconnectcustomerprofiles-recommender-schemas"
           },
           {
             "name": "recommenders",
@@ -45627,6 +45936,19 @@
         ],
         "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
       },
+      "DeleteCampaignEntryLimits": {
+        "access_level": "Write",
+        "action_name": "connect-campaigns:DeleteCampaignEntryLimits",
+        "condition_keys": [],
+        "description": "Grants permission to delete the entry limits configuration of a campaign",
+        "resource_types": [
+          {
+            "name": "campaign*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectoutboundcampaigns.html#amazonconnectoutboundcampaigns-campaign"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+      },
       "DeleteConnectInstanceConfig": {
         "access_level": "Write",
         "action_name": "connect-campaigns:DeleteConnectInstanceConfig",
@@ -45967,6 +46289,19 @@
         "action_name": "connect-campaigns:UpdateCampaignDialerConfig",
         "condition_keys": [],
         "description": "Grants permission to update the dialer configuration of a campaign",
+        "resource_types": [
+          {
+            "name": "campaign*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectoutboundcampaigns.html#amazonconnectoutboundcampaigns-campaign"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+      },
+      "UpdateCampaignEntryLimits": {
+        "access_level": "Write",
+        "action_name": "connect-campaigns:UpdateCampaignEntryLimits",
+        "condition_keys": [],
+        "description": "Grants permission to update the entry limits configuration of a campaign",
         "resource_types": [
           {
             "name": "campaign*",
@@ -46689,6 +47024,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_BatchPutLinkedTypes.html"
+      },
+      "CancelMessage": {
+        "access_level": "Write",
+        "action_name": "datazone:CancelMessage",
+        "condition_keys": [],
+        "description": "Grants permission to cancel an in-progress agent response",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_CancelMessage.html"
       },
       "CancelMetadataGenerationRun": {
         "access_level": "Write",
@@ -95290,7 +95633,12 @@
       "AssociateEncryptionConfig": {
         "access_level": "Write",
         "action_name": "eks:AssociateEncryptionConfig",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "eks:encryptionConfigProviderKeyArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_encryptionConfigProviderKeyArns"
+          }
+        ],
         "description": "Grants permission to associate encryption configuration to a cluster",
         "resource_types": [
           {
@@ -95459,6 +95807,34 @@
           {
             "name": "eks:loggingType/${type}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_loggingType___type_"
+          },
+          {
+            "name": "eks:kubernetesVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_kubernetesVersion"
+          },
+          {
+            "name": "eks:endpointPublicAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_endpointPublicAccess"
+          },
+          {
+            "name": "eks:endpointPrivateAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_endpointPrivateAccess"
+          },
+          {
+            "name": "eks:deletionProtection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_deletionProtection"
+          },
+          {
+            "name": "eks:controlPlaneScalingTier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_controlPlaneScalingTier"
+          },
+          {
+            "name": "eks:encryptionConfigProviderKeyArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_encryptionConfigProviderKeyArns"
+          },
+          {
+            "name": "eks:zonalShiftEnabled",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_zonalShiftEnabled"
           }
         ],
         "description": "Grants permission to create an Amazon EKS cluster",
@@ -96358,6 +96734,26 @@
           {
             "name": "eks:loggingType/${type}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_loggingType___type_"
+          },
+          {
+            "name": "eks:endpointPublicAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_endpointPublicAccess"
+          },
+          {
+            "name": "eks:endpointPrivateAccess",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_endpointPrivateAccess"
+          },
+          {
+            "name": "eks:deletionProtection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_deletionProtection"
+          },
+          {
+            "name": "eks:controlPlaneScalingTier",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_controlPlaneScalingTier"
+          },
+          {
+            "name": "eks:zonalShiftEnabled",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_zonalShiftEnabled"
           }
         ],
         "description": "Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)",
@@ -96372,7 +96768,12 @@
       "UpdateClusterVersion": {
         "access_level": "Write",
         "action_name": "eks:UpdateClusterVersion",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "eks:kubernetesVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_kubernetesVersion"
+          }
+        ],
         "description": "Grants permission to update the Kubernetes version of an Amazon EKS cluster",
         "resource_types": [
           {
@@ -97743,6 +98144,19 @@
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html"
       },
+      "CreateEntitlement": {
+        "access_level": "Write",
+        "action_name": "evs:CreateEntitlement",
+        "condition_keys": [],
+        "description": "Grants permission to create an entitlement in an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEntitlement.html"
+      },
       "CreateEnvironment": {
         "access_level": "Write",
         "action_name": "evs:CreateEnvironment",
@@ -97760,6 +98174,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironment.html"
       },
+      "CreateEnvironmentConnector": {
+        "access_level": "Write",
+        "action_name": "evs:CreateEnvironmentConnector",
+        "condition_keys": [],
+        "description": "Grants permission to create a connector in an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentConnector.html"
+      },
       "CreateEnvironmentHost": {
         "access_level": "Write",
         "action_name": "evs:CreateEnvironmentHost",
@@ -97773,6 +98200,19 @@
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentHost.html"
       },
+      "DeleteEntitlement": {
+        "access_level": "Write",
+        "action_name": "evs:DeleteEntitlement",
+        "condition_keys": [],
+        "description": "Grants permission to delete an entitlement from an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEntitlement.html"
+      },
       "DeleteEnvironment": {
         "access_level": "Write",
         "action_name": "evs:DeleteEnvironment",
@@ -97785,6 +98225,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironment.html"
+      },
+      "DeleteEnvironmentConnector": {
+        "access_level": "Write",
+        "action_name": "evs:DeleteEnvironmentConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete a connector from an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentConnector.html"
       },
       "DeleteEnvironmentHost": {
         "access_level": "Write",
@@ -97833,6 +98286,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetVersions.html"
       },
+      "ListEnvironmentConnectors": {
+        "access_level": "List",
+        "action_name": "evs:ListEnvironmentConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of connectors associated with an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentConnectors.html"
+      },
       "ListEnvironmentHosts": {
         "access_level": "List",
         "action_name": "evs:ListEnvironmentHosts",
@@ -97879,6 +98345,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListTagsForResource.html"
+      },
+      "ListVmEntitlements": {
+        "access_level": "List",
+        "action_name": "evs:ListVmEntitlements",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of entitlements associated with an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListVmEntitlements.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -97927,6 +98406,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateEnvironmentConnector": {
+        "access_level": "Write",
+        "action_name": "evs:UpdateEnvironmentConnector",
+        "condition_keys": [],
+        "description": "Grants permission to update a connector in an Amazon EVS environment",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_UpdateEnvironmentConnector.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html",
@@ -98472,6 +98964,45 @@
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetJobRun.html"
       },
+      "GetResourceDashboard": {
+        "access_level": "Read",
+        "action_name": "emr-serverless:GetResourceDashboard",
+        "condition_keys": [],
+        "description": "Grants permission to get the resource dashboard",
+        "resource_types": [
+          {
+            "name": "session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetResourceDashboard.html"
+      },
+      "GetSession": {
+        "access_level": "Read",
+        "action_name": "emr-serverless:GetSession",
+        "condition_keys": [],
+        "description": "Grants permission to get details about a session",
+        "resource_types": [
+          {
+            "name": "session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetSession.html"
+      },
+      "GetSessionEndpoint": {
+        "access_level": "Read",
+        "action_name": "emr-serverless:GetSessionEndpoint",
+        "condition_keys": [],
+        "description": "Grants permission to get the endpoint URL and authentication token for connecting to a session",
+        "resource_types": [
+          {
+            "name": "session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetSessionEndpoint.html"
+      },
       "ListApplications": {
         "access_level": "List",
         "action_name": "emr-serverless:ListApplications",
@@ -98506,6 +99037,19 @@
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_ListJobRuns.html"
       },
+      "ListSessions": {
+        "access_level": "List",
+        "action_name": "emr-serverless:ListSessions",
+        "condition_keys": [],
+        "description": "Grants permission to list sessions associated with an application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_ListSessions.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "emr-serverless:ListTagsForResource",
@@ -98519,6 +99063,10 @@
           {
             "name": "jobRun",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-jobRun"
+          },
+          {
+            "name": "session",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
           }
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_ListTagsForResource.html"
@@ -98558,6 +99106,28 @@
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_StartJobRun.html"
       },
+      "StartSession": {
+        "access_level": "Write",
+        "action_name": "emr-serverless:StartSession",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to start a session in an application",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-application"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_StartSession.html"
+      },
       "StopApplication": {
         "access_level": "Write",
         "action_name": "emr-serverless:StopApplication",
@@ -98593,9 +99163,26 @@
           {
             "name": "jobRun",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-jobRun"
+          },
+          {
+            "name": "session",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
           }
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_TagResource.html"
+      },
+      "TerminateSession": {
+        "access_level": "Write",
+        "action_name": "emr-serverless:TerminateSession",
+        "condition_keys": [],
+        "description": "Grants permission to terminate a session",
+        "resource_types": [
+          {
+            "name": "session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_TerminateSession.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -98615,6 +99202,10 @@
           {
             "name": "jobRun",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-jobRun"
+          },
+          {
+            "name": "session",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemrserverless.html#amazonemrserverless-session"
           }
         ],
         "url": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_UntagResource.html"
@@ -109971,6 +110562,28 @@
         ],
         "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchStartViewerSessionRevocation.html"
       },
+      "CreateAdConfiguration": {
+        "access_level": "Write",
+        "action_name": "ivs:CreateAdConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-aws_RequestTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a new ad configuration",
+        "resource_types": [
+          {
+            "name": "Ad-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateAdConfiguration.html"
+      },
       "CreateChannel": {
         "access_level": "Write",
         "action_name": "ivs:CreateChannel",
@@ -110173,6 +110786,19 @@
         ],
         "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateStreamKey.html"
       },
+      "DeleteAdConfiguration": {
+        "access_level": "Write",
+        "action_name": "ivs:DeleteAdConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete an ad configuration for the specified ARN",
+        "resource_types": [
+          {
+            "name": "Ad-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteAdConfiguration.html"
+      },
       "DeleteChannel": {
         "access_level": "Write",
         "action_name": "ivs:DeleteChannel",
@@ -110319,6 +110945,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DisconnectParticipant.html"
+      },
+      "GetAdConfiguration": {
+        "access_level": "Read",
+        "action_name": "ivs:GetAdConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to get the ad configuration for the specified ARN",
+        "resource_types": [
+          {
+            "name": "Ad-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetAdConfiguration.html"
       },
       "GetChannel": {
         "access_level": "Read",
@@ -110559,6 +111198,27 @@
         ],
         "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ImportPublicKey.html"
       },
+      "InsertAdBreak": {
+        "access_level": "Write",
+        "action_name": "ivs:InsertAdBreak",
+        "condition_keys": [],
+        "description": "Grants permission to request an ad insertion on a channel using an associated ad configuration",
+        "resource_types": [
+          {
+            "name": "Channel*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Channel"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_InsertAdBreak.html"
+      },
+      "ListAdConfigurations": {
+        "access_level": "List",
+        "action_name": "ivs:ListAdConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to get summary information about ad configurations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListAdConfigurations.html"
+      },
       "ListChannels": {
         "access_level": "List",
         "action_name": "ivs:ListChannels",
@@ -110779,6 +111439,10 @@
         "description": "Grants permission to get information about the tags for a specified ARN",
         "resource_types": [
           {
+            "name": "Ad-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          },
+          {
             "name": "Channel",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Channel"
           },
@@ -110962,6 +111626,10 @@
         "description": "Grants permission to add or update tags for a resource with a specified ARN",
         "resource_types": [
           {
+            "name": "Ad-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          },
+          {
             "name": "Channel",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Channel"
           },
@@ -111019,6 +111687,10 @@
         ],
         "description": "Grants permission to remove tags for a resource with a specified ARN",
         "resource_types": [
+          {
+            "name": "Ad-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Ad-Configuration"
+          },
           {
             "name": "Channel",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html#amazoninteractivevideoservice-Channel"
@@ -119598,7 +120270,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_AssociateTrackerConsumer.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_AssociateTrackerConsumer.html"
       },
       "BatchDeleteDevicePositionHistory": {
         "access_level": "Write",
@@ -119616,7 +120288,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchDeleteDevicePositionHistory.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchDeleteDevicePositionHistory.html"
       },
       "BatchDeleteGeofence": {
         "access_level": "Write",
@@ -119634,7 +120306,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchDeleteGeofence.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchDeleteGeofence.html"
       },
       "BatchEvaluateGeofences": {
         "access_level": "Write",
@@ -119647,7 +120319,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchEvaluateGeofences.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchEvaluateGeofences.html"
       },
       "BatchGetDevicePosition": {
         "access_level": "Read",
@@ -119665,7 +120337,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchGetDevicePosition.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchGetDevicePosition.html"
       },
       "BatchPutGeofence": {
         "access_level": "Write",
@@ -119683,7 +120355,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchPutGeofence.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchPutGeofence.html"
       },
       "BatchUpdateDevicePosition": {
         "access_level": "Write",
@@ -119701,7 +120373,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_BatchUpdateDevicePosition.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchUpdateDevicePosition.html"
       },
       "CalculateRoute": {
         "access_level": "Read",
@@ -119714,7 +120386,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRoute.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CalculateRoute.html"
       },
       "CalculateRouteMatrix": {
         "access_level": "Read",
@@ -119727,7 +120399,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRouteMatrix.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CalculateRouteMatrix.html"
+      },
+      "CancelJob": {
+        "access_level": "Write",
+        "action_name": "geo:CancelJob",
+        "condition_keys": [],
+        "description": "Grants permission to cancel a job",
+        "resource_types": [
+          {
+            "name": "job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_CancelJob.html"
       },
       "CreateGeofenceCollection": {
         "access_level": "Write",
@@ -119749,7 +120434,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreateGeofenceCollection.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_CreateGeofenceCollection.html"
       },
       "CreateKey": {
         "access_level": "Write",
@@ -119771,7 +120456,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-api-key"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreateKey.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_CreateKey.html"
       },
       "CreateMap": {
         "access_level": "Write",
@@ -119793,7 +120478,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreateMap.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreateMap.html"
       },
       "CreatePlaceIndex": {
         "access_level": "Write",
@@ -119815,7 +120500,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreatePlaceIndex.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreatePlaceIndex.html"
       },
       "CreateRouteCalculator": {
         "access_level": "Write",
@@ -119837,7 +120522,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreateRouteCalculator.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreateRouteCalculator.html"
       },
       "CreateTracker": {
         "access_level": "Write",
@@ -119859,7 +120544,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_CreateTracker.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_CreateTracker.html"
       },
       "DeleteGeofenceCollection": {
         "access_level": "Write",
@@ -119872,7 +120557,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteGeofenceCollection.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_DeleteGeofenceCollection.html"
       },
       "DeleteKey": {
         "access_level": "Write",
@@ -119885,7 +120570,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-api-key"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteKey.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_DeleteKey.html"
       },
       "DeleteMap": {
         "access_level": "Write",
@@ -119898,7 +120583,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteMap.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeleteMap.html"
       },
       "DeletePlaceIndex": {
         "access_level": "Write",
@@ -119911,7 +120596,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeletePlaceIndex.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeletePlaceIndex.html"
       },
       "DeleteRouteCalculator": {
         "access_level": "Write",
@@ -119924,7 +120609,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteRouteCalculator.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeleteRouteCalculator.html"
       },
       "DeleteTracker": {
         "access_level": "Write",
@@ -119937,7 +120622,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DeleteTracker.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DeleteTracker.html"
       },
       "DescribeGeofenceCollection": {
         "access_level": "Read",
@@ -119950,7 +120635,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeGeofenceCollection.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_DescribeGeofenceCollection.html"
       },
       "DescribeKey": {
         "access_level": "Read",
@@ -119963,7 +120648,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-api-key"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeKey.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_DescribeKey.html"
       },
       "DescribeMap": {
         "access_level": "Read",
@@ -119976,7 +120661,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeMap.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribeMap.html"
       },
       "DescribePlaceIndex": {
         "access_level": "Read",
@@ -119989,7 +120674,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribePlaceIndex.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribePlaceIndex.html"
       },
       "DescribeRouteCalculator": {
         "access_level": "Read",
@@ -120002,7 +120687,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeRouteCalculator.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribeRouteCalculator.html"
       },
       "DescribeTracker": {
         "access_level": "Read",
@@ -120015,7 +120700,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DescribeTracker.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DescribeTracker.html"
       },
       "DisassociateTrackerConsumer": {
         "access_level": "Write",
@@ -120028,7 +120713,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_DisassociateTrackerConsumer.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DisassociateTrackerConsumer.html"
       },
       "ForecastGeofenceEvents": {
         "access_level": "Read",
@@ -120041,7 +120726,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ForecastGeofenceEvents.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ForecastGeofenceEvents.html"
       },
       "GetDevicePosition": {
         "access_level": "Read",
@@ -120059,7 +120744,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetDevicePosition.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePosition.html"
       },
       "GetDevicePositionHistory": {
         "access_level": "Read",
@@ -120077,7 +120762,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetDevicePositionHistory.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePositionHistory.html"
       },
       "GetGeofence": {
         "access_level": "Read",
@@ -120095,7 +120780,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetGeofence.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GetGeofence.html"
+      },
+      "GetJob": {
+        "access_level": "Read",
+        "action_name": "geo:GetJob",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve job details",
+        "resource_types": [
+          {
+            "name": "job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_GetJob.html"
       },
       "GetMapGlyphs": {
         "access_level": "Read",
@@ -120108,7 +120806,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html"
       },
       "GetMapSprites": {
         "access_level": "Read",
@@ -120121,7 +120819,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapSprites.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapSprites.html"
       },
       "GetMapStyleDescriptor": {
         "access_level": "Read",
@@ -120134,7 +120832,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapStyleDescriptor.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapStyleDescriptor.html"
       },
       "GetMapTile": {
         "access_level": "Read",
@@ -120147,7 +120845,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapTile.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapTile.html"
       },
       "GetPlace": {
         "access_level": "Read",
@@ -120160,7 +120858,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_GetPlace.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetPlace.html"
       },
       "ListDevicePositions": {
         "access_level": "Read",
@@ -120173,7 +120871,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListDevicePositions.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListDevicePositions.html"
       },
       "ListGeofenceCollections": {
         "access_level": "List",
@@ -120186,7 +120884,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListGeofenceCollections.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ListGeofenceCollections.html"
       },
       "ListGeofences": {
         "access_level": "Read",
@@ -120199,7 +120897,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListGeofences.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ListGeofences.html"
+      },
+      "ListJobs": {
+        "access_level": "List",
+        "action_name": "geo:ListJobs",
+        "condition_keys": [],
+        "description": "Grants permission to list jobs",
+        "resource_types": [
+          {
+            "name": "job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_ListJobs.html"
       },
       "ListKeys": {
         "access_level": "List",
@@ -120212,7 +120923,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-api-key"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListKeys.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_ListKeys.html"
       },
       "ListMaps": {
         "access_level": "List",
@@ -120225,7 +120936,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListMaps.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListMaps.html"
       },
       "ListPlaceIndexes": {
         "access_level": "List",
@@ -120238,7 +120949,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListPlaceIndexes.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListPlaceIndexes.html"
       },
       "ListRouteCalculators": {
         "access_level": "List",
@@ -120251,7 +120962,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListRouteCalculators.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListRouteCalculators.html"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -120266,6 +120977,10 @@
           {
             "name": "geofence-collection",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
+          },
+          {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
           },
           {
             "name": "map",
@@ -120284,7 +120999,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListTagsForResource.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_ListTagsForResource.html"
       },
       "ListTrackerConsumers": {
         "access_level": "Read",
@@ -120297,7 +121012,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListTrackerConsumers.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListTrackerConsumers.html"
       },
       "ListTrackers": {
         "access_level": "List",
@@ -120310,7 +121025,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_ListTrackers.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListTrackers.html"
       },
       "PutGeofence": {
         "access_level": "Write",
@@ -120328,7 +121043,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_PutGeofence.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_PutGeofence.html"
       },
       "SearchPlaceIndexForPosition": {
         "access_level": "Read",
@@ -120341,7 +121056,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForPosition.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForPosition.html"
       },
       "SearchPlaceIndexForSuggestions": {
         "access_level": "Read",
@@ -120354,7 +121069,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForSuggestions.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForSuggestions.html"
       },
       "SearchPlaceIndexForText": {
         "access_level": "Read",
@@ -120367,7 +121082,29 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_SearchPlaceIndexForText.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForText.html"
+      },
+      "StartJob": {
+        "access_level": "Write",
+        "action_name": "geo:StartJob",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to start a job",
+        "resource_types": [
+          {
+            "name": "job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_StartJob.html"
       },
       "TagResource": {
         "access_level": "Tagging",
@@ -120393,6 +121130,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           },
           {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          },
+          {
             "name": "map",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           },
@@ -120409,7 +121150,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_TagResource.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_TagResource.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -120431,6 +121172,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           },
           {
+            "name": "job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-job"
+          },
+          {
             "name": "map",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           },
@@ -120447,7 +121192,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UntagResource.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_UntagResource.html"
       },
       "UpdateGeofenceCollection": {
         "access_level": "Write",
@@ -120460,7 +121205,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-geofence-collection"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateGeofenceCollection.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_UpdateGeofenceCollection.html"
       },
       "UpdateKey": {
         "access_level": "Write",
@@ -120473,7 +121218,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-api-key"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateKey.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_UpdateKey.html"
       },
       "UpdateMap": {
         "access_level": "Write",
@@ -120486,7 +121231,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-map"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateMap.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdateMap.html"
       },
       "UpdatePlaceIndex": {
         "access_level": "Write",
@@ -120499,7 +121244,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-place-index"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdatePlaceIndex.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdatePlaceIndex.html"
       },
       "UpdateRouteCalculator": {
         "access_level": "Write",
@@ -120512,7 +121257,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-route-calculator"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateRouteCalculator.html"
+        "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdateRouteCalculator.html"
       },
       "UpdateTracker": {
         "access_level": "Write",
@@ -120525,7 +121270,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_UpdateTracker.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_UpdateTracker.html"
       },
       "VerifyDevicePosition": {
         "access_level": "Read",
@@ -120543,7 +121288,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html#amazonlocation-tracker"
           }
         ],
-        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_VerifyDevicePosition.html"
+        "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_VerifyDevicePosition.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html",
@@ -166804,6 +167549,40 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html"
       },
+      "GetInventoryConfiguration": {
+        "access_level": "Read",
+        "action_name": "s3express:GetInventoryConfiguration",
+        "condition_keys": [
+          {
+            "name": "s3express:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_authType"
+          },
+          {
+            "name": "s3express:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_ResourceAccount"
+          },
+          {
+            "name": "s3express:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_signatureversion"
+          },
+          {
+            "name": "s3express:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_TlsVersion"
+          },
+          {
+            "name": "s3express:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          }
+        ],
+        "description": "Grants permission to return an inventory configuration identified by the inventory configuration ID for a S3 directory bucket",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html"
+      },
       "GetLifecycleConfiguration": {
         "access_level": "Read",
         "action_name": "s3express:GetLifecycleConfiguration",
@@ -167127,6 +167906,44 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html"
+      },
+      "PutInventoryConfiguration": {
+        "access_level": "Write",
+        "action_name": "s3express:PutInventoryConfiguration",
+        "condition_keys": [
+          {
+            "name": "s3express:authType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_authType"
+          },
+          {
+            "name": "s3express:ResourceAccount",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_ResourceAccount"
+          },
+          {
+            "name": "s3express:signatureversion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_signatureversion"
+          },
+          {
+            "name": "s3express:TlsVersion",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_TlsVersion"
+          },
+          {
+            "name": "s3express:x-amz-content-sha256",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_x-amz-content-sha256"
+          },
+          {
+            "name": "s3express:InventoryAccessibleOptionalFields",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-s3express_InventoryAccessibleOptionalFields"
+          }
+        ],
+        "description": "Grants permission to add an inventory configuration to the bucket, identified by the inventory ID",
+        "resource_types": [
+          {
+            "name": "bucket*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3express.html#amazons3express-bucket"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html"
       },
       "PutLifecycleConfiguration": {
         "access_level": "Write",
@@ -172133,6 +172950,18 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-action"
           },
           {
+            "name": "ai-benchmark-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          },
+          {
+            "name": "ai-recommendation-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          },
+          {
+            "name": "ai-workload-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          },
+          {
             "name": "algorithm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-algorithm"
           },
@@ -172517,6 +173346,72 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/partner-apps-onboard.html"
+      },
+      "CreateAIBenchmarkJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:CreateAIBenchmarkJob",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AI benchmark job",
+        "resource_types": [
+          {
+            "name": "ai-benchmark-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIBenchmarkJob.html"
+      },
+      "CreateAIRecommendationJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:CreateAIRecommendationJob",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AI recommendation job",
+        "resource_types": [
+          {
+            "name": "ai-recommendation-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIRecommendationJob.html"
+      },
+      "CreateAIWorkloadConfig": {
+        "access_level": "Write",
+        "action_name": "sagemaker:CreateAIWorkloadConfig",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AI workload configuration",
+        "resource_types": [
+          {
+            "name": "ai-workload-config*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIWorkloadConfig.html"
       },
       "CreateAction": {
         "access_level": "Write",
@@ -174036,6 +174931,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_MinimumInstanceMetadataServiceVersion"
           },
           {
+            "name": "sagemaker:NotebookInstanceLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_NotebookInstanceLifecycleConfigArns"
+          },
+          {
             "name": "sagemaker:RootAccess",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_RootAccess"
           },
@@ -174693,6 +175592,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkteam.html"
+      },
+      "DeleteAIBenchmarkJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:DeleteAIBenchmarkJob",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AI benchmark job",
+        "resource_types": [
+          {
+            "name": "ai-benchmark-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIBenchmarkJob.html"
+      },
+      "DeleteAIRecommendationJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:DeleteAIRecommendationJob",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AI recommendation job",
+        "resource_types": [
+          {
+            "name": "ai-recommendation-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIRecommendationJob.html"
+      },
+      "DeleteAIWorkloadConfig": {
+        "access_level": "Write",
+        "action_name": "sagemaker:DeleteAIWorkloadConfig",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AI workload configuration",
+        "resource_types": [
+          {
+            "name": "ai-workload-config*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIWorkloadConfig.html"
       },
       "DeleteAction": {
         "access_level": "Write",
@@ -175496,6 +176434,18 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-action"
           },
           {
+            "name": "ai-benchmark-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          },
+          {
+            "name": "ai-recommendation-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          },
+          {
+            "name": "ai-workload-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          },
+          {
             "name": "algorithm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-algorithm"
           },
@@ -175833,6 +176783,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeregisterDevices.html"
+      },
+      "DescribeAIBenchmarkJob": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeAIBenchmarkJob",
+        "condition_keys": [],
+        "description": "Grants permission to describe an AI benchmark job",
+        "resource_types": [
+          {
+            "name": "ai-benchmark-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIBenchmarkJob.html"
+      },
+      "DescribeAIRecommendationJob": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeAIRecommendationJob",
+        "condition_keys": [],
+        "description": "Grants permission to describe an AI recommendation job",
+        "resource_types": [
+          {
+            "name": "ai-recommendation-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIRecommendationJob.html"
+      },
+      "DescribeAIWorkloadConfig": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeAIWorkloadConfig",
+        "condition_keys": [],
+        "description": "Grants permission to describe an AI workload configuration",
+        "resource_types": [
+          {
+            "name": "ai-workload-config*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIWorkloadConfig.html"
       },
       "DescribeAction": {
         "access_level": "Read",
@@ -177047,6 +178036,30 @@
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointWithResponseStream.html"
       },
+      "ListAIBenchmarkJobs": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListAIBenchmarkJobs",
+        "condition_keys": [],
+        "description": "Grants permission to list AI benchmark jobs",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIBenchmarkJobs.html"
+      },
+      "ListAIRecommendationJobs": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListAIRecommendationJobs",
+        "condition_keys": [],
+        "description": "Grants permission to list AI recommendation jobs",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIRecommendationJobs.html"
+      },
+      "ListAIWorkloadConfigs": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListAIWorkloadConfigs",
+        "condition_keys": [],
+        "description": "Grants permission to list AI workload configurations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIWorkloadConfigs.html"
+      },
       "ListActions": {
         "access_level": "List",
         "action_name": "sagemaker:ListActions",
@@ -177778,6 +178791,18 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-action"
           },
           {
+            "name": "ai-benchmark-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          },
+          {
+            "name": "ai-recommendation-job",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          },
+          {
+            "name": "ai-workload-config",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-workload-config"
+          },
+          {
             "name": "algorithm",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-algorithm"
           },
@@ -178398,6 +179423,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartSession.html"
+      },
+      "StopAIBenchmarkJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:StopAIBenchmarkJob",
+        "condition_keys": [],
+        "description": "Grants permission to stop an AI benchmark job",
+        "resource_types": [
+          {
+            "name": "ai-benchmark-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-benchmark-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopAIBenchmarkJob.html"
+      },
+      "StopAIRecommendationJob": {
+        "access_level": "Write",
+        "action_name": "sagemaker:StopAIRecommendationJob",
+        "condition_keys": [],
+        "description": "Grants permission to stop an AI recommendation job",
+        "resource_types": [
+          {
+            "name": "ai-recommendation-job*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-ai-recommendation-job"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopAIRecommendationJob.html"
       },
       "StopAutoMLJob": {
         "access_level": "Write",
@@ -179230,6 +180281,10 @@
           {
             "name": "sagemaker:MinimumInstanceMetadataServiceVersion",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_MinimumInstanceMetadataServiceVersion"
+          },
+          {
+            "name": "sagemaker:NotebookInstanceLifecycleConfigArns",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-sagemaker_NotebookInstanceLifecycleConfigArns"
           },
           {
             "name": "sagemaker:RootAccess",
@@ -189982,6 +191037,10 @@
           {
             "name": "policy-store*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html#amazonverifiedpermissions-policy-store"
+          },
+          {
+            "name": "policy-store-alias*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonverifiedpermissions.html#amazonverifiedpermissions-policy-store-alias"
           }
         ],
         "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStoreAlias.html"
@@ -263518,6 +264577,19 @@
         ],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContact.html"
       },
+      "DescribeContactVersion": {
+        "access_level": "Read",
+        "action_name": "groundstation:DescribeContactVersion",
+        "condition_keys": [],
+        "description": "Grants permission to describe a specific version of a contact",
+        "resource_types": [
+          {
+            "name": "Contact*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-Contact"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContactVersion.html"
+      },
       "DescribeEphemeris": {
         "access_level": "Read",
         "action_name": "groundstation:DescribeEphemeris",
@@ -263617,6 +264689,19 @@
         ],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetSatellite.html"
       },
+      "ListAntennas": {
+        "access_level": "List",
+        "action_name": "groundstation:ListAntennas",
+        "condition_keys": [],
+        "description": "Grants permission to list antennas for a ground station",
+        "resource_types": [
+          {
+            "name": "GroundStationResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-GroundStationResource"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListAntennas.html"
+      },
       "ListConfigs": {
         "access_level": "List",
         "action_name": "groundstation:ListConfigs",
@@ -263624,6 +264709,19 @@
         "description": "Grants permission to return a list of past configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListConfigs.html"
+      },
+      "ListContactVersions": {
+        "access_level": "List",
+        "action_name": "groundstation:ListContactVersions",
+        "condition_keys": [],
+        "description": "Grants permission to list versions of a contact",
+        "resource_types": [
+          {
+            "name": "Contact*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-Contact"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContactVersions.html"
       },
       "ListContacts": {
         "access_level": "List",
@@ -263648,6 +264746,19 @@
         "description": "Grants permission to list ephemerides",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListEphemerides.html"
+      },
+      "ListGroundStationReservations": {
+        "access_level": "List",
+        "action_name": "groundstation:ListGroundStationReservations",
+        "condition_keys": [],
+        "description": "Grants permission to list reservations for a ground station",
+        "resource_types": [
+          {
+            "name": "GroundStationResource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-GroundStationResource"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStationReservations.html"
       },
       "ListGroundStations": {
         "access_level": "List",
@@ -263820,6 +264931,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateConfig.html"
+      },
+      "UpdateContact": {
+        "access_level": "Write",
+        "action_name": "groundstation:UpdateContact",
+        "condition_keys": [],
+        "description": "Grants permission to update a contact",
+        "resource_types": [
+          {
+            "name": "Contact*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html#awsgroundstation-Contact"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateContact.html"
       },
       "UpdateEphemeris": {
         "access_level": "Write",
@@ -295251,63 +296375,122 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:AcceptAgreementApprovalRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to approve an incoming subscription request (for providers who provide products that require subscription verification)",
+        "description": "Grants permission to approve an incoming subscription request (for providers who provide products that require subscription verification)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "AcceptAgreementCancellationRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:AcceptAgreementCancellationRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to accept an agreement cancellation request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to accept an agreement cancellation request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "AcceptAgreementPaymentRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:AcceptAgreementPaymentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to accept a payment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to accept a payment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "AcceptAgreementRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:AcceptAgreementRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to accept their agreement requests",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          },
+          {
+            "name": "aws-marketplace:ProductId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_ProductId"
+          }
+        ],
+        "description": "Grants permission to accept an agreement request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "BatchCreateBillingAdjustmentRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:BatchCreateBillingAdjustmentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to create a billing adjustment request against an agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to create a billing adjustment request against an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "CancelAgreement": {
         "access_level": "Write",
         "action_name": "aws-marketplace:CancelAgreement",
-        "condition_keys": [],
-        "description": "Grants permission to users to cancel their agreements",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to cancel agreements",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "CancelAgreementCancellationRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:CancelAgreementCancellationRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to withdraw a pending agreement cancellation request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to cancel a pending agreement cancellation request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "CancelAgreementPaymentRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:CancelAgreementPaymentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to cancel a payment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to cancel a payment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295315,23 +296498,41 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:CancelAgreementRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to cancel pending subscription requests for products that require subscription verification",
+        "description": "Grants permission to cancel pending subscription requests for products that require subscription verification",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "CreateAgreementRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:CreateAgreementRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to create an agreement request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          },
+          {
+            "name": "aws-marketplace:ProductId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_ProductId"
+          }
+        ],
+        "description": "Grants permission to create an agreement request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "DescribeAgreement": {
         "access_level": "Read",
         "action_name": "aws-marketplace:DescribeAgreement",
-        "condition_keys": [],
-        "description": "Grants permission to users to describe the metadata about the agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to describe the metadata about the agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295339,31 +296540,54 @@
         "access_level": "Read",
         "action_name": "aws-marketplace:GetAgreementApprovalRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to view the details of their incoming subscription requests (for providers who provide products that require subscription verification)",
+        "description": "Grants permission to view the details of incoming subscription requests (for providers who provide products that require subscription verification)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "GetAgreementCancellationRequest": {
         "access_level": "Read",
         "action_name": "aws-marketplace:GetAgreementCancellationRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to view the details of an agreement cancellation request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to view the details of an agreement cancellation request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "GetAgreementEntitlements": {
         "access_level": "Read",
         "action_name": "aws-marketplace:GetAgreementEntitlements",
-        "condition_keys": [],
-        "description": "Grants permission to users to view the entitlements associated with an agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to get the entitlements associated with an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "GetAgreementPaymentRequest": {
         "access_level": "Read",
         "action_name": "aws-marketplace:GetAgreementPaymentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to view details for a payment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to view details for a payment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295371,23 +296595,41 @@
         "access_level": "Read",
         "action_name": "aws-marketplace:GetAgreementRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to view the details of their subscription requests for data products that require subscription verification",
+        "description": "Grants permission to view the details of subscription requests for data products that require subscription verification",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "GetAgreementTerms": {
         "access_level": "List",
         "action_name": "aws-marketplace:GetAgreementTerms",
-        "condition_keys": [],
-        "description": "Grants permission to users to get a list of terms for an agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to get a list of terms for an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "GetBillingAdjustmentRequest": {
         "access_level": "Read",
         "action_name": "aws-marketplace:GetBillingAdjustmentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to view the details of a billing adjustment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to view the details of a billing adjustment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295395,39 +296637,71 @@
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementApprovalRequests",
         "condition_keys": [],
-        "description": "Grants permission to users to list their incoming subscription requests (for providers who provide products that require subscription verification)",
+        "description": "Grants permission to list incoming subscription requests (for providers who provide products that require subscription verification)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "ListAgreementCancellationRequests": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementCancellationRequests",
-        "condition_keys": [],
-        "description": "Grants permission to users to list agreement cancellation requests",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to list agreement cancellation requests",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "ListAgreementCharges": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementCharges",
-        "condition_keys": [],
-        "description": "Grants permission to users to view charges associated with their agreements",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to list charges associated with an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "ListAgreementInvoiceLineItems": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementInvoiceLineItems",
-        "condition_keys": [],
-        "description": "Grants permission to users to list invoice line items for an agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to list invoice line items for an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "ListAgreementPaymentRequests": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementPaymentRequests",
-        "condition_keys": [],
-        "description": "Grants permission to users to list payment requests for an agreement",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to list payment requests for an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295435,15 +296709,24 @@
         "access_level": "List",
         "action_name": "aws-marketplace:ListAgreementRequests",
         "condition_keys": [],
-        "description": "Grants permission to users to list their subscription requests for products that require subscription verification",
+        "description": "Grants permission to list subscription requests for products that require subscription verification",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "ListBillingAdjustmentRequests": {
         "access_level": "List",
         "action_name": "aws-marketplace:ListBillingAdjustmentRequests",
-        "condition_keys": [],
-        "description": "Grants permission to users to list billing adjustment requests",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to list billing adjustment requests",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295451,7 +296734,7 @@
         "access_level": "Read",
         "action_name": "aws-marketplace:ListEntitlementDetails",
         "condition_keys": [],
-        "description": "Grants permission to users to view details of the entitlements associated with an agreement. Note that this action is not applicable to Marketplace purchases",
+        "description": "Grants permission to list details of the entitlements associated with an agreement. Note that this action is not applicable to Marketplace purchases",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295459,47 +296742,92 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:RejectAgreementApprovalRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to decline an incoming subscription requests (for providers who provide products that require subscription verification)",
+        "description": "Grants permission to decline an incoming subscription requests (for providers who provide products that require subscription verification)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "RejectAgreementCancellationRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:RejectAgreementCancellationRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to reject an agreement cancellation request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to reject an agreement cancellation request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "RejectAgreementPaymentRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:RejectAgreementPaymentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to reject a payment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to reject a payment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "SearchAgreements": {
         "access_level": "List",
         "action_name": "aws-marketplace:SearchAgreements",
-        "condition_keys": [],
-        "description": "Grants permission to users to search their agreements",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to search agreements",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "SendAgreementCancellationRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:SendAgreementCancellationRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to send an agreement cancellation request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to send an agreement cancellation request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "SendAgreementPaymentRequest": {
         "access_level": "Write",
         "action_name": "aws-marketplace:SendAgreementPaymentRequest",
-        "condition_keys": [],
-        "description": "Grants permission to users to send payment request",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:PartyType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_PartyType"
+          },
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to send a payment request",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295507,7 +296835,7 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:Subscribe",
         "condition_keys": [],
-        "description": "Grants permission to users to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription",
+        "description": "Grants permission to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295515,7 +296843,7 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:Unsubscribe",
         "condition_keys": [],
-        "description": "Grants permission to users to remove subscriptions to AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription",
+        "description": "Grants permission to unsubscribe from AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295523,15 +296851,20 @@
         "access_level": "Write",
         "action_name": "aws-marketplace:UpdateAgreementApprovalRequest",
         "condition_keys": [],
-        "description": "Grants permission to users to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification)",
+        "description": "Grants permission to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification)",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
       "UpdatePurchaseOrders": {
         "access_level": "Write",
         "action_name": "aws-marketplace:UpdatePurchaseOrders",
-        "condition_keys": [],
-        "description": "Grants permission to users to update purchase orders for charges associated with their agreements",
+        "condition_keys": [
+          {
+            "name": "aws-marketplace:AgreementType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplace.html#awsmarketplace-aws-marketplace_AgreementType"
+          }
+        ],
+        "description": "Grants permission to update purchase orders for charges associated with an agreement",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       },
@@ -295539,7 +296872,7 @@
         "access_level": "List",
         "action_name": "aws-marketplace:ViewSubscriptions",
         "condition_keys": [],
-        "description": "Grants permission to users to see their account's subscriptions",
+        "description": "Grants permission to view account's subscriptions",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
       }
@@ -295615,6 +296948,19 @@
         ],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html"
       },
+      "GetInvoiceSubmissionTask": {
+        "access_level": "Read",
+        "action_name": "aws-marketplace:GetInvoiceSubmissionTask",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details of an existing invoice submission task",
+        "resource_types": [
+          {
+            "name": "InvoiceSubmissionTask*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-InvoiceSubmissionTask"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+      },
       "GetResourcePolicy": {
         "access_level": "Read",
         "action_name": "aws-marketplace:GetResourcePolicy",
@@ -295652,11 +296998,27 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html"
       },
+      "ListInvoiceSubmissionTasks": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:ListInvoiceSubmissionTasks",
+        "condition_keys": [],
+        "description": "Grants permission to list existing invoice submission tasks",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+      },
+      "ListPayables": {
+        "access_level": "List",
+        "action_name": "aws-marketplace:ListPayables",
+        "condition_keys": [],
+        "description": "Grants permission to list payables of the specified payable provenance",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "aws-marketplace:ListTagsForResource",
         "condition_keys": [],
-        "description": "Grants permission to list tags on an existing entity or a change set",
+        "description": "Grants permission to list tags on an existing entity, change set, or invoice submission task",
         "resource_types": [
           {
             "name": "ChangeSet",
@@ -295665,6 +297027,10 @@
           {
             "name": "Entity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-Entity"
+          },
+          {
+            "name": "InvoiceSubmissionTask",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-InvoiceSubmissionTask"
           }
         ],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListTagsForResource.html"
@@ -295712,6 +297078,28 @@
         ],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html"
       },
+      "StartInvoiceSubmissionTask": {
+        "access_level": "Write",
+        "action_name": "aws-marketplace:StartInvoiceSubmissionTask",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to initiate tasks that submit invoices for processing in AWS Marketplace",
+        "resource_types": [
+          {
+            "name": "InvoiceSubmissionTask*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-InvoiceSubmissionTask"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html"
+      },
       "TagResource": {
         "access_level": "Tagging",
         "action_name": "aws-marketplace:TagResource",
@@ -295725,7 +297113,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-aws_RequestTag___TagKey_"
           }
         ],
-        "description": "Grants permission to tag an existing entity or a change set",
+        "description": "Grants permission to add new tags to a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask",
         "resource_types": [
           {
             "name": "ChangeSet",
@@ -295734,6 +297122,10 @@
           {
             "name": "Entity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-Entity"
+          },
+          {
+            "name": "InvoiceSubmissionTask",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-InvoiceSubmissionTask"
           }
         ],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_TagResource.html"
@@ -295747,7 +297139,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to untag an existing entity or a change set",
+        "description": "Grants permission to remove tags from a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask",
         "resource_types": [
           {
             "name": "ChangeSet",
@@ -295756,6 +297148,10 @@
           {
             "name": "Entity",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-Entity"
+          },
+          {
+            "name": "InvoiceSubmissionTask",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html#awsmarketplacecatalog-InvoiceSubmissionTask"
           }
         ],
         "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_UntagResource.html"
@@ -307058,7 +308454,12 @@
       "PutSellingSystemSettings": {
         "access_level": "Write",
         "action_name": "partnercentral:PutSellingSystemSettings",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html#awspartnercentral-partnercentral_Catalog"
+          }
+        ],
         "description": "Grants permission to put selling system settings in AWS Partner Central",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutSellingSystemSettings.html"
