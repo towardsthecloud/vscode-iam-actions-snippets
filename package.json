@@ -29,23 +29,6 @@
     "actions",
     "security"
   ],
-  "badges": [
-    {
-      "url": "https://img.shields.io/visual-studio-marketplace/v/dannysteenman.iam-actions-snippets",
-      "href": "https://marketplace.visualstudio.com/items?itemName=dannysteenman.iam-actions-snippets",
-      "description": "Version"
-    },
-    {
-      "url": "https://img.shields.io/visual-studio-marketplace/i/dannysteenman.iam-actions-snippets",
-      "href": "https://marketplace.visualstudio.com/items?itemName=dannysteenman.iam-actions-snippets",
-      "description": "Installs"
-    },
-    {
-      "url": "https://img.shields.io/visual-studio-marketplace/stars/dannysteenman.iam-actions-snippets",
-      "href": "https://marketplace.visualstudio.com/items?itemName=dannysteenman.iam-actions-snippets",
-      "description": "Rating"
-    }
-  ],
   "activationEvents": [
     "onLanguage:json",
     "onLanguage:python",
