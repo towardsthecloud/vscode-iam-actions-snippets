@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Build: remove badges from README and package.json. [Danny Steenman]
+
+
+1.85.0 (2026-04-24)
+-------------------
+- Build: auto-update snippets to version: 1.85.0. [Github Actions]
+
+
 1.84.0 (2026-04-17)
 -------------------
 - Build: auto-update snippets to version: 1.84.0. [Github Actions]
