@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.86.0 (2026-05-01)
+-------------------
+- Build: auto-update snippets to version: 1.86.0. [Github Actions]
 - Build: remove badges from README and package.json. [Danny Steenman]
 
 
