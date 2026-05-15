@@ -7687,6 +7687,28 @@
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
       },
+      "CreateStream": {
+        "access_level": "Write",
+        "action_name": "dsql:CreateStream",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a Change Stream for a cluster",
+        "resource_types": [
+          {
+            "name": "Cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+      },
       "DbConnect": {
         "access_level": "Write",
         "action_name": "dsql:DbConnect",
@@ -7738,6 +7760,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html"
+      },
+      "DeleteStream": {
+        "access_level": "Write",
+        "action_name": "dsql:DeleteStream",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Change Stream",
+        "resource_types": [
+          {
+            "name": "Stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
       },
       "GetBackupJob": {
         "access_level": "Read",
@@ -7791,6 +7826,19 @@
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html"
       },
+      "GetStream": {
+        "access_level": "Read",
+        "action_name": "dsql:GetStream",
+        "condition_keys": [],
+        "description": "Grants permission to get information about a Change Stream",
+        "resource_types": [
+          {
+            "name": "Stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+      },
       "GetVpcEndpointServiceName": {
         "access_level": "Read",
         "action_name": "dsql:GetVpcEndpointServiceName",
@@ -7829,6 +7877,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListClusters.html"
       },
+      "ListStreams": {
+        "access_level": "List",
+        "action_name": "dsql:ListStreams",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of Change Streams for a cluster",
+        "resource_types": [
+          {
+            "name": "Cluster*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "dsql:ListTagsForResource",
@@ -7836,8 +7897,12 @@
         "description": "Grants permission to list all tags on an Aurora DSQL resource",
         "resource_types": [
           {
-            "name": "Cluster*",
+            "name": "Cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          },
+          {
+            "name": "Stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListTagsForResource.html"
@@ -7967,8 +8032,12 @@
         "description": "Grants permission to add tags to Aurora DSQL resources",
         "resource_types": [
           {
-            "name": "Cluster*",
+            "name": "Cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          },
+          {
+            "name": "Stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_TagResource.html"
@@ -7985,8 +8054,12 @@
         "description": "Grants permission to remove tags from Aurora DSQL resources",
         "resource_types": [
           {
-            "name": "Cluster*",
+            "name": "Cluster",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Cluster"
+          },
+          {
+            "name": "Stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UntagResource.html"
@@ -8008,6 +8081,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html"
+      },
+      "UpdateStream": {
+        "access_level": "Write",
+        "action_name": "dsql:UpdateStream",
+        "condition_keys": [],
+        "description": "Grants permission to modify Change Stream attributes",
+        "resource_types": [
+          {
+            "name": "Stream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html#amazonauroradsql-Stream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonauroradsql.html",
@@ -12521,7 +12607,16 @@
       "CreatePolicyEngine": {
         "access_level": "Write",
         "action_name": "bedrock-agentcore:CreatePolicyEngine",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a new policy engine",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html"
@@ -13474,6 +13569,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html"
       },
+      "GetPolicyEngineSummary": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetPolicyEngineSummary",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a summary of a policy engine",
+        "resource_types": [
+          {
+            "name": "policy-engine*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngineSummary.html"
+      },
       "GetPolicyGeneration": {
         "access_level": "Read",
         "action_name": "bedrock-agentcore:GetPolicyGeneration",
@@ -13490,6 +13598,40 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGeneration.html"
+      },
+      "GetPolicyGenerationSummary": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetPolicyGenerationSummary",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a summary of a policy generation request",
+        "resource_types": [
+          {
+            "name": "policy-engine*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          },
+          {
+            "name": "policy-generation*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-generation"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGenerationSummary.html"
+      },
+      "GetPolicySummary": {
+        "access_level": "Read",
+        "action_name": "bedrock-agentcore:GetPolicySummary",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a summary of a policy",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy"
+          },
+          {
+            "name": "policy-engine*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicySummary.html"
       },
       "GetRecommendation": {
         "access_level": "Read",
@@ -14231,6 +14373,14 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html"
       },
+      "ListPolicyEngineSummaries": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListPolicyEngineSummaries",
+        "condition_keys": [],
+        "description": "Grants permission to list policy engine summaries",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html"
+      },
       "ListPolicyEngines": {
         "access_level": "List",
         "action_name": "bedrock-agentcore:ListPolicyEngines",
@@ -14256,6 +14406,19 @@
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html"
       },
+      "ListPolicyGenerationSummaries": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListPolicyGenerationSummaries",
+        "condition_keys": [],
+        "description": "Grants permission to list policy generation summaries",
+        "resource_types": [
+          {
+            "name": "policy-engine*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html"
+      },
       "ListPolicyGenerations": {
         "access_level": "List",
         "action_name": "bedrock-agentcore:ListPolicyGenerations",
@@ -14268,6 +14431,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerations.html"
+      },
+      "ListPolicySummaries": {
+        "access_level": "List",
+        "action_name": "bedrock-agentcore:ListPolicySummaries",
+        "condition_keys": [],
+        "description": "Grants permission to list policy summaries within a policy engine",
+        "resource_types": [
+          {
+            "name": "policy-engine*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html"
       },
       "ListRecommendations": {
         "access_level": "List",
@@ -14369,6 +14545,10 @@
           {
             "name": "paymentcredentialprovider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-paymentcredentialprovider"
+          },
+          {
+            "name": "policy-engine",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
           },
           {
             "name": "runtime",
@@ -14798,6 +14978,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-paymentcredentialprovider"
           },
           {
+            "name": "policy-engine",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
+          },
+          {
             "name": "runtime",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-runtime"
           },
@@ -14878,6 +15062,10 @@
           {
             "name": "paymentcredentialprovider",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-paymentcredentialprovider"
+          },
+          {
+            "name": "policy-engine",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockagentcore.html#amazonbedrockagentcore-policy-engine"
           },
           {
             "name": "runtime",
@@ -21582,7 +21770,16 @@
       "CreateFunction": {
         "access_level": "Write",
         "action_name": "cloudfront:CreateFunction",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a CloudFront function",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFunction.html"
@@ -21624,7 +21821,16 @@
       "CreateKeyValueStore": {
         "access_level": "Write",
         "action_name": "cloudfront:CreateKeyValueStore",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a CloudFront KeyValueStore",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyValueStore.html"
@@ -22948,6 +23154,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-distribution-tenant"
           },
           {
+            "name": "function",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-function"
+          },
+          {
+            "name": "key-value-store",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-key-value-store"
+          },
+          {
             "name": "trust-store",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-trust-store"
           },
@@ -23057,6 +23271,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-distribution-tenant"
           },
           {
+            "name": "function",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-function"
+          },
+          {
+            "name": "key-value-store",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-key-value-store"
+          },
+          {
             "name": "streaming-distribution",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-streaming-distribution"
           },
@@ -23127,6 +23349,14 @@
           {
             "name": "distribution-tenant",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-distribution-tenant"
+          },
+          {
+            "name": "function",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-function"
+          },
+          {
+            "name": "key-value-store",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html#amazoncloudfront-key-value-store"
           },
           {
             "name": "streaming-distribution",
@@ -27050,7 +27280,16 @@
       "IntegrateWithS3Table": {
         "access_level": "Write",
         "action_name": "logs:IntegrateWithS3Table",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "logs:data_source_name",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-logs_data_source_name"
+          },
+          {
+            "name": "logs:data_source_type",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-logs_data_source_type"
+          }
+        ],
         "description": "Grants permission to deliver log events to S3 Tables",
         "resource_types": [
           {
@@ -27219,7 +27458,16 @@
       "ProcessWithPipeline": {
         "access_level": "Write",
         "action_name": "logs:ProcessWithPipeline",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "logs:data_source_name",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-logs_data_source_name"
+          },
+          {
+            "name": "logs:data_source_type",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-logs_data_source_type"
+          }
+        ],
         "description": "Grants permission to process and transform log events through pipeline transformers before storage",
         "resource_types": [
           {
@@ -49351,7 +49599,12 @@
         "action_name": "datazone:StartAccountBootstrapAction",
         "condition_keys": [],
         "description": "Grants permission to start account bootstrap action for a domain",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondatazone.html#amazondatazone-domain"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartAccountBootstrapAction.html"
       },
       "StartConversation": {
@@ -111357,6 +111610,14 @@
         "description": "Grants permission to send telemetry for an active telemetry session",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetry.html"
+      },
+      "SendTelemetryEvent": {
+        "access_level": "Write",
+        "action_name": "inspector2-telemetry:SendTelemetryEvent",
+        "condition_keys": [],
+        "description": "Grants permission to send telemetry event for a telemetry session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetryEvent.html"
       },
       "StartSession": {
         "access_level": "Write",
@@ -174007,6 +174268,19 @@
   },
   "amazonsagemaker": {
     "actions": {
+      "AccessModelPackage": {
+        "access_level": "Read",
+        "action_name": "sagemaker:AccessModelPackage",
+        "condition_keys": [],
+        "description": "Grants permission to access model package that can be used in Amazon SageMaker training or hosting services",
+        "resource_types": [
+          {
+            "name": "model-package*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-model-package"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/"
+      },
       "AddAssociation": {
         "access_level": "Write",
         "action_name": "sagemaker:AddAssociation",
@@ -213942,6 +214216,14 @@
         "action_name": "billing:GetContractInformation",
         "condition_keys": [],
         "description": "Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+      },
+      "GetCreditAllocationHistory": {
+        "access_level": "Read",
+        "action_name": "billing:GetCreditAllocationHistory",
+        "condition_keys": [],
+        "description": "Grants permission to view a credit allocation history",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
       },
@@ -319362,6 +319644,19 @@
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AcceptLink.html"
       },
+      "AssociateCertificate": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:AssociateCertificate",
+        "condition_keys": [],
+        "description": "Grants permission to associate an ACM certificate with a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AssociateCertificate.html"
+      },
       "CreateInboundExternalLink": {
         "access_level": "Write",
         "action_name": "rtbfabric:CreateInboundExternalLink",
@@ -319400,6 +319695,28 @@
         "description": "Grants permission to create a new link between RTB applications",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLink.html"
+      },
+      "CreateLinkRoutingRule": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:CreateLinkRoutingRule",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a routing rule for a link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLinkRoutingRule.html"
       },
       "CreateOutboundExternalLink": {
         "access_level": "Write",
@@ -319487,6 +319804,23 @@
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLink.html"
       },
+      "DeleteLinkRoutingRule": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DeleteLinkRoutingRule",
+        "condition_keys": [],
+        "description": "Grants permission to delete a routing rule from a link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          },
+          {
+            "name": "LinkRoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLinkRoutingRule.html"
+      },
       "DeleteOutboundExternalLink": {
         "access_level": "Write",
         "action_name": "rtbfabric:DeleteOutboundExternalLink",
@@ -319530,6 +319864,32 @@
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteResponderGateway.html"
       },
+      "DisassociateCertificate": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:DisassociateCertificate",
+        "condition_keys": [],
+        "description": "Grants permission to remove a certificate association from a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DisassociateCertificate.html"
+      },
+      "GetCertificateAssociation": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetCertificateAssociation",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details of a certificate association with a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetCertificateAssociation.html"
+      },
       "GetInboundExternalLink": {
         "access_level": "Read",
         "action_name": "rtbfabric:GetInboundExternalLink",
@@ -319559,6 +319919,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLink.html"
+      },
+      "GetLinkRoutingRule": {
+        "access_level": "Read",
+        "action_name": "rtbfabric:GetLinkRoutingRule",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about a routing rule for a link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          },
+          {
+            "name": "LinkRoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLinkRoutingRule.html"
       },
       "GetOutboundExternalLink": {
         "access_level": "Read",
@@ -319603,6 +319980,32 @@
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetResponderGateway.html"
       },
+      "ListCertificateAssociations": {
+        "access_level": "List",
+        "action_name": "rtbfabric:ListCertificateAssociations",
+        "condition_keys": [],
+        "description": "Grants permission to list certificate associations for a responder gateway",
+        "resource_types": [
+          {
+            "name": "ResponderGateway*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-ResponderGateway"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListCertificateAssociations.html"
+      },
+      "ListLinkRoutingRules": {
+        "access_level": "List",
+        "action_name": "rtbfabric:ListLinkRoutingRules",
+        "condition_keys": [],
+        "description": "Grants permission to list routing rules for a link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinkRoutingRules.html"
+      },
       "ListLinks": {
         "access_level": "List",
         "action_name": "rtbfabric:ListLinks",
@@ -319640,6 +320043,10 @@
           {
             "name": "Link",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          },
+          {
+            "name": "LinkRoutingRule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
           },
           {
             "name": "OutboundExternalLink",
@@ -319693,6 +320100,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
           },
           {
+            "name": "LinkRoutingRule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
+          },
+          {
             "name": "OutboundExternalLink",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-OutboundExternalLink"
           },
@@ -319725,6 +320136,10 @@
           {
             "name": "Link",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          },
+          {
+            "name": "LinkRoutingRule",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
           },
           {
             "name": "OutboundExternalLink",
@@ -319766,6 +320181,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkModuleFlow.html"
+      },
+      "UpdateLinkRoutingRule": {
+        "access_level": "Write",
+        "action_name": "rtbfabric:UpdateLinkRoutingRule",
+        "condition_keys": [],
+        "description": "Grants permission to update a routing rule for a link",
+        "resource_types": [
+          {
+            "name": "Link*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-Link"
+          },
+          {
+            "name": "LinkRoutingRule*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrtbfabric.html#awsrtbfabric-LinkRoutingRule"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkRoutingRule.html"
       },
       "UpdateRequesterGateway": {
         "access_level": "Write",
@@ -324245,10 +324677,6 @@
           {
             "name": "federated-user",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-federated-user"
-          },
-          {
-            "name": "user",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-user"
           }
         ],
         "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html"
@@ -324347,10 +324775,6 @@
           {
             "name": "role",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-role"
-          },
-          {
-            "name": "user",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-user"
           }
         ],
         "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html#id_credentials_temp_control-access_monitor-perms"
@@ -324398,10 +324822,6 @@
           {
             "name": "role",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-role"
-          },
-          {
-            "name": "user",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecuritytokenservice.html#awssecuritytokenservice-user"
           }
         ],
         "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html"
@@ -324925,6 +325345,23 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html"
       },
+      "AssociateIamRoleToResource": {
+        "access_level": "Write",
+        "action_name": "odb:AssociateIamRoleToResource",
+        "condition_keys": [],
+        "description": "Grants permission to associate an AWS Identity and Access Management (IAM) service role with a specified resource to enable AWS service integration",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateIamRoleToResource.html"
+      },
       "CreateCloudAutonomousVmCluster": {
         "access_level": "Write",
         "action_name": "odb:CreateCloudAutonomousVmCluster",
@@ -325173,6 +325610,23 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_DeleteResourcePolicy.html"
+      },
+      "DisassociateIamRoleFromResource": {
+        "access_level": "Write",
+        "action_name": "odb:DisassociateIamRoleFromResource",
+        "condition_keys": [],
+        "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) service role from a specified resource to disable AWS service integration",
+        "resource_types": [
+          {
+            "name": "cloud-autonomous-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-autonomous-vm-cluster"
+          },
+          {
+            "name": "cloud-vm-cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservice-oracledatabase_aws.html#awsservice-oracledatabase_aws-cloud-vm-cluster"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateIamRoleFromResource.html"
       },
       "GetCloudAutonomousVmCluster": {
         "access_level": "Read",
@@ -346928,10 +347382,105 @@
   },
   "claudeplatformonaws": {
     "actions": {
+      "ArchiveAgent": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveAgent",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a managed agent",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ArchiveEnvironment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveEnvironment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a managed agent environment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ArchiveMemoryStore": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveMemoryStore",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a memory store",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ArchiveSession": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a managed agent session",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ArchiveVault": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveVault",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a credential vault",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
       "ArchiveWorkspace": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:ArchiveWorkspace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to archive a workspace",
         "resource_types": [
           {
@@ -346939,7 +347488,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "AssumeConsole": {
         "access_level": "Write",
@@ -346952,7 +347501,7 @@
         ],
         "description": "Grants permission to assume console access on Claude Platform",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CallWithBearerToken": {
         "access_level": "List",
@@ -346965,12 +347514,17 @@
         ],
         "description": "Grants permission to make API calls using bearer token authentication",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html"
       },
       "CancelBatchInference": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CancelBatchInference",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to cancel an in-progress batch inference request",
         "resource_types": [
           {
@@ -346978,12 +347532,17 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CountTokens": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CountTokens",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to count tokens for a message request",
         "resource_types": [
           {
@@ -346991,12 +347550,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateAgent": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateAgent",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateBatchInference": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateBatchInference",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a batch inference request",
         "resource_types": [
           {
@@ -347004,12 +347586,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateEnvironment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateEnvironment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent environment in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateFile": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateFile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to upload a file to a workspace",
         "resource_types": [
           {
@@ -347017,12 +347622,17 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateInference": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateInference",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a chat completion inference request",
         "resource_types": [
           {
@@ -347030,12 +347640,53 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateMemoryStore": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateMemoryStore",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent memory store in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateSession": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent session in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateSkill": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateSkill",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a skill in a workspace",
         "resource_types": [
           {
@@ -347043,12 +347694,17 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateUserProfile": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateUserProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create a user profile in a workspace",
         "resource_types": [
           {
@@ -347056,20 +347712,70 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateUserProfileEnrollmentUrl": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateUserProfileEnrollmentUrl",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create an enrollment URL for a user profile",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "CreateVault": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateVault",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent credential vault in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "CreateWorkspace": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:CreateWorkspace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_TagKeys"
+          }
+        ],
         "description": "Grants permission to create a workspace in an organization",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "DeleteBatchInference": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:DeleteBatchInference",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a batch inference request",
         "resource_types": [
           {
@@ -347077,12 +347783,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "DeleteEnvironment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:DeleteEnvironment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a managed agent environment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "DeleteFile": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:DeleteFile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a file from a workspace",
         "resource_types": [
           {
@@ -347090,12 +347819,53 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "DeleteMemoryStore": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:DeleteMemoryStore",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a memory store",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "DeleteSession": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:DeleteSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a managed agent session",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "DeleteSkill": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:DeleteSkill",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to delete a skill from a workspace",
         "resource_types": [
           {
@@ -347103,7 +347873,25 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "DeleteVault": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:DeleteVault",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a credential vault",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetAccountStatus": {
         "access_level": "Read",
@@ -347111,12 +347899,35 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve the status of account setup and AWS Marketplace registration",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "GetAgent": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetAgent",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details or versions of a managed agent",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetBatchInference": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetBatchInference",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve details of a batch inference request",
         "resource_types": [
           {
@@ -347124,12 +347935,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "GetEnvironment": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetEnvironment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details of a managed agent environment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetFile": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetFile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve a file or its content from a workspace",
         "resource_types": [
           {
@@ -347137,12 +347971,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "GetMemoryStore": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetMemoryStore",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details of a memory store, its memories, or its memory versions",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetModel": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetModel",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve information about a specific model",
         "resource_types": [
           {
@@ -347150,12 +348007,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "GetSession": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details, events, or resources of a managed agent session",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetSkill": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetSkill",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve details of a skill or its versions",
         "resource_types": [
           {
@@ -347163,12 +348043,17 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetUserProfile": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetUserProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve details of a user profile",
         "resource_types": [
           {
@@ -347176,12 +348061,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "GetVault": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetVault",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details of a credential vault or its credentials",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "GetWorkspace": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetWorkspace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve details of a workspace",
         "resource_types": [
           {
@@ -347189,12 +348097,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListAgents": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListAgents",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agents in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListBatchInferences": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListBatchInferences",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list batch inference requests in a workspace",
         "resource_types": [
           {
@@ -347202,12 +348133,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListEnvironments": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListEnvironments",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agent environments in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListFiles": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListFiles",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list files in a workspace",
         "resource_types": [
           {
@@ -347215,12 +348169,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListMemoryStores": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListMemoryStores",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agent memory stores in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListModels": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListModels",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list available models in a workspace",
         "resource_types": [
           {
@@ -347228,12 +348205,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListSessions": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListSessions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agent sessions in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListSkills": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListSkills",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list skills in a workspace",
         "resource_types": [
           {
@@ -347241,12 +348241,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListTagsForResource": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:ListTagsForResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list tags for a resource",
+        "resource_types": [
+          {
+            "name": "workspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListUserProfiles": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListUserProfiles",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list user profiles in a workspace",
         "resource_types": [
           {
@@ -347254,7 +348277,25 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "ListVaults": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListVaults",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agent credential vaults in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "ListWorkspaces": {
         "access_level": "List",
@@ -347262,12 +348303,137 @@
         "condition_keys": [],
         "description": "Grants permission to list workspaces in an organization",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "TagResource": {
+        "access_level": "Tagging",
+        "action_name": "aws-external-anthropic:TagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_TagKeys"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_RequestTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to tag a resource",
+        "resource_types": [
+          {
+            "name": "workspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UntagResource": {
+        "access_level": "Tagging",
+        "action_name": "aws-external-anthropic:UntagResource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to untag a resource",
+        "resource_types": [
+          {
+            "name": "workspace",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UpdateAgent": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateAgent",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a managed agent",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UpdateEnvironment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateEnvironment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a managed agent environment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UpdateMemoryStore": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateMemoryStore",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a memory store, mutate its memories, or redact a memory version",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UpdateSession": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a managed agent session, append session events, or manage its resources",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "UpdateSkill": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:UpdateSkill",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to create or delete a skill version",
         "resource_types": [
           {
@@ -347275,12 +348441,17 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "UpdateUserProfile": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:UpdateUserProfile",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update a user profile in a workspace",
         "resource_types": [
           {
@@ -347288,12 +348459,35 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+      },
+      "UpdateVault": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateVault",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a credential vault or manage its stored credentials",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       },
       "UpdateWorkspace": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:UpdateWorkspace",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to update a workspace",
         "resource_types": [
           {
@@ -347301,7 +348495,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html#claudeplatformonaws-workspace"
           }
         ],
-        "url": "https://docs.aws.amazon.com/#welcome"
+        "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_claudeplatformonaws.html",
