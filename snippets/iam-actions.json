@@ -94034,6 +94034,44 @@
   },
   "amazonelasticcontainerservice": {
     "actions": {
+      "ContinueServiceDeployment": {
+        "access_level": "Write",
+        "action_name": "ecs:ContinueServiceDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecs:cluster",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_cluster"
+          },
+          {
+            "name": "ecs:service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_service"
+          }
+        ],
+        "description": "Grants permission to continue a paused service deployment",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-service"
+          },
+          {
+            "name": "service-deployment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-service-deployment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContinueServiceDeployment.html"
+      },
       "CreateCapacityProvider": {
         "access_level": "Write",
         "action_name": "ecs:CreateCapacityProvider",
@@ -99369,6 +99407,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html"
+      },
+      "GetDepotUrl": {
+        "access_level": "Read",
+        "action_name": "evs:GetDepotUrl",
+        "condition_keys": [],
+        "description": "Grants permission to get an Amazon EVS environment depot url",
+        "resource_types": [
+          {
+            "name": "environment*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticvmwareservice.html#amazonelasticvmwareservice-environment"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetDepotUrl.html"
       },
       "GetEnvironment": {
         "access_level": "Read",
@@ -176160,10 +176211,6 @@
           {
             "name": "model-package",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-model-package"
-          },
-          {
-            "name": "model-package-group",
-            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html#amazonsagemaker-model-package-group"
           }
         ],
         "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"
@@ -232685,6 +232732,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-ConformancePack"
           },
           {
+            "name": "Connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          },
+          {
             "name": "OrganizationConfigRule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-OrganizationConfigRule"
           },
@@ -233047,6 +233098,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-ConformancePack"
           },
           {
+            "name": "Connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          },
+          {
             "name": "OrganizationConfigRule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-OrganizationConfigRule"
           },
@@ -233091,6 +233146,10 @@
           {
             "name": "ConformancePack",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-ConformancePack"
+          },
+          {
+            "name": "Connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
           },
           {
             "name": "OrganizationConfigRule",
@@ -291299,12 +291358,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_EncryptionContextKeys"
           },
           {
+            "name": "kms:GrantConstraintSourceArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_GrantConstraintSourceArn"
+          },
+          {
             "name": "kms:GrantConstraintType",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_GrantConstraintType"
           },
           {
             "name": "kms:GranteePrincipal",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_GranteePrincipal"
+          },
+          {
+            "name": "kms:GranteeServicePrincipal",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_GranteeServicePrincipal"
           },
           {
             "name": "kms:GrantIsForAWSResource",
@@ -291317,6 +291384,10 @@
           {
             "name": "kms:RetiringPrincipal",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_RetiringPrincipal"
+          },
+          {
+            "name": "kms:RetiringServicePrincipal",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html#awskeymanagementservice-kms_RetiringServicePrincipal"
           },
           {
             "name": "kms:ViaService",
@@ -338965,6 +339036,10 @@
           {
             "name": "transfer:RequestConnectorProtocol",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestConnectorProtocol"
+          },
+          {
+            "name": "transfer:RequestSecurityPolicyName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestSecurityPolicyName"
           }
         ],
         "description": "Grants permission to create a connector",
@@ -339024,6 +339099,10 @@
           {
             "name": "transfer:RequestServerProtocols",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestServerProtocols"
+          },
+          {
+            "name": "transfer:RequestSecurityPolicyName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestSecurityPolicyName"
           }
         ],
         "description": "Grants permission to create a server",
@@ -339911,7 +339990,12 @@
       "UpdateConnector": {
         "access_level": "Write",
         "action_name": "transfer:UpdateConnector",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "transfer:RequestSecurityPolicyName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestSecurityPolicyName"
+          }
+        ],
         "description": "Grants permission to update a connector",
         "resource_types": [
           {
@@ -339962,6 +340046,10 @@
           {
             "name": "transfer:RequestServerProtocols",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestServerProtocols"
+          },
+          {
+            "name": "transfer:RequestSecurityPolicyName",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html#awstransferfamily-transfer_RequestSecurityPolicyName"
           }
         ],
         "description": "Grants permission to update the configuration of a server",
