@@ -262468,7 +262468,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-completion"
           }
         ],
-        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html"
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#"
       },
       "GetConnection": {
         "access_level": "Read",
@@ -264406,7 +264406,7 @@
         "condition_keys": [],
         "description": "Grants permission to provide feedback about a glue completion experience in AWS Q",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html"
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#"
       },
       "SendRecipeAction": {
         "access_level": "Permissions management",
@@ -264477,7 +264477,7 @@
         "condition_keys": [],
         "description": "Grants permission to create a completion request in Glue for AWS Q experience",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html"
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html#"
       },
       "StartCrawler": {
         "access_level": "Write",
