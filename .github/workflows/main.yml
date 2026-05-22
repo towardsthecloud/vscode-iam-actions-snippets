@@ -3,32 +3,38 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "10 9 * * 5" # At 09:10 on Friday.
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Setup Python
-        uses: actions/setup-python@v5
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-python@v6
         with:
-          node-version: "20"
+          python-version: "3.x"
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
       - name: Install Python
         run: |
           set -x -e
-          sudo apt install python3-setuptools
-          python3 -m pip install --upgrade pip && pip3 install -r src/requirements.txt
+          python -m pip install --upgrade pip setuptools
+          python -m pip install -r src/requirements.txt
       - name: Update the iam actions snippets
         run: |
           echo "Update the iam actions snippets"
-          python3 src/update-iam-action-snippets.py --workers 20
+          python src/update-iam-action-snippets.py --workers 20
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code || echo "::set-output name=changes_exist::true"
+          git diff --exit-code || echo "changes_exist=true" >> "$GITHUB_OUTPUT"
       - name: Commit changes to Github
         if: steps.git-check.outputs.changes_exist == 'true'
         run: |
@@ -39,7 +45,7 @@ jobs:
 
           # Update version
           npm version minor --force --no-git-tag-version
-          package_version=$(cat package.json | grep 'version":' | sed 's/[",]//g' | awk '{print $2}')
+          package_version=$(node -p "require('./package.json').version")
 
           # Install dependencies and prepare for publishing
           npm install
@@ -53,18 +59,18 @@ jobs:
           git push
 
           # Create and push tag
-          git tag $package_version
+          git tag "$package_version"
           git push origin --tags
       - name: Publish to Visual Studio Marketplace
         if: steps.git-check.outputs.changes_exist == 'true'
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         id: publishToVSCE
         with:
           pat: ${{ secrets.VSCE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
       - name: Publish to Open VSX Registry
         if: steps.git-check.outputs.changes_exist == 'true'
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ steps.publishToVSCE.outputs.vsixPath }}

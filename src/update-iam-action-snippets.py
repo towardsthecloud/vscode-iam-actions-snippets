@@ -10,10 +10,26 @@ from bs4 import BeautifulSoup
 # Constants
 BASE_URL = "https://docs.aws.amazon.com/service-authorization/latest/reference/"
 SERVICES_PAGE = "reference_policies_actions-resources-contextkeys.html"
+OPENVSX_SAFE_ACTION_URLS = {
+    (
+        "glue",
+        "CheckSchemaVersionValidity",
+    ): "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-CheckSchemaVersionValidity",
+    (
+        "glue",
+        "QuerySchemaVersionMetadata",
+    ): "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-QuerySchemaVersionMetadata",
+}
+
+
+def normalize_action_url(service_prefix, action_name, action_url):
+    return OPENVSX_SAFE_ACTION_URLS.get((service_prefix, action_name), action_url)
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Scrape IAM actions from AWS documentation")
+    parser = argparse.ArgumentParser(
+        description="Scrape IAM actions from AWS documentation"
+    )
     parser.add_argument(
         "--output",
         dest="output_file",
@@ -50,7 +66,11 @@ def scrape_service_actions(service_url):
         # Extract the service name
         title = soup.find("h1", class_="topictitle")
         if title:
-            service_name = title.text.strip().replace("Actions, resources, and condition keys for ", "").strip()
+            service_name = (
+                title.text.strip()
+                .replace("Actions, resources, and condition keys for ", "")
+                .strip()
+            )
 
         # Extract the service prefix
         for p in soup.find_all("p"):
@@ -77,8 +97,14 @@ def scrape_service_actions(service_url):
                     current_action = action_link.text.strip()
                     description = cells[1].text.strip()
                     access_level = cells[2].text.strip()
-                    url = urljoin(service_url, action_link.get("href", ""))
-                    action_name = f"{prefix}:{current_action}" if prefix else current_action
+                    url = normalize_action_url(
+                        prefix,
+                        current_action,
+                        urljoin(service_url, action_link.get("href", "")),
+                    )
+                    action_name = (
+                        f"{prefix}:{current_action}" if prefix else current_action
+                    )
                     actions[current_action] = {
                         "action_name": action_name,
                         "description": description,
@@ -94,7 +120,9 @@ def scrape_service_actions(service_url):
                     for link in resource_type_links:
                         resource_type = {
                             "name": link.text.strip(),
-                            "reference_href": urljoin(service_url, link.get("href", "")),
+                            "reference_href": urljoin(
+                                service_url, link.get("href", "")
+                            ),
                         }
                         actions[current_action]["resource_types"].append(resource_type)
 
@@ -104,7 +132,9 @@ def scrape_service_actions(service_url):
                     for link in condition_key_links:
                         condition_key = {
                             "name": link.text.strip(),
-                            "reference_href": urljoin(service_url, link.get("href", "")),
+                            "reference_href": urljoin(
+                                service_url, link.get("href", "")
+                            ),
                         }
                         actions[current_action]["condition_keys"].append(condition_key)
 
@@ -157,14 +187,19 @@ def scrape_service(service_name, service_url):
 
 def scrape_iam_actions(num_services=None, num_workers=10):
     soup = get_soup(BASE_URL + SERVICES_PAGE)
-    services = [(link.text.strip(), urljoin(BASE_URL, link["href"])) for link in soup.select("div.highlights li a")]
+    services = [
+        (link.text.strip(), urljoin(BASE_URL, link["href"]))
+        for link in soup.select("div.highlights li a")
+    ]
 
     if num_services:
         services = services[:num_services]
 
     iam_actions = {}
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
-        future_to_service = {executor.submit(scrape_service, name, url): name for name, url in services}
+        future_to_service = {
+            executor.submit(scrape_service, name, url): name for name, url in services
+        }
         for future in as_completed(future_to_service):
             service_name = future_to_service[future]
             try:

@@ -260821,7 +260821,7 @@
         "condition_keys": [],
         "description": "Grants permission to retrieve a check the validity of schema version",
         "resource_types": [],
-        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CheckSchemaVersionValidity"
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-CheckSchemaVersionValidity"
       },
       "CreateBlueprint": {
         "access_level": "Write",
@@ -264203,7 +264203,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-schema"
           }
         ],
-        "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-QuerySchemaVersionMetadata"
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html#awsglue-QuerySchemaVersionMetadata"
       },
       "RefreshOAuth2Tokens": {
         "access_level": "Permissions management",
