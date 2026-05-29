@@ -2,12 +2,16 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.90.0 (2026-05-22)
+-------------------
 
 Fix
 ~~~
 - Unblock openvsx publishing. [Danny Steenman]
+
+Other
+~~~~~
+- Build: auto-update snippets to version: 1.90.0. [Github Actions]
 
 
 1.89.0 (2026-05-22)

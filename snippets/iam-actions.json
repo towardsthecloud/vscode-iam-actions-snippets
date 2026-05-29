@@ -41309,6 +41309,24 @@
         ],
         "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html"
       },
+      "SendOutboundWebNotification": {
+        "access_level": "Write",
+        "action_name": "connect:SendOutboundWebNotification",
+        "condition_keys": [
+          {
+            "name": "connect:InstanceId",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-connect_InstanceId"
+          }
+        ],
+        "description": "Grants permission to send outbound web notifications using the Amazon Connect API",
+        "resource_types": [
+          {
+            "name": "instance*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-instance"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundWebNotification.html"
+      },
       "StartAttachedFileUpload": {
         "access_level": "Write",
         "action_name": "connect:StartAttachedFileUpload",
@@ -168315,6 +168333,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_authType"
           },
           {
+            "name": "s3:ExistingObjectTag/<key>",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_ExistingObjectTag_key"
+          },
+          {
             "name": "s3:ResourceAccount",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-s3_ResourceAccount"
           },
@@ -211698,6 +211720,19 @@
         ],
         "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetLegalHold.html"
       },
+      "GetPITRMalwareScanResults": {
+        "access_level": "Read",
+        "action_name": "backup:GetPITRMalwareScanResults",
+        "condition_keys": [],
+        "description": "Grants permission to get point-in-time recovery (PITR) malware scan results",
+        "resource_types": [
+          {
+            "name": "recoveryPoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackup.html#awsbackup-recoveryPoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetPITRMalwareScanResults.html"
+      },
       "GetRecoveryPointIndexDetails": {
         "access_level": "Read",
         "action_name": "backup:GetRecoveryPointIndexDetails",
@@ -250170,6 +250205,23 @@
         ],
         "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_AssociateFeed.html"
       },
+      "CreateDictionary": {
+        "access_level": "Write",
+        "action_name": "elemental-inference:CreateDictionary",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new dictionary",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateDictionary.html"
+      },
       "CreateFeed": {
         "access_level": "Write",
         "action_name": "elemental-inference:CreateFeed",
@@ -250186,6 +250238,19 @@
         "description": "Grants permission to create a new feed",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateFeed.html"
+      },
+      "DeleteDictionary": {
+        "access_level": "Write",
+        "action_name": "elemental-inference:DeleteDictionary",
+        "condition_keys": [],
+        "description": "Grants permission to delete a dictionary",
+        "resource_types": [
+          {
+            "name": "dictionary*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteDictionary.html"
       },
       "DeleteFeed": {
         "access_level": "Write",
@@ -250213,6 +250278,32 @@
         ],
         "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DisassociateFeed.html"
       },
+      "ExportDictionaryEntries": {
+        "access_level": "Read",
+        "action_name": "elemental-inference:ExportDictionaryEntries",
+        "condition_keys": [],
+        "description": "Grants permission to export dictionary entries",
+        "resource_types": [
+          {
+            "name": "dictionary*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ExportDictionaryEntries.html"
+      },
+      "GetDictionary": {
+        "access_level": "Read",
+        "action_name": "elemental-inference:GetDictionary",
+        "condition_keys": [],
+        "description": "Grants permission to get dictionary details",
+        "resource_types": [
+          {
+            "name": "dictionary*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetDictionary.html"
+      },
       "GetFeed": {
         "access_level": "Read",
         "action_name": "elemental-inference:GetFeed",
@@ -250238,6 +250329,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetMetadata.html"
+      },
+      "ListDictionaries": {
+        "access_level": "List",
+        "action_name": "elemental-inference:ListDictionaries",
+        "condition_keys": [],
+        "description": "Grants permission to list dictionaries in the account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListDictionaries.html"
       },
       "ListFeeds": {
         "access_level": "List",
@@ -250284,6 +250383,10 @@
         "description": "Grants permission to add tags to a resource",
         "resource_types": [
           {
+            "name": "dictionary",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          },
+          {
             "name": "feed",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-feed"
           }
@@ -250302,11 +250405,28 @@
         "description": "Grants permission to remove tags from a resource",
         "resource_types": [
           {
+            "name": "dictionary",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          },
+          {
             "name": "feed",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-feed"
           }
         ],
         "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UntagResource.html"
+      },
+      "UpdateDictionary": {
+        "access_level": "Write",
+        "action_name": "elemental-inference:UpdateDictionary",
+        "condition_keys": [],
+        "description": "Grants permission to update dictionary configuration",
+        "resource_types": [
+          {
+            "name": "dictionary*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html#awselementalinference-dictionary"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateDictionary.html"
       },
       "UpdateFeed": {
         "access_level": "Write",
@@ -279220,6 +279340,24 @@
         ],
         "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_GetCommandExecution.html"
       },
+      "GetConnection": {
+        "access_level": "Write",
+        "action_name": "iot:GetConnection",
+        "condition_keys": [
+          {
+            "name": "iot:IncludeSocketInformation",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-iot_IncludeSocketInformation"
+          }
+        ],
+        "description": "Grants permission to retrieve the specified connection information",
+        "resource_types": [
+          {
+            "name": "client*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-client"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+      },
       "GetEffectivePolicies": {
         "access_level": "Read",
         "action_name": "iot:GetEffectivePolicies",
@@ -279932,6 +280070,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListStreams.html"
       },
+      "ListSubscriptions": {
+        "access_level": "Write",
+        "action_name": "iot:ListSubscriptions",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the specified connection's subscriptions",
+        "resource_types": [
+          {
+            "name": "client*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-client"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "iot:ListTagsForResource",
@@ -280428,6 +280579,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html"
+      },
+      "SendDirectMessage": {
+        "access_level": "Write",
+        "action_name": "iot:SendDirectMessage",
+        "condition_keys": [
+          {
+            "name": "iot:Topic",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-iot_Topic"
+          }
+        ],
+        "description": "Grants permission to send a direct message to an IoT client",
+        "resource_types": [
+          {
+            "name": "client*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-client"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html"
       },
       "SetDefaultAuthorizer": {
         "access_level": "Permissions management",
@@ -312251,6 +312420,19 @@
         ],
         "url": "https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListAvailableResourceMetrics.html"
       },
+      "ListPerformanceAnalysisReportRecommendations": {
+        "access_level": "List",
+        "action_name": "pi:ListPerformanceAnalysisReportRecommendations",
+        "condition_keys": [],
+        "description": "Grants permission to call ListPerformanceAnalysisReportRecommendations API to retrieve a Performance Analysis Report Recommendations for a specified DB instance",
+        "resource_types": [
+          {
+            "name": "perf-reports-resource*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsperformanceinsights.html#awsperformanceinsights-perf-reports-resource"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListPerformanceAnalysisReportRecommendations.html"
+      },
       "ListPerformanceAnalysisReports": {
         "access_level": "List",
         "action_name": "pi:ListPerformanceAnalysisReports",
@@ -315900,6 +316082,64 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAppVersionResource.html"
       },
+      "CreateAssertion": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateAssertion",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create an assertion for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAssertion.html"
+      },
+      "CreateInputSource": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateInputSource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create an input source for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateInputSource.html"
+      },
+      "CreatePolicy": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreatePolicy",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a resilience policy that defines availability and disaster recovery requirements",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreatePolicy.html"
+      },
       "CreateRecommendationTemplate": {
         "access_level": "Write",
         "action_name": "resiliencehub:CreateRecommendationTemplate",
@@ -315922,6 +316162,24 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateRecommendationTemplate.html"
       },
+      "CreateReport": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateReport",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a report for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateReport.html"
+      },
       "CreateResiliencyPolicy": {
         "access_level": "Write",
         "action_name": "resiliencehub:CreateResiliencyPolicy",
@@ -315943,6 +316201,128 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateResiliencyPolicy.html"
+      },
+      "CreateService": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateService",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          },
+          {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
+            "name": "system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateService.html"
+      },
+      "CreateServiceFunction": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateServiceFunction",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a service function",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunction.html"
+      },
+      "CreateServiceFunctionResources": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateServiceFunctionResources",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create service function resources",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunctionResources.html"
+      },
+      "CreateSystem": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateSystem",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a system that represents a logical grouping of services",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateSystem.html"
+      },
+      "CreateUserJourney": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:CreateUserJourney",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a user journey within a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          },
+          {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateUserJourney.html"
       },
       "DeleteApp": {
         "access_level": "Write",
@@ -316009,6 +316389,60 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppVersionResource.html"
       },
+      "DeleteAssertion": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteAssertion",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete an assertion",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAssertion.html"
+      },
+      "DeleteInputSource": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteInputSource",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete an input source",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteInputSource.html"
+      },
+      "DeletePolicy": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeletePolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a resilience policy",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeletePolicy.html"
+      },
       "DeleteRecommendationTemplate": {
         "access_level": "Write",
         "action_name": "resiliencehub:DeleteRecommendationTemplate",
@@ -316034,6 +316468,96 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteResiliencyPolicy.html"
+      },
+      "DeleteService": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteService",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteService.html"
+      },
+      "DeleteServiceFunction": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteServiceFunction",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a service function",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunction.html"
+      },
+      "DeleteServiceFunctionResources": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteServiceFunctionResources",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete service function resources",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunctionResources.html"
+      },
+      "DeleteSystem": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteSystem",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteSystem.html"
+      },
+      "DeleteUserJourney": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:DeleteUserJourney",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a user journey",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteUserJourney.html"
       },
       "DescribeApp": {
         "access_level": "Read",
@@ -316172,6 +316696,156 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeResourceGroupingRecommendationTask.html"
+      },
+      "GetFailureModeFinding": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetFailureModeFinding",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a failure mode finding",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetFailureModeFinding.html"
+      },
+      "GetPolicy": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a resilience policy",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetPolicy.html"
+      },
+      "GetService": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetService",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetService.html"
+      },
+      "GetSystem": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetSystem",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetSystem.html"
+      },
+      "GetUserJourney": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetUserJourney",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a user journey",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetUserJourney.html"
+      },
+      "ImportApp": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:ImportApp",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to import a V1 app into the V2 resource model",
+        "resource_types": [
+          {
+            "name": "application*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-application"
+          },
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportApp.html"
+      },
+      "ImportPolicy": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:ImportPolicy",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_TagKeys"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to import a V1 policy into V2",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
+            "name": "resiliency-policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-resiliency-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportPolicy.html"
       },
       "ImportResourcesToDraftAppVersion": {
         "access_level": "Write",
@@ -316332,6 +317006,86 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListApps.html"
       },
+      "ListAssertions": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListAssertions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list assertions for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAssertions.html"
+      },
+      "ListDependencies": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListDependencies",
+        "condition_keys": [],
+        "description": "Grants permission to list dependencies discovered for services",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListDependencies.html"
+      },
+      "ListFailureModeAssessments": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListFailureModeAssessments",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list failure mode assessments",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeAssessments.html"
+      },
+      "ListFailureModeFindings": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListFailureModeFindings",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list failure mode findings",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeFindings.html"
+      },
+      "ListInputSources": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListInputSources",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list input sources for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListInputSources.html"
+      },
       "ListMetrics": {
         "access_level": "List",
         "action_name": "resiliencehub:ListMetrics",
@@ -316339,6 +317093,14 @@
         "description": "Grants permission to list metrics",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListMetrics.html"
+      },
+      "ListPolicies": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListPolicies",
+        "condition_keys": [],
+        "description": "Grants permission to list resilience policies",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListPolicies.html"
       },
       "ListRecommendationTemplates": {
         "access_level": "List",
@@ -316352,6 +317114,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListRecommendationTemplates.html"
+      },
+      "ListReports": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListReports",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list reports",
+        "resource_types": [
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListReports.html"
       },
       "ListResiliencyPolicies": {
         "access_level": "List",
@@ -316374,6 +317154,86 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResourceGroupingRecommendations.html"
       },
+      "ListResources": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListResources",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list resources for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResources.html"
+      },
+      "ListServiceEvents": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListServiceEvents",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list events for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceEvents.html"
+      },
+      "ListServiceFunctions": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListServiceFunctions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list service functions",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceFunctions.html"
+      },
+      "ListServiceTopologyEdges": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListServiceTopologyEdges",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list service topology edges",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceTopologyEdges.html"
+      },
+      "ListServices": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListServices",
+        "condition_keys": [],
+        "description": "Grants permission to list services",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServices.html"
+      },
       "ListSopRecommendations": {
         "access_level": "List",
         "action_name": "resiliencehub:ListSopRecommendations",
@@ -316395,12 +317255,67 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSuggestedResiliencyPolicies.html"
       },
+      "ListSystemEvents": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListSystemEvents",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list events for a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystemEvents.html"
+      },
+      "ListSystems": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListSystems",
+        "condition_keys": [],
+        "description": "Grants permission to list systems",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystems.html"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "resiliencehub:ListTagsForResource",
         "condition_keys": [],
         "description": "Grants permission to list tags for a resource",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "app-assessment",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-app-assessment"
+          },
+          {
+            "name": "application",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-application"
+          },
+          {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
+            "name": "recommendation-template",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-recommendation-template"
+          },
+          {
+            "name": "resiliency-policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-resiliency-policy"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          },
+          {
+            "name": "system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTagsForResource.html"
       },
       "ListTestRecommendations": {
@@ -316428,6 +317343,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListUnsupportedAppVersionResources.html"
+      },
+      "ListUserJourneys": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListUserJourneys",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list user journeys for a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListUserJourneys.html"
       },
       "PublishAppVersion": {
         "access_level": "Write",
@@ -316516,6 +317449,24 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartAppAssessment.html"
       },
+      "StartFailureModeAssessment": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:StartFailureModeAssessment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to start a failure mode assessment",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartFailureModeAssessment.html"
+      },
       "StartMetricsExport": {
         "access_level": "Write",
         "action_name": "resiliencehub:StartMetricsExport",
@@ -316561,12 +317512,24 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-application"
           },
           {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
             "name": "recommendation-template",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-recommendation-template"
           },
           {
             "name": "resiliency-policy",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-resiliency-policy"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          },
+          {
+            "name": "system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_TagResource.html"
@@ -316591,12 +317554,24 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-application"
           },
           {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
             "name": "recommendation-template",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-recommendation-template"
           },
           {
             "name": "resiliency-policy",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-resiliency-policy"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          },
+          {
+            "name": "system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UntagResource.html"
@@ -316653,6 +317628,78 @@
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionResource.html"
       },
+      "UpdateAssertion": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateAssertion",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update an assertion",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAssertion.html"
+      },
+      "UpdateDependency": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateDependency",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a dependency classification",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateDependency.html"
+      },
+      "UpdateFailureModeFinding": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateFailureModeFinding",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a failure mode finding",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateFailureModeFinding.html"
+      },
+      "UpdatePolicy": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdatePolicy",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a resilience policy",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdatePolicy.html"
+      },
       "UpdateResiliencyPolicy": {
         "access_level": "Write",
         "action_name": "resiliencehub:UpdateResiliencyPolicy",
@@ -316665,6 +317712,102 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateResiliencyPolicy.html"
+      },
+      "UpdateService": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateService",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          },
+          {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          },
+          {
+            "name": "system",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateService.html"
+      },
+      "UpdateServiceFunction": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateServiceFunction",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a service function",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateServiceFunction.html"
+      },
+      "UpdateSystem": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateSystem",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a system",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateSystem.html"
+      },
+      "UpdateUserJourney": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:UpdateUserJourney",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a user journey",
+        "resource_types": [
+          {
+            "name": "system*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-system"
+          },
+          {
+            "name": "policy",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html#awsresiliencehub-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateUserJourney.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresiliencehub.html",
