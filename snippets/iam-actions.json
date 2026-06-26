@@ -24805,6 +24805,24 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html"
       },
+      "GetDataset": {
+        "access_level": "Read",
+        "action_name": "cloudwatch:GetDataset",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get a dataset",
+        "resource_types": [
+          {
+            "name": "dataset*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDataset.html"
+      },
       "GetInsightRuleReport": {
         "access_level": "Read",
         "action_name": "cloudwatch:GetInsightRuleReport",
@@ -24821,9 +24839,19 @@
       "GetMetricData": {
         "access_level": "Read",
         "action_name": "cloudwatch:GetMetricData",
-        "condition_keys": [],
-        "description": "Grants permission to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data",
-        "resource_types": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve batch amounts of CloudWatch classic metric data and perform metric math on retrieved data; and grants permission to retrieve OTLP metric data using PromQL",
+        "resource_types": [
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html"
       },
       "GetMetricStatistics": {
@@ -24987,9 +25015,19 @@
       "ListMetrics": {
         "access_level": "List",
         "action_name": "cloudwatch:ListMetrics",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to retrieve a list of valid metrics stored for the AWS account owner",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html"
       },
       "ListServiceLevelObjectives": {
@@ -25011,7 +25049,40 @@
       "ListTagsForResource": {
         "access_level": "List",
         "action_name": "cloudwatch:ListTagsForResource",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list tags for an Amazon CloudWatch resource",
         "resource_types": [
           {
@@ -25027,8 +25098,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dashboard"
           },
           {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          },
+          {
             "name": "insight-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-insight-rule"
+          },
+          {
+            "name": "metric-stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-metric-stream"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-service"
           },
           {
             "name": "slo",
@@ -25145,6 +25228,32 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html"
       },
+      "PutLogAlarm": {
+        "access_level": "Write",
+        "action_name": "cloudwatch:PutLogAlarm",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_TagKeys"
+          },
+          {
+            "name": "cloudwatch:AlarmActions",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-cloudwatch_AlarmActions"
+          }
+        ],
+        "description": "Grants permission to create or update a log-based alarm and associate it with a CloudWatch Logs Insights scheduled query",
+        "resource_types": [
+          {
+            "name": "alarm*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-alarm"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutLogAlarm.html"
+      },
       "PutManagedInsightRules": {
         "access_level": "Write",
         "action_name": "cloudwatch:PutManagedInsightRules",
@@ -25171,6 +25280,10 @@
         "action_name": "cloudwatch:PutMetricAlarm",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:RequestTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_RequestTag___TagKey_"
           },
@@ -25188,6 +25301,10 @@
           {
             "name": "alarm*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-alarm"
+          },
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html"
@@ -25197,12 +25314,21 @@
         "action_name": "cloudwatch:PutMetricData",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "cloudwatch:namespace",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-cloudwatch_namespace"
           }
         ],
-        "description": "Grants permission to publish metric data points to Amazon CloudWatch",
-        "resource_types": [],
+        "description": "Grants permission to publish metric data points to Amazon CloudWatch using CloudWatch and OTLP formats",
+        "resource_types": [
+          {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html"
       },
       "PutMetricStream": {
@@ -25287,6 +25413,38 @@
         "action_name": "cloudwatch:TagResource",
         "condition_keys": [
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_TagKeys"
           },
@@ -25310,8 +25468,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dashboard"
           },
           {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          },
+          {
             "name": "insight-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-insight-rule"
+          },
+          {
+            "name": "metric-stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-metric-stream"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-service"
           },
           {
             "name": "slo",
@@ -25324,6 +25494,38 @@
         "access_level": "Tagging",
         "action_name": "cloudwatch:UntagResource",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-aws_TagKeys"
@@ -25344,8 +25546,20 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dashboard"
           },
           {
+            "name": "dataset",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-dataset"
+          },
+          {
             "name": "insight-rule",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-insight-rule"
+          },
+          {
+            "name": "metric-stream",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-metric-stream"
+          },
+          {
+            "name": "service",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-service"
           },
           {
             "name": "slo",
@@ -25667,6 +25881,19 @@
   },
   "amazoncloudwatchapplicationsignals": {
     "actions": {
+      "BatchDeleteInstrumentationConfigurations": {
+        "access_level": "Write",
+        "action_name": "application-signals:BatchDeleteInstrumentationConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to batch delete instrumentation configurations",
+        "resource_types": [
+          {
+            "name": "instrumentationConfig*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchDeleteInstrumentationConfigurations.html"
+      },
       "BatchGetServiceLevelObjectiveBudgetReport": {
         "access_level": "Read",
         "action_name": "application-signals:BatchGetServiceLevelObjectiveBudgetReport",
@@ -25693,6 +25920,23 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/API_BatchUpdateExclusionWindows.html"
       },
+      "CreateInstrumentationConfiguration": {
+        "access_level": "Write",
+        "action_name": "application-signals:CreateInstrumentationConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an instrumentation configuration for dynamic instrumentation",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateInstrumentationConfiguration.html"
+      },
       "CreateServiceLevelObjective": {
         "access_level": "Write",
         "action_name": "application-signals:CreateServiceLevelObjective",
@@ -25718,6 +25962,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteGroupingConfiguration.html"
       },
+      "DeleteInstrumentationConfiguration": {
+        "access_level": "Write",
+        "action_name": "application-signals:DeleteInstrumentationConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete an instrumentation configuration",
+        "resource_types": [
+          {
+            "name": "instrumentationConfig*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteInstrumentationConfiguration.html"
+      },
       "DeleteServiceLevelObjective": {
         "access_level": "Write",
         "action_name": "application-signals:DeleteServiceLevelObjective",
@@ -25730,6 +25987,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteServiceLevelObjective.html"
+      },
+      "GetInstrumentationConfiguration": {
+        "access_level": "Read",
+        "action_name": "application-signals:GetInstrumentationConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve an instrumentation configuration",
+        "resource_types": [
+          {
+            "name": "instrumentationConfig*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfiguration.html"
+      },
+      "GetInstrumentationConfigurationStatus": {
+        "access_level": "Read",
+        "action_name": "application-signals:GetInstrumentationConfigurationStatus",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the status history of an instrumentation configuration",
+        "resource_types": [
+          {
+            "name": "instrumentationConfig*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfigurationStatus.html"
       },
       "GetService": {
         "access_level": "Read",
@@ -25783,6 +26066,14 @@
         "description": "Grants permission to list grouping attribute configurations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListGroupingAttributeDefinitions.html"
+      },
+      "ListInstrumentationConfigurations": {
+        "access_level": "List",
+        "action_name": "application-signals:ListInstrumentationConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to list instrumentation configurations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListInstrumentationConfigurations.html"
       },
       "ListObservedEntities": {
         "access_level": "List",
@@ -25857,10 +26148,14 @@
         "access_level": "Read",
         "action_name": "application-signals:ListTagsForResource",
         "condition_keys": [],
-        "description": "Grants permission to list tags for an Amazon CloudWatch SLO",
+        "description": "Grants permission to list tags for an Amazon CloudWatch Application Signals resource",
         "resource_types": [
           {
-            "name": "slo*",
+            "name": "instrumentationConfig",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          },
+          {
+            "name": "slo",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-slo"
           }
         ],
@@ -25873,6 +26168,19 @@
         "description": "Grants permission to create or update a grouping configuration",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_PutGroupingConfiguration.html"
+      },
+      "ReportInstrumentationConfigurationStatus": {
+        "access_level": "Write",
+        "action_name": "application-signals:ReportInstrumentationConfigurationStatus",
+        "condition_keys": [],
+        "description": "Grants permission to report the status of instrumentation configurations",
+        "resource_types": [
+          {
+            "name": "instrumentationConfig*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ReportInstrumentationConfigurationStatus.html"
       },
       "StartDiscovery": {
         "access_level": "Write",
@@ -25895,10 +26203,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to add tags to an Amazon CloudWatch SLO",
+        "description": "Grants permission to add tags to an Amazon CloudWatch Application Signals resource",
         "resource_types": [
           {
-            "name": "slo*",
+            "name": "instrumentationConfig",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          },
+          {
+            "name": "slo",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-slo"
           }
         ],
@@ -25913,10 +26225,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to untag to an Amazon CloudWatch SLO",
+        "description": "Grants permission to remove tags from an Amazon CloudWatch Application Signals resource",
         "resource_types": [
           {
-            "name": "slo*",
+            "name": "instrumentationConfig",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-instrumentationConfig"
+          },
+          {
+            "name": "slo",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchapplicationsignals.html#amazoncloudwatchapplicationsignals-slo"
           }
         ],
@@ -27181,6 +27497,19 @@
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html"
       },
+      "DeleteSyslogConfiguration": {
+        "access_level": "Write",
+        "action_name": "logs:DeleteSyslogConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to delete syslog configuration for the specified log group",
+        "resource_types": [
+          {
+            "name": "log-group*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-log-group"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSyslogConfiguration.html"
+      },
       "DeleteTransformer": {
         "access_level": "Write",
         "action_name": "logs:DeleteTransformer",
@@ -27729,6 +28058,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSourcesForS3TableIntegration.html"
       },
+      "ListSyslogConfigurations": {
+        "access_level": "List",
+        "action_name": "logs:ListSyslogConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to return all syslog configurations associated with the AWS account making the request",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSyslogConfigurations.html"
+      },
       "ListTagsForResource": {
         "access_level": "List",
         "action_name": "logs:ListTagsForResource",
@@ -28043,6 +28380,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html"
+      },
+      "PutSyslogConfiguration": {
+        "access_level": "Write",
+        "action_name": "logs:PutSyslogConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to add syslog configuration for the specified log group",
+        "resource_types": [
+          {
+            "name": "log-group*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-log-group"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSyslogConfiguration.html"
       },
       "PutTransformer": {
         "access_level": "Write",
@@ -49162,6 +49512,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_GetCellRunResult.html"
       },
+      "GetCompute": {
+        "access_level": "Read",
+        "action_name": "datazone:GetCompute",
+        "condition_keys": [],
+        "description": "Grants permission to get compute",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_GetCompute.html"
+      },
       "GetConnection": {
         "access_level": "Read",
         "action_name": "datazone:GetConnection",
@@ -50030,6 +50388,14 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartAccountBootstrapAction.html"
       },
+      "StartCompute": {
+        "access_level": "Write",
+        "action_name": "datazone:StartCompute",
+        "condition_keys": [],
+        "description": "Grants permission to start compute",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartCompute.html"
+      },
       "StartConversation": {
         "access_level": "Write",
         "action_name": "datazone:StartConversation",
@@ -50077,6 +50443,22 @@
         "description": "Grants permission to import notebooks",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartNotebookImport.html"
+      },
+      "StartNotebookSync": {
+        "access_level": "Write",
+        "action_name": "datazone:StartNotebookSync",
+        "condition_keys": [],
+        "description": "Grants permission to start notebook sync",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StartNotebookSync.html"
+      },
+      "StopCompute": {
+        "access_level": "Write",
+        "action_name": "datazone:StopCompute",
+        "condition_keys": [],
+        "description": "Grants permission to stop compute",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/${APIReferenceDocPage}API_StopCompute.html"
       },
       "StopMetadataGenerationRun": {
         "access_level": "Write",
@@ -96778,6 +97160,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-cpu"
           },
           {
+            "name": "ecs:task-definition",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-definition"
+          },
+          {
             "name": "ecs:task-memory",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html#amazonelasticcontainerservice-ecs_task-memory"
           }
@@ -97773,6 +98159,10 @@
           {
             "name": "eks:zonalShiftEnabled",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_zonalShiftEnabled"
+          },
+          {
+            "name": "eks:controlPlaneEgressMode",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_controlPlaneEgressMode"
           }
         ],
         "description": "Grants permission to create an Amazon EKS cluster",
@@ -98692,6 +99082,10 @@
           {
             "name": "eks:zonalShiftEnabled",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_zonalShiftEnabled"
+          },
+          {
+            "name": "eks:controlPlaneEgressMode",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html#amazonelastickubernetesservice-eks_controlPlaneEgressMode"
           }
         ],
         "description": "Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)",
@@ -110088,6 +110482,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html"
       },
+      "CreateInvestigation": {
+        "access_level": "Write",
+        "action_name": "guardduty:CreateInvestigation",
+        "condition_keys": [],
+        "description": "Grants permission to create a GuardDuty investigation",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateInvestigation.html"
+      },
       "CreateMalwareProtectionPlan": {
         "access_level": "Write",
         "action_name": "guardduty:CreateMalwareProtectionPlan",
@@ -110474,6 +110876,14 @@
         ],
         "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetIPSet.html"
       },
+      "GetInvestigation": {
+        "access_level": "Read",
+        "action_name": "guardduty:GetInvestigation",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a GuardDuty investigation",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetInvestigation.html"
+      },
       "GetInvitationsCount": {
         "access_level": "Read",
         "action_name": "guardduty:GetInvitationsCount",
@@ -110650,6 +111060,14 @@
         "description": "Grants permission to retrieve a list of GuardDuty IPSets",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListIPSets.html"
+      },
+      "ListInvestigations": {
+        "access_level": "List",
+        "action_name": "guardduty:ListInvestigations",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of GuardDuty investigations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListInvestigations.html"
       },
       "ListInvitations": {
         "access_level": "List",
@@ -111819,6 +112237,28 @@
         ],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html"
       },
+      "CreateConnector": {
+        "access_level": "Write",
+        "action_name": "inspector2:CreateConnector",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a connector to scan resources from a third-party cloud provider",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateConnector.html"
+      },
       "CreateFilter": {
         "access_level": "Write",
         "action_name": "inspector2:CreateFilter",
@@ -111900,6 +112340,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityScanConfiguration.html"
+      },
+      "DeleteConnector": {
+        "access_level": "Write",
+        "action_name": "inspector2:DeleteConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete a connector configured for scanning resources from a third-party cloud provider",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteConnector.html"
       },
       "DeleteFilter": {
         "access_level": "Write",
@@ -112129,6 +112582,22 @@
         "description": "Grants permission to list all code security scan configurations in your account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurations.html"
+      },
+      "ListConnectorScanConfigurations": {
+        "access_level": "List",
+        "action_name": "inspector2:ListConnectorScanConfigurations",
+        "condition_keys": [],
+        "description": "Grants permission to list scan configurations for connectors",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectorScanConfigurations.html"
+      },
+      "ListConnectors": {
+        "access_level": "List",
+        "action_name": "inspector2:ListConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to list connectors configured for scanning resources from third-party cloud providers",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectors.html"
       },
       "ListCoverage": {
         "access_level": "List",
@@ -112399,6 +112868,40 @@
         "description": "Grants permission to update information about the Amazon Inspector configuration settings for an AWS account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConfiguration.html"
+      },
+      "UpdateConnector": {
+        "access_level": "Write",
+        "action_name": "inspector2:UpdateConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to update a connector configured for scanning resources from a third-party cloud provider",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector2.html#amazoninspector2-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnector.html"
+      },
+      "UpdateConnectorScanConfiguration": {
+        "access_level": "Write",
+        "action_name": "inspector2:UpdateConnectorScanConfiguration",
+        "condition_keys": [],
+        "description": "Grants permission to update scan configuration settings for resources associated with a connector",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnectorScanConfiguration.html"
       },
       "UpdateEc2DeepInspectionConfiguration": {
         "access_level": "Write",
@@ -131684,6 +132187,19 @@
         ],
         "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get"
       },
+      "DescribeSharedResources": {
+        "access_level": "Read",
+        "action_name": "mq:DescribeSharedResources",
+        "condition_keys": [],
+        "description": "Grants permission to return the resources shared to a broker",
+        "resource_types": [
+          {
+            "name": "brokers*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html#amazonmq-brokers"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id-shared-resources.html"
+      },
       "DescribeUser": {
         "access_level": "Read",
         "action_name": "mq:DescribeUser",
@@ -146580,6 +147096,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
       },
+      "BatchAssignLimitsProfile": {
+        "access_level": "Write",
+        "action_name": "quicksight:BatchAssignLimitsProfile",
+        "condition_keys": [],
+        "description": "Grants permission to assign a limits profile to targets",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchAssignLimitsProfile.html"
+      },
       "BatchCreateTopicReviewedAnswer": {
         "access_level": "Write",
         "action_name": "quicksight:BatchCreateTopicReviewedAnswer",
@@ -146644,6 +147173,19 @@
         "description": "Grants permission to get user preferences",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+      },
+      "BatchUnassignLimitsProfile": {
+        "access_level": "Write",
+        "action_name": "quicksight:BatchUnassignLimitsProfile",
+        "condition_keys": [],
+        "description": "Grants permission to unassign a limits profile from targets",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchUnassignLimitsProfile.html"
       },
       "BatchUpdatePreferences": {
         "access_level": "Write",
@@ -147052,6 +147594,28 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIngestion.html"
+      },
+      "CreateLimitsProfile": {
+        "access_level": "Write",
+        "action_name": "quicksight:CreateLimitsProfile",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a limits profile",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateLimitsProfile.html"
       },
       "CreateNamespace": {
         "access_level": "Write",
@@ -147619,6 +148183,19 @@
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteKnowledgeBase.html"
       },
+      "DeleteLimitsProfile": {
+        "access_level": "Write",
+        "action_name": "quicksight:DeleteLimitsProfile",
+        "condition_keys": [],
+        "description": "Grants permission to delete a limits profile",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteLimitsProfile.html"
+      },
       "DeleteNamespace": {
         "access_level": "Write",
         "action_name": "quicksight:DeleteNamespace",
@@ -147994,6 +148571,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAssetBundleImportJob.html"
+      },
+      "DescribeAutomationGroup": {
+        "access_level": "Read",
+        "action_name": "quicksight:DescribeAutomationGroup",
+        "condition_keys": [],
+        "description": "Grants permission to describe an automation group",
+        "resource_types": [
+          {
+            "name": "automationGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-automationGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroup.html"
+      },
+      "DescribeAutomationGroupPermissions": {
+        "access_level": "Permissions management",
+        "action_name": "quicksight:DescribeAutomationGroupPermissions",
+        "condition_keys": [],
+        "description": "Grants permission to describe permissions for an automation group",
+        "resource_types": [
+          {
+            "name": "automationGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-automationGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroupPermissions.html"
       },
       "DescribeAutomationJob": {
         "access_level": "Read",
@@ -148417,6 +149020,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBasePermissions.html"
+      },
+      "DescribeLimitsProfile": {
+        "access_level": "Read",
+        "action_name": "quicksight:DescribeLimitsProfile",
+        "condition_keys": [],
+        "description": "Grants permission to describe a limits profile",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeLimitsProfile.html"
       },
       "DescribeNamespace": {
         "access_level": "Read",
@@ -148942,6 +149558,27 @@
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssetBundleImportJobs.html"
       },
+      "ListAssignmentsForPrincipal": {
+        "access_level": "List",
+        "action_name": "quicksight:ListAssignmentsForPrincipal",
+        "condition_keys": [],
+        "description": "Grants permission to list limits profile assignments for a principal",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssignmentsForPrincipal.html"
+      },
+      "ListAutomationGroups": {
+        "access_level": "List",
+        "action_name": "quicksight:ListAutomationGroups",
+        "condition_keys": [],
+        "description": "Grants permission to list all automation groups in an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAutomationGroups.html"
+      },
       "ListBrands": {
         "access_level": "List",
         "action_name": "quicksight:ListBrands",
@@ -149190,6 +149827,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListKnowledgeBases.html"
       },
+      "ListLimitsProfiles": {
+        "access_level": "List",
+        "action_name": "quicksight:ListLimitsProfiles",
+        "condition_keys": [],
+        "description": "Grants permission to list limits profiles",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListLimitsProfiles.html"
+      },
       "ListNamespaces": {
         "access_level": "List",
         "action_name": "quicksight:ListNamespaces",
@@ -149214,6 +149864,19 @@
         "description": "Grants permission to list OAuth client applications in an account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListOAuthClientApplications.html"
+      },
+      "ListProfileAssignments": {
+        "access_level": "List",
+        "action_name": "quicksight:ListProfileAssignments",
+        "condition_keys": [],
+        "description": "Grants permission to list assignments for a limits profile",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListProfileAssignments.html"
       },
       "ListRefreshSchedules": {
         "access_level": "List",
@@ -149704,6 +150367,14 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAnalyses.html"
+      },
+      "SearchAutomationGroups": {
+        "access_level": "List",
+        "action_name": "quicksight:SearchAutomationGroups",
+        "condition_keys": [],
+        "description": "Grants permission to search for automation groups in an account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAutomationGroups.html"
       },
       "SearchDashboards": {
         "access_level": "List",
@@ -150238,6 +150909,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateApplicationWithTokenExchangeGrant.html"
       },
+      "UpdateAutomationGroupPermissions": {
+        "access_level": "Permissions management",
+        "action_name": "quicksight:UpdateAutomationGroupPermissions",
+        "condition_keys": [],
+        "description": "Grants permission to update permissions for an automation group",
+        "resource_types": [
+          {
+            "name": "automationGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-automationGroup"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAutomationGroupPermissions.html"
+      },
       "UpdateBrand": {
         "access_level": "Write",
         "action_name": "quicksight:UpdateBrand",
@@ -150593,6 +151277,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBasePermissions.html"
+      },
+      "UpdateLimitsProfile": {
+        "access_level": "Write",
+        "action_name": "quicksight:UpdateLimitsProfile",
+        "condition_keys": [],
+        "description": "Grants permission to update a limits profile",
+        "resource_types": [
+          {
+            "name": "limitsProfile*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html#amazonquicksight-limitsProfile"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateLimitsProfile.html"
       },
       "UpdateOAuthClientApplication": {
         "access_level": "Write",
@@ -200706,6 +201403,32 @@
   },
   "amazonworkspacesagentaccessmcpserver": {
     "actions": {
+      "CallForwardedTool": {
+        "access_level": "Write",
+        "action_name": "agentaccess-mcp:CallForwardedTool",
+        "condition_keys": [
+          {
+            "name": "agentaccess-mcp:StackArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspacesagentaccessmcpserver.html#amazonworkspacesagentaccessmcpserver-agentaccess-mcp_StackArn"
+          }
+        ],
+        "description": "Grants permission to invoke a forwarded tool on a remote instance",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/"
+      },
+      "CheckConnectionStatus": {
+        "access_level": "Read",
+        "action_name": "agentaccess-mcp:CheckConnectionStatus",
+        "condition_keys": [
+          {
+            "name": "agentaccess-mcp:StackArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspacesagentaccessmcpserver.html#amazonworkspacesagentaccessmcpserver-agentaccess-mcp_StackArn"
+          }
+        ],
+        "description": "Grants permission to check the connection status of a streaming session",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/"
+      },
       "DoubleClick": {
         "access_level": "Write",
         "action_name": "agentaccess-mcp:DoubleClick",
@@ -216440,12 +217163,38 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
       },
+      "GetCumulativeTracking": {
+        "access_level": "Read",
+        "action_name": "billing:GetCumulativeTracking",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve cumulative spend and usage tracking data for a contract",
+        "resource_types": [
+          {
+            "name": "contract*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbilling.html#awsbilling-contract"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+      },
       "GetIAMAccessPreference": {
         "access_level": "Read",
         "action_name": "billing:GetIAMAccessPreference",
         "condition_keys": [],
         "description": "Grants permission to retrieve the state of the Allow IAM Access billing preference",
         "resource_types": [],
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+      },
+      "GetMonthlyTracking": {
+        "access_level": "Read",
+        "action_name": "billing:GetMonthlyTracking",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve monthly spend and usage tracking data for a contract",
+        "resource_types": [
+          {
+            "name": "contract*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbilling.html#awsbilling-contract"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
       },
       "GetResourcePolicy": {
@@ -234199,6 +234948,19 @@
         ],
         "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConformancePack.html"
       },
+      "DeleteConnector": {
+        "access_level": "Write",
+        "action_name": "config:DeleteConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete a connector configuration",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html"
+      },
       "DeleteDeliveryChannel": {
         "access_level": "Write",
         "action_name": "config:DeleteDeliveryChannel",
@@ -234721,6 +235483,19 @@
         ],
         "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceSummary.html"
       },
+      "GetConnector": {
+        "access_level": "Read",
+        "action_name": "config:GetConnector",
+        "condition_keys": [],
+        "description": "Grants permission to return the details of a specific connector configuration",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetConnector.html"
+      },
       "GetCustomRulePolicy": {
         "access_level": "Read",
         "action_name": "config:GetCustomRulePolicy",
@@ -234838,6 +235613,14 @@
         "description": "Grants permission to return the percentage of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_ListConformancePackComplianceScores.html"
+      },
+      "ListConnectors": {
+        "access_level": "List",
+        "action_name": "config:ListConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to list all connectors in the AWS account and region",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_ListConnectors.html"
       },
       "ListDiscoveredResources": {
         "access_level": "List",
@@ -235009,6 +235792,28 @@
         ],
         "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html"
       },
+      "PutConnector": {
+        "access_level": "Write",
+        "action_name": "config:PutConnector",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a connector configuration that contains provider identity information, as well as other optional provider-specific information required for third-party recording",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html"
+      },
       "PutDeliveryChannel": {
         "access_level": "Write",
         "action_name": "config:PutDeliveryChannel",
@@ -235143,6 +235948,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html"
+      },
+      "PutThirdPartyServiceLinkedConfigurationRecorder": {
+        "access_level": "Write",
+        "action_name": "config:PutThirdPartyServiceLinkedConfigurationRecorder",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-aws_TagKeys"
+          },
+          {
+            "name": "config:ConfigurationRecorderServicePrincipal",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-config_ConfigurationRecorderServicePrincipal"
+          }
+        ],
+        "description": "Grants permission to create or update a service-linked configuration recorder for a third-party provider linked to a specific AWS partner service",
+        "resource_types": [
+          {
+            "name": "Connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconfig.html#awsconfig-Connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html"
       },
       "SelectAggregateResourceConfig": {
         "access_level": "Read",
@@ -297514,6 +298345,14 @@
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CheckpointDurableExecution.html"
       },
+      "ConnectMicrovm": {
+        "access_level": "Write",
+        "action_name": "lambda:ConnectMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+      },
       "CreateAlias": {
         "access_level": "Write",
         "action_name": "lambda:CreateAlias",
@@ -297659,6 +298498,79 @@
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html"
       },
+      "CreateMicrovmAuthToken": {
+        "access_level": "Write",
+        "action_name": "lambda:CreateMicrovmAuthToken",
+        "condition_keys": [],
+        "description": "Grants permission to create an auth token for an AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmAuthToken.html"
+      },
+      "CreateMicrovmImage": {
+        "access_level": "Write",
+        "action_name": "lambda:CreateMicrovmImage",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an AWS Lambda MicroVM image",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmImage.html"
+      },
+      "CreateMicrovmShellAuthToken": {
+        "access_level": "Write",
+        "action_name": "lambda:CreateMicrovmShellAuthToken",
+        "condition_keys": [],
+        "description": "Grants permission to create a shell auth token for an AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmShellAuthToken.html"
+      },
+      "CreateNetworkConnector": {
+        "access_level": "Write",
+        "action_name": "lambda:CreateNetworkConnector",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_TagKeys"
+          },
+          {
+            "name": "lambda:SecurityGroupIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-lambda_SecurityGroupIds"
+          },
+          {
+            "name": "lambda:SubnetIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-lambda_SubnetIds"
+          }
+        ],
+        "description": "Grants permission to create an AWS Lambda network connector",
+        "resource_types": [
+          {
+            "name": "networkConnector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateNetworkConnector.html"
+      },
       "DeleteAlias": {
         "access_level": "Write",
         "action_name": "lambda:DeleteAlias",
@@ -297802,6 +298714,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html"
+      },
+      "DeleteMicrovmImage": {
+        "access_level": "Write",
+        "action_name": "lambda:DeleteMicrovmImage",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImage.html"
+      },
+      "DeleteMicrovmImageVersion": {
+        "access_level": "Write",
+        "action_name": "lambda:DeleteMicrovmImageVersion",
+        "condition_keys": [],
+        "description": "Grants permission to delete a version of an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImageVersion.html"
+      },
+      "DeleteNetworkConnector": {
+        "access_level": "Write",
+        "action_name": "lambda:DeleteNetworkConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete an AWS Lambda network connector",
+        "resource_types": [
+          {
+            "name": "networkConnector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteNetworkConnector.html"
       },
       "DeleteProvisionedConcurrencyConfig": {
         "access_level": "Write",
@@ -298089,6 +299040,71 @@
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html"
       },
+      "GetMicrovm": {
+        "access_level": "Read",
+        "action_name": "lambda:GetMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to view information about an AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovm.html"
+      },
+      "GetMicrovmImage": {
+        "access_level": "Read",
+        "action_name": "lambda:GetMicrovmImage",
+        "condition_keys": [],
+        "description": "Grants permission to view information about an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImage.html"
+      },
+      "GetMicrovmImageBuild": {
+        "access_level": "Read",
+        "action_name": "lambda:GetMicrovmImageBuild",
+        "condition_keys": [],
+        "description": "Grants permission to view information about a build of an AWS Lambda MicroVM image version",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageBuild.html"
+      },
+      "GetMicrovmImageVersion": {
+        "access_level": "Read",
+        "action_name": "lambda:GetMicrovmImageVersion",
+        "condition_keys": [],
+        "description": "Grants permission to view information about a version of an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageVersion.html"
+      },
+      "GetNetworkConnector": {
+        "access_level": "Read",
+        "action_name": "lambda:GetNetworkConnector",
+        "condition_keys": [],
+        "description": "Grants permission to view details about an AWS Lambda network connector",
+        "resource_types": [
+          {
+            "name": "networkConnector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetNetworkConnector.html"
+      },
       "GetPolicy": {
         "access_level": "Read",
         "action_name": "lambda:GetPolicy",
@@ -298324,6 +299340,77 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html"
       },
+      "ListManagedMicrovmImageVersions": {
+        "access_level": "List",
+        "action_name": "lambda:ListManagedMicrovmImageVersions",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of versions for a managed AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImageVersions.html"
+      },
+      "ListManagedMicrovmImages": {
+        "access_level": "List",
+        "action_name": "lambda:ListManagedMicrovmImages",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of managed AWS Lambda MicroVM images",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImages.html"
+      },
+      "ListMicrovmImageBuilds": {
+        "access_level": "List",
+        "action_name": "lambda:ListMicrovmImageBuilds",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of builds for an AWS Lambda MicroVM image version",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageBuilds.html"
+      },
+      "ListMicrovmImageVersions": {
+        "access_level": "List",
+        "action_name": "lambda:ListMicrovmImageVersions",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of versions for an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageVersions.html"
+      },
+      "ListMicrovmImages": {
+        "access_level": "List",
+        "action_name": "lambda:ListMicrovmImages",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of AWS Lambda MicroVM images",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImages.html"
+      },
+      "ListMicrovms": {
+        "access_level": "List",
+        "action_name": "lambda:ListMicrovms",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of AWS Lambda MicroVMs",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovms.html"
+      },
+      "ListNetworkConnectors": {
+        "access_level": "List",
+        "action_name": "lambda:ListNetworkConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of AWS Lambda network connectors",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListNetworkConnectors.html"
+      },
       "ListProvisionedConcurrencyConfigs": {
         "access_level": "List",
         "action_name": "lambda:ListProvisionedConcurrencyConfigs",
@@ -298341,7 +299428,7 @@
         "access_level": "Read",
         "action_name": "lambda:ListTags",
         "condition_keys": [],
-        "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
+        "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource",
         "resource_types": [
           {
             "name": "capacityProvider",
@@ -298358,6 +299445,14 @@
           {
             "name": "function",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-function"
+          },
+          {
+            "name": "microvmImage",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          },
+          {
+            "name": "networkConnector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
           }
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html"
@@ -298386,6 +299481,14 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-capacityProvider"
           }
         ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+      },
+      "PassNetworkConnector": {
+        "access_level": "Write",
+        "action_name": "lambda:PassNetworkConnector",
+        "condition_keys": [],
+        "description": "Grants permission to pass an AWS Lambda network connector to a service",
+        "resource_types": [],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
       },
       "PublishLayerVersion": {
@@ -298553,6 +299656,32 @@
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html"
       },
+      "ResumeMicrovm": {
+        "access_level": "Write",
+        "action_name": "lambda:ResumeMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to resume a suspended AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ResumeMicrovm.html"
+      },
+      "RunMicrovm": {
+        "access_level": "Write",
+        "action_name": "lambda:RunMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to run an AWS Lambda MicroVM from a MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_RunMicrovm.html"
+      },
       "SendDurableExecutionCallbackFailure": {
         "access_level": "Write",
         "action_name": "lambda:SendDurableExecutionCallbackFailure",
@@ -298605,6 +299734,19 @@
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_StopDurableExecution.html"
       },
+      "SuspendMicrovm": {
+        "access_level": "Write",
+        "action_name": "lambda:SuspendMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to suspend an AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_SuspendMicrovm.html"
+      },
       "TagResource": {
         "access_level": "Tagging",
         "action_name": "lambda:TagResource",
@@ -298618,7 +299760,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
+        "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource",
         "resource_types": [
           {
             "name": "capacityProvider",
@@ -298635,9 +299777,30 @@
           {
             "name": "function",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-function"
+          },
+          {
+            "name": "microvmImage",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          },
+          {
+            "name": "networkConnector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
           }
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html"
+      },
+      "TerminateMicrovm": {
+        "access_level": "Write",
+        "action_name": "lambda:TerminateMicrovm",
+        "condition_keys": [],
+        "description": "Grants permission to terminate an AWS Lambda MicroVM",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_TerminateMicrovm.html"
       },
       "UntagResource": {
         "access_level": "Tagging",
@@ -298648,7 +299811,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
+        "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource",
         "resource_types": [
           {
             "name": "capacityProvider",
@@ -298665,6 +299828,14 @@
           {
             "name": "function",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-function"
+          },
+          {
+            "name": "microvmImage",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          },
+          {
+            "name": "networkConnector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
           }
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html"
@@ -298820,6 +299991,45 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionUrlConfig.html"
+      },
+      "UpdateMicrovmImage": {
+        "access_level": "Write",
+        "action_name": "lambda:UpdateMicrovmImage",
+        "condition_keys": [],
+        "description": "Grants permission to update an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImage.html"
+      },
+      "UpdateMicrovmImageVersion": {
+        "access_level": "Write",
+        "action_name": "lambda:UpdateMicrovmImageVersion",
+        "condition_keys": [],
+        "description": "Grants permission to update a version of an AWS Lambda MicroVM image",
+        "resource_types": [
+          {
+            "name": "microvmImage*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-microvmImage"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImageVersion.html"
+      },
+      "UpdateNetworkConnector": {
+        "access_level": "Write",
+        "action_name": "lambda:UpdateNetworkConnector",
+        "condition_keys": [],
+        "description": "Grants permission to update an AWS Lambda network connector",
+        "resource_types": [
+          {
+            "name": "networkConnector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html#awslambda-networkConnector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateNetworkConnector.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html",
@@ -327463,6 +328673,23 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConfigurationPolicy.html"
       },
+      "CreateConnector": {
+        "access_level": "Write",
+        "action_name": "securityhub:CreateConnector",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a connector based on input parameters",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConnector.html"
+      },
       "CreateConnectorV2": {
         "access_level": "Write",
         "action_name": "securityhub:CreateConnectorV2",
@@ -327591,6 +328818,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConfigurationPolicy.html"
+      },
+      "DeleteConnector": {
+        "access_level": "Write",
+        "action_name": "securityhub:DeleteConnector",
+        "condition_keys": [],
+        "description": "Grants permission to delete a connector in Security Hub CSPM",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConnector.html"
       },
       "DeleteConnectorV2": {
         "access_level": "Write",
@@ -327795,6 +329035,19 @@
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html"
       },
+      "DisableSecurityHubFeatureV2": {
+        "access_level": "Write",
+        "action_name": "securityhub:DisableSecurityHubFeatureV2",
+        "condition_keys": [],
+        "description": "Grants permission to disable a Security Hub V2 feature",
+        "resource_types": [
+          {
+            "name": "hubv2*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hubv2"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHubFeatureV2.html"
+      },
       "DisableSecurityHubV2": {
         "access_level": "Write",
         "action_name": "securityhub:DisableSecurityHubV2",
@@ -327889,6 +329142,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html"
+      },
+      "EnableSecurityHubFeatureV2": {
+        "access_level": "Write",
+        "action_name": "securityhub:EnableSecurityHubFeatureV2",
+        "condition_keys": [],
+        "description": "Grants permission to enable a Security Hub V2 feature",
+        "resource_types": [
+          {
+            "name": "hubv2*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-hubv2"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHubFeatureV2.html"
       },
       "EnableSecurityHubV2": {
         "access_level": "Write",
@@ -327996,6 +329262,19 @@
         "description": "Grants permission to retrieve information about a configuration policy associated with a member account or organizational unit of the calling account's organization",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConfigurationPolicyAssociation.html"
+      },
+      "GetConnector": {
+        "access_level": "Read",
+        "action_name": "securityhub:GetConnector",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve details for a connector from Security Hub CSPM based on connector id",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConnector.html"
       },
       "GetConnectorV2": {
         "access_level": "Read",
@@ -328348,6 +329627,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConfigurationPolicyAssociations.html"
       },
+      "ListConnectors": {
+        "access_level": "List",
+        "action_name": "securityhub:ListConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of connectors and their metadata for the calling account from Security Hub CSPM",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConnectors.html"
+      },
       "ListConnectorsV2": {
         "access_level": "List",
         "action_name": "securityhub:ListConnectorsV2",
@@ -328541,6 +329828,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-configuration-policy"
           },
           {
+            "name": "connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connector"
+          },
+          {
             "name": "connectorv2",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connectorv2"
           },
@@ -328576,6 +329867,10 @@
           {
             "name": "configuration-policy",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-configuration-policy"
+          },
+          {
+            "name": "connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connector"
           },
           {
             "name": "connectorv2",
@@ -328643,6 +329938,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConfigurationPolicy.html"
+      },
+      "UpdateConnector": {
+        "access_level": "Write",
+        "action_name": "securityhub:UpdateConnector",
+        "condition_keys": [],
+        "description": "Grants permission to update a connector in Security Hub CSPM based on connector id and input parameters",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html#awssecurityhub-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConnector.html"
       },
       "UpdateConnectorV2": {
         "access_level": "Write",
@@ -339149,6 +340457,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-execution"
           },
           {
+            "name": "cloud-connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          },
+          {
             "name": "document",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-document"
           },
@@ -339310,6 +340622,28 @@
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html"
       },
+      "CreateCloudConnector": {
+        "access_level": "Write",
+        "action_name": "ssm:CreateCloudConnector",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a cloud connector for managing instances in other cloud environments",
+        "resource_types": [
+          {
+            "name": "cloud-connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateCloudConnector.html"
+      },
       "CreateDocument": {
         "access_level": "Write",
         "action_name": "ssm:CreateDocument",
@@ -339459,6 +340793,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html"
+      },
+      "DeleteCloudConnector": {
+        "access_level": "Write",
+        "action_name": "ssm:DeleteCloudConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a specified cloud connector",
+        "resource_types": [
+          {
+            "name": "cloud-connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteCloudConnector.html"
       },
       "DeleteDocument": {
         "access_level": "Write",
@@ -340184,6 +341536,24 @@
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCalendarState.html"
       },
+      "GetCloudConnector": {
+        "access_level": "Read",
+        "action_name": "ssm:GetCloudConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to view details about a specified cloud connector",
+        "resource_types": [
+          {
+            "name": "cloud-connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCloudConnector.html"
+      },
       "GetCommandInvocation": {
         "access_level": "Read",
         "action_name": "ssm:GetCommandInvocation",
@@ -340557,6 +341927,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html"
       },
+      "ListCloudConnectors": {
+        "access_level": "List",
+        "action_name": "ssm:ListCloudConnectors",
+        "condition_keys": [],
+        "description": "Grants permission to list cloud connectors in your account",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCloudConnectors.html"
+      },
       "ListCommandInvocations": {
         "access_level": "List",
         "action_name": "ssm:ListCommandInvocations",
@@ -340752,6 +342130,10 @@
           {
             "name": "automation-execution",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-execution"
+          },
+          {
+            "name": "cloud-connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
           },
           {
             "name": "document",
@@ -341004,6 +342386,10 @@
           {
             "name": "automation-execution",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-automation-execution"
+          },
+          {
+            "name": "cloud-connector",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
           },
           {
             "name": "document",
@@ -341427,6 +342813,24 @@
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html"
       },
+      "UpdateCloudConnector": {
+        "access_level": "Write",
+        "action_name": "ssm:UpdateCloudConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a specified cloud connector",
+        "resource_types": [
+          {
+            "name": "cloud-connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateCloudConnector.html"
+      },
       "UpdateDocument": {
         "access_level": "Write",
         "action_name": "ssm:UpdateDocument",
@@ -341679,6 +343083,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html"
+      },
+      "ValidateCloudConnector": {
+        "access_level": "Read",
+        "action_name": "ssm:ValidateCloudConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to verify that a specified cloud connector is functioning properly and to retrieve any validation findings or issues detected",
+        "resource_types": [
+          {
+            "name": "cloud-connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html#awssystemsmanager-cloud-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ValidateCloudConnector.html"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanager.html",
