@@ -63,6 +63,8 @@ and an example of the hover information:
 
 Requires VS Code 1.85.0 or newer. IAM data ships with the extension; completion and hover work offline.
 
+VS Code API typings stay pinned to the minimum supported editor version. Update the compiler and other development dependencies independently to retain compatibility with that editor.
+
 CloudFormation `.template` files open as JSON by default. For YAML templates with that extension, select YAML in the editor's language mode.
 
 The updater checks AWS's JSON service inventory, enriches actions from the Service Authorization Reference, and merges documentation pages sharing a service prefix. Empty inventories, missing metadata, failed requests, removed services, and action-count drops above 5% fail the update before the existing catalog is replaced. Review legitimate service removals or large reductions before rebuilding the catalog.

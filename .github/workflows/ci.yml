@@ -17,12 +17,12 @@ jobs:
       matrix:
         vscode: ["1.85.0", "stable"]
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.14"
           cache: pip
@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir -p .vscode-test/results
           xvfb-run -a npm test -- '${{ matrix.vscode }}' 2>&1 | tee '.vscode-test/results/${{ matrix.vscode }}.log'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: extension-${{ matrix.vscode }}

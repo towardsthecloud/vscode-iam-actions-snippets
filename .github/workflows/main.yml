@@ -28,15 +28,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.14"
           cache: pip
           cache-dependency-path: src/requirements.txt
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -67,7 +67,7 @@ jobs:
           mkdir -p .vscode-test/results
           xvfb-run -a npm test -- 1.85.0 2>&1 | tee .vscode-test/results/1.85.0.log
           xvfb-run -a node scripts/test-vscode.cjs stable 2>&1 | tee .vscode-test/results/stable.log
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         if: always() && steps.changes.outputs.release == 'true'
         with:
           name: tested-release
@@ -103,14 +103,14 @@ jobs:
             name: open-vsx
     name: Publish to ${{ matrix.name }}
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.2
         with:
           name: tested-release
           path: .vscode-test
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: "24"
-      - uses: HaaLeo/publish-vscode-extension@v2
+      - uses: HaaLeo/publish-vscode-extension@v2.1.0
         with:
           pat: ${{ secrets[matrix.token] }}
           registryUrl: ${{ matrix.registry }}
