@@ -15,7 +15,7 @@ const tokenCharacter = /[A-Za-z0-9*?:-]/;
 function yamlValueStart(text: string, offset: number): number | undefined {
   const lineStart = text.lastIndexOf('\n', offset - 1) + 1;
   const line = text.slice(lineStart, offset);
-  const scalar = /^\s*(?:-\s*)?(?:Action|NotAction)\s*:\s*/i.exec(line);
+  const scalar = /^\s*(?:-\s*)?(["']?)(?:Action|NotAction)\1\s*:\s*/i.exec(line);
   if (scalar) return lineStart + scalar[0].length;
   const item = /^\s*-\s+/.exec(line);
   const indent = /^\s*/.exec(line)![0].length;
@@ -25,9 +25,9 @@ function yamlValueStart(text: string, offset: number): number | undefined {
     if (!parent.trim() || parent.trimStart().startsWith('#')) continue;
     const parentIndent = /^\s*/.exec(parent)![0].length;
     if (parentIndent > indent || (parentIndent === indent && parent.trimStart().startsWith('-'))) continue;
-    const key = /^\s*(?:-\s*)?([\w]+)\s*:\s*(?:#.*)?$/.exec(parent);
+    const key = /^\s*(?:-\s*)?(["']?)([\w]+)\1\s*:\s*(?:#.*)?$/.exec(parent);
     if (key && parentIndent <= indent) {
-      return actionKeys.has(key[1].toLowerCase()) && item ? lineStart + item[0].length : undefined;
+      return actionKeys.has(key[2].toLowerCase()) && item ? lineStart + item[0].length : undefined;
     }
     if (parentIndent <= indent && !parent.trimStart().startsWith('-')) return undefined;
   }
@@ -141,6 +141,7 @@ export function getActionContext(document: vscode.TextDocument, position: vscode
         start: start + (quote ? 1 : 0),
         quote,
         array: /^\s*-/.test(text.slice(text.lastIndexOf('\n', offset - 1) + 1, offset)),
+        flow: false,
       };
     }
   } else {
@@ -152,8 +153,7 @@ export function getActionContext(document: vscode.TextDocument, position: vscode
   const closedQuote = !!value.quote && text[end] === value.quote;
   const after = end + (closedQuote ? 1 : 0);
   const next = followingCharacter(text, after, document.languageId);
-  const needsComma =
-    value.array && document.languageId !== 'yaml' && next !== undefined && next !== ',' && next !== ']';
+  const needsComma = value.array && value.flow && next !== undefined && next !== ',' && next !== ']';
   return {
     range: new vscode.Range(document.positionAt(value.start), document.positionAt(end)),
     prefix: text.slice(value.start, offset),

@@ -103,6 +103,15 @@ for (const [language, marked, expected] of [
   ['yaml', '{Action: ["s3:Ge|"]}', '{Action: ["s3:GetObject"]}'],
   ['yaml', '{Action: "s3:Ge|"}', '{Action: "s3:GetObject"}'],
   ['yaml', '{NotAction: s3:Ge|}', '{NotAction: s3:GetObject}'],
+  ['yaml', 'Action: ["s3:Ge|" "s3:ListBucket"]', 'Action: ["s3:GetObject", "s3:ListBucket"]'],
+  ['yaml', 'Action: [s3:Ge| s3:ListBucket]', 'Action: [s3:GetObject, s3:ListBucket]'],
+  ['yaml', 'Action: ["s3:Ge|", "s3:ListBucket"]', 'Action: ["s3:GetObject", "s3:ListBucket"]'],
+  ['yaml', 'Action: ["s3:Ge|" # reason\n"s3:ListBucket"]', 'Action: ["s3:GetObject", # reason\n"s3:ListBucket"]'],
+  ['yaml', 'Action:\n  - "s3:Ge|"\n  - "s3:ListBucket"', 'Action:\n  - "s3:GetObject"\n  - "s3:ListBucket"'],
+  ['yaml', '"Action": "s3:Ge|"', '"Action": "s3:GetObject"'],
+  ['yaml', "'NotAction': s3:Ge|", "'NotAction': s3:GetObject"],
+  ['yaml', '"Action":\n  - s3:Ge|', '"Action":\n  - s3:GetObject'],
+  ['yaml', "Statement:\n  - 'NotAction':\n      - s3:Ge|", "Statement:\n  - 'NotAction':\n      - s3:GetObject"],
   [
     'jsonc',
     '{"Action": ["s3:Ge|" /* reason */, "s3:ListBucket"]}',
@@ -159,6 +168,7 @@ for (const [language, marked] of [
   ['yaml', 'Action:\n  - "s3:GetObject"\nResource:\n  - s3:Ge|'],
   ['yaml', 'Action: [\n  "s3:GetObject"\n]\nResource: ["s3:Ge|"]'],
   ['yaml', '{Action: "s3:GetObject", Resource: "s3:Ge|"}'],
+  ['yaml', '"Action":\n  - "s3:GetObject"\n"Resource":\n  - s3:Ge|'],
   ['typescript', 'const p = { actions: [\n  // "s3:Ge|"\n] };'],
 ]) {
   test(`${language}: excludes non-action context ${JSON.stringify(marked)}`, async () => {
