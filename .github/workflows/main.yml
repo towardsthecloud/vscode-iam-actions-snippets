@@ -1,76 +1,118 @@
-name: Fetch IAM Actions and update this VSCode extension.
+name: Update and publish IAM extension
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 9 * * 5" # At 09:10 on Friday.
-
+    - cron: "10 9 * * 5"
+  push:
+    branches: [main]
+    paths:
+      - src/**
+      - snippets/**
+      - scripts/**
+      - package.json
+      - package-lock.json
+      - tsconfig.json
+      - .vscodeignore
+      - .nvmrc
+      - .github/workflows/main.yml
 permissions:
   contents: write
-
+concurrency:
+  group: iam-extension-release
+  cancel-in-progress: false
 jobs:
-  build:
+  prepare:
+    outputs:
+      release: ${{ steps.changes.outputs.release }}
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Setup Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.x"
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: src/requirements.txt
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: python -m pip install -r src/requirements.txt
+      - run: npm ci
+      - run: npm run test:python
+      - name: Fetch a complete IAM catalog
+        run: python src/update-iam-action-snippets.py --workers 12
+      - name: Check whether a release is needed
+        id: changes
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = push ] || ! git diff --quiet -- snippets/iam-actions.json; then
+            echo 'release=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Prepare release version
+        if: steps.changes.outputs.release == 'true'
+        run: |
+          npm version minor --no-git-tag-version
+          gitchangelog > CHANGELOG.md
+      - name: Validate the release catalog
+        run: npm run validate:catalog
+      - name: Test the release VSIX on minimum and stable VS Code
+        if: steps.changes.outputs.release == 'true'
+        shell: bash
+        run: |
+          mkdir -p .vscode-test/results
+          xvfb-run -a npm test -- 1.85.0 2>&1 | tee .vscode-test/results/1.85.0.log
+          xvfb-run -a node scripts/test-vscode.cjs stable 2>&1 | tee .vscode-test/results/stable.log
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.changes.outputs.release == 'true'
+        with:
+          name: tested-release
+          path: |
+            .vscode-test/iam-actions.vsix
+            .vscode-test/results/
+      - name: Commit the validated release
+        if: steps.changes.outputs.release == 'true'
+        run: |
+          git config user.name 'Github Actions'
+          git config user.email 'danny@towardsthecloud.com'
+          package_version=$(node -p "require('./package.json').version")
+          git add snippets/iam-actions.json package.json package-lock.json CHANGELOG.md
+          git commit -m "build: auto-update snippets to version: $package_version"
+          git tag "$package_version"
+          git push --atomic origin HEAD:main "$package_version"
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.release == 'true'
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - registry: https://marketplace.visualstudio.com
+            token: VSCE_TOKEN
+            name: marketplace
+          - registry: https://open-vsx.org
+            token: OPEN_VSX_TOKEN
+            name: open-vsx
+    name: Publish to ${{ matrix.name }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: tested-release
+          path: .vscode-test
+      - uses: actions/setup-node@v6
         with:
           node-version: "24"
-      - name: Install Python
-        run: |
-          set -x -e
-          python -m pip install --upgrade pip setuptools
-          python -m pip install -r src/requirements.txt
-      - name: Update the iam actions snippets
-        run: |
-          echo "Update the iam actions snippets"
-          python src/update-iam-action-snippets.py --workers 20
-      - name: Check for changes
-        id: git-check
-        run: |
-          git diff --exit-code || echo "changes_exist=true" >> "$GITHUB_OUTPUT"
-      - name: Commit changes to Github
-        if: steps.git-check.outputs.changes_exist == 'true'
-        run: |
-          set -x -e
-          # Configure git
-          git config --global user.name 'Github Actions'
-          git config --global user.email 'danny@towardsthecloud.com'
-
-          # Update version
-          npm version minor --force --no-git-tag-version
-          package_version=$(node -p "require('./package.json').version")
-
-          # Install dependencies and prepare for publishing
-          npm install
-          npm run vscode:prepublish
-
-          # Generate changelog
-          gitchangelog | tee "CHANGELOG.md"
-
-          # Commit and push changes
-          git commit -am "build: auto-update snippets to version: $package_version"
-          git push
-
-          # Create and push tag
-          git tag "$package_version"
-          git push origin --tags
-      - name: Publish to Visual Studio Marketplace
-        if: steps.git-check.outputs.changes_exist == 'true'
-        uses: HaaLeo/publish-vscode-extension@v2
-        id: publishToVSCE
+      - uses: HaaLeo/publish-vscode-extension@v2
         with:
-          pat: ${{ secrets.VSCE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-      - name: Publish to Open VSX Registry
-        if: steps.git-check.outputs.changes_exist == 'true'
-        uses: HaaLeo/publish-vscode-extension@v2
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ steps.publishToVSCE.outputs.vsixPath }}
+          pat: ${{ secrets[matrix.token] }}
+          registryUrl: ${{ matrix.registry }}
+          extensionFile: .vscode-test/iam-actions.vsix
+          skipDuplicate: true

@@ -13,7 +13,7 @@
     "url": "https://github.com/towardsthecloud/vscode-iam-actions-snippets.git"
   },
   "engines": {
-    "vscode": "^1.31.0"
+    "vscode": "^1.85.0"
   },
   "galleryBanner": {
     "color": "#2B2C33",
@@ -31,44 +31,35 @@
   ],
   "activationEvents": [
     "onLanguage:json",
-    "onLanguage:python",
+    "onLanguage:jsonc",
+    "onLanguage:yaml",
     "onLanguage:terraform",
+    "onLanguage:python",
     "onLanguage:typescript",
-    "onLanguage:yaml"
+    "onLanguage:typescriptreact"
   ],
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "test": "npm run package && python scripts/validate-vsix.py .vscode-test/iam-actions.vsix && node scripts/test-vscode.cjs",
+    "test:python": "python -m unittest discover -s tests -v",
+    "package": "vsce package --no-dependencies --out .vscode-test/iam-actions.vsix",
+    "validate:catalog": "python src/update-iam-action-snippets.py --validate"
   },
   "devDependencies": {
-    "@types/node": "^14.x",
-    "@types/vscode": "^1.31.0",
-    "typescript": "^5.x"
+    "@types/node": "18.19.130",
+    "@types/vscode": "1.85.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "4.0.0",
+    "typescript": "5.6.3"
   },
   "contributes": {
     "languages": [
       {
         "id": "json",
-        "aliases": [
-          "JSON",
-          "json"
-        ],
         "extensions": [
-          ".json",
-          ".template"
-        ]
-      },
-      {
-        "id": "yaml",
-        "aliases": [
-          "YAML",
-          "yaml"
-        ],
-        "extensions": [
-          ".yaml",
-          ".yml",
           ".template"
         ]
       },
@@ -81,27 +72,6 @@
         "extensions": [
           ".tf",
           ".tfvars"
-        ]
-      },
-      {
-        "id": "python",
-        "aliases": [
-          "Python",
-          "python"
-        ],
-        "extensions": [
-          ".py"
-        ]
-      },
-      {
-        "id": "typescript",
-        "aliases": [
-          "TypeScript",
-          "typescript"
-        ],
-        "extensions": [
-          ".ts",
-          ".tsx"
         ]
       }
     ]

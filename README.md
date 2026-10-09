@@ -20,6 +20,7 @@ This AWS IAM Actions Snippets extension equips Visual Studio Code with comprehen
 > 2. **Then install the [CloudBurn GitHub App](https://github.com/marketplace/cloudburn-io)** on the same repository
 >
 > From then on, every PR with infrastructure changes gets a comment with your CDK diff analysis, and CloudBurn adds a cost report next to it:
+>
 > - **Monthly cost impact**: whether this change raises or lowers your AWS bill, and by how much
 > - **Per-resource breakdown**: which resources drive the change, old versus new monthly cost
 > - **Region-aware pricing**: rates match the region your infrastructure actually deploys to
@@ -38,14 +39,14 @@ This AWS IAM Actions Snippets extension equips Visual Studio Code with comprehen
 3. **Documentation Links**: Quick access to AWS documentation for each IAM action directly from the snippet.
 4. **Flexible Format Support**: Supports IAM policies in JSON, but also IAM Policies defined in CloudFormation templates (`.json, .yaml`), and Terraform files (`.tf`).
 5. **Up-to-Date**: Regularly updated to reflect the latest AWS IAM actions.
-6. **Smart Hover Information**: When hovering over wildcard actions, displays all matching IAM actions, providing a comprehensive view of the permissions covered.
+6. **Smart Hover Information**: Supports case-insensitive action names and `*` / `?` wildcards. Large matches show the total count and the first 100 actions.
 
 ## Usage
 
 1. Install the AWS IAM Actions Snippets extension in VS Code.
-2. Open or create a new `.json`, `.yml`, or `.tf` file for your IAM policy.
+2. Open a JSON, JSONC, YAML, Terraform, TypeScript, or Python file containing an IAM policy.
 3. Start typing an IAM action name (e.g., `s3:Get`) in the appropriate place in your policy.
-4. The extension will provide auto-completion suggestions for matching IAM actions.
+4. The extension suggests service prefixes first, then filters actions as you type (for example, `s3:Ge`). Completions support `Action` / `NotAction` values and CDK / Terraform action arrays.
 5. Select the desired action to insert it into your policy.
 
 Example of auto-completion in action:
@@ -58,7 +59,41 @@ and an example of the hover information:
 
 > **Note:** If auto-completion doesn't trigger automatically, press `Ctrl+Space` (or `Cmd+Space` on macOS) to manually invoke IntelliSense.
 
+## Requirements and development
+
+Requires VS Code 1.85.0 or newer. IAM data ships with the extension; completion and hover work offline.
+
+CloudFormation `.template` files open as JSON by default. For YAML templates with that extension, select YAML in the editor's language mode.
+
+The updater checks AWS's JSON service inventory, enriches actions from the Service Authorization Reference, and merges documentation pages sharing a service prefix. Empty inventories, missing metadata, failed requests, removed services, and action-count drops above 5% fail the update before the existing catalog is replaced. Review legitimate service removals or large reductions before rebuilding the catalog.
+
+Use Node 24 (see `.nvmrc`) and Python 3.14:
+
+```sh
+npm ci
+uv venv --python 3.14
+uv pip install --python .venv/bin/python -r src/requirements.txt
+source .venv/bin/activate
+npm run test:python
+npm run validate:catalog
+npm test -- 1.85.0
+npm test -- stable
+```
+
+Each `npm test` builds and validates the VSIX, then tests the unpacked package in an isolated VS Code extension host. Reports are saved in `.vscode-test/results/`. On headless Linux, use `xvfb-run -a npm test -- <version>`.
+
+To update the catalog:
+
+```sh
+python src/update-iam-action-snippets.py --workers 12
+```
+
+For a limited development scrape, use a separate output: `--test 3 --output .vscode-test/sample-actions.json`.
+
+Pull requests validate the catalog, updater, and packaged extension on minimum and stable VS Code. Releases run the same checks, then publish the tested VSIX to both registries. Failed registry jobs can be rerun independently using the retained release artifact.
+
 ---
+
 ## Support
 
 If you have a feature request or an issue, please let me know on [Github](https://github.com/towardsthecloud/vscode-iam-actions-snippets/issues)

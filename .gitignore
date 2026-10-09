@@ -11,3 +11,11 @@ node_modules
 !test/complete-resource-specification.json
 !test/short-resource-specification.json
 !out/README.md
+
+.venv/
+__pycache__/
+/.vscode-test/vscode-*/
+/.vscode-test/user-data/
+/.vscode-test/extensions/
+/.vscode-test/packaged/
+/.vscode-test/results/
