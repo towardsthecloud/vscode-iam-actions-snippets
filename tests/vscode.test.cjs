@@ -101,6 +101,33 @@ for (const [language, marked, expected] of [
   ['yaml', 'Action: ["s3:Ge|"]', 'Action: ["s3:GetObject"]'],
   ['yaml', 'Action: [\n  "s3:Ge|"\n]', 'Action: [\n  "s3:GetObject"\n]'],
   ['yaml', '{Action: ["s3:Ge|"]}', '{Action: ["s3:GetObject"]}'],
+  ['yaml', '{Action: "s3:Ge|"}', '{Action: "s3:GetObject"}'],
+  ['yaml', '{NotAction: s3:Ge|}', '{NotAction: s3:GetObject}'],
+  [
+    'jsonc',
+    '{"Action": ["s3:Ge|" /* reason */, "s3:ListBucket"]}',
+    '{"Action": ["s3:GetObject" /* reason */, "s3:ListBucket"]}',
+  ],
+  [
+    'typescript',
+    "const p = { actions: ['s3:Ge|' /* reason */, 's3:ListBucket'] };",
+    "const p = { actions: ['s3:GetObject' /* reason */, 's3:ListBucket'] };",
+  ],
+  [
+    'typescript',
+    "const p = { actions: ['s3:Ge|' // reason\n, 's3:ListBucket'] };",
+    "const p = { actions: ['s3:GetObject' // reason\n, 's3:ListBucket'] };",
+  ],
+  [
+    'typescript',
+    "const p = { actions: ['s3:Ge|' /* reason */ 's3:ListBucket'] };",
+    "const p = { actions: ['s3:GetObject', /* reason */ 's3:ListBucket'] };",
+  ],
+  [
+    'python',
+    'p = PolicyStatement(actions=["s3:Ge|" # reason\n])',
+    'p = PolicyStatement(actions=["s3:GetObject" # reason\n])',
+  ],
   ['terraform', 'statement {\n  actions = ["s3:Ge|"]\n}', 'statement {\n  actions = ["s3:GetObject"]\n}'],
   ['typescript', 'const p = { actions: ["s3:Ge|"] };', 'const p = { actions: ["s3:GetObject"] };'],
   [
@@ -131,6 +158,7 @@ for (const [language, marked] of [
   ['terraform', 'statement { actions = ["s3:GetObject"]\n  resources = ["s3:Ge|"] }'],
   ['yaml', 'Action:\n  - "s3:GetObject"\nResource:\n  - s3:Ge|'],
   ['yaml', 'Action: [\n  "s3:GetObject"\n]\nResource: ["s3:Ge|"]'],
+  ['yaml', '{Action: "s3:GetObject", Resource: "s3:Ge|"}'],
   ['typescript', 'const p = { actions: [\n  // "s3:Ge|"\n] };'],
 ]) {
   test(`${language}: excludes non-action context ${JSON.stringify(marked)}`, async () => {

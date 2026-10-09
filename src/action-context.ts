@@ -38,7 +38,7 @@ function structuredValue(
   text: string,
   offset: number,
   language: string,
-): { start: number; quote?: string; array: boolean } | undefined {
+): { start: number; quote?: string; array: boolean; flow: boolean } | undefined {
   const frames: Array<{ action: boolean }> = [];
   let key = '';
   let actionValue = false;
@@ -65,7 +65,7 @@ function structuredValue(
       if (i >= offset) {
         if (char === '`') return undefined;
         return actionValue || frames.at(-1)?.action
-          ? { start: start + 1, quote: char, array: !!frames.at(-1)?.action }
+          ? { start: start + 1, quote: char, array: !!frames.at(-1)?.action, flow: frames.length > 0 }
           : undefined;
       }
       key = text.slice(start + 1, i);
@@ -74,8 +74,12 @@ function structuredValue(
     }
     if (/[\w$-]/.test(char)) {
       const start = i;
-      while (i + 1 < offset && /[\w$-]/.test(text[i + 1])) i++;
-      key = text.slice(start, i + 1);
+      const inAction = actionValue || !!frames.at(-1)?.action;
+      const character = inAction ? tokenCharacter : /[\w$-]/;
+      while (i + 1 < offset && character.test(text[i + 1])) i++;
+      if (inAction && i + 1 === offset) return { start, array: !!frames.at(-1)?.action, flow: frames.length > 0 };
+      key = inAction ? '' : text.slice(start, i + 1);
+      if (inAction) actionValue = false;
       continue;
     }
     if (char === ':' || char === '=') {
@@ -98,7 +102,27 @@ function structuredValue(
   let start = offset;
   while (start > 0 && tokenCharacter.test(text[start - 1])) start--;
   if (start > 0 && ['"', "'", '`'].includes(text[start - 1])) return undefined;
-  return { start, array: !!frames.at(-1)?.action };
+  return { start, array: !!frames.at(-1)?.action, flow: frames.length > 0 };
+}
+
+function followingCharacter(text: string, start: number, language: string): string | undefined {
+  let i = start;
+  while (i < text.length) {
+    if (/\s/.test(text[i])) {
+      i++;
+    } else if (text.startsWith('/*', i)) {
+      const end = text.indexOf('*/', i + 2);
+      if (end < 0) return;
+      i = end + 2;
+    } else if (text.startsWith('//', i) || (text[i] === '#' && ['python', 'terraform', 'yaml'].includes(language))) {
+      const end = text.indexOf('\n', i);
+      if (end < 0) return;
+      i = end + 1;
+    } else {
+      return text[i];
+    }
+  }
+  return;
 }
 
 export function getActionContext(document: vscode.TextDocument, position: vscode.Position): ActionContext | undefined {
@@ -107,7 +131,7 @@ export function getActionContext(document: vscode.TextDocument, position: vscode
   let value;
   if (document.languageId === 'yaml') {
     const flow = structuredValue(text, offset, document.languageId);
-    if (flow?.array) {
+    if (flow?.flow) {
       value = flow;
     } else {
       const start = yamlValueStart(text, offset);
@@ -127,7 +151,7 @@ export function getActionContext(document: vscode.TextDocument, position: vscode
   while (end < text.length && tokenCharacter.test(text[end])) end++;
   const closedQuote = !!value.quote && text[end] === value.quote;
   const after = end + (closedQuote ? 1 : 0);
-  const next = text.slice(after).trimStart()[0];
+  const next = followingCharacter(text, after, document.languageId);
   const needsComma =
     value.array && document.languageId !== 'yaml' && next !== undefined && next !== ',' && next !== ']';
   return {
