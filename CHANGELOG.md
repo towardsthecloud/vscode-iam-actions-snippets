@@ -2,6 +2,27 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+Fix
+~~~
+- Restore IAM catalog and stabilize extension (#2) [Danny Steenman]
+
+  Restore the complete AWS IAM catalog, preserve policy syntax during completion, and bound hover output. Validate catalog refreshes before atomic replacement and test the packaged extension before publishing it to both registries.
+
+  Upgrade TypeScript, Node typings, and CI actions while retaining the VS Code 1.85 API contract. Packaged integration tests pass on minimum and stable VS Code, with updater failure-path coverage and release safeguards.
+
+Other
+~~~~~
+- Docs: update readme tip. [Danny Steenman]
+
+
+1.97.0 (2026-07-10)
+-------------------
+- Build: auto-update snippets to version: 1.97.0. [Github Actions]
+
+
 1.96.0 (2026-07-03)
 -------------------
 - Build: auto-update snippets to version: 1.96.0. [Github Actions]
