@@ -4,6 +4,11 @@ Changelog
 
 (unreleased)
 ------------
+- Chore(ci): limit artifact retention (#3) [Axon Stone, Danny Steenman]
+
+
+1.98.0 (2026-10-10)
+-------------------
 
 Fix
 ~~~
@@ -15,6 +20,7 @@ Fix
 
 Other
 ~~~~~
+- Build: auto-update snippets to version: 1.98.0. [Github Actions]
 - Docs: update readme tip. [Danny Steenman]
 
 
