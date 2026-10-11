@@ -71,6 +71,7 @@ jobs:
         if: always() && steps.changes.outputs.release == 'true'
         with:
           name: tested-release
+          retention-days: 7
           path: |
             .vscode-test/iam-actions.vsix
             .vscode-test/results/

@@ -40,6 +40,7 @@ jobs:
         if: always()
         with:
           name: extension-${{ matrix.vscode }}
+          retention-days: 7
           path: |
             .vscode-test/iam-actions.vsix
             .vscode-test/results/
