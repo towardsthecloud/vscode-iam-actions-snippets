@@ -82,7 +82,7 @@ Pull requests validate the catalog, updater, and packaged extension on minimum a
 ## Related IAM extensions
 
 - [AWS IAM Service Principal Snippets](https://marketplace.visualstudio.com/items?itemName=dannysteenman.iam-service-principal-snippets) completes documented service principals in trust policies and CDK roles.
-- [AWS IAM Policy Debugger](https://github.com/towardsthecloud/vscode-iam-policy-debugger) validates policies, explains request matches and saves regression scenarios in VS Code’s Testing panel. It is an unpublished development preview; build a local VSIX to try it.
+- [AWS IAM Policy Debugger](https://marketplace.visualstudio.com/items?itemName=dannysteenman.iam-policy-debugger) validates policies, explains request matches and saves regression scenarios in VS Code’s Testing panel. It is an unpublished development preview; build a local VSIX to try it.
 
 ## Support
 
