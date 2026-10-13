@@ -38,6 +38,7 @@ jobs:
           xvfb-run -a npm test -- '${{ matrix.vscode }}' 2>&1 | tee '.vscode-test/results/${{ matrix.vscode }}.log'
       - uses: actions/upload-artifact@v7.0.2
         if: always()
+        continue-on-error: true
         with:
           name: extension-${{ matrix.vscode }}
           retention-days: 7
