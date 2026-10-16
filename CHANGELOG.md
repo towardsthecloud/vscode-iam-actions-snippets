@@ -4,6 +4,23 @@ Changelog
 
 (unreleased)
 ------------
+- Chore(ci): keep report uploads from failing on artifact quota (#5)
+  [Danny Steenman]
+- Docs: link companion IAM extensions and debugger preview (#4) [Axon,
+  Danny Steenman]
+
+  * docs: link companion IAM extensions and debugger preview
+
+  * Update AWS IAM Policy Debugger link in README
+
+  ---------
+- Docs: promote the open-source CloudBurn CLI in the readme tip. [Danny
+  Steenman]
+
+
+1.99.0 (2026-10-11)
+-------------------
+- Build: auto-update snippets to version: 1.99.0. [Github Actions]
 - Chore(ci): limit artifact retention (#3) [Axon Stone, Danny Steenman]
 
 

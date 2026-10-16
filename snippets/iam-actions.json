@@ -2697,6 +2697,14 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_acm.html#list_acm-action-CreateAcmeExternalAccountBinding"
       },
+      "CreateTimeStamp": {
+        "access_level": "Write",
+        "action_name": "acm:CreateTimeStamp",
+        "condition_keys": [],
+        "description": "Grants permission to create an RFC 3161 timestamp token over a submitted message digest",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_acm.html#list_acm-action-CreateTimeStamp"
+      },
       "DeleteAcmeDomainValidation": {
         "access_level": "Write",
         "action_name": "acm:DeleteAcmeDomainValidation",
@@ -4919,6 +4927,10 @@
         "action_name": "aidevops:AssociateService",
         "condition_keys": [
           {
+            "name": "aidevops:ServiceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_ServiceType"
+          },
+          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
           }
@@ -5339,6 +5351,10 @@
         "action_name": "aidevops:DisassociateService",
         "condition_keys": [
           {
+            "name": "aidevops:ServiceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_ServiceType"
+          },
+          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
           }
@@ -5536,6 +5552,10 @@
         "access_level": "Read",
         "action_name": "aidevops:GetAssociation",
         "condition_keys": [
+          {
+            "name": "aidevops:ServiceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_ServiceType"
+          },
           {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
@@ -6069,6 +6089,10 @@
         "action_name": "aidevops:ListWebhooks",
         "condition_keys": [
           {
+            "name": "aidevops:ServiceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_ServiceType"
+          },
+          {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
           }
@@ -6322,6 +6346,10 @@
         "access_level": "Write",
         "action_name": "aidevops:UpdateAssociation",
         "condition_keys": [
+          {
+            "name": "aidevops:ServiceType",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_ServiceType"
+          },
           {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
@@ -29559,6 +29587,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-ArchiveAgent"
       },
+      "ArchiveDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:ArchiveDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to archive a managed agent deployment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-ArchiveDeployment"
+      },
       "ArchiveEnvironment": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:ArchiveEnvironment",
@@ -29746,6 +29792,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-CreateBatchInference"
+      },
+      "CreateDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:CreateDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a managed agent deployment in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-CreateDeployment"
       },
       "CreateEnvironment": {
         "access_level": "Write",
@@ -30129,6 +30193,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-GetBatchInference"
       },
+      "GetDeployment": {
+        "access_level": "Read",
+        "action_name": "aws-external-anthropic:GetDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve details of a managed agent deployment or its runs",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-GetDeployment"
+      },
       "GetEnvironment": {
         "access_level": "Read",
         "action_name": "aws-external-anthropic:GetEnvironment",
@@ -30348,6 +30430,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-ListBatchInferences"
       },
+      "ListDeployments": {
+        "access_level": "List",
+        "action_name": "aws-external-anthropic:ListDeployments",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list managed agent deployments in a workspace",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-ListDeployments"
+      },
       "ListEnvironments": {
         "access_level": "List",
         "action_name": "aws-external-anthropic:ListEnvironments",
@@ -30534,6 +30634,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-ListWorkspaces"
       },
+      "PauseDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:PauseDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to pause a managed agent deployment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-PauseDeployment"
+      },
       "ProcessEnvironmentWork": {
         "access_level": "Write",
         "action_name": "aws-external-anthropic:ProcessEnvironmentWork",
@@ -30578,6 +30696,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-RotateWebhookSecret"
       },
+      "RunDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:RunDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to trigger a managed agent deployment run",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-RunDeployment"
+      },
       "TagResource": {
         "access_level": "Tagging, Write",
         "action_name": "aws-external-anthropic:TagResource",
@@ -30603,6 +30739,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-TagResource"
+      },
+      "UnpauseDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UnpauseDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to resume a paused managed agent deployment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-UnpauseDeployment"
       },
       "UntagResource": {
         "access_level": "Tagging, Write",
@@ -30643,6 +30797,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-UpdateAgent"
+      },
+      "UpdateDeployment": {
+        "access_level": "Write",
+        "action_name": "aws-external-anthropic:UpdateDeployment",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a managed agent deployment",
+        "resource_types": [
+          {
+            "name": "workspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-resource-workspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html#list_aws-external-anthropic-action-UpdateDeployment"
       },
       "UpdateEnvironment": {
         "access_level": "Write",
@@ -71934,6 +72106,10 @@
           {
             "name": "cloudwatch:AlarmActions",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmActions"
+          },
+          {
+            "name": "cloudwatch:AlarmTagsPropagationEnabled",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmTagsPropagationEnabled"
           }
         ],
         "description": "Grants permission to create or update a composite alarm",
@@ -72033,6 +72209,10 @@
           {
             "name": "cloudwatch:AlarmActions",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmActions"
+          },
+          {
+            "name": "cloudwatch:AlarmTagsPropagationEnabled",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmTagsPropagationEnabled"
           }
         ],
         "description": "Grants permission to create or update a log-based alarm and associate it with a CloudWatch Logs Insights scheduled query",
@@ -72084,6 +72264,10 @@
           {
             "name": "cloudwatch:AlarmActions",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmActions"
+          },
+          {
+            "name": "cloudwatch:AlarmTagsPropagationEnabled",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudwatch.html#list_cloudwatch-cloudwatch_AlarmTagsPropagationEnabled"
           }
         ],
         "description": "Grants permission to create or update an alarm and associates it with the specified Amazon CloudWatch metric",
@@ -104866,6 +105050,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-CreateConnection"
       },
+      "CreateDataApp": {
+        "access_level": "Write",
+        "action_name": "datazone:CreateDataApp",
+        "condition_keys": [],
+        "description": "Grants permission to create data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-CreateDataApp"
+      },
       "CreateDataProduct": {
         "access_level": "Write",
         "action_name": "datazone:CreateDataProduct",
@@ -105075,6 +105267,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteAccountPool"
       },
+      "DeleteAgentApprovalPolicy": {
+        "access_level": "Write",
+        "action_name": "datazone:DeleteAgentApprovalPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete an agent approval policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteAgentApprovalPolicy"
+      },
       "DeleteAsset": {
         "access_level": "Write",
         "action_name": "datazone:DeleteAsset",
@@ -105122,6 +105322,22 @@
         "description": "Grants permission to delete connections",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteConnection"
+      },
+      "DeleteConversation": {
+        "access_level": "Write",
+        "action_name": "datazone:DeleteConversation",
+        "condition_keys": [],
+        "description": "Grants permission to delete conversations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteConversation"
+      },
+      "DeleteDataApp": {
+        "access_level": "Write",
+        "action_name": "datazone:DeleteDataApp",
+        "condition_keys": [],
+        "description": "Grants permission to delete data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteDataApp"
       },
       "DeleteDataExportConfiguration": {
         "access_level": "Write",
@@ -105341,6 +105557,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeleteTimeSeriesDataPoints"
       },
+      "DeregisterAgentArtifact": {
+        "access_level": "Write",
+        "action_name": "datazone:DeregisterAgentArtifact",
+        "condition_keys": [],
+        "description": "Grants permission to deregister agent artifacts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-DeregisterAgentArtifact"
+      },
       "DisassociateEnvironmentRole": {
         "access_level": "Write",
         "action_name": "datazone:DisassociateEnvironmentRole",
@@ -105372,6 +105596,14 @@
         "description": "Grants permission to get account pool details",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-GetAccountPool"
+      },
+      "GetAgentApprovalPolicy": {
+        "access_level": "Read",
+        "action_name": "datazone:GetAgentApprovalPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to get an agent approval policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-GetAgentApprovalPolicy"
       },
       "GetAsset": {
         "access_level": "Read",
@@ -105452,6 +105684,14 @@
         "description": "Grants permission to Get Current Effective Policy",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-GetCurrentEffectivePolicy"
+      },
+      "GetDataApp": {
+        "access_level": "Read",
+        "action_name": "datazone:GetDataApp",
+        "condition_keys": [],
+        "description": "Grants permission to get data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-GetDataApp"
       },
       "GetDataExportConfiguration": {
         "access_level": "Read",
@@ -105791,6 +106031,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-GetUserProfile"
       },
+      "InvokeAgent": {
+        "access_level": "Write",
+        "action_name": "datazone:InvokeAgent",
+        "condition_keys": [],
+        "description": "Grants permission to invoke agent",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-InvokeAgent"
+      },
       "ListAccountEnvironments": {
         "access_level": "List",
         "action_name": "datazone:ListAccountEnvironments",
@@ -105814,6 +106062,22 @@
         "description": "Grants permission to list accounts in an account pool",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListAccountsInAccountPool"
+      },
+      "ListAgentArtifacts": {
+        "access_level": "List",
+        "action_name": "datazone:ListAgentArtifacts",
+        "condition_keys": [],
+        "description": "Grants permission to list agent artifacts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListAgentArtifacts"
+      },
+      "ListAgentSessionRecords": {
+        "access_level": "List",
+        "action_name": "datazone:ListAgentSessionRecords",
+        "condition_keys": [],
+        "description": "Grants permission to list agent session records",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListAgentSessionRecords"
       },
       "ListAssetFilters": {
         "access_level": "List",
@@ -105854,6 +106118,14 @@
         "description": "Grants permission to list conversations",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListConversations"
+      },
+      "ListDataApps": {
+        "access_level": "List",
+        "action_name": "datazone:ListDataApps",
+        "condition_keys": [],
+        "description": "Grants permission to list data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListDataApps"
       },
       "ListDataProductRevisions": {
         "access_level": "List",
@@ -106089,6 +106361,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListRules"
       },
+      "ListSharedDataApps": {
+        "access_level": "List",
+        "action_name": "datazone:ListSharedDataApps",
+        "condition_keys": [],
+        "description": "Grants permission to list shared data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ListSharedDataApps"
+      },
       "ListSubscriptionGrants": {
         "access_level": "List",
         "action_name": "datazone:ListSubscriptionGrants",
@@ -106179,6 +106459,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-ProvisionDomain"
       },
+      "PutAgentApprovalPolicy": {
+        "access_level": "Write",
+        "action_name": "datazone:PutAgentApprovalPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to create or update an agent approval policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-PutAgentApprovalPolicy"
+      },
       "PutCellRunResult": {
         "access_level": "Write",
         "action_name": "datazone:PutCellRunResult",
@@ -106226,6 +106514,14 @@
         "description": "Grants permission to refresh token",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-RefreshToken"
+      },
+      "RegisterAgentArtifact": {
+        "access_level": "Write",
+        "action_name": "datazone:RegisterAgentArtifact",
+        "condition_keys": [],
+        "description": "Grants permission to register agent artifacts",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-RegisterAgentArtifact"
       },
       "RejectPredictions": {
         "access_level": "Write",
@@ -106429,6 +106725,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-StartNotebookSync"
       },
+      "StopAgent": {
+        "access_level": "Write",
+        "action_name": "datazone:StopAgent",
+        "condition_keys": [],
+        "description": "Grants permission to stop agent",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-StopAgent"
+      },
       "StopCompute": {
         "access_level": "Write",
         "action_name": "datazone:StopCompute",
@@ -106548,6 +106852,22 @@
         "description": "Grants permission to update connections",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-UpdateConnection"
+      },
+      "UpdateConversation": {
+        "access_level": "Write",
+        "action_name": "datazone:UpdateConversation",
+        "condition_keys": [],
+        "description": "Grants permission to update conversations",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-UpdateConversation"
+      },
+      "UpdateDataApp": {
+        "access_level": "Write",
+        "action_name": "datazone:UpdateDataApp",
+        "condition_keys": [],
+        "description": "Grants permission to update data apps",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html#list_datazone-action-UpdateDataApp"
       },
       "UpdateDataSource": {
         "access_level": "Write",
@@ -241058,6 +241378,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-AddLFTagsToResource"
       },
+      "AttachRLSPolicy": {
+        "access_level": "Permissions management, Write",
+        "action_name": "lakeformation:AttachRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to attach a Lake Formation row-level security policy to a resource for one or more principals",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-AttachRLSPolicy"
+      },
       "BatchGrantPermissions": {
         "access_level": "Permissions management, Write",
         "action_name": "lakeformation:BatchGrantPermissions",
@@ -241130,6 +241458,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-CreateLakeFormationOptIn"
       },
+      "CreateRLSPolicy": {
+        "access_level": "Write",
+        "action_name": "lakeformation:CreateRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to create a Lake Formation row-level security policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-CreateRLSPolicy"
+      },
       "DeleteDataCellsFilter": {
         "access_level": "Write",
         "action_name": "lakeformation:DeleteDataCellsFilter",
@@ -241178,6 +241514,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-DeleteObjectsOnCancel"
       },
+      "DeleteRLSPolicy": {
+        "access_level": "Write",
+        "action_name": "lakeformation:DeleteRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete a Lake Formation row-level security policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-DeleteRLSPolicy"
+      },
       "DeregisterResource": {
         "access_level": "Write",
         "action_name": "lakeformation:DeregisterResource",
@@ -241209,6 +241553,14 @@
         "description": "Grants permission to get status of the given transaction",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-DescribeTransaction"
+      },
+      "DetachRLSPolicy": {
+        "access_level": "Permissions management, Write",
+        "action_name": "lakeformation:DetachRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to detach a Lake Formation row-level security policy from a resource for one or more principals",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-DetachRLSPolicy"
       },
       "ExtendTransaction": {
         "access_level": "Write",
@@ -241294,6 +241646,14 @@
         "description": "Grants permission to retrieve the statistics for the given query",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-GetQueryStatistics"
+      },
+      "GetRLSPolicy": {
+        "access_level": "Read",
+        "action_name": "lakeformation:GetRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a Lake Formation row-level security policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-GetRLSPolicy"
       },
       "GetResourceLFTags": {
         "access_level": "Read",
@@ -241390,6 +241750,22 @@
         "description": "Grants permission to list permissions filtered by principal or resource",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-ListPermissions"
+      },
+      "ListRLSPolicies": {
+        "access_level": "List",
+        "action_name": "lakeformation:ListRLSPolicies",
+        "condition_keys": [],
+        "description": "Grants permission to list Lake Formation row-level security policies",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-ListRLSPolicies"
+      },
+      "ListRLSPolicyAttachments": {
+        "access_level": "List",
+        "action_name": "lakeformation:ListRLSPolicyAttachments",
+        "condition_keys": [],
+        "description": "Grants permission to list the resource and principal attachments of Lake Formation row-level security policies",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-ListRLSPolicyAttachments"
       },
       "ListResources": {
         "access_level": "List",
@@ -241518,6 +241894,14 @@
         "description": "Grants permission to update the IAM Identity Center connection parameters",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-UpdateLakeFormationIdentityCenterConfiguration"
+      },
+      "UpdateRLSPolicy": {
+        "access_level": "Write",
+        "action_name": "lakeformation:UpdateRLSPolicy",
+        "condition_keys": [],
+        "description": "Grants permission to update the filter expression of a Lake Formation row-level security policy",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html#list_lakeformation-action-UpdateRLSPolicy"
       },
       "UpdateResource": {
         "access_level": "Write",
@@ -243202,6 +243586,24 @@
         "description": "Grants permission to retrieve a list of AWS Lambda MicroVMs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html#list_lambda-action-ListMicrovms"
+      },
+      "ListNetworkConnectorVersions": {
+        "access_level": "List",
+        "action_name": "lambda:ListNetworkConnectorVersions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html#list_lambda-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve a list of versions of an AWS Lambda network connector",
+        "resource_types": [
+          {
+            "name": "networkConnector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html#list_lambda-resource-networkConnector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lambda.html#list_lambda-action-ListNetworkConnectorVersions"
       },
       "ListNetworkConnectors": {
         "access_level": "List",
@@ -294324,6 +294726,32 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-GetPartner"
       },
+      "GetPartnerCentralContentDocument": {
+        "access_level": "Read",
+        "action_name": "partnercentral:GetPartnerCentralContentDocument",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to retrieve a content document in AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-GetPartnerCentralContentDocument"
+      },
+      "GetPartnerCentralContentMetadata": {
+        "access_level": "Read",
+        "action_name": "partnercentral:GetPartnerCentralContentMetadata",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to retrieve content metadata in AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-GetPartnerCentralContentMetadata"
+      },
       "GetPartnerDashboard": {
         "access_level": "Read",
         "action_name": "partnercentral:GetPartnerDashboard",
@@ -294944,6 +295372,19 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-ListOpportunityFromEngagementTasks"
       },
+      "ListPartnerCentralContent": {
+        "access_level": "List",
+        "action_name": "partnercentral:ListPartnerCentralContent",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to list content in AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-ListPartnerCentralContent"
+      },
       "ListPartnerPaths": {
         "access_level": "List",
         "action_name": "partnercentral:ListPartnerPaths",
@@ -295286,6 +295727,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-RejectEngagementInvitation"
+      },
+      "SearchPartnerCentralContent": {
+        "access_level": "List",
+        "action_name": "partnercentral:SearchPartnerCentralContent",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to search content in AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-SearchPartnerCentralContent"
       },
       "SearchPartnerProfiles": {
         "access_level": "List",
@@ -331022,6 +331476,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-DescribeResourceGroupingRecommendationTask"
       },
+      "GetDependencyInsights": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:GetDependencyInsights",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve dependency insights for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-resource-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-GetDependencyInsights"
+      },
       "GetFailureModeFinding": {
         "access_level": "Read",
         "action_name": "resiliencehub:GetFailureModeFinding",
@@ -331525,6 +331997,24 @@
         "description": "Grants permission to list resilience policies",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-ListPolicies"
+      },
+      "ListPolicyEvents": {
+        "access_level": "Read",
+        "action_name": "resiliencehub:ListPolicyEvents",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list events for a resilience policy",
+        "resource_types": [
+          {
+            "name": "policy*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-resource-policy"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-ListPolicyEvents"
       },
       "ListRecommendationTemplates": {
         "access_level": "List",
@@ -332101,6 +332591,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-StartAppAssessment"
+      },
+      "StartDependencyInsights": {
+        "access_level": "Write",
+        "action_name": "resiliencehub:StartDependencyInsights",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to start generating dependency insights for a service",
+        "resource_types": [
+          {
+            "name": "service*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-resource-service"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html#list_resilience-hub-action-StartDependencyInsights"
       },
       "StartFailureModeAssessment": {
         "access_level": "Write",
@@ -337300,6 +337808,14 @@
         "description": "Grants permission to get detailed information about a domain",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53domains.html#list_route53domains-action-GetDomainDetail"
+      },
+      "GetDomainPrices": {
+        "access_level": "Read",
+        "action_name": "route53domains:GetDomainPrices",
+        "condition_keys": [],
+        "description": "Grants permission to get the prices of operations for the given domain name",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53domains.html#list_route53domains-action-GetDomainPrices"
       },
       "GetDomainSuggestions": {
         "access_level": "Read",
@@ -360898,6 +361414,48 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-CreateTrainingPlan"
       },
+      "CreateTrainingSession": {
+        "access_level": "Write",
+        "action_name": "sagemaker:CreateTrainingSession",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_TagKeys"
+          },
+          {
+            "name": "sagemaker:OutputKmsKeyArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_OutputKmsKeyArn"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:VpcSecurityGroupIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_VpcSecurityGroupIds"
+          },
+          {
+            "name": "sagemaker:VpcSubnets",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_VpcSubnets"
+          }
+        ],
+        "description": "Grants permission to create a SageMaker training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-CreateTrainingSession"
+      },
       "CreateTransformJob": {
         "access_level": "Write",
         "action_name": "sagemaker:CreateTransformJob",
@@ -362739,6 +363297,28 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-DeleteTrainingJob"
       },
+      "DeleteTrainingSession": {
+        "access_level": "Write",
+        "action_name": "sagemaker:DeleteTrainingSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a SageMaker training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-DeleteTrainingSession"
+      },
       "DeleteTrial": {
         "access_level": "Write",
         "action_name": "sagemaker:DeleteTrial",
@@ -364477,6 +365057,28 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-DescribeTrainingPlanExtensionHistory"
       },
+      "DescribeTrainingSession": {
+        "access_level": "Read",
+        "action_name": "sagemaker:DescribeTrainingSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to return information about a SageMaker training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-DescribeTrainingSession"
+      },
       "DescribeTransformJob": {
         "access_level": "Read",
         "action_name": "sagemaker:DescribeTransformJob",
@@ -364677,6 +365279,50 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-EnableSagemakerServicecatalogPortfolio"
       },
+      "ExecuteSamplingOperation": {
+        "access_level": "Write",
+        "action_name": "sagemaker:ExecuteSamplingOperation",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to execute a sampling operation against a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-ExecuteSamplingOperation"
+      },
+      "ExecuteTrainingOperation": {
+        "access_level": "Write",
+        "action_name": "sagemaker:ExecuteTrainingOperation",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to execute a training operation against a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-ExecuteTrainingOperation"
+      },
       "ExtendTrainingPlan": {
         "access_level": "Write",
         "action_name": "sagemaker:ExtendTrainingPlan",
@@ -364819,6 +365465,28 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-GetSagemakerServicecatalogPortfolioStatus"
       },
+      "GetSamplingOperationResult": {
+        "access_level": "Read",
+        "action_name": "sagemaker:GetSamplingOperationResult",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get the result of a sampling operation for a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-GetSamplingOperationResult"
+      },
       "GetScalingConfigurationRecommendation": {
         "access_level": "Read",
         "action_name": "sagemaker:GetScalingConfigurationRecommendation",
@@ -364848,6 +365516,28 @@
         "description": "Grants permission to get search suggestions when provided with a keyword",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-GetSearchSuggestions"
+      },
+      "GetTrainingOperationResult": {
+        "access_level": "Read",
+        "action_name": "sagemaker:GetTrainingOperationResult",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get the result of a training operation for a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-GetTrainingOperationResult"
       },
       "ImportHubContent": {
         "access_level": "Write",
@@ -366188,6 +366878,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-ListTrainingPlans"
       },
+      "ListTrainingSessions": {
+        "access_level": "List",
+        "action_name": "sagemaker:ListTrainingSessions",
+        "condition_keys": [],
+        "description": "Grants permission to list SageMaker training sessions",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-ListTrainingSessions"
+      },
       "ListTransformJobs": {
         "access_level": "List",
         "action_name": "sagemaker:ListTransformJobs",
@@ -366415,6 +367113,50 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-Sample"
+      },
+      "SampleTrainingSession": {
+        "access_level": "Write",
+        "action_name": "sagemaker:SampleTrainingSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke a synchronous sample request against a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-SampleTrainingSession"
+      },
+      "SampleTrainingSessionWithResponseStream": {
+        "access_level": "Write",
+        "action_name": "sagemaker:SampleTrainingSessionWithResponseStream",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to invoke a streaming sample request against a training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-SampleTrainingSessionWithResponseStream"
       },
       "SampleWithResponseStream": {
         "access_level": "Write",
@@ -367148,6 +367890,28 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-StopTrainingJob"
+      },
+      "StopTrainingSession": {
+        "access_level": "Write",
+        "action_name": "sagemaker:StopTrainingSession",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "sagemaker:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-sagemaker_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to stop a SageMaker training session",
+        "resource_types": [
+          {
+            "name": "training-session*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-resource-training-session"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html#list_sagemaker-action-StopTrainingSession"
       },
       "StopTransformJob": {
         "access_level": "Write",
@@ -373498,6 +374262,42 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-action-BatchDeleteThreats"
+      },
+      "BatchDisassociateFindingIssue": {
+        "access_level": "Write",
+        "action_name": "securityagent:BatchDisassociateFindingIssue",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to disassociate issues from findings",
+        "resource_types": [
+          {
+            "name": "AgentSpace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-resource-AgentSpace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-action-BatchDisassociateFindingIssue"
+      },
+      "BatchExportFindings": {
+        "access_level": "Write",
+        "action_name": "securityagent:BatchExportFindings",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create issues for the findings",
+        "resource_types": [
+          {
+            "name": "AgentSpace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-resource-AgentSpace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html#list_securityagent-action-BatchExportFindings"
       },
       "BatchGetAgentSpaces": {
         "access_level": "Read",
