@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.100.0 (2026-10-16)
+--------------------
+- Build: auto-update snippets to version: 1.100.0. [Github Actions]
 - Chore(ci): keep report uploads from failing on artifact quota (#5)
   [Danny Steenman]
 - Docs: link companion IAM extensions and debugger preview (#4) [Axon,
