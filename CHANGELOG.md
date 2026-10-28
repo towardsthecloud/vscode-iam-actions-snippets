@@ -4,6 +4,13 @@ Changelog
 
 (unreleased)
 ------------
+- Fix(deps): patch certifi trust store and qs serialization (#8) [Danny
+  Steenman]
+
+
+1.102.0 (2026-10-28)
+--------------------
+- Build: auto-update snippets to version: 1.102.0. [Github Actions]
 - Fix(catalog): remove retired CodeStar actions blocking releases (#7)
   [Danny Steenman]
 - Fix(deps): patch MSAL Node information disclosure (#6) [Danny
