@@ -2,6 +2,19 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Fix(catalog): remove retired CodeStar actions blocking releases (#7)
+  [Danny Steenman]
+- Fix(deps): patch MSAL Node information disclosure (#6) [Danny
+  Steenman]
+
+
+1.101.0 (2026-10-23)
+--------------------
+- Build: auto-update snippets to version: 1.101.0. [Github Actions]
+
+
 1.100.0 (2026-10-16)
 --------------------
 - Build: auto-update snippets to version: 1.100.0. [Github Actions]

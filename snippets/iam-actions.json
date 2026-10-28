@@ -9746,7 +9746,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aoss_collection-group"
           }
         ],
-        "description": "Grants permission to get attributes for one or more collection groups",
+        "description": "Grants permission to get attributes for one or more collection-groups",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-BatchGetCollectionGroup"
       },
@@ -9773,6 +9773,24 @@
         "description": "Grants permission to get attributes for one or more VPC endpoints",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-BatchGetVpcEndpoint"
+      },
+      "CancelIngestionJob": {
+        "access_level": "Write",
+        "action_name": "aoss:CancelIngestionJob",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to cancel an ingestion job",
+        "resource_types": [
+          {
+            "name": "IngestionJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionJob"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-CancelIngestionJob"
       },
       "CreateAccessPolicy": {
         "access_level": "Write",
@@ -9836,6 +9854,58 @@
         "description": "Grants permission to create an opensearch index",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-CreateIndex"
+      },
+      "CreateIngestionJob": {
+        "access_level": "Write",
+        "action_name": "aoss:CreateIngestionJob",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an ingestion job on a collection",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-CreateIngestionJob"
+      },
+      "CreateIngestionStream": {
+        "access_level": "Write",
+        "action_name": "aoss:CreateIngestionStream",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create an ingestion stream on a collection",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-CreateIngestionStream"
       },
       "CreateLifecyclePolicy": {
         "access_level": "Write",
@@ -9962,6 +10032,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-DeleteIndex"
       },
+      "DeleteIngestionStream": {
+        "access_level": "Write",
+        "action_name": "aoss:DeleteIngestionStream",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete an ingestion stream",
+        "resource_types": [
+          {
+            "name": "IngestionStream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionStream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-DeleteIngestionStream"
+      },
       "DeleteLifecyclePolicy": {
         "access_level": "Write",
         "action_name": "aoss:DeleteLifecyclePolicy",
@@ -10037,6 +10125,42 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-GetIndex"
       },
+      "GetIngestionJob": {
+        "access_level": "Read",
+        "action_name": "aoss:GetIngestionJob",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get information about an ingestion job",
+        "resource_types": [
+          {
+            "name": "IngestionJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionJob"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-GetIngestionJob"
+      },
+      "GetIngestionStream": {
+        "access_level": "Read",
+        "action_name": "aoss:GetIngestionStream",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get information about an ingestion stream",
+        "resource_types": [
+          {
+            "name": "IngestionStream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionStream"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-GetIngestionStream"
+      },
       "GetPoliciesStats": {
         "access_level": "Read",
         "action_name": "aoss:GetPoliciesStats",
@@ -10078,7 +10202,7 @@
         "access_level": "List",
         "action_name": "aoss:ListCollectionGroups",
         "condition_keys": [],
-        "description": "Grants permission to list collection groups",
+        "description": "Grants permission to list collection-groups",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListCollectionGroups"
       },
@@ -10089,6 +10213,42 @@
         "description": "Grants permission to list collections",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListCollections"
+      },
+      "ListIngestionJobs": {
+        "access_level": "List",
+        "action_name": "aoss:ListIngestionJobs",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list ingestion jobs for a collection",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListIngestionJobs"
+      },
+      "ListIngestionStreams": {
+        "access_level": "List",
+        "action_name": "aoss:ListIngestionStreams",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list ingestion streams for a collection",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListIngestionStreams"
       },
       "ListLifecyclePolicies": {
         "access_level": "List",
@@ -10117,9 +10277,31 @@
       "ListTagsForResource": {
         "access_level": "List",
         "action_name": "aoss:ListTagsForResource",
-        "condition_keys": [],
-        "description": "Grants permission to list tags for a collection",
-        "resource_types": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list tags for a collection, collection group, ingestion job, or ingestion stream",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          },
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-CollectionGroup"
+          },
+          {
+            "name": "IngestionJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionJob"
+          },
+          {
+            "name": "IngestionStream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionStream"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListTagsForResource"
       },
       "ListVpcEndpoints": {
@@ -10131,7 +10313,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-ListVpcEndpoints"
       },
       "TagResource": {
-        "access_level": "Write",
+        "access_level": "Tagging, Write",
         "action_name": "aoss:TagResource",
         "condition_keys": [
           {
@@ -10147,21 +10329,59 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to tag a serverless collection",
-        "resource_types": [],
+        "description": "Grants permission to add tags to a collection, collection group, ingestion job, or ingestion stream",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          },
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-CollectionGroup"
+          },
+          {
+            "name": "IngestionJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionJob"
+          },
+          {
+            "name": "IngestionStream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionStream"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-TagResource"
       },
       "UntagResource": {
-        "access_level": "Write",
+        "access_level": "Tagging, Write",
         "action_name": "aoss:UntagResource",
         "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
+          },
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_TagKeys"
           }
         ],
-        "description": "Grants permission to remove tags from a collection",
-        "resource_types": [],
+        "description": "Grants permission to remove tags from a collection, collection group, ingestion job, or ingestion stream",
+        "resource_types": [
+          {
+            "name": "Collection*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-Collection"
+          },
+          {
+            "name": "CollectionGroup*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-CollectionGroup"
+          },
+          {
+            "name": "IngestionJob*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionJob"
+          },
+          {
+            "name": "IngestionStream*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-resource-IngestionStream"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-action-UntagResource"
       },
       "UpdateAccessPolicy": {
@@ -10193,6 +10413,10 @@
         "access_level": "Write",
         "action_name": "aoss:UpdateCollection",
         "condition_keys": [
+          {
+            "name": "aoss:DeletionProtection",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aoss_DeletionProtection"
+          },
           {
             "name": "aws:ResourceTag/${TagKey}",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchserverless.html#list_opensearchserverless-aws_ResourceTag___TagKey_"
@@ -105828,12 +106052,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for a Microsoft Azure Blob Storage container",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationAzureBlob"
       },
       "CreateLocationEfs": {
@@ -105930,12 +106163,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for an Amazon Hdfs",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationHdfs"
       },
       "CreateLocationNfs": {
@@ -105947,12 +106189,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for a NFS file system",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationNfs"
       },
       "CreateLocationObjectStorage": {
@@ -105964,12 +106215,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for a self-managed object storage bucket",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationObjectStorage"
       },
       "CreateLocationS3": {
@@ -105981,12 +106241,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for an Amazon S3 bucket",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationS3"
       },
       "CreateLocationSmb": {
@@ -105998,12 +106267,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an endpoint for an SMB file system",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "agent*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-action-CreateLocationSmb"
       },
       "CreateTask": {
@@ -106739,6 +107017,10 @@
         "description": "Grants permission to update an Azure Blob Storage sync location",
         "resource_types": [
           {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          },
+          {
             "name": "location*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-location"
           }
@@ -106847,6 +107129,10 @@
         "description": "Grants permission to update an HDFS sync Location",
         "resource_types": [
           {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          },
+          {
             "name": "location*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-location"
           }
@@ -106865,6 +107151,10 @@
         "description": "Grants permission to update an NFS sync Location",
         "resource_types": [
           {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          },
+          {
             "name": "location*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-location"
           }
@@ -106882,6 +107172,10 @@
         ],
         "description": "Grants permission to update a self-managed object storage server location",
         "resource_types": [
+          {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          },
           {
             "name": "location*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-location"
@@ -106918,6 +107212,10 @@
         ],
         "description": "Grants permission to update a SMB sync location",
         "resource_types": [
+          {
+            "name": "agent",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-agent"
+          },
           {
             "name": "location*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html#list_datasync-resource-location"
@@ -158932,6 +159230,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-DescribeRegistry"
       },
+      "DescribeReplicationBackfillResults": {
+        "access_level": "Read",
+        "action_name": "ecr:DescribeReplicationBackfillResults",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the results of a replication backfill for the registry",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-DescribeReplicationBackfillResults"
+      },
       "DescribeRepositories": {
         "access_level": "Read",
         "action_name": "ecr:DescribeRepositories",
@@ -159168,6 +159474,14 @@
         "description": "Grants permission to list pull time update exclusions for the registry",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-ListPullTimeUpdateExclusions"
+      },
+      "ListReplicationBackfills": {
+        "access_level": "List",
+        "action_name": "ecr:ListReplicationBackfills",
+        "condition_keys": [],
+        "description": "Grants permission to list the replication backfills for the registry",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-ListReplicationBackfills"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -159427,6 +159741,22 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-StartLifecyclePolicyPreview"
+      },
+      "StartReplicationBackfill": {
+        "access_level": "Write",
+        "action_name": "ecr:StartReplicationBackfill",
+        "condition_keys": [],
+        "description": "Grants permission to start a replication backfill to a destination region for the registry",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-StartReplicationBackfill"
+      },
+      "StopReplicationBackfill": {
+        "access_level": "Write",
+        "action_name": "ecr:StopReplicationBackfill",
+        "condition_keys": [],
+        "description": "Grants permission to stop an in-progress replication backfill for the registry",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-StopReplicationBackfill"
       },
       "TagResource": {
         "access_level": "Tagging, Write",
@@ -175160,6 +175490,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-CreateFeed"
       },
+      "CreateScheduleAction": {
+        "access_level": "Write",
+        "action_name": "elemental-inference:CreateScheduleAction",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to create a schedule action for a feed",
+        "resource_types": [
+          {
+            "name": "feed*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-resource-feed"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-CreateScheduleAction"
+      },
       "DeleteDictionary": {
         "access_level": "Write",
         "action_name": "elemental-inference:DeleteDictionary",
@@ -175213,6 +175561,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-DeleteFeedPolicy"
+      },
+      "DeleteScheduleAction": {
+        "access_level": "Write",
+        "action_name": "elemental-inference:DeleteScheduleAction",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a schedule action for a feed",
+        "resource_types": [
+          {
+            "name": "feed*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-resource-feed"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-DeleteScheduleAction"
       },
       "DisassociateFeed": {
         "access_level": "Write",
@@ -175337,6 +175703,24 @@
         "description": "Grants permission to list feeds in the account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-ListFeeds"
+      },
+      "ListScheduleActions": {
+        "access_level": "Read",
+        "action_name": "elemental-inference:ListScheduleActions",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to list schedule actions for a feed",
+        "resource_types": [
+          {
+            "name": "feed*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-resource-feed"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html#list_elementalinference-action-ListScheduleActions"
       },
       "ListTagsForResource": {
         "access_level": "Read",
@@ -177951,6 +178335,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-AddDirectQueryDataSource"
       },
+      "AddReplicationPeer": {
+        "access_level": "Write",
+        "action_name": "es:AddReplicationPeer",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to pair two OpenSearch Service domains for replication. Requires the permission on both domains",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-AddReplicationPeer"
+      },
       "AddTags": {
         "access_level": "Tagging, Write",
         "action_name": "es:AddTags",
@@ -178101,6 +178503,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-CancelServiceSoftwareUpdate"
       },
+      "CompareDomainConfiguration": {
+        "access_level": "Read",
+        "action_name": "es:CompareDomainConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to compare the configuration of two OpenSearch Service domains. Requires the permission on both domains",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-CompareDomainConfiguration"
+      },
       "CreateApplication": {
         "access_level": "Write",
         "action_name": "es:CreateApplication",
@@ -178133,6 +178553,14 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_TagKeys"
+          },
+          {
+            "name": "es:SecurityGroupIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-es_SecurityGroupIds"
+          },
+          {
+            "name": "es:SubnetIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-es_SubnetIds"
           }
         ],
         "description": "Grants permission to create an Amazon OpenSearch Service domain",
@@ -178159,6 +178587,14 @@
           {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_TagKeys"
+          },
+          {
+            "name": "es:SecurityGroupIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-es_SecurityGroupIds"
+          },
+          {
+            "name": "es:SubnetIds",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-es_SubnetIds"
           }
         ],
         "description": "Grants permission to create an OpenSearch Service domain. This permission is deprecated. Use CreateDomain instead",
@@ -178564,6 +179000,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-DescribeDomainNodes"
       },
+      "DescribeDomainReplication": {
+        "access_level": "Read",
+        "action_name": "es:DescribeDomainReplication",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve the replication relationship details for an OpenSearch Service domain",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-DescribeDomainReplication"
+      },
       "DescribeDomains": {
         "access_level": "List",
         "action_name": "es:DescribeDomains",
@@ -178947,6 +179401,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-ESHttpPut"
+      },
+      "FailoverReplication": {
+        "access_level": "Write",
+        "action_name": "es:FailoverReplication",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to promote the secondary domain of a replication relationship when the primary is unavailable. Requires the permission on both domains",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-FailoverReplication"
       },
       "GetApplication": {
         "access_level": "Read",
@@ -179526,6 +179998,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-RejectInboundCrossClusterSearchConnection"
       },
+      "RemoveReplicationPeer": {
+        "access_level": "Write",
+        "action_name": "es:RemoveReplicationPeer",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to end the replication relationship between two OpenSearch Service domains. Requires the permission on both domains",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-RemoveReplicationPeer"
+      },
       "RemoveTags": {
         "access_level": "Tagging, Write",
         "action_name": "es:RemoveTags",
@@ -179671,6 +180161,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-StartServiceSoftwareUpdate"
+      },
+      "SwitchoverReplication": {
+        "access_level": "Write",
+        "action_name": "es:SwitchoverReplication",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to swap the primary and secondary roles of a replication relationship between two OpenSearch Service domains without data loss. Requires the permission on both domains",
+        "resource_types": [
+          {
+            "name": "domain*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-resource-domain"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_es.html#list_es-action-SwitchoverReplication"
       },
       "UpdateApplication": {
         "access_level": "Write",
@@ -215497,7 +216005,12 @@
       "CreateFindingsReport": {
         "access_level": "Write",
         "action_name": "inspector2:CreateFindingsReport",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "inspector2:ExpectedBucketOwner",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-inspector2_ExpectedBucketOwner"
+          }
+        ],
         "description": "Grants permission to request the generation of a findings report",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-CreateFindingsReport"
@@ -215505,7 +216018,12 @@
       "CreateSbomExport": {
         "access_level": "Write",
         "action_name": "inspector2:CreateSbomExport",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "inspector2:ExpectedBucketOwner",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-inspector2_ExpectedBucketOwner"
+          }
+        ],
         "description": "Grants permission to request the generation of an SBOM report",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-CreateSbomExport"
@@ -215744,6 +216262,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-GetMember"
       },
+      "GetOnDemandScanStatus": {
+        "access_level": "Read",
+        "action_name": "inspector2:GetOnDemandScanStatus",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve the status of an on-demand scan for a specified resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-GetOnDemandScanStatus"
+      },
       "GetSbomExport": {
         "access_level": "Read",
         "action_name": "inspector2:GetSbomExport",
@@ -215888,6 +216414,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-ListMembers"
       },
+      "ListOnDemandScans": {
+        "access_level": "List",
+        "action_name": "inspector2:ListOnDemandScans",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve information about on-demand scans for a specified resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-ListOnDemandScans"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "inspector2:ListTagsForResource",
@@ -215951,6 +216485,14 @@
         "description": "Grants permission to initiate a code security scan on a specified repository",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-StartCodeSecurityScan"
+      },
+      "StartOnDemandScan": {
+        "access_level": "Write",
+        "action_name": "inspector2:StartOnDemandScan",
+        "condition_keys": [],
+        "description": "Grants permission to initiate an on-demand scan on a specified resource",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html#list_inspector2-action-StartOnDemandScan"
       },
       "StopCisSession": {
         "access_level": "Write",
@@ -232380,6 +232922,32 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-CreateEncoderConfiguration"
       },
+      "CreateFailoverSlateConfiguration": {
+        "access_level": "Write",
+        "action_name": "ivs:CreateFailoverSlateConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:RequestTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_RequestTag___TagKey_"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "aws:TagKeys",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_TagKeys"
+          }
+        ],
+        "description": "Grants permission to create a new failover slate configuration",
+        "resource_types": [
+          {
+            "name": "Failover-Slate-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-CreateFailoverSlateConfiguration"
+      },
       "CreateIngestConfiguration": {
         "access_level": "Write",
         "action_name": "ivs:CreateIngestConfiguration",
@@ -232620,6 +233188,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-DeleteEncoderConfiguration"
       },
+      "DeleteFailoverSlateConfiguration": {
+        "access_level": "Write",
+        "action_name": "ivs:DeleteFailoverSlateConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to delete a failover slate configuration for the specified ARN",
+        "resource_types": [
+          {
+            "name": "Failover-Slate-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-DeleteFailoverSlateConfiguration"
+      },
       "DeleteIngestConfiguration": {
         "access_level": "Write",
         "action_name": "ivs:DeleteIngestConfiguration",
@@ -232853,6 +233439,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-GetEncoderConfiguration"
+      },
+      "GetFailoverSlateConfiguration": {
+        "access_level": "Read",
+        "action_name": "ivs:GetFailoverSlateConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get the failover slate configuration for the specified ARN",
+        "resource_types": [
+          {
+            "name": "Failover-Slate-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-GetFailoverSlateConfiguration"
       },
       "GetIngestConfiguration": {
         "access_level": "Read",
@@ -233196,6 +233800,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-ListEncoderConfigurations"
       },
+      "ListFailoverSlateConfigurations": {
+        "access_level": "List",
+        "action_name": "ivs:ListFailoverSlateConfigurations",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to get summary information about failover slate configurations",
+        "resource_types": [
+          {
+            "name": "Failover-Slate-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-ListFailoverSlateConfigurations"
+      },
       "ListIngestConfigurations": {
         "access_level": "List",
         "action_name": "ivs:ListIngestConfigurations",
@@ -233448,6 +234070,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Encoder-Configuration"
           },
           {
+            "name": "Failover-Slate-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          },
+          {
             "name": "Ingest-Configuration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Ingest-Configuration"
           },
@@ -233680,6 +234306,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Encoder-Configuration"
           },
           {
+            "name": "Failover-Slate-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          },
+          {
             "name": "Ingest-Configuration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Ingest-Configuration"
           },
@@ -233746,6 +234376,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Encoder-Configuration"
           },
           {
+            "name": "Failover-Slate-Configuration",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          },
+          {
             "name": "Ingest-Configuration",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Ingest-Configuration"
           },
@@ -233805,6 +234439,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-UpdateChannel"
+      },
+      "UpdateFailoverSlateConfiguration": {
+        "access_level": "Write",
+        "action_name": "ivs:UpdateFailoverSlateConfiguration",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a failover slate configuration for the specified ARN",
+        "resource_types": [
+          {
+            "name": "Failover-Slate-Configuration*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-resource-Failover-Slate-Configuration"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html#list_interactive-video-service-action-UpdateFailoverSlateConfiguration"
       },
       "UpdateIngestConfiguration": {
         "access_level": "Write",
@@ -235833,6 +236485,60 @@
         "description": "Grants permission to list all MSK Connect worker configurations in this account",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-action-ListWorkerConfigurations"
+      },
+      "PauseConnector": {
+        "access_level": "Write",
+        "action_name": "kafkaconnect:PauseConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to pause an MSK Connect connector",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-resource-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-action-PauseConnector"
+      },
+      "RestartConnector": {
+        "access_level": "Write",
+        "action_name": "kafkaconnect:RestartConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to restart an MSK Connect connector",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-resource-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-action-RestartConnector"
+      },
+      "ResumeConnector": {
+        "access_level": "Write",
+        "action_name": "kafkaconnect:ResumeConnector",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to resume an MSK Connect connector",
+        "resource_types": [
+          {
+            "name": "connector*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-resource-connector"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kafkaconnect.html#list_kafkaconnect-action-ResumeConnector"
       },
       "TagResource": {
         "access_level": "Tagging, Write",
@@ -288451,6 +289157,10 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-cloud-exadata-infrastructure"
           },
           {
+            "name": "exascale-db-storage-vault",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-exascale-db-storage-vault"
+          },
+          {
             "name": "odb-network*",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-odb-network"
           }
@@ -288514,12 +289224,21 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-aws_RequestTag___TagKey_"
           },
           {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-aws_ResourceTag___TagKey_"
+          },
+          {
             "name": "aws:TagKeys",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-aws_TagKeys"
           }
         ],
         "description": "Grants permission to create an Exascale DB storage vault",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-cloud-exadata-infrastructure"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-action-CreateExascaleDbStorageVault"
       },
       "CreateGrantShare": {
@@ -289352,9 +290071,19 @@
       "ListExascaleDbStorageVaults": {
         "access_level": "List",
         "action_name": "odb:ListExascaleDbStorageVaults",
-        "condition_keys": [],
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-aws_ResourceTag___TagKey_"
+          }
+        ],
         "description": "Grants permission to list information about the Exascale DB storage vaults owned by your Amazon Web Services account",
-        "resource_types": [],
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-cloud-exadata-infrastructure"
+          }
+        ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-action-ListExascaleDbStorageVaults"
       },
       "ListFlexComponents": {
@@ -289860,6 +290589,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-action-UpdateExadbVmCluster"
+      },
+      "UpdateExascaleCloudExadataInfrastructure": {
+        "access_level": "Write",
+        "action_name": "odb:UpdateExascaleCloudExadataInfrastructure",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to configure Exascale storage on an Exadata infrastructure resource",
+        "resource_types": [
+          {
+            "name": "cloud-exadata-infrastructure*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-resource-cloud-exadata-infrastructure"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html#list_odb-action-UpdateExascaleCloudExadataInfrastructure"
       },
       "UpdateExascaleDbStorageVault": {
         "access_level": "Write",
@@ -298644,6 +299391,19 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-RejectEngagementInvitation"
+      },
+      "SearchOpportunities": {
+        "access_level": "List",
+        "action_name": "partnercentral:SearchOpportunities",
+        "condition_keys": [
+          {
+            "name": "partnercentral:Catalog",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-partnercentral_Catalog"
+          }
+        ],
+        "description": "Grants permission to search Opportunities on AWS Partner Central",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_partner-central.html#list_partner-central-action-SearchOpportunities"
       },
       "SearchPartnerCentralContent": {
         "access_level": "List",
@@ -391374,7 +392134,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html#list_signin-signin_OAuthRedirectUri"
           }
         ],
-        "description": "Grants permission to authenticate through a browser and obtain an OAuth 2.0 authorization code for credential exchange",
+        "description": "Grants permission to authenticate through a browser and obtain an OAuth 2 authorization code for credential exchange",
         "resource_types": [
           {
             "name": "console*",
@@ -391417,7 +392177,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html#list_signin-signin_OAuthRedirectUri"
           }
         ],
-        "description": "Grants permission to dynamically register an OAuth 2.0 public client for use with AWS Sign-In",
+        "description": "Grants permission to dynamically register an OAuth 2 public client for use with AWS Sign-In",
         "resource_types": [
           {
             "name": "oauth2-public-client-registration*",
@@ -391447,7 +392207,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html#list_signin-signin_OAuthRedirectUri"
           }
         ],
-        "description": "Grants permission to exchange an authorization code for OAuth 2.0 access token and refresh token that can be used to access AWS services from developer tools and applications",
+        "description": "Grants permission to exchange an authorization code, refresh token, SigV4 credentials, or JWT for OAuth 2 access token that can be used to access AWS services from developer tools and applications",
         "resource_types": [
           {
             "name": "console*",
@@ -391521,7 +392281,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html#list_signin-signin_OAuthTokenType"
           }
         ],
-        "description": "Grants permission to inspect the metadata and active state of an OAuth 2.0 access token or refresh token",
+        "description": "Grants permission to inspect the metadata and active state of an OAuth 2 access token or refresh token",
         "resource_types": [
           {
             "name": "oauth2-public-client-localhost*",
@@ -391579,7 +392339,7 @@
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html#list_signin-signin_OAuthTokenType"
           }
         ],
-        "description": "Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh tokens",
+        "description": "Grants permission to revoke an OAuth 2 refresh token and its associated refresh tokens",
         "resource_types": [
           {
             "name": "oauth2-public-client-localhost*",
@@ -415579,6 +416339,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html#list_transcribe-action-UpdateCallAnalyticsCategory"
       },
+      "UpdateLanguageModel": {
+        "access_level": "Write",
+        "action_name": "transcribe:UpdateLanguageModel",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html#list_transcribe-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update a custom language model",
+        "resource_types": [
+          {
+            "name": "languagemodel*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html#list_transcribe-resource-languagemodel"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transcribe.html#list_transcribe-action-UpdateLanguageModel"
+      },
       "UpdateMedicalVocabulary": {
         "access_level": "Write",
         "action_name": "transcribe:UpdateMedicalVocabulary",
@@ -430850,6 +431628,42 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-action-QueryAssistant"
       },
+      "RegisterAssistantReplicaKey": {
+        "access_level": "Write",
+        "action_name": "wisdom:RegisterAssistantReplicaKey",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to register a replica KMS key for an assistant",
+        "resource_types": [
+          {
+            "name": "Assistant*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-resource-Assistant"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-action-RegisterAssistantReplicaKey"
+      },
+      "RegisterKnowledgeBaseReplicaKey": {
+        "access_level": "Write",
+        "action_name": "wisdom:RegisterKnowledgeBaseReplicaKey",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to register a replica KMS key for a knowledge base",
+        "resource_types": [
+          {
+            "name": "KnowledgeBase*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-resource-KnowledgeBase"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html#list_q-in-connect-action-RegisterKnowledgeBaseReplicaKey"
+      },
       "RemoveAssistantAIAgent": {
         "access_level": "Write",
         "action_name": "wisdom:RemoveAssistantAIAgent",
@@ -438163,6 +438977,14 @@
         "description": "Grants permission to retrieve a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_xray.html#list_xray-action-BatchGetTraces"
+      },
+      "CallWithBearerToken": {
+        "access_level": "Write",
+        "action_name": "xray:CallWithBearerToken",
+        "condition_keys": [],
+        "description": "Grants permission to authenticate requests to AWS X-Ray using a bearer token",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_xray.html#list_xray-action-CallWithBearerToken"
       },
       "CancelTraceRetrieval": {
         "access_level": "Read",
