@@ -55,6 +55,11 @@
     "@vscode/vsce": "4.0.0",
     "typescript": "7.0.2"
   },
+  "overrides": {
+    "@azure/identity": {
+      "@azure/msal-node": "7.1.2"
+    }
+  },
   "contributes": {
     "languages": [
       {
