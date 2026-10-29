@@ -89,6 +89,7 @@ jobs:
     needs: prepare
     if: needs.prepare.outputs.release == 'true'
     permissions:
+      id-token: write
       contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -97,10 +98,8 @@ jobs:
       matrix:
         include:
           - registry: https://marketplace.visualstudio.com
-            token: VSCE_TOKEN
             name: marketplace
           - registry: https://open-vsx.org
-            token: OPEN_VSX_TOKEN
             name: open-vsx
     name: Publish to ${{ matrix.name }}
     steps:
@@ -111,9 +110,13 @@ jobs:
       - uses: actions/setup-node@v7.1.0
         with:
           node-version: "24"
+      - name: Publish to Visual Studio Marketplace
+        if: matrix.name == 'marketplace'
+        run: npx --yes @vscode/vsce@4.1.0 publish --oidc --packagePath .vscode-test/iam-actions.vsix --skip-duplicate
       - uses: HaaLeo/publish-vscode-extension@v2.1.0
+        if: matrix.name == 'open-vsx'
         with:
-          pat: ${{ secrets[matrix.token] }}
-          registryUrl: ${{ matrix.registry }}
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          registryUrl: https://open-vsx.org
           extensionFile: .vscode-test/iam-actions.vsix
           skipDuplicate: true
