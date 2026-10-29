@@ -4,6 +4,13 @@ Changelog
 
 (unreleased)
 ------------
+- Ci: publish VS Code extensions with trusted publishing (#9) [Danny
+  Steenman]
+
+
+1.103.0 (2026-10-28)
+--------------------
+- Build: auto-update snippets to version: 1.103.0. [Github Actions]
 - Fix(deps): patch certifi trust store and qs serialization (#8) [Danny
   Steenman]
 

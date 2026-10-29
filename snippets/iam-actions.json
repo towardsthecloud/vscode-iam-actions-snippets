@@ -5600,6 +5600,14 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-GetBacklogTask"
       },
+      "GetCatalogCapability": {
+        "access_level": "Read",
+        "action_name": "aidevops:GetCatalogCapability",
+        "condition_keys": [],
+        "description": "Grants permission to get a capability from the catalog",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-GetCatalogCapability"
+      },
       "GetKnowledgeItem": {
         "access_level": "Read",
         "action_name": "aidevops:GetKnowledgeItem",
@@ -5855,6 +5863,30 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-ListBacklogTasks"
+      },
+      "ListCatalogCapabilities": {
+        "access_level": "List",
+        "action_name": "aidevops:ListCatalogCapabilities",
+        "condition_keys": [],
+        "description": "Grants permission to list capabilities in the catalog",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-ListCatalogCapabilities"
+      },
+      "ListCatalogCapabilityFiles": {
+        "access_level": "List",
+        "action_name": "aidevops:ListCatalogCapabilityFiles",
+        "condition_keys": [],
+        "description": "Grants permission to list the files in a capability from the catalog",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-ListCatalogCapabilityFiles"
+      },
+      "ListCatalogCapabilityTypes": {
+        "access_level": "List",
+        "action_name": "aidevops:ListCatalogCapabilityTypes",
+        "condition_keys": [],
+        "description": "Grants permission to list the capability types in the catalog",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-ListCatalogCapabilityTypes"
       },
       "ListChats": {
         "access_level": "List",
@@ -6171,6 +6203,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-RotateAccessToken"
+      },
+      "SearchAssets": {
+        "access_level": "Read",
+        "action_name": "aidevops:SearchAssets",
+        "condition_keys": [
+          {
+            "name": "aidevops:SourceAgentSpaceArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_SourceAgentSpaceArn"
+          },
+          {
+            "name": "aidevops:TargetAgentSpaceArn",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aidevops_TargetAgentSpaceArn"
+          },
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to search assets",
+        "resource_types": [
+          {
+            "name": "agentspace*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-resource-agentspace"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-agent.html#list_devops-agent-action-SearchAssets"
       },
       "SearchServiceAccessibleResource": {
         "access_level": "Read",
@@ -159676,6 +159734,28 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-ReplicateImage"
       },
+      "ReplicateImageDelete": {
+        "access_level": "Write",
+        "action_name": "ecr:ReplicateImageDelete",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-aws_ResourceTag___TagKey_"
+          },
+          {
+            "name": "ecr:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-ecr_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to replicate image deletions to the destination registry",
+        "resource_types": [
+          {
+            "name": "repository*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-resource-repository"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecr.html#list_ecr-action-ReplicateImageDelete"
+      },
       "SetRepositoryPolicy": {
         "access_level": "Permissions management, Write",
         "action_name": "ecr:SetRepositoryPolicy",
@@ -262320,6 +262400,24 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-AssociateRouterNetworkInterface"
       },
+      "ConnectEndpoints": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:ConnectEndpoints",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to connect a source endpoint to a destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-ConnectEndpoints"
+      },
       "CreateBridge": {
         "access_level": "Write",
         "action_name": "mediaconnect:CreateBridge",
@@ -262494,6 +262592,14 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeleteGateway"
       },
+      "DeleteResourcePolicy": {
+        "access_level": "Permissions management, Write",
+        "action_name": "mediaconnect:DeleteResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to delete a resource policy from a resource in AWS Elemental MediaConnect",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeleteResourcePolicy"
+      },
       "DeleteRouterInput": {
         "access_level": "Write",
         "action_name": "mediaconnect:DeleteRouterInput",
@@ -262548,6 +262654,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeleteRouterOutput"
       },
+      "DeregisterDestinationEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:DeregisterDestinationEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to deregister a destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeregisterDestinationEndpoint"
+      },
       "DeregisterGatewayInstance": {
         "access_level": "Write",
         "action_name": "mediaconnect:DeregisterGatewayInstance",
@@ -262560,6 +262684,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeregisterGatewayInstance"
+      },
+      "DeregisterSourceEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:DeregisterSourceEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to deregister a source endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "SourceEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DeregisterSourceEndpoint"
       },
       "DescribeBridge": {
         "access_level": "Read",
@@ -262680,6 +262822,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DescribeReservation"
       },
+      "DisconnectEndpoints": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:DisconnectEndpoints",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to disconnect a source endpoint from a destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DisconnectEndpoints"
+      },
       "DiscoverGatewayPollEndpoint": {
         "access_level": "Read",
         "action_name": "mediaconnect:DiscoverGatewayPollEndpoint",
@@ -262692,6 +262852,32 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-DiscoverGatewayPollEndpoint"
+      },
+      "GetDestinationEndpoint": {
+        "access_level": "Read",
+        "action_name": "mediaconnect:GetDestinationEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve information about a specific destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-GetDestinationEndpoint"
+      },
+      "GetResourcePolicy": {
+        "access_level": "Read",
+        "action_name": "mediaconnect:GetResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a resource policy for a resource in AWS Elemental MediaConnect",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-GetResourcePolicy"
       },
       "GetRouterInput": {
         "access_level": "Read",
@@ -262783,8 +262969,26 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-GetRouterOutput"
       },
+      "GetSourceEndpoint": {
+        "access_level": "Read",
+        "action_name": "mediaconnect:GetSourceEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to retrieve information about a specific source endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "SourceEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-GetSourceEndpoint"
+      },
       "GrantFlowEntitlements": {
-        "access_level": "Write",
+        "access_level": "Permissions management, Write",
         "action_name": "mediaconnect:GrantFlowEntitlements",
         "condition_keys": [
           {
@@ -262820,6 +263024,14 @@
         "description": "Grants permission to display a list of bridges that are associated with this account and an optionally specified Arn",
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-ListBridges"
+      },
+      "ListDestinationEndpoints": {
+        "access_level": "List",
+        "action_name": "mediaconnect:ListDestinationEndpoints",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of destination endpoints in AWS Elemental MediaConnect",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-ListDestinationEndpoints"
       },
       "ListEntitlements": {
         "access_level": "List",
@@ -262893,6 +263105,14 @@
         "resource_types": [],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-ListRouterOutputs"
       },
+      "ListSourceEndpoints": {
+        "access_level": "List",
+        "action_name": "mediaconnect:ListSourceEndpoints",
+        "condition_keys": [],
+        "description": "Grants permission to retrieve a list of source endpoints in AWS Elemental MediaConnect",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-ListSourceEndpoints"
+      },
       "ListTagsForResource": {
         "access_level": "Read",
         "action_name": "mediaconnect:ListTagsForResource",
@@ -262921,6 +263141,50 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-PurchaseOffering"
+      },
+      "PutResourcePolicy": {
+        "access_level": "Permissions management, Write",
+        "action_name": "mediaconnect:PutResourcePolicy",
+        "condition_keys": [],
+        "description": "Grants permission to attach a resource policy to a resource in AWS Elemental MediaConnect",
+        "resource_types": [],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-PutResourcePolicy"
+      },
+      "RegisterDestinationEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:RegisterDestinationEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to register a new destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-RegisterDestinationEndpoint"
+      },
+      "RegisterSourceEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:RegisterSourceEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to register a new source endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "SourceEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-RegisterSourceEndpoint"
       },
       "RemoveBridgeOutput": {
         "access_level": "Write",
@@ -263073,7 +263337,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-RestartRouterOutput"
       },
       "RevokeFlowEntitlement": {
-        "access_level": "Write",
+        "access_level": "Permissions management, Write",
         "action_name": "mediaconnect:RevokeFlowEntitlement",
         "condition_keys": [
           {
@@ -263230,6 +263494,10 @@
         "description": "Grants permission to associate tags with resources",
         "resource_types": [
           {
+            "name": "DestinationEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          },
+          {
             "name": "Entitlement",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-Entitlement"
           },
@@ -263260,6 +263528,10 @@
           {
             "name": "Source",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-Source"
+          },
+          {
+            "name": "SourceEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
           },
           {
             "name": "VpcInterface",
@@ -263302,6 +263574,10 @@
         "description": "Grants permission to remove tags from resources",
         "resource_types": [
           {
+            "name": "DestinationEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          },
+          {
             "name": "Entitlement",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-Entitlement"
           },
@@ -263332,6 +263608,10 @@
           {
             "name": "Source",
             "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-Source"
+          },
+          {
+            "name": "SourceEndpoint",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
           },
           {
             "name": "VpcInterface",
@@ -263392,6 +263672,24 @@
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-UpdateBridgeState"
       },
+      "UpdateDestinationEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:UpdateDestinationEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update the configuration of a destination endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "DestinationEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-DestinationEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-UpdateDestinationEndpoint"
+      },
       "UpdateFlow": {
         "access_level": "Write",
         "action_name": "mediaconnect:UpdateFlow",
@@ -263411,7 +263709,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-UpdateFlow"
       },
       "UpdateFlowEntitlement": {
-        "access_level": "Write",
+        "access_level": "Permissions management, Write",
         "action_name": "mediaconnect:UpdateFlowEntitlement",
         "condition_keys": [
           {
@@ -263560,6 +263858,24 @@
           }
         ],
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-UpdateRouterOutput"
+      },
+      "UpdateSourceEndpoint": {
+        "access_level": "Write",
+        "action_name": "mediaconnect:UpdateSourceEndpoint",
+        "condition_keys": [
+          {
+            "name": "aws:ResourceTag/${TagKey}",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-aws_ResourceTag___TagKey_"
+          }
+        ],
+        "description": "Grants permission to update the configuration of a source endpoint in AWS Elemental MediaConnect",
+        "resource_types": [
+          {
+            "name": "SourceEndpoint*",
+            "reference_href": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-resource-SourceEndpoint"
+          }
+        ],
+        "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html#list_mediaconnect-action-UpdateSourceEndpoint"
       }
     },
     "reference_url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaconnect.html",
