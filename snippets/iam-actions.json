@@ -291544,7 +291544,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_omics.html#list_omics-action-DeleteRunGroup"
       },
       "DeleteS3AccessPolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management, Write",
         "action_name": "omics:DeleteS3AccessPolicy",
         "condition_keys": [
           {
@@ -292418,7 +292418,7 @@
         "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_omics.html#list_omics-action-ListWorkflows"
       },
       "PutS3AccessPolicy": {
-        "access_level": "Write",
+        "access_level": "Permissions management, Write",
         "action_name": "omics:PutS3AccessPolicy",
         "condition_keys": [
           {

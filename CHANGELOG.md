@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.104.0 (2026-10-29)
+--------------------
+- Build: auto-update snippets to version: 1.104.0. [Github Actions]
 - Ci: publish VS Code extensions with trusted publishing (#9) [Danny
   Steenman]
 
