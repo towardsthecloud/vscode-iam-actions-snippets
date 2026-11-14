@@ -2,6 +2,21 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Fix(deps): patch soupsieve and minimatch DoS advisories (#10) [Danny
+  Steenman]
+
+  Bump soupsieve to 4.1 for the CSS selector ReDoS, recursion, and
+  descendant combinator advisories. Override minimatch to 11.0.8 under
+  @vscode/vsce, whose latest release still depends on ^10.2.6.
+
+
+1.105.0 (2026-10-30)
+--------------------
+- Build: auto-update snippets to version: 1.105.0. [Github Actions]
+
+
 1.104.0 (2026-10-29)
 --------------------
 - Build: auto-update snippets to version: 1.104.0. [Github Actions]
