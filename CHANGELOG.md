@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+1.106.0 (2026-11-14)
+--------------------
+- Build: auto-update snippets to version: 1.106.0. [Github Actions]
 - Fix(deps): patch soupsieve and minimatch DoS advisories (#10) [Danny
   Steenman]
 
